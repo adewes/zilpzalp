@@ -132,4 +132,3 @@ Eventuell werden einzelne Systemkomponenten anschließend als PoCs umgesetzt. S�
 
 # Bildnachweise
 
-1.) By Gaston Bussière - [1], Public Domain, https://commons.wikimedia.org/w/index.php?curid=4491753
