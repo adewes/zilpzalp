@@ -1,6 +1,6 @@
 # Brunhilde - Dezentrale Kontaktnachverfolgung. Ohne App & ohne Rapper!
 
-![Brunhilde - Schildmaid der Datenschützer](/materials/images/bruni.jpg "Brunhilde - Schildmaid der Datenschützer")
+<img src="/materials/images/bruni.jpg" alt="Brunhilde - Schildmaid der Datenschützer" title="Brunhilde - Schildmaid der Datenschützer" width="40%" />
 
 **Disclaimer**: *Dies ist ein erster, grober Entwurf des Design-Dokuments. Weitere Details folgen in den kommenden Tagen und Wochen.*
 
