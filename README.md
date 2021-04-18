@@ -12,7 +12,7 @@ Dies ist das Design-Dokument von **Zilp-Zalp**, einem System zur Kontaktnachverf
 
 Warum Zilp-Zalp? Obwohl es vielleicht zu spät ist um die Diskussion um Kontaktnachverfolgungs-Apps in die richtige Richtung zu lenken ist es wichtig zu zeigen, dass viele Aussagen der Luca-Macher einfach faktisch falsch sind, und dass Luca mit Sicherheit nicht "der sicherste mögliche Ansatz" zur Realisierung eines rechtskonformen Systems zur Kontaktnachverfolgung ist.
 
-Es ist vermutlich unwahrscheinlich, dass Zilp-Zalp jemals in der Praxis eingesetzt werden wird (Walküren sind auch leider nicht mehr so populär wie Popstars). Das Konzept ist daher eher eine "einfache" Übung im angewandten **Privacy Engineering** mit der gezeigt werden soll, wie man privatsphäre-freundliche Systeme kollaborativ und offen entwickeln kann.
+Das Konzept ist folgt angewandten Best-Practices im **Privacy Engineering** und soll zeigen, wie man privatsphäre-freundliche Systeme kollaborativ und offen entwickeln kann.
 
 ## Problemstellung
 
