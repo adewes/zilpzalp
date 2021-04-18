@@ -1,22 +1,22 @@
-# Brunhilde - Dezentrale Kontaktnachverfolgung. Ohne App & ohne Rapper!
+# Zilp-Zalp - Dezentrale Kontaktnachverfolgung. Ohne App & ohne Rapper!
 
-<img src="/materials/images/bruni.jpg" alt="Brunhilde - Schildmaid der Datenschützer" title="Brunhilde - Schildmaid der Datenschützer" width="40%" />
+<!--<img src="/materials/images/zilp-zalp.jpg" alt="Zilp-Zalp - Logo" title="Zilp-Zalp - Logo" width="40%" />-->
 
 **Disclaimer**: *Dies ist ein erster, grober Entwurf des Design-Dokuments. Weitere Details folgen in den kommenden Tagen und Wochen.*
 
-Dies ist das Design-Dokument von **Brunhilde**, einem System zur Kontaktnachverfolgung das mit Methoden des **Privacy & Security Engineering** entworfen wurde. Das Design ist als Gegenentwurf zu zentralisierten Systemen wie **Luca** gedacht und soll zeigen, dass viele Design-Entscheidungen in diesen Systemen mehr von kommerziellen Interessen als von **Privacy & Security By Design** getrieben sind, und für eine effektive Kontaktnachverfolgung nicht notwendig sind.
+Dies ist das Design-Dokument von **Zilp-Zalp**, einem System zur Kontaktnachverfolgung das mit Methoden des **Privacy & Security Engineering** entworfen wurde. Das Design ist als Gegenentwurf zu zentralisierten Systemen wie **Luca** gedacht und soll zeigen, dass viele Design-Entscheidungen in diesen Systemen mehr von kommerziellen Interessen als von **Privacy & Security By Design** getrieben sind, und für eine effektive Kontaktnachverfolgung nicht notwendig sind.
 
 (wir benutzen aktuell das generische Maskulinum, der Text wird aber in Kürze überarbeitet um genderneutral zu sein)
 
 # Motivation
 
-Warum Brunhilde? Obwohl es vielleicht zu spät ist um die Diskussion um Kontaktnachverfolgungs-Apps in die richtige Richtung zu lenken ist es wichtig zu zeigen, dass viele Aussagen der Luca-Macher einfach faktisch falsch sind, und dass Luca mit Sicherheit nicht "der sicherste mögliche Ansatz" zur Realisierung eines rechtskonformen Systems zur Kontaktnachverfolgung ist.
+Warum Zilp-Zalp? Obwohl es vielleicht zu spät ist um die Diskussion um Kontaktnachverfolgungs-Apps in die richtige Richtung zu lenken ist es wichtig zu zeigen, dass viele Aussagen der Luca-Macher einfach faktisch falsch sind, und dass Luca mit Sicherheit nicht "der sicherste mögliche Ansatz" zur Realisierung eines rechtskonformen Systems zur Kontaktnachverfolgung ist.
 
-Es ist vermutlich unwahrscheinlich, dass Brunhilde jemals in der Praxis eingesetzt werden wird (Walküren sind auch leider nicht mehr so populär wie Popstars). Das Konzept ist daher eher eine "einfache" Übung im angewandten **Privacy Engineering** mit der gezeigt werden soll, wie man privatsphäre-freundliche Systeme kollaborativ und offen entwickeln kann.
+Es ist vermutlich unwahrscheinlich, dass Zilp-Zalp jemals in der Praxis eingesetzt werden wird (Walküren sind auch leider nicht mehr so populär wie Popstars). Das Konzept ist daher eher eine "einfache" Übung im angewandten **Privacy Engineering** mit der gezeigt werden soll, wie man privatsphäre-freundliche Systeme kollaborativ und offen entwickeln kann.
 
 ## Problemstellung
 
-Brunhilde soll folgendes Problem lösen:
+Zilp-Zalp soll folgendes Problem lösen:
 
 * Die Nachverfolgung von Kontakten zur Eindämmung von Covid-19, in Übereinstimmung mit den Infektionsschutzverordnungen der Bundesländer.
 
@@ -26,7 +26,7 @@ Um den gesetzlichen Anforderungen genüge zu tun, müssen Betreiber von **Ortsch
 
 ## Notwendige Arbeitsabläufe
 
-Folgende Arbeitsabläufe müssen von Brunhilde unterstützt werden, um eine Kontaktnachverfolgung zu gewährleisten:
+Folgende Arbeitsabläufe müssen von Zilp-Zalp unterstützt werden, um eine Kontaktnachverfolgung zu gewährleisten:
 
 * Erfassung eines **Check-Ins** in einer **Ortschaft**. Hierzu müssen ein **Nutzer** und ein **Betreiber** kooperieren um die Anwesenheit des **Nutzers** in der **Ortschaft** des **Betreibers** zu dokumentieren. Gesetzlich muss ein möglichst genauer Aufenthaltsort sowie die Zeit des Aufenthalts dokumentiert werden. Durch die **Check-Ins** eines **Nutzers** entsteht ein **Kontakttagebuch**, das später dem **Gesundheitsamt** die Kontaktnachverfolgung ermöglicht.
 * Bereitstellung des **Kontakttagebuchs** eines **Nutzers** an das **Gesundheitsamt** zum Zweck der Kontaktnachverfolgung.
@@ -36,11 +36,11 @@ Folgende Arbeitsabläufe müssen von Brunhilde unterstützt werden, um eine Kont
 
 Die erforderlichen Arbeitsabläufe können auf unterschiedlichen Wegen umgesetzt werden. Bisher werden hierzu papierbasierte Listen eingesetzt, die jedoch einige Nachteile aufweisen, wie z.B. hoher manueller Erstellungsaufwand und Datenschutzrisiken.
 
-**Brunhilde** hat folgende Systemkomponenten (wir kommen später auf die mit diesen Komponenten verbundenen Risiken und Strategien zu derer Minimierung):
+**Zilp-Zalp** hat folgende Systemkomponenten (wir kommen später auf die mit diesen Komponenten verbundenen Risiken und Strategien zu derer Minimierung):
 
 ### Web-Anwendung für **Nutzer**
 
-Um als **Nutzer** ein Kontakttagebuch zu führen nutzen andere Systeme wie *Luca* und *Recover* Smartphone-Apps. Dies hat jedoch verschiedene Nachteile wie z.B. Zentralisierung, möglicher Feature Creep und Deployment-Komplexität. Brunhilde hingegen nutzt eine einfache Web-Applikation, die vollständig lokal arbeitet und auf kein zentrales Backend angewiesen ist. Diese Anwendung kann über eine (oder mehrere) vertrauenswürdige URL(s) verteilt werden und ohne Installation genutzt werden. Es können auch lokal unterschiedliche Varianten der Web-Anwendung verbreitet werden um z.B. regionale Besonderheiten bei der Kontaktnachverfolgung umzusetzen. Die Web-Anwendung ist wie alle Komponenten open-source, der Quelltext kann von jedem Nutzer inspiziert werden.
+Um als **Nutzer** ein Kontakttagebuch zu führen nutzen andere Systeme wie *Luca* und *Recover* Smartphone-Apps. Dies hat jedoch verschiedene Nachteile wie z.B. Zentralisierung, möglicher Feature Creep und Deployment-Komplexität. Zilp-Zalp hingegen nutzt eine einfache Web-Applikation, die vollständig lokal arbeitet und auf kein zentrales Backend angewiesen ist. Diese Anwendung kann über eine (oder mehrere) vertrauenswürdige URL(s) verteilt werden und ohne Installation genutzt werden. Es können auch lokal unterschiedliche Varianten der Web-Anwendung verbreitet werden um z.B. regionale Besonderheiten bei der Kontaktnachverfolgung umzusetzen. Die Web-Anwendung ist wie alle Komponenten open-source, der Quelltext kann von jedem Nutzer inspiziert werden.
 
 **Nutzer** können diese Web-Anwendung einfach über eine URL in ihrem Browser öffnen. Es ist vorstellbar, dass eine öffentliche Stelle wie das RKI diese Web-Applikation unter einer offiziellen Domain hostet. Zur Nutzung der Applikation reicht es aus, die URL manuell einzugeben oder z.B. von einem QR-Code zu scannen, der in Restaurants und anderen Lokalitäten verteilt werden kann.
 
@@ -72,11 +72,11 @@ Die Web-Anwendungen der Gesundheitsämter können wiederum die übermittelten Da
 
 ## Papierbasierter Check-In
 
-Alternativ zur Web-Anwendung für Nutzer bietet Brunhilde auch einen komplett analogen Check-In Ablauf, der papiergestützt funktioniert. Dieser erfordert lediglich, einmalig mithilfe einer Web-Anwendung und einem Drucker einen Ausdruck zu erzeugen, der einen QR-Code enthält welcher wie bei der Web-App verschlüsselt die Daten des Nutzers enthält. Dieser kann von Nutzer dann eingesetzt werden um einzuchecken. Die beim Check-In generierten Zufallszahlen können einfach auf dem Blatt aufgeschrieben und im Falle einer Infektion ans Gesundheitsamt gefaxt werden (wir lieben Faxe). Der für die Verschlüsselung verwendete öffentliche Schlüssel bleibt hierbei jedoch länger gültig, gegenüber der Web-Anwendung, welche jeden Tag einen neuen öffentlichen Schlüssel nutzen kann werden hierbei daher mehr Meta-Daten erzeugt, was die Sicherheit etwas reduziert.
+Alternativ zur Web-Anwendung für Nutzer bietet Zilp-Zalp auch einen komplett analogen Check-In Ablauf, der papiergestützt funktioniert. Dieser erfordert lediglich, einmalig mithilfe einer Web-Anwendung und einem Drucker einen Ausdruck zu erzeugen, der einen QR-Code enthält welcher wie bei der Web-App verschlüsselt die Daten des Nutzers enthält. Dieser kann von Nutzer dann eingesetzt werden um einzuchecken. Die beim Check-In generierten Zufallszahlen können einfach auf dem Blatt aufgeschrieben und im Falle einer Infektion ans Gesundheitsamt gefaxt werden (wir lieben Faxe). Der für die Verschlüsselung verwendete öffentliche Schlüssel bleibt hierbei jedoch länger gültig, gegenüber der Web-Anwendung, welche jeden Tag einen neuen öffentlichen Schlüssel nutzen kann werden hierbei daher mehr Meta-Daten erzeugt, was die Sicherheit etwas reduziert.
 
 ## Öffentliche API zur Datenübermittlung
 
-**Brunhilde** benötigt zur Kommunikation zwischen den Gesundheitsämtern, Nutzern und Betreibern verschiedene Schnittstellen:
+**Zilp-Zalp** benötigt zur Kommunikation zwischen den Gesundheitsämtern, Nutzern und Betreibern verschiedene Schnittstellen:
 
 * Gesundheitsämter müssen die Möglichkeit haben, mit Check-Ins verbundene Zufallswerten zu veröffentlichen um Betreiber aufzufordern, diese zu übermitteln.
 * Betrieber müssen die Möglichkeit haben, Daten an Gesundheitsämter zu schicken.
@@ -90,11 +90,11 @@ Um diese Funktionalität umzustzen kann eine einfache REST-API zur Verfügung ge
 
 Diese Endpunkte müssen gegen Missbrauch und den Upload manipulierter/gefälschter Daten geschützt werden, dies ist jedoch durch verschiedene Schritte problemlos möglich.
 
-Zusätzlich benötigt Brunhilde eine private API für Gesundheitsämter, über die diese Zufallswerte veröffentlichen und von Betreibern sowie Nutzern bereitgestellte Daten abrufen können.
+Zusätzlich benötigt Zilp-Zalp eine private API für Gesundheitsämter, über die diese Zufallswerte veröffentlichen und von Betreibern sowie Nutzern bereitgestellte Daten abrufen können.
 
 # Vorteile gegenüber Luca
 
-**Brunhilde** hat eine Reihe von Vorteilen gegenüber dem Luca-System:
+**Zilp-Zalp** hat eine Reihe von Vorteilen gegenüber dem Luca-System:
 
 * Es werden nicht indiskriminiert Check-In Daten zentral erfasst und gespeichert.
 * Das System benötigt keine zentrale Stelle, der einzelne Akteure ungeprüft vertrauen müssen.
@@ -107,26 +107,26 @@ Zusätzlich benötigt Brunhilde eine private API für Gesundheitsämter, über d
 
 # Mögliche Nachteile gegenüber Luca
 
-**Brunhilde** bietet alle Funktionalität die für die Nachverfolgung von Kontakten notwendig ist. Gegenüber Luca weist das System einige Unterschiede auf, die eventuell als Nachteile ausgelegt werden könnten (die aber aus unserer Sicht keine Nachteile darstellen):
+**Zilp-Zalp** bietet alle Funktionalität die für die Nachverfolgung von Kontakten notwendig ist. Gegenüber Luca weist das System einige Unterschiede auf, die eventuell als Nachteile ausgelegt werden könnten (die aber aus unserer Sicht keine Nachteile darstellen):
 
-* **Manueller Check-In**: Im Gegensatz zu Luca erlaubt **Brunhilde** keine automatisierten Check-Ins, d.h. solche ohne Beteiligung des Betreibers. Dies ist aus unserer Sicht jedoch ein Vorteil da es sich gezeigt hat, dass automatische Check-Ins ohne Zutun des Betreibers einfach missbraucht werden können und zudem die Genauigkeit der Kontaktdaten stark reduzieren.
-* **Zeitverzögerung bei Kontaktdaten-Upload**: Da Brunhilde dezentral funktioniert, kann die Übertragung von Kontaktdaten eventuell etwas langsamer sein als bei Systemen wie Luca. Da jedoch auch bei Luca eine manuelle Freigabe von Kontaktdaten durch Betreiber vorgesehen ist, sollte dies in der Praxis keine Rolle spielen.
-* **Dezentrale Datenhaltung**: Brunhilde speichert Daten dezentral, dementsprechend ist das Verlustrisiko gegenüber einem System wie Luca höher. Da jedoch von Betreibern nur verschlüsselte Daten gespeichert werden und zudem auch Luca Abhängigkeiten von lokal gespeicherten Daten (z.B. privaten Schlüsseln von Betreibern) hat, ist die dezentrale Datenhaltung aus unserer Sicht nicht problematischer und hat sogar viele Vorteile (geringere Aufwände im Backend, geringeres Risiko eines Totalverlusts von Daten).
+* **Manueller Check-In**: Im Gegensatz zu Luca erlaubt **Zilp-Zalp** keine automatisierten Check-Ins, d.h. solche ohne Beteiligung des Betreibers. Dies ist aus unserer Sicht jedoch ein Vorteil da es sich gezeigt hat, dass automatische Check-Ins ohne Zutun des Betreibers einfach missbraucht werden können und zudem die Genauigkeit der Kontaktdaten stark reduzieren.
+* **Zeitverzögerung bei Kontaktdaten-Upload**: Da Zilp-Zalp dezentral funktioniert, kann die Übertragung von Kontaktdaten eventuell etwas langsamer sein als bei Systemen wie Luca. Da jedoch auch bei Luca eine manuelle Freigabe von Kontaktdaten durch Betreiber vorgesehen ist, sollte dies in der Praxis keine Rolle spielen.
+* **Dezentrale Datenhaltung**: Zilp-Zalp speichert Daten dezentral, dementsprechend ist das Verlustrisiko gegenüber einem System wie Luca höher. Da jedoch von Betreibern nur verschlüsselte Daten gespeichert werden und zudem auch Luca Abhängigkeiten von lokal gespeicherten Daten (z.B. privaten Schlüsseln von Betreibern) hat, ist die dezentrale Datenhaltung aus unserer Sicht nicht problematischer und hat sogar viele Vorteile (geringere Aufwände im Backend, geringeres Risiko eines Totalverlusts von Daten).
 * **Web-Anwendungen statt Apps**: Apps bieten verschiedene Vorteile wie z.B. eine unlimitierte Speicherdauer und privilegierten Zugriff auf Systemfunktionen wie Kameras oder Adressbücher. Zusätzlich können sie einfacher asynchrone Funktionalitäten wie z.B. regelmäßige Prüfungen durchführen. Viele dieser Funktionalitäten lassen sich jedoch auch mit Web-Anwendungen realisieren, so können z.B. Service-Worker genutzt werden um regelmäßig Daten zu prüfen und Nutzer über Risikokontake zu warnen.
 
 # Sicherheitsaspekte
 
-Brunhilde nutzt Web-Anwendungen um Daten zu verarbeiten. Das ist nicht unproblematisch, denn solche Anwendungen laufen in Web-Browsern, die u.a. durch "bösartige" Erweiterungen oder "Adware/Malware" eine Bedrohung darstellen können. Um diese Risiken zu minimieren stehen verschiedene Strategien zur Verfügung, die wir in der Erweiterung dieses Dokuments diskutieren werden.
+Zilp-Zalp nutzt Web-Anwendungen um Daten zu verarbeiten. Das ist nicht unproblematisch, denn solche Anwendungen laufen in Web-Browsern, die u.a. durch "bösartige" Erweiterungen oder "Adware/Malware" eine Bedrohung darstellen können. Um diese Risiken zu minimieren stehen verschiedene Strategien zur Verfügung, die wir in der Erweiterung dieses Dokuments diskutieren werden.
 
 # Mögliche Varianten und Erweiterungen
 
-Brunhilde kann wie andere Systeme auch auf Apps zurückgreifen um Kontaktdaten zu übermitteln, wir halten dies jedoch für unnötig und teilweise schädlich. Brunhilde kann bestehende Infrastruktur, z.B. Schlüsselpaare wie sie von Luca generiert werden für Gesundheitsämter nutzen um den Datenaustausch zu ermöglichen, der Wechsel von Luca zu Brunhilde sollte daher sowohl für Gesundheitsämter als auch für Betreiber und Nutzer sehr einfach sein.
+Zilp-Zalp kann wie andere Systeme auch auf Apps zurückgreifen um Kontaktdaten zu übermitteln, wir halten dies jedoch für unnötig und teilweise schädlich. Zilp-Zalp kann bestehende Infrastruktur, z.B. Schlüsselpaare wie sie von Luca generiert werden für Gesundheitsämter nutzen um den Datenaustausch zu ermöglichen, der Wechsel von Luca zu Zilp-Zalp sollte daher sowohl für Gesundheitsämter als auch für Betreiber und Nutzer sehr einfach sein.
 
 # Weitere Schritte
 
 Dies ist ein erstes, grobes Design-Konzept das verdeutlichen soll, dass viele Komponenten des Luca-Systems nicht notwendig sind und nur existieren um als Grundlage eines kommerziellen Geschäftsmodells zu dienen.
 
-In den kommenden Tagen wird an dieser Stelle das Konzept von **Brunhilde** komplett ausgearbeitet werden, um die Sicherheit und die Privatsphäre-Eigenschaften zu beweisen. Sämtliche Arbeiten sollen öffentlich durchgeführt werden.
+In den kommenden Tagen wird an dieser Stelle das Konzept von **Zilp-Zalp** komplett ausgearbeitet werden, um die Sicherheit und die Privatsphäre-Eigenschaften zu beweisen. Sämtliche Arbeiten sollen öffentlich durchgeführt werden.
 
 Eventuell werden einzelne Systemkomponenten anschließend als PoCs umgesetzt. Sämtliche Entwicklungsschritte sollen offen und nachvollziehbar hier auf Github erfolgen, Mitwirkung ist höchst willkommen. Alle Software-Bestandteile des Systems sollen unter BSD-3 Lizenz veröffentlicht werden, alle Nicht-Software-Bestandteile unter einer Creative-Commons (CC) NC-Lizenz.
 
