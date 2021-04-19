@@ -1,9 +1,25 @@
 title: Zilp-Zalp
 pages:
-  - src: common/index.html
+  - src|f|exists?: "{target_language}/index.md"
     title|t: Zilp-Zalp Dokumentation
-    navtitle|t: Übersicht
+    navtitle|t: Start
     name: ''
+  - title|t: Protokolle
+    name: protocols
+    slug||slugify: Protokolle
+    children:
+    - title|t: Übersicht
+      src|f|exists?: "{target_language}/protocols/index.md" 
+      name: index
+      slug||slugify: Übersicht
+    - title|t: Papiergestützt
+      src|f|exists?: "{target_language}/protocols/paper-based.md" 
+      name: paper-based
+      slug||slugify: Papiergestützt
+    - title|t: Digital
+      src|f|exists?: "{target_language}/protocols/digital.md" 
+      name: digital
+      slug||slugify: Digital
 #  - title|t: Installation
 #    navtitle|t: Installation
 #    slug||slugify: installation

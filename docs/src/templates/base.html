@@ -9,6 +9,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{'hp.site-title'|translate}}{% if title is defined %} | {{title}}{%endif%}</title>
   <link rel="stylesheet" type="text/css" href="{{'css/main.css'|file}}">
+  <script>
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']]
+    },
+    svg: {
+      fontCache: 'global'
+    }
+  };
+  </script>
+  <script src="{{'js/mathjax/tex-chtml.js'|file}}" id="MathJax-script" async></script>
   {%filter highlight_styles%}{%endfilter%}
   {% block head %}{% endblock head %}
 </head>

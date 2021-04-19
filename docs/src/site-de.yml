@@ -2,7 +2,23 @@
 # Modify this file instead: site-all.yml
 pages:
 - name: ''
-  navtitle: Übersicht
-  src: common/index.html
+  navtitle: Start
+  src: de/index.md
   title: Zilp-Zalp Dokumentation
+- children:
+  - name: index
+    slug: uebersicht
+    src: de/protocols/index.md
+    title: Übersicht
+  - name: paper-based
+    slug: papiergestuetzt
+    src: de/protocols/paper-based.md
+    title: Papiergestützt
+  - name: digital
+    slug: digital
+    src: de/protocols/digital.md
+    title: Digital
+  name: protocols
+  slug: protokolle
+  title: Protokolle
 title: Zilp-Zalp
