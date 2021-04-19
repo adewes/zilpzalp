@@ -1,0 +1,54 @@
+image: ubuntu:20.04
+
+stages:
+  - deploy
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive # required for submodules
+  DEBIAN_FRONTEND: noninteractive
+
+
+cache: 
+    key: ${CI_COMMIT_REF_SLUG}
+    paths:
+      - docs/node_modules/
+      - docs/venv/
+    policy: pull-push
+
+deploy-docs:
+  only:
+    - /^docs-(\d+)\.(\d+)\.(\d+)$/
+  stage: deploy
+  before_script:
+    - apt-get update -qy
+    - apt-get install -y curl tidy optipng python3 python3-pip locales rsync nodejs npm openssh-client expect
+    - pip3 install virtualenv
+    - npm install -g n
+    - n latest
+    - echo "en_US UTF-8" > /etc/locale.gen
+    - locale-gen en_US.UTF-8
+    - export LANG=en_US.UTF-8
+    - export LANGUAGE=en_US:en
+    - export LC_ALL=en_US.UTF-8
+  script:
+    - if [ ! -n "$SERVER_SSH_KEY" ]; then exit 0; fi
+    - cd docs
+    - mkdir ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "$SERVER_SSH_CONFIG" > ~/.ssh/config
+    - echo "$SERVER_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - echo "$JUMPHOST_SSH_KEY" | tr -d '\r' > ~/.ssh/id_rsa_jumphost
+    - chmod 600 ~/.ssh/*
+    # Add the SSH passphrases to the agent
+    - eval `ssh-agent`
+    - FILENAME=`readlink -f ~/.ssh/id_rsa` SSHKEY="$SERVER_SSH_KEY_PASS" .ci-scripts/add-ssh-pass.exp
+    - FILENAME=`readlink -f ~/.ssh/id_rsa_jumphost` SSHKEY="$JUMPHOST_SSH_KEY_PASS" .ci-scripts/add-ssh-pass.exp
+    - chmod 600 ~/.ssh/id_rsa
+    - make setup
+    - make SITE=src/site-prod.yml
+    - make optimize-html
+    - echo "Deploying $CI_COMMIT_REF_NAME..."
+    - if [ "$CI_COMMIT_REF_NAME" = "master" ]; then export DIRECTORY=master; fi;
+    - if [ "$CI_COMMIT_REF_NAME" = "staging" ]; then export DIRECTORY=staging; fi;
+    # we deploy the documentation via SSH
+    - if [ -n "$DIRECTORY" ]; then ssh $SERVER_SSH_USER@$SERVER_SSH_HOSTNAME mkdir -p $SERVER_SSH_DIRECTORY/$DIRECTORY; rsync --delete -avh build/ $SERVER_SSH_USER@$SERVER_SSH_HOSTNAME:$SERVER_SSH_DIRECTORY/$DIRECTORY; fi;

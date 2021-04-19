@@ -1,0 +1,9 @@
+#!/usr/bin/expect -f
+set timeout 5
+spawn ssh-add "$env(FILENAME)"
+expect "Enter passphrase*"
+send "$env(SSHKEY)\n";
+expect {
+    timeout { puts "timeout"; exit 1; }
+	"Identity added: $env(FILENAME) (\.\*)"
+}
