@@ -1,0 +1,8 @@
+# Warning, this is an auto-generated file, do not modify!
+# Modify this file instead: site-all.yml
+pages:
+- name: ''
+  navtitle: Übersicht
+  src: common/index.html
+  title: Zilp-Zalp Dokumentation
+title: Zilp-Zalp

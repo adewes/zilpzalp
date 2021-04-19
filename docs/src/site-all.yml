@@ -1,0 +1,35 @@
+title: Zilp-Zalp
+pages:
+  - src: common/index.html
+    title|t: Zilp-Zalp Dokumentation
+    navtitle|t: Übersicht
+    name: ''
+#  - title|t: Installation
+#    navtitle|t: Installation
+#    slug||slugify: installation
+#    name: installation
+#    src|f|exists?: "{target_language}/installation.md"
+#  - title|t: Command Line Interface (CLI)
+#    navtitle|t: Command Line Interface (CLI)
+#    slug||slugify: cli
+#    name: cli
+#    children:
+#      - title|t: Overview
+#        navtitle|t: Overview
+#        name: index
+#        slug||slugify: overview
+#        src|f|exists?: "{target_language}/cli/index.md"
+#  - name: actions
+#    title|t: Actions
+#    navtitle|t: Actions
+#    slug||slugify: actions
+#    children:
+#      - src|f|exists?: "{target_language}/actions/index.md"
+#        title|t: Overview
+#        navtitle|t: Overview
+#        slug||slugify: overview
+#        name: index
+#  - name: blueprints
+#    title|t: Blueprints
+#    navtitle|t: Blueprints
+#    src|f|exists?: "{target_language}/blueprints.md"

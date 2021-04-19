@@ -1,0 +1,45 @@
+about-us:
+  _t:
+    de: b7defbf9cff089f6
+    en: b7defbf9cff089f6
+  de: Über uns
+  en: About us
+  fr: À propos de nous
+  it: Chi siamo
+  zh: 关于我们
+imprint:
+  _t:
+    de: b8a6051923e6a649
+    en: b8a6051923e6a649
+  de: Impressum
+  en: Imprint
+  fr: Mentions légales
+  it: Impronta
+  zh: 版本说明
+languages:
+  _t:
+    de: 17d630275f4395eb
+    en: 17d630275f4395eb
+  de: Sprachen
+  en: Languages
+  fr: Langues
+  it: Lingue
+  zh: 语种
+menu:
+  _t:
+    de: a314bd0b56a3158c
+    en: a314bd0b56a3158c
+  de: Menü
+  en: Menu
+  fr: Menu
+  it: Menu
+  zh: 菜单
+overview:
+  _t:
+    de: 4d2bb368f919df81
+    en: 4d2bb368f919df81
+  de: Übersicht
+  en: Overview
+  fr: Vue d'ensemble
+  it: Panoramica
+  zh: 概述
