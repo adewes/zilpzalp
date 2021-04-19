@@ -17,7 +17,7 @@ cache:
 
 deploy-docs:
   only:
-    - /^docs-(\d+)\.(\d+)\.(\d+)$/
+    - /^docs-(\d+)\.(\d+)\.(\d+)(\.[a-z]+)?$/
   stage: deploy
   before_script:
     - apt-get update -qy
@@ -48,7 +48,7 @@ deploy-docs:
     - make SITE=src/site-prod.yml
     - make optimize-html
     - echo "Deploying $CI_COMMIT_REF_NAME..."
-    - if [ "$CI_COMMIT_REF_NAME" = "master" ]; then export DIRECTORY=master; fi;
-    - if [ "$CI_COMMIT_REF_NAME" = "staging" ]; then export DIRECTORY=staging; fi;
+    - export DIRECTORY=master
+    - if [[ "$CI_COMMIT_REF_NAME" =~ ^docs-[0-9]+.[0-9]+.[0-9]+\.staging$ ]]; then export DIRECTORY=staging; fi;
     # we deploy the documentation via SSH
     - if [ -n "$DIRECTORY" ]; then ssh $SERVER_SSH_USER@$SERVER_SSH_HOSTNAME mkdir -p $SERVER_SSH_DIRECTORY/$DIRECTORY; rsync --delete -avh build/ $SERVER_SSH_USER@$SERVER_SSH_HOSTNAME:$SERVER_SSH_DIRECTORY/$DIRECTORY; fi;
