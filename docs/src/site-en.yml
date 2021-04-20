@@ -1,11 +1,31 @@
 # Warning, this is an auto-generated file, do not modify!
 # Modify this file instead: site-all.yml
 pages:
-- children: []
+- name: ''
+  navtitle: Start
+  src: en/index.md
+  title: Zilp-Zalp Documentation
+- children:
+  - name: luca
+    slug: luca
+    src: en/analyses/luca.md
+    title: Luca
   name: analyses
   slug: analyses
   title: Analyses
-- children: []
+- children:
+  - name: index
+    slug: overview
+    src: en/protocols/index.md
+    title: Overview
+  - name: paper-based
+    slug: paper-based
+    src: en/protocols/paper-based.md
+    title: Paper-based
+  - name: digital
+    slug: digital
+    src: en/protocols/digital.md
+    title: Digital
   name: protocols
   slug: protocols
   title: Protocols

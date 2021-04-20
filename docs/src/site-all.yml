@@ -12,6 +12,26 @@ pages:
         src|f|exists?: "{target_language}/analyses/luca.md"
         name: luca
         slug||slugify: luca
+#  - title|t: System
+#    name: system
+#    slug||slugify: system
+#    children:
+#    - title|t: API
+#      src|f|exists?: "{target_language}/system/api.md" 
+#      name: index
+#      slug||slugify: api
+#    - title|t: Apps
+#      src|f|exists?: "{target_language}/system/apps.md" 
+#      name: index
+#      slug||slugify: apps
+#    - title|t: Deployment
+#      src|f|exists?: "{target_language}/system/deployment.md" 
+#      name: index
+#      slug||slugify: deployment
+#    - title|t: Schlüsselmanagement
+#      src|f|exists?: "{target_language}/system/key-management.md" 
+#      name: index
+#      slug||slugify: schluesselmanagement
   - title|t: Protokolle
     name: protocols
     slug||slugify: Protokolle

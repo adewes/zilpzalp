@@ -1,11 +1,12 @@
 # Papiergestützte Kontaktnachverfolgung
 
-Viele Systeme zur Kontaktnachverfolgung wie **Luca** oder **Recover** setzen primär auf technische Hilfsmittel wie Smartphone-Apps, um **Besuche** zu dokumentieren. Dies ist aus verschiedenen Gründen problematisch. Papiergestützte bzw. analoge Protokolle werden zwar auch von anderen Systemen wie **Luca** angeboten (in Form von Schlüsselanhängern), jedoch weisen diese eine Reihe von Datenschutz-Problemen auf.
+Viele Systeme zur Kontaktnachverfolgung wie Luca oder Recover setzen primär auf technische Hilfsmittel wie Smartphone-Apps, um Besuche zu dokumentieren.
+Dies ist aus verschiedenen Gründen problematisch. Papiergestützte bzw. analoge Protokolle werden zwar auch von anderen Systemen wie Luca angeboten (in Form von Schlüsselanhängern), jedoch weisen diese eine Reihe von Datenschutz-Problemen auf.
 
-**Zilp-Zalp** setzt hingegen **primär** auf ein papiergestütztes Protokoll, das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen nutzt, im Wesentlichen für den Nutzer bei **Besuchen** komplett ohne technologische Hilfsmittel funktioniert. Ein solches Protokoll hat in der Praxis viele Vorteile:
+Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll, das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen nutzt, im Wesentlichen für den Nutzer bei Besuchen komplett ohne technologische Hilfsmittel funktioniert. Ein solches Protokoll hat in der Praxis viele Vorteile:
 
 * Nutzer müssen keine Smartphone-Anwendungen von eventuell nicht vertrauenswürdigen Quellen installieren.
-* Für die Dokumentation von **Besuchen** ist es nicht notwendig, ein Smartphone mit sich zu führen oder über Internet-Konnektivität zu verfügen.
+* Für die Dokumentation von Besuchen ist es nicht notwendig, ein Smartphone mit sich zu führen oder über Internet-Konnektivität zu verfügen.
 * Das Verfahren ist auch für Menschen nutzbar die keine Erfahrung im Umgang mit Smartphone Apps haben oder diese aus anderen Gründen nicht nutzen können.
 
 ## Grundideen
@@ -15,7 +16,7 @@ Um die in der [Übersicht]({{'protocols.index'|href}}) genannten Anforderungen a
 * Ein Betreiber einer **Ortschaft** muss in der Lage sein, den **Besuch** eines **Nutzers** rechtskonform zu dokumentieren.
 * Ein **Gesundheitsamt (GA)** (Plural: **GÄ**) muss in der Lage sein, in Zusammenarbeit mit einem infizierten Nutzer (unter möglichst geringem Aufwand) mögliche Risikokontakte dieses **Nutzers** basierend auf dessen **Besuchshistorie** zu identifizieren und zu kontaktieren.
 
-Grundlegend müssen wir für eine robuste Kontaktermittlung in der Lage sein, mögliche Schnittmengen zwischen **Besuchen** einzelner Nutzer zu ermitteln. Dies erfordert generell eine Dokumentation der Besuche einzelner Nutzer, sowie ein Verfahren um für einen spezifischen Besuch eines Nutzers alle Besuche anderer Nutzer zu ermitteln die in der gleichen Ortschaft und im gleichen Zeitraum erfolgten.
+Grundlegend müssen wir für eine robuste Kontaktermittlung in der Lage sein, mögliche Schnittmengen zwischen Besuchen einzelner Nutzer zu ermitteln. Dies erfordert generell eine Dokumentation der Besuche einzelner Nutzer, sowie ein Verfahren um für einen spezifischen Besuch eines Nutzers alle Besuche anderer Nutzer zu ermitteln die in der gleichen Ortschaft und im gleichen Zeitraum erfolgten.
 
 ### Mögliche Strategien
 
@@ -44,7 +45,7 @@ Um den Austausch dieser Daten zwischen den Akteuren zu ermöglichen implementier
 * **Web-Anwendungen** für Betreiber, GÄ und Nutzer (für letztere hier nur zur Erstellung von QR-Codes benötigt).
 * Eine **API** zum Austausch von Besuchshistorien und Kontaktdaten.
 
-Die Verschlüsselung von Daten für GÄ sowie die Authentifizierung von öffentlichen Anfragen dieser erfolgt durch **Public-Key Verschlüsselung**. Im Folgenden nehmen wir an, dass GÄ jeweils über ein Schlüsselpaar zum Signieren sowie zum Ver- & Entschlüsseln von Daten verfügen, und andere Akteure die Vertrauenswürdigkeit der öffentlichen Schlüssel dieser Paare über einen geeigneten Mechanismus (z.B. ein Root-Zertifikat das gemeinsam mit der Web-Anwendung ausgeliefert wird) verifizieren können.
+Die Verschlüsselung von Daten für GÄ sowie die Authentifizierung von öffentlichen Anfragen dieser erfolgt durch Public-Key Verschlüsselung. Im Folgenden nehmen wir an, dass GÄ jeweils über ein Schlüsselpaar zum Signieren sowie zum Ver- & Entschlüsseln von Daten verfügen, und andere Akteure die Vertrauenswürdigkeit der öffentlichen Schlüssel dieser Paare über einen geeigneten Mechanismus (z.B. ein Root-Zertifikat das gemeinsam mit der Web-Anwendung ausgeliefert wird) verifizieren können.
 
 ### Initialisierung
 
@@ -54,7 +55,7 @@ Die Kontaktdaten sollen hierbei nur von vertauenswürdigen Akteuren verarbeitet 
 
 Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer und E-Mail Adresse (eine Validierung dieser Daten wird unten beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte, symmetrische Schlüssel $K _ A$ und $K _ B$, die über ein geeignetes Schlüsselableitungsverfahren miteinander zu einem Schlüssel $K _ C$ kombiniert werden. Die Anwendung verschlüsselt nun die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K _ C$, fügt zu diesen verschlüsselten Daten den Schlüssel $K _ A$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem öffentlichen Schlüssel der GÄ und übermittelt diese Daten an die API, welche sie in einem Backend ablegt und einen zufälligen Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind für keinen Akteur ohne Kenntnis des Schlüssels $K _ B$ sowie des privaten Schlüssels der GÄ entschlüsselbar. Letzterer befindet sich zunächst unter Kontrolle des Nutzers und kann nur über diesen oder über einen Betreiber an ein GÄ gelangen, das diesen entschlüsseln kann.
 
-Weiterhin generiert die Anwendung des Nutzers einen Zufallswert $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige Reihe weiterer Zufallswerte $H _ 1, H _ 2, \ldots H _ n$ erzeugt wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung an ein GA weitergegeben.
+Weiterhin generiert die Anwendung des Nutzers einen Zufallswert $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige Reihe weiterer Werte $H _ 1, H _ 2, \ldots H _ n$ erzeugt wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung an ein GA weitergegeben.
 
 Nun generiert die Anwendung Wertepaare bestehend aus $H _ i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits, wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils für jedes Wertepaar individuell mit dem GÄ-Schlüssel verschlüsselt wird. Diese Paare werden für die Kontaktnachverfolgung genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
 

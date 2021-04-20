@@ -1,0 +1,24 @@
+1ffa957894a8b309:
+  de: >-
+    Zilp-Zalp ist eine quelloffene, kostenlose und freie Plattform
+    zur Kontaktverfolgung. Diese Seite dokumentiert die verschiedenen
+    Protokolle und Anwendungen aus denen Zilp-Zalp besteht.
+  en: >-
+    Zilp-Zalp is an open source, free and open source contact
+    tracing platform. This page documents the various protocols
+    and applications that make up Zilp-Zalp.
+3d111a9375d5e0d4:
+  de: '# Willkommen!'
+  en: '# Welcome!'
+b9c046d85ca97f06:
+  de: >-
+    Zilp-Zalp unterstützt verschiedene [Protokolle]({{'protocols.index'|href}}),
+    u.a.  die [papiergestützte Kontaktnachverfolgung]({{'protocols.paper-based'|href}})
+    sowie die [digitale Kontaktnachverfolgung]({{'protocols.digital'|href}}).
+  en: >-
+    Zilp-Zalp supports several [protocols]({{'protocols.index'|href}}),
+    including [paper-based contact tracing]({{'protocols.paper-based'|href}})
+    and [digital contact tracing]({{'protocols.digital'|href}}).
+e3b0c44298fc1c14:
+  de: ''
+  en: ''

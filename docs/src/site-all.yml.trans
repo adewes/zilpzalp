@@ -1,3 +1,6 @@
+28ed044393371099:
+  de: Schlüsselmanagement
+  en: Key Management
 42be1f53d688ed48:
   de: Digital
   en: Digital
@@ -7,6 +10,15 @@
 60de773a83ae47d8:
   de: Analysen
   en: Analyses
+6725e7bbcd28f3a8:
+  de: System
+  en: System
+870a8ffd98f4f2bd:
+  de: Deployment
+  en: Deployment
+89dd748442c19485:
+  de: Apps
+  en: Apps
 91ce7d8f81a8cf4a:
   de: Luca
   en: Luca
@@ -22,6 +34,9 @@ b4026e97bc848ea3:
 bcd09ee138c34208:
   de: Zilp-Zalp Dokumentation
   en: Zilp-Zalp Documentation
+c8e5998f6a3955c2:
+  de: API
+  en: API
 d4b1ea5708dd5329:
   de: Übersicht
   en: Overview

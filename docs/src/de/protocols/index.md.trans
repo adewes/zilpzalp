@@ -1,0 +1,109 @@
+1121864b1c268809:
+  de: '# Protokolle'
+  en: '# Protocols'
+187e89c2e1e3582f:
+  de: >-
+    * **Nutzer** sollen gegenüber **Betreibern** einen **Besuch**
+    in deren **Ortschaften** dokumentieren können. Die Dokumentation
+    soll es mittelbar **Gesundheitsämtern** ermöglichen, mögliche
+    Infektionsketten durch die Auswertung von Kontaktdaten nachzuverfolgen
+    und mit betroffenen Personen in Kontakt zu treten.
+  en: >-
+    * **Users** should be able to document a **visit to** their
+    **localities** vis-à-vis **operators**. The documentation
+    should indirectly enable **health authorities** to trace possible
+    chains of infection by evaluating contact data and to contact
+    affected persons.
+1c76be46fcebb4cb:
+  de: >-
+    Ausgehend von diesen Anforderungen wurden Protokolle entwickelt,
+    die diese umsetzen. Hierbei wurde zunächst eine [papiergestütztes
+    Protokoll]({{'protocols.paper-based'|href}}) entwickelt, dass
+    barrierefrei für den Nutzer ohne technologische Hilfsmittel
+    wie Apps und Smartphones nutzbar ist. Darauf aufbauend wurde
+    ein [digitales Protokoll]({{'protocols.digital'|href}}) formuliert,
+    das die Dokumentation von Besuchshistorien mithilfe einer
+    Web-Anwendung ermöglicht.
+  en: >-
+    Based on these requirements, protocols were developed that
+    implement them. First, a [paper-based protocol]({{'protocols.paper-based'|href}})
+    was developed that is accessible to the user without technological
+    aids such as apps and smartphones. Based on this, a [digital
+    protocol]({{'protocols.digital'|href}}) was formulated that
+    enables the documentation of visit histories using a web application.
+2fbe0e510348315f:
+  de: >-
+    * Lediglich **Gesundheitsämter** sollen **anlassbezogen**
+    in der Lage sein, Kontaktdaten einzusehen, und dies nur mit
+    Mitwirkung eines betroffenen **Nutzers** sowie eines **Betreibers**.
+  en: >-
+    * Only **health authorities** should be able to view contact
+    data on an ad **hoc basis**, and only with the cooperation
+    of an affected **user** and an **operator**.
+3bfa505feddba17f:
+  de: '## Protokolle'
+  en: '## Protocols'
+3d5c9be43b583f16:
+  de: >-
+    Hier beschreiben wir die Protokolle, die Zilp-Zalp für den
+    Austausch von Kontaktdaten zur Infektionsverfolgung unterstützt.
+    Wir formulieren zunächst die Anforderungen an ein generelles
+    Protokoll zum Austausch von Kontaktdaten und diskutieren darauf
+    aufbauend mögliche Protokollvarianten.
+  en: >-
+    Here we describe the protocols that Zilp-Zalp supports for
+    exchanging contact information for infection tracing. We first
+    formulate the requirements for a general protocol for exchanging
+    contact data and discuss possible protocol variants based
+    on this.
+623b32b953aa9a27:
+  de: '## Anforderungen'
+  en: '## Requirements'
+694c133ff331048f:
+  de: >-
+    * Die Dokumentation eines **Besuchs** soll möglichst genau
+    sein und soweit möglich und sinnvoll Angaben zum genauen Aufenthaltsort,
+    Kontaktpersonen und Besuchszeiten enthalten.
+  en: >-
+    * The documentation of a **visit** should be as accurate as
+    possible and include, as far as possible and reasonable, information
+    on the exact location, contact persons and visiting times.
+84254a3cfa80e3bb:
+  de: >-
+    Zusätzlich legen wir folgende Sicherheits- & Datenschutzanforderungen
+    zugrunde:
+  en: >-
+    In addition, we apply the following security & -  privacy
+    requirements :
+86737c96bc8ffd17:
+  de: 'Wir legen folgende funktionale Anforderungen zugrunde:'
+  en: 'We use the following functional requirements as a basis:'
+9128888e135f4e11:
+  de: >-
+    * Die Erfassung, Speicherung und Verarbeitung der **Kontaktdaten**
+    und **Besuchshistorien** einzelner **Nutzer** soll möglichst
+    datensparsam und privatsphärefreundlich erfolgen.
+  en: >-
+    * The collection, storage and processing of **contact data**
+    and **visit histories of** individual **users** should be
+    as data-saving and privacy-friendly as possible.
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+fb8a8ffeecf186cd:
+  de: >-
+    Ausgehend von diesen Anforderungen wurden Protokolle entwickelt,
+    die diese umsetzen. Hierbei wurde zunächst eine [papiergestütztes
+    Protokoll]({{'protocols.paper-based'|href}}) entwickelt, dass
+    barrierefrei für den **Nutzer** ohne technologische Hilfsmittel
+    wie Apps und Smartphones nutzbar ist. Darauf aufbauend wurde
+    ein [digitales Protokoll]({{'protocols.digital'|href}}) formuliert,
+    das die Dokumentation von Besuchshistorien mithilfe einer
+    Web-Anwendung ermöglicht.
+  en: >-
+    Based on these requirements, protocols were developed that
+    implement them. First, a [paper-based protocol]({{'protocols.paper-based'|href}})
+    was developed that is accessible to the user without technological
+    aids such as apps and smartphones. Based on this, a [digital
+    protocol]({{'protocols.digital'|href}}) was formulated that
+    enables the documentation of visit histories using a web application.

@@ -1,0 +1,341 @@
+0004dba8b0d9ddbd:
+  de: >-
+    In den folgenden Abschnitten beschreiben wir einige Schwachstellen
+    des Designs des Luca-Systems und vergleichen sie mit dem Design
+    von Zilp-Zalp. Dies ist keine abschließende Bewertung der
+    Sicherheit des Luca-Systems. Es existiert vielmehr bereits
+    eine Reihe vone externen Analysen[^1]. Diese Aufstellung ist
+    nur ergänzend.
+  en: >-
+    In the following sections, we describe some weaknesses of
+    the Luca system design and compare them to the Zilp-Zalp design.
+    This is not a conclusive assessment of the security of the
+    Luca system. Rather, a number of external analyses^1 already
+    exist, and this list is only supplementary.
+05332c099c46fb76:
+  de: '# Analyse & Vergleich mit Luca'
+  en: '# Analysis & comparison with Luca'
+059730d397937439:
+  de: >-
+    * Eine missbräuchliche Abfrage großer Datenmengen ist leicht
+    zu entdecken. Da alle Anfragen über eine öffentliche Schnittstelle
+    verfügbar gemacht werden ist von außen ersichtlich, wieviele
+    Daten von Gesundheitsämtern abgefragt werden.
+  en: >-
+    * Abusive querying of large amounts of data is easy to detect.
+    Since all queries are made available via a public interface,
+    it is externally visible how much data is queried by health
+    authorities.
+06fbd68809be3807:
+  de: >-
+    * Geheime Schlüssel sollten nicht in der Nutzer-App vorgehalten
+    werden. Stattdessen sollte diese aus den geheimen Schlüsseln
+    abzuleitende Daten einmalig bei der Initialisierung erstellen
+    und diese anschließend vernichten. Das Luca-Protokoll ist
+    hierauf jedoch nicht ausgelegt und müsste maßgeblich modifiziert
+    werden, um ein solches Vorgehen zu unterstützen.
+  en: >-
+    * Secret keys should not be kept in the user app. Instead,
+    the app should create the data to be derived from the secret
+    keys once during initialization and then destroy them. However,
+    the Luca protocol is not designed for this and would have
+    to be significantly modified to support such a procedure.
+2943c87c326e06c1:
+  de: '### Szenario: Kompromittierung des System-Betreibers'
+  en: '### Scenario: compromise of the system operator'
+2ec187b2a9749681:
+  de: >-
+    * QR-Codes müssen nicht in Form von Schlüsselanhängern bezogen
+    werden sondern können von Nutzern selbst dezentral erstellt
+    und ausgedruckt werden. Betreiber oder andere Akteure können
+    theoretisch auch vorgefertigte QR-Code Serien an Nutzer ausgeben,
+    welche diese dann im Rahmen der Protokollerweiterung unten
+    selbst mit ihren Daten verknüpfen. In anderen Konstellationen
+    können pseudonyme QR-Codes ausgegeben werden um eine Kontaktnachverfolgung
+    unter Beteiligung eines neutralen Dritten zu ermöglichen.
+  en: >-
+    * QR codes do not have to be obtained in the form of key tags
+    but can be created and printed out decentrally by users themselves.
+    Operators or other actors can theoretically also issue prefabricated
+    QR code series to users, which they then link to their data
+    themselves as part of the protocol extension below. In other
+    constellations, pseudonymous QR codes can be issued to enable
+    contact tracing with the participation of a neutral third
+    party.
+32a909e69129d3a0:
+  de: >-
+    * Betreiber sind nicht auf eine ständige Internet-Verbindung
+    angewiesen, sie können Besuchsdaten asynchron erfassen und
+    z.B. täglich verarbeiten. Dies macht Zilp-Zalp auch für Ortschaften
+    und Veranstaltungen nutzbar, die abseits einer funktionalen
+    Internet-Infrastruktur liegen.
+  en: >-
+    * Operators are not dependent on a permanent internet connection,
+    they can collect visit data asynchronously and process it
+    e.g. daily. This makes Zilp-Zalp also usable for localities
+    and events that are located away from a functional internet
+    infrastructure.
+33926821874f715d:
+  de: >-
+    * Zilp-Zalp ist als Open-Source Software lizensiert und kann
+    einfach betrieben werden.
+  en: >-
+    * Zilp-Zalp is licensed as open source software and can be
+    easily operated.
+3d07cbd0586edafd:
+  de: >-
+    * Besuchshistorien sollten nicht zentral in einem Backend
+    gespeichert werden.
+  en: >-
+    * Visit histories should not be stored centrally in a backend.
+432a1b290a4ee738:
+  de: >-
+    * Eine Kompromittierung des Backends macht einem Angreifer
+    lediglich wenige, relativ unkritische Meta-Daten zugänglich.
+    Das Backend speichert nur verschlüsselte Kontaktdaten und
+    IDs, nicht jedoch wie z.B. das Luca-Backend komplette Besuchshistorien.
+  en: >-
+    * Compromising the backend only makes a few, relatively uncritical
+    meta data accessible to an attacker. The backend only stores
+    encrypted contact data and IDs, but not complete visit histories
+    like the Luca backend, for example.
+4b45c4558e25f907:
+  de: 'Folgende externe Analysen des Luca-Systems sind uns bekannt:'
+  en: >-
+    We are aware of the following external analyses of the Luca
+    system:
+4efd491df9694ebd:
+  de: >-
+    * Systemkomponenten wie Smartphone-Apps und Web-Anwendungen
+    sollten nicht der Kontrolle eines einzelnen Akteurs unterliegen.
+  en: >-
+    * System components such as smartphone apps and web applications
+    should not be under the control of a single actor.
+528abe8051361dd9:
+  de: >-
+    * Wenn die kontinuierliche Nutzung von geheimen Schlüsseln
+    im Rahmen einer App unumgänglich ist, sollte geprüft werden
+    ob Plattform-spezifische Mittel wie sichere Enklaven genutzt
+    werden können um diese Schlüssel vor einer Extraktion zu schützen.
+  en: >-
+    * If the continuous use of secret keys is unavoidable in the
+    context of an app, it should be examined whether platform-specific
+    means such as secure enclaves can be used to protect these
+    keys from extraction.
+6adf563634e53a18:
+  de: >-
+    Das Risiko das durch eine Kompromittierung des System-Betreibers
+    entsteht ist hierbei nicht unumgänglich und kann durch verschiedene
+    Maßnahmen gemindert werden:
+  en: >-
+    The risk of compromising the system operator is not inevitable
+    and can be mitigated by various measures:
+6b50f1d4e3e80c7f:
+  de: >-
+    * Backends können föderiert und kooperativ betrieben werden,
+    ebenso können Web-Anwendungen regional bereitgestellt und
+    angepasst werden. Eine zentrale Datenhaltung ist nicht notwendig.
+  en: >-
+    * Backends can be federated and operated cooperatively, and
+    web applications can be deployed and customized regionally.
+    Central data storage is not necessary.
+734b4a1d53faee80:
+  de: '## Vergleich'
+  en: '## Comparison'
+74d73792b6cddac8:
+  de: >-
+    * Nutzerdaten sollten nicht lediglich mit einem symmetrischen
+    Schlüssel geschützt werden.
+  en: >-
+    * User data should not only be protected with a symmetric
+    key.
+7a4c604e8405659c:
+  de: >-
+    * Da jeder Nutzer über eine Vielzahl von QR-Codes verfügt
+    und diese nur unter Zuhilfenahme eines geheimen Schlüssel
+    im Besitz des Nutzers sowie des GÄ-Schlüssels miteinander
+    in Verbindung gebracht werden können ist es für einen Angreifer
+    fast unmöglich, Besuchsdaten einzelner Nutzer miteinander
+    zu korrelieren um z.B. Besuchshistorien zu erstellen.
+  en: >-
+    * Since each user has a large number of QR codes and these
+    can only be linked to each other with the help of a secret
+    key in the possession of the user and the GÄ key, it is almost
+    impossible for an attacker to correlate the visit data of
+    individual users with each other, e.g. to create visit histories.
+7b53a21c2a7d09a5:
+  de: '## Externe Analysen'
+  en: '## External analyses'
+8045f4ec611ef8a8:
+  de: >-
+    **Zilp-Zalp** bietet gegenüber Luca aus unserer Sicht folgende
+    Vorteile:
+  en: >-
+    In * our opinion, Zilp-Zalp offers * the following advantages
+    over Luca :
+86a79d64bb453e8d:
+  de: >-
+    * Im Gegensatz zu Luca kann kein einzelner Akteur durch alleinige
+    technische Manipulation von Systemkomponenten die Kontaktdaten
+    eines Nutzers entschlüsseln oder die Besuchshistorie des Nutzers
+    offenlegen.
+  en: >-
+    * Unlike Luca, no single actor can decrypt a user's contact
+    information or reveal a user's visit history through technical
+    manipulation of system components alone.
+8d79778e0a748e0c:
+  de: >-
+    Zilp-Zalp bietet gegenüber Luca aus unserer Sicht folgende
+    Vorteile:
+  en: >-
+    In our view, Zilp-Zalp offers the following advantages over
+    Luca:
+aab92d07ae52ef09:
+  de: >-
+    * Zilp-Zalp ist nicht profitorientiert und soll nicht privatwirtschaftlich
+    betrieben werden, eine Weiternutzung zu kommerziellen Zwecken
+    ist nicht geplant.
+  en: >-
+    * Zilp-Zalp is not profit-oriented and shall not be operated
+    privately, a further use for commercial purposes is not planned.
+b5c5a581f60256e1:
+  de: >-
+    Das Design des Systems entspricht somit aus unserer Sicht
+    nicht dem gängigen Konzept einer Ende-zu-Ende Verschlüsselung,
+    zumindest wenn man eines der Enden beim Nutzer sieht und das
+    andere bei den Gesundheitsämtern. Eine echte Ende-zu-Ende
+    Verschlüsselung würde den Luca-Betreiber als Intermediär betrachten,
+    der kein besonderes Vertrauen im System genießt. Selbst bei
+    vollständiger Kompromittierung dieses Intermediärs sollte
+    es diesem nicht möglich sein, sensible Nutzerdaten zu entschlüsseln.
+  en: >-
+    Thus, in our view, the design of the system does not conform
+    to the common concept of end-to-end encryption, at least if
+    one of the ends is seen as being with the user and the other
+    with the health authorities. A true end-to-end encryption
+    would view the Luca operator as an intermediary that is not
+    particularly trusted in the system. Even if this intermediary
+    is completely compromised, it should not be possible for it
+    to decrypt sensitive user data.
+baac4e680f129fd3:
+  de: >-
+    * Die Luca-App kann jederzeit auf alle geheimen Schlüssel
+    eines Nutzers zugreifen, insbesondere auf das **data secret**
+    sowie das **tracing secret**. Diese Informationen werden u.a.
+    beim Transfer der Nutzerdaten für Gesundheitsämter in einem
+    sogenannten "Guest Data Transfer Object" zusammengefasst.
+  en: >-
+    * The Luca app can access all of a user's **secret** keys
+    at any time, in particular the **data secret** and the **tracing
+    secret**. This information is combined in a so-called "Guest
+    Data Transfer Object" when transferring user data for health
+    authorities, among other things.
+c4b6b410815e32cd:
+  de: >-
+    Gelingt es einem Angreifer die Luca-Infrastruktur (Backend,
+    Apps) zu kompromittieren, oder modifiziert der Betreiber von
+    Luca das System selbst, kann er problemlos alle Nutzerdaten
+    extrahieren:
+  en: >-
+    If an attacker succeeds in compromising the Luca infrastructure
+    (backend, apps), or if the operator of Luca modifies the system
+    himself, he can easily extract all user data:
+c8defe7dffb52a6c:
+  de: >-
+    [^1]: [Preliminary Analysis of Potential Harms in the Luca
+    TracingSystem - Theresa Stadler et. al.](https://arxiv.org/pdf/2103.11958.pdf)
+  en: >-
+    [^1] : [Preliminary Analysis of Potential Harms in the Luca
+    TracingSystem - Theresa Stadler et. al](https://arxiv.org/pdf/2103.11958.pdf).</md-list>
+d110ea7fd4a12b54:
+  de: '## Schwachstellenanalyse'
+  en: '## Vulnerability Analysis'
+d35e920c83dad6b0:
+  de: >-
+    * Die Datenhaltung im Backend sowie der Kommunikationsaufwand
+    ist sehr gering, nur im Falle einer Kontaktnachverfolgung
+    sowie bei der Initialisierung werden Daten zwischen dem Backend
+    und anderen Akteuren ausgetauscht. Die Dokumentation von Besuchen
+    erfolgt dezentral und ohne Kommunikation mit dem Backend,
+    es fallen daher bei Besuchen keine Meta-Daten an.
+  en: >-
+    * The data storage in the backend as well as the communication
+    effort is very low, data is only exchanged between the backend
+    and other actors in the case of contact follow-up and initialization.
+    The documentation of visits takes place decentrally and without
+    communication with the backend, so no meta data is generated
+    for visits.
+d8ef4b6393e91e2a:
+  de: >-
+    * Ein Verlust von Besuchsdaten eines Betreibers oder selbst
+    ein konspirativer Missbrauch des Systems durch verschiedene
+    Betreiber führt nicht zu einem Verlust personenbezogener Daten
+    oder der Offenlegung von Besuchshistorien einzelner Nutzer.
+  en: >-
+    * Loss of visit data from one operator or even conspiratorial
+    misuse of the system by different operators does not result
+    in loss of personal data or disclosure of visit histories
+    of individual users.
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e53df3b41f3e7b7f:
+  de: >-
+    * Die Dokumentation von Besuchen ist technisch auch bei sehr
+    großen Veranstaltungen ohne Internet-Konnektivität (z.B. Konzerten)
+    problemlos möglich.
+  en: >-
+    * The documentation of visits is technically possible without
+    any problems even for very large events without internet connectivity
+    (e.g. concerts).
+ea9895974998ce55:
+  de: >-
+    * Zilp-Zalp kann durch die optionale Validierung mithilfe
+    von vertrauenswürdigen Dritten als einziges System die Schaffung
+    valider Kontaktdaten garantieren.
+  en: >-
+    * Zilp-Zalp is the only system that can guarantee the creation
+    of valid contact data through optional validation with the
+    help of trusted third parties.
+eb68c3d4c0fae8f3:
+  de: >-
+    * Durch Veränderung des App-Codes kann der Luca-Betreiber
+    oder ein Angreifer diese dazu veranlassen, das **data secret**
+    sowie das **tracing secret** ohne Nutzerinteraktion an das
+    Backend zu übertragen. Mit diesem kann er die auf dem Backend
+    hinterlegten Kontaktdaten des Nutzers entschlüsseln sowie
+    die Besuchshistorie dieses Nutzers rekonstruieren.
+  en: >-
+    * By modifying the app code, the Luca operator or an attacker
+    can cause it to transmit the **data secret** and the **tracing
+    secret to** the backend without user interaction. With this,
+    he can decrypt the user's contact data stored on the backend
+    and reconstruct the user's visit history.
+f112812651696a14:
+  de: >-
+    In diesem Dokument analysieren wir das [Luca](https://www.luca-app.de)
+    System und vergleichen die dort getroffenen Entscheidungen
+    mit denen die wir beim Entwurf des Zilp-Zalp Protokolls getroffen
+    haben.
+  en: >-
+    In this document we analyze the [Luca](https://www.luca-app.de)
+    system and compare the decisions made there with those we
+    made when designing the Zilp-Zalp protocol.
+fa4493c963779a0e:
+  de: >-
+    * Für die Dokumentation eines Besuchs ist keine Interaktion
+    eines Nutzers mit einer Web-Anwendung oder einem Smartphone
+    notwendig. Betreiber können Besuche auch asynchron erfassen
+    und mit zusätzlichen Metadaten versehen. Der Aufwand zum Einlesen
+    von QR-Codes ist gering, und die Aufbewahrung der Codes durch
+    Betreiber stellt ein zusätzliches Backup zu den digitalen
+    Daten dar und kann diesen auch als Nachweis der Erfüllung
+    ihrer Dokumentationspflichten dienen.
+  en: >-
+    * Documenting a visit does not require a user to interact
+    with a web app or smartphone. Operators can also capture visits
+    asynchronously and tag them with additional metadata. The
+    effort required to scan QR codes is low, and the retention
+    of the codes by operators provides an additional backup to
+    the digital data and can also serve them as proof of compliance
+    with their documentation obligations.

@@ -4,7 +4,7 @@ In diesem Dokument analysieren wir das [Luca](https://www.luca-app.de) System un
 
 ## Vergleich
 
-**Zilp-Zalp** bietet gegenüber Luca aus unserer Sicht folgende Vorteile:
+Zilp-Zalp bietet gegenüber Luca aus unserer Sicht folgende Vorteile:
 
 * Im Gegensatz zu Luca kann kein einzelner Akteur durch alleinige technische Manipulation von Systemkomponenten die Kontaktdaten eines Nutzers entschlüsseln oder die Besuchshistorie des Nutzers offenlegen.
 * Da jeder Nutzer über eine Vielzahl von QR-Codes verfügt und diese nur unter Zuhilfenahme eines geheimen Schlüssel im Besitz des Nutzers sowie des GÄ-Schlüssels miteinander in Verbindung gebracht werden können ist es für einen Angreifer fast unmöglich, Besuchsdaten einzelner Nutzer miteinander zu korrelieren um z.B. Besuchshistorien zu erstellen.
