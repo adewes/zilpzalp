@@ -32,14 +32,14 @@ prepare_contact_data:
   en: Prepare contact information $D_k$.
 prepare_ga_data:
   _t:
-    de: 932279ab39715b87
-    en: 932279ab39715b87
+    de: b8820e1a9b30d866
+    en: b8820e1a9b30d866
   de: >-
-    Verschlüssele Daten für Gesundheitsamt $D_{\mathrm{ga}} =
-    \mathrm{enc}_{a}((K_B, I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+    Verschlüssele Daten für Gesundheitsamt $D^e_{\mathrm{ga}}
+    = \mathrm{enc}_{a}((K_B, I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
   en: >-
-    Encrypted data for health department $D_{\mathrm{ga}} = \mathrm{enc}_{a}((K_B,
-    I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+    Encrypted data for health department $D^e_{\mathrm{ga}} =
+    \mathrm{enc}_{a}((K_B, I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
 prepare_operator_data:
   _t:
     de: 4d0c9521ea084b20
@@ -78,13 +78,13 @@ request_ga_keys:
     backend $K_{\mathrm{ga}}^{\mathrm{pub}}$.
 save_data:
   _t:
-    de: 48e1a897aa4a74ab
-    en: 48e1a897aa4a74ab
+    de: 8a9c4934f068359a
+    en: 8a9c4934f068359a
   de: >-
-    Generiere QR-Codes aus $D_{\mathrm{op}}^i$ und $D_{\mathrm{ga}}$,
+    Generiere QR-Codes aus $D_{\mathrm{op}}^i$ und $D^e_{\mathrm{ga}}$,
     drucke QR-Codes aus.
   en: >-
-    Generate QR codes from $D_{\mathrm{op}}^i$ and $D_{\mathrm{ga}}$,
+    Generate QR codes from $D_{\mathrm{op}}^i$ and $D^e_{\mathrm{ga}}$,
     print QR codes.
 store_contact_data:
   _t:

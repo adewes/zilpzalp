@@ -1,13 +1,13 @@
 decrypt_ga_data:
   _t:
-    de: d4f7941d882f05ca
-    en: d4f7941d882f05ca
+    de: d5c4ae5beda78e58
+    en: d5c4ae5beda78e58
   de: >-
-    Entschlüssele GA-Daten $D_{\mathrm{ga}}^d = \mathrm{dec}_{a}(D_\mathrm{ga},
+    Entschlüssele GA-Daten $D_{\mathrm{ga}} = \mathrm{dec}_{a}(D^e_\mathrm{ga},
     K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_B, I_D, H_s)$ zu
     erhalten.
   en: >-
-    Decode GA data $D_{\mathrm{ga}}^d = \mathrm{dec}_{a}(D_\mathrm{ga},
+    Decode GA data $D_{\mathrm{ga}} = \mathrm{dec}_{a}(D^e_\mathrm{ga},
     K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(K_B, I_D, H_s)$.
 decrypt_user_data:
   _t:
@@ -53,10 +53,14 @@ regenerate_hashes:
   en: Regenerate $H_1 \ldots H_n$ from $H_s$.
 request_hash_publication:
   _t:
-    de: 404b9be82f156c51
-    en: 404b9be82f156c51
-  de: Frage Veröffentlichung der Werte $H_1 \ldots H_n$ an.
-  en: Question publication of values $H_1 \ldots H_n$ an.
+    de: 186893f8432eb2ac
+    en: 186893f8432eb2ac
+  de: >-
+    Frage Veröffentlichung der Werte $H_1 \ldots H_n$ an (aggregiert
+    mit anderen Werten um Anonymität zu wahren).
+  en: >-
+    Request publication of values $H_1 \ldots H_n$ (aggregated
+    with other values to maintain anonymity).
 request_user_data:
   _t:
     de: fe2fe15fcdf67cc8
