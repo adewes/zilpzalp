@@ -12,4 +12,4 @@ Zur Verhinderung der unberechtigten Wiederverwendung von QR-Codes können bei de
 
 ### Optionales Kontakttagebuch
 
-Die Web-Anwendung kann im Gegensatz zur papiergestützten
+Die Web-Anwendung kann theoretisch auch als Kontakttagebuch genutzt werden. Hierzu kann ein statischer QR-Code in der Ortschaft des Betreibers gescannt werden. Eventuell sind hierfür jedoch bestehende Anwendungen wie die Corona-Warn-App zu bevorzugen, da sie mit dem Durchführen eines anonymen Check-Ins auch gleichzeitig im Falle einer Infektion anonyme Warnungen an Nutzer schicken kann.

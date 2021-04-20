@@ -15,6 +15,11 @@ In diesem Dokument analysieren wir das [Luca](https://www.luca-app.de) System un
 * Für die Dokumentation eines Besuchs ist keine Interaktion eines Nutzers mit einer Web-Anwendung oder einem Smartphone notwendig. Betreiber können Besuche auch asynchron erfassen und mit zusätzlichen Metadaten versehen. Der Aufwand zum Einlesen von QR-Codes ist gering, und die Aufbewahrung der Codes durch Betreiber stellt ein zusätzliches Backup zu den digitalen Daten dar und kann diesen auch als Nachweis der Erfüllung ihrer Dokumentationspflichten dienen.
 * QR-Codes müssen nicht in Form von Schlüsselanhängern bezogen werden sondern können von Nutzern selbst dezentral erstellt und ausgedruckt werden. Betreiber oder andere Akteure können theoretisch auch vorgefertigte QR-Code Serien an Nutzer ausgeben, welche diese dann im Rahmen der Protokollerweiterung unten selbst mit ihren Daten verknüpfen. In anderen Konstellationen können pseudonyme QR-Codes ausgegeben werden um eine Kontaktnachverfolgung unter Beteiligung eines neutralen Dritten zu ermöglichen.
 * Backends können föderiert und kooperativ betrieben werden, ebenso können Web-Anwendungen regional bereitgestellt und angepasst werden. Eine zentrale Datenhaltung ist nicht notwendig.
+* Die Dokumentation von Besuchen ist technisch auch bei sehr großen Veranstaltungen ohne Internet-Konnektivität (z.B. Konzerten) problemlos möglich.
+* Betreiber sind nicht auf eine ständige Internet-Verbindung angewiesen, sie können Besuchsdaten asynchron erfassen und z.B. täglich verarbeiten. Dies macht Zilp-Zalp auch für Ortschaften und Veranstaltungen nutzbar, die abseits einer funktionalen Internet-Infrastruktur liegen.
+* Zilp-Zalp kann durch die optionale Validierung mithilfe von vertrauenswürdigen Dritten als einziges System die Schaffung valider Kontaktdaten garantieren.
+* Zilp-Zalp ist als Open-Source Software lizensiert und kann einfach betrieben werden.
+* Zilp-Zalp ist nicht profitorientiert und soll nicht privatwirtschaftlich betrieben werden, eine Weiternutzung zu kommerziellen Zwecken ist nicht geplant.
 
 ## Schwachstellenanalyse
 
