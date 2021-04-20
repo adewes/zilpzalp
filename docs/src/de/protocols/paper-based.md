@@ -31,7 +31,7 @@ Hier zeigt sich, dass wir das Problem der Dokumentation von **Besuchen** unabhä
 * Zunächst schaffen wir eine Möglichkeit, Kontaktdaten so zu hinterlegen, dass sie nur **anlassbezogen** von **Gesundheitsämtern** zur Kontaktnachverfolgung verarbeitet werden können und auch verschlüsselt keinen anderen Akteuren im System zugänglich sind.
 * Weiterhin schaffen wir eine Möglichkeit, **Besuche** robust und datensparsam zu dokumentieren.
 
-## Protokoll (v0.2)
+## Protokoll (v0.3)
 
 Das papiergestützte, dezentrale Protokoll von Zilp-Zalp umfasst folgende Akteure:
 
@@ -46,19 +46,27 @@ Um den Austausch dieser Daten zwischen den Akteuren zu ermöglichen implementier
 
 Die Verschlüsselung von Daten für **Gesundheitsämtern** sowie die Authentifizierung von öffentlichen Anfragen dieser erfolgt durch **Public-Key Verschlüsselung**. Im Folgenden nehmen wir an, dass Gesundheitsämter jeweils über ein Schlüsselpaar zum Signieren sowie zum Ver- & Entschlüsseln von Daten verfügen, und andere Akteure die Vertrauenswürdigkeit der öffentlichen Schlüssel dieser Paare über einen geeigneten Mechanismus (z.B. ein Root-Zertifikat das gemeinsam mit der Web-Anwendung ausgeliefert wird) verifizieren können.
 
-### Hinterlegung von Kontaktdaten für Gesundheitsämter
+### Initialisierung
 
 Nutzer im System möchten **Gesundheitsämtern** anlassbezogen ihre **Kontaktdaten** zur Verfügung stellen. Hierbei legen wir die Annahme zugrunde, dass Nutzer die Daten so hinterlegen möchten, dass **GÄs** bei gegebenem Anlass ohne weiteres Zutun der Nutzer (allerdings für diese nachvollziebar) auf die Daten zugreifen können.
 
 Die Kontaktdaten sollen hierbei nur von vertauenswürdigen Akteuren verarbeitet werden können und generell möglichst wenigen Akteuren im System vorliegen (egal ob in verschlüsselter oder unverschlüsselter Form).
 
-Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer und E-Mail Adresse (eine Validierung dieser Daten kann in einer Protokollerweiterung durch externe Dienste erfolgen  und wird geplant in `v0.3` beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte, symmetrische Schlüssel $K _ A$ und $K _ B$, die über ein geeignetes Schlüsselableitungsverfahren miteinander zu einem Schlüssel $K _ C$ kombiniert werden. Die Anwendung verschlüsselt nun die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K _ C$, fügt zu diesen verschlüsselten Daten den Schlüssel $K _ A$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem öffentlichen Schlüssel der **GÄs** und übermittelt diese Daten an die **API**, welche sie in einem Backend ablegt und einen zufälligen Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind für keinen Akteur ohne Kenntnis des Schlüssels $K _ B$ sowie des privaten Schlüssels der **GÄs** entschlüsselbar. Letzterer befindet sich zunächst unter Kontrolle des Nutzers und kann nur über diesen oder über einen Betreiber an ein **GÄ** gelangen, das diesen entschlüsseln kann.
+Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer und E-Mail Adresse (eine Validierung dieser Daten wird unten beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte, symmetrische Schlüssel $K _ A$ und $K _ B$, die über ein geeignetes Schlüsselableitungsverfahren miteinander zu einem Schlüssel $K _ C$ kombiniert werden. Die Anwendung verschlüsselt nun die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K _ C$, fügt zu diesen verschlüsselten Daten den Schlüssel $K _ A$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem öffentlichen Schlüssel der **GÄs** und übermittelt diese Daten an die **API**, welche sie in einem Backend ablegt und einen zufälligen Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind für keinen Akteur ohne Kenntnis des Schlüssels $K _ B$ sowie des privaten Schlüssels der **GÄs** entschlüsselbar. Letzterer befindet sich zunächst unter Kontrolle des Nutzers und kann nur über diesen oder über einen Betreiber an ein **GÄ** gelangen, das diesen entschlüsseln kann.
 
 Weiterhin generiert die Anwendung des Nutzers einen Zufallswert $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige Reihe weiterer Zufallswerte $H _ 1, H _ 2, \cdots H _ n$ erzeugt wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung an ein GA weitergegeben.
 
 Nun generiert die Anwendung Wertepaare bestehend aus $H _ i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits, wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils für jedes Wertepaar individuell mit dem GÄ-Schlüssel verschlüsselt wird. Diese Paare werden für die Kontaktnachverfolgung genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
 
 Die Anwendung generiert anschließend aus allen Datenstrukturen QR-Codes, übergibt diese dem Nutzer (z.B. zum Ausdruck) und löscht anschließend alle Daten.
+
+#### Optional: Initialisierung mit Daten-Validierung
+
+Im Rahmen der normalen Initialisierung erfolgt keine Prüfung der vom Nutzer angegebenen Kontaktdaten. Wenn eine Validierung dieser Daten gewünscht ist, muss die Initialisierung mithilfe eines vertrauenswürdigen Dritten erfolgen. Hierzu betreibt dieser Dritte eine spezielle Version der Web-Anwendung, über die Nutzer zunächst genau wie oben ihre Daten initialisieren. Im Gegensatz zur normalen Initialisierung prüft der Dritte hierbei jedoch vor der Verschlüsselung die Daten (z.B. durch Abgleich mit einem Ausweisdokument) und bestätigt deren Korrektheit. Die Web-Anwendung signiert anschließend jedes Wertepaar des Nutzers mit einer Signatur, welche das Vorhandensein korrekter Nutzerdaten zu dem Wertepaar zertifiziert. Diese Signaturen $ S _ i $ werden zusätzlich zu den Wertepaaren auf den QR-Codes des Nutzers aufgebracht. Die Web-Anwendung eines Betreibers kann beim Scannen eines QR-Codes diese Signatur einlesen und bestätigen. Der Betreiber kann hiermit bestätigen, dass zu dem QR-Code validierte Nutzerdaten gehören.
+
+Vertrauenswürdige Dritte könnten beispielsweise staatliche Institutionen aber auch ggf. privatwirtschaftliche Akteure (z.B. Postfilialen) sein, die bereits Erfahrung mit der Validierung von Daten haben. Die Umsetzung eines solchen Systems erfordert jedoch voraussichtlich einen sehr hohen Aufwand und schafft ein zusätzliches Risiko, da ein weiterer Dritter bei der Initialisierung Zugang zu den Daten eines Nutzers hat. Der Nutzen sollte daher dem Aufwand gegenüber abgewogen werden.
+
+Eine Validierung über Dritt-APIs wie sie in anderen, zentralen Systemen vorgenommen wird kann theoretisch ebenfalls erfolgen, z.B. kann die Web-Anwendung die Erstellung von QR-Codes nur erlauben, nachdem bestimmte Daten wie eine Telefonnummer oder eine E-Mail Adresse über einen externen Dienst bestätigt wurden. Da die Web-Anwendung (oder generell jede Client-Anwendung) unter Kontrolle des Nutzers ist kann dieser diese leicht manipulieren, um die Validierung zu umgehen. Dass dies praktikabel ist wurde bereits demonstriert. Eine clientseitige Validierung von Daten hält daher nur technisch nicht versierte, kooperationswillige Nutzer von der Angabe falscher Daten ab (dies heißt jedoch nicht, dass eine solche zusätzliche Validierung vollständig nutzlos ist, sie sollte jedoch keineswegs als sicher oder verlässlich eingestuft werden).
 
 ### Besuchsdokumentation
 
@@ -96,7 +104,7 @@ Das Risiko der Wiederverwendung kann zudem über einen Gültigkeitsmechanismus b
 
 #### Hinterlegung falscher Daten
 
-Wie bei anderen Systemen ist die Validierung von Nutzerdaten bei gleichzeitiger Einhaltung der Pseudonymität eines Nutzers schwierig. Eine folgende Version (geplant `v0.3`) dieses Protokolls soll daher eine Möglichkeit zur Validierung einzelner Kontaktdaten beinhalten. Generell ist eine durchgängige Validierung jedoch kaum möglich, ohne ein sehr invasives Überwachungssystem zu schaffen. Kontaktnachverfolgung basiert jedoch auf dem Eigeninteresse und der Eigenverantwortung der Beteiligten und selbst die Gesetzgebung hat hierbei anerkannt, dass eine zwangsweise Validierung nicht sinnvoll ist.
+Der oben beschriebene Validierungs-Ablauf kann das Vorhandensein und die Echtheit bestimmter Nutzerdaten im System garantieren. Er erfordert jedoch die Einbindung einer vertrauenswürdigen Stelle im Initialisierungsprozess.
 
 #### Rekonstruktion von Besuchshistorien
 
