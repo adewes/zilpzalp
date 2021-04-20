@@ -4,7 +4,7 @@ In diesem Dokument analysieren wir das [Luca](https://www.luca-app.de) System un
 
 ## Schwachstellenanalyse
 
-In den folgenden Abschnitten beschreiben wir einige Schwachstellen des Designs des Luca-Systems und vergleichen sie mit dem Design von Zilp-Zalp.
+In den folgenden Abschnitten beschreiben wir einige Schwachstellen des Designs des Luca-Systems und vergleichen sie mit dem Design von Zilp-Zalp. Dies ist keine abschließende Bewertung der Sicherheit des Luca-Systems. Es existiert vielmehr bereits eine Reihe vone externen Analysen[^1]. Diese Aufstellung ist nur ergänzend.
 
 ### Szenario: Kompromittierung des System-Betreibers
 
@@ -22,3 +22,9 @@ Das Risiko das durch eine Kompromittierung des System-Betreibers entsteht ist hi
 * Wenn die kontinuierliche Nutzung von geheimen Schlüsseln im Rahmen einer App unumgänglich ist, sollte geprüft werden ob Plattform-spezifische Mittel wie sichere Enklaven genutzt werden können um diese Schlüssel vor einer Extraktion zu schützen.
 * Besuchshistorien sollten nicht zentral in einem Backend gespeichert werden.
 * Nutzerdaten sollten nicht lediglich mit einem symmetrischen Schlüssel geschützt werden.
+
+## Externe Analysen
+
+Folgende externe Analysen des Luca-Systems sind uns bekannt:
+
+[^1]: [Preliminary Analysis of Potential Harms in the Luca TracingSystem - Theresa Stadler et. al.](https://arxiv.org/pdf/2103.11958.pdf)
