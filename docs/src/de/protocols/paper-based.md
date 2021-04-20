@@ -101,6 +101,8 @@ Wie bei anderen Systemen ist die Validierung von Nutzerdaten bei gleichzeitiger 
 
 Das **Backend** verfügt über alle Informationen die nötig sind, um alle Hashwerte die einem Nutzer zugeordnet sind zu rekonstruieren. Dies ist im Rahmen des Protokolls notwendig, um die Besuchshistorie eines Nutzers mithilfe der Betreiber zu rekonstruieren. Würde ein Dritter sowohl in den Besitz der im Backend gespeicherten Werte $H _ 1$ als auch des Schlüssels $ K _ s$ gelangen, könnte er eventuell beobachtete einzelne Besuchsdaten spezifischen Nutzern zuorden. Hierzu wäre jedoch weiterhin erforderlich, dass er ebenfalls Zugang zu diesen Daten erhält, welche dezentral bei den Betreibern gespeichert werden.
 
+Generell führt eine Kompromittierung sowohl des Backends als auch der Betreiber-Anwendungen in dem Protokoll dazu, dass Besuchshistorien rekonstruiert werden können. Dies kann in der nächsten Protokollversion adressiert werden. 
+
 ### Verbesserungsmöglichkeiten
 
 Die folgenden Aspekte des Protokolls können aus unserer Sicht noch verbessert werden:

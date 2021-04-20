@@ -2,6 +2,10 @@
 # Modify this file instead: site-all.yml
 pages:
 - children: []
+  name: analyses
+  slug: analyses
+  title: Analyses
+- children: []
   name: protocols
   slug: protocols
   title: Protocols

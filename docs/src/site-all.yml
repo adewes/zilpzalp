@@ -4,6 +4,14 @@ pages:
     title|t: Zilp-Zalp Dokumentation
     navtitle|t: Start
     name: ''
+  - title|t: Analysen
+    name: analyses
+    slug||slugify: Analysen
+    children:
+      - title|t: Luca
+        src|f|exists?: "{target_language}/analyses/luca.md"
+        name: luca
+        slug||slugify: luca
   - title|t: Protokolle
     name: protocols
     slug||slugify: Protokolle

@@ -6,6 +6,14 @@ pages:
   src: de/index.md
   title: Zilp-Zalp Dokumentation
 - children:
+  - name: luca
+    slug: luca
+    src: de/analyses/luca.md
+    title: Luca
+  name: analyses
+  slug: analysen
+  title: Analysen
+- children:
   - name: index
     slug: uebersicht
     src: de/protocols/index.md
