@@ -8,4 +8,4 @@ Generell erfolgt die Initialisierung ebenso wie im papiergestützten Protokoll. 
 
 ## Unterschiede zum papiergestützten Protokoll
 
-Zur Verhinderung der unberechtigten Wiederverwendung von QR-Codes können bei der Initialisierung im Falle der digitalen Nachverfolgung sowie dem Einsatz zeitlimitierter QR-Codes sehr viel mehr Codes generiert werden (z.B. einer für jede Stunde der kommenden zwölf Monate). Hierbei muss die Initialisierung jedoch ebenfalls über einen validierenden Dritten erfolgen.
+Zur Verhinderung der unberechtigten Wiederverwendung von QR-Codes können bei der Initialisierung im Falle der digitalen Nachverfolgung sowie dem Einsatz zeitlimitierter QR-Codes sehr viel mehr Codes generiert werden (z.B. einer für jede Stunde der kommenden zwölf Monate). Hierbei muss die Initialisierung jedoch ebenfalls über einen validierenden Dritten erfolgen. Eine Selbst-Zertifizierung der QR-Codes durch die Web-Anwendung des Nutzers ist ebenfalls möglich, eine Mehrfachverwendung kann jedoch in diesem Fall erst bei der Analyse der Daten durch Gesundheitsämter erfolgen.

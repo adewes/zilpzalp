@@ -2,6 +2,20 @@
 
 In diesem Dokument analysieren wir das [Luca](https://www.luca-app.de) System und vergleichen die dort getroffenen Entscheidungen mit denen die wir beim Entwurf des Zilp-Zalp Protokolls getroffen haben.
 
+## Vergleich
+
+**Zilp-Zalp** bietet gegenüber Luca aus unserer Sicht folgende Vorteile:
+
+* Im Gegensatz zu Luca kann kein einzelner Akteur durch alleinige technische Manipulation von Systemkomponenten die Kontaktdaten eines Nutzers entschlüsseln oder die Besuchshistorie des Nutzers offenlegen.
+* Da jeder Nutzer über eine Vielzahl von QR-Codes verfügt und diese nur unter Zuhilfenahme eines geheimen Schlüssel im Besitz des Nutzers sowie des GÄ-Schlüssels miteinander in Verbindung gebracht werden können ist es für einen Angreifer fast unmöglich, Besuchsdaten einzelner Nutzer miteinander zu korrelieren um z.B. Besuchshistorien zu erstellen.
+* Ein Verlust von Besuchsdaten eines Betreibers oder selbst ein konspirativer Missbrauch des Systems durch verschiedene Betreiber führt nicht zu einem Verlust personenbezogener Daten oder der Offenlegung von Besuchshistorien einzelner Nutzer.
+* Eine Kompromittierung des Backends macht einem Angreifer lediglich wenige, relativ unkritische Meta-Daten zugänglich. Das Backend speichert nur verschlüsselte Kontaktdaten und IDs, nicht jedoch wie z.B. das Luca-Backend komplette Besuchshistorien.
+* Die Datenhaltung im Backend sowie der Kommunikationsaufwand ist sehr gering, nur im Falle einer Kontaktnachverfolgung sowie bei der Initialisierung werden Daten zwischen dem Backend und anderen Akteuren ausgetauscht. Die Dokumentation von Besuchen erfolgt dezentral und ohne Kommunikation mit dem Backend, es fallen daher bei Besuchen keine Meta-Daten an.
+* Eine missbräuchliche Abfrage großer Datenmengen ist leicht zu entdecken. Da alle Anfragen über eine öffentliche Schnittstelle verfügbar gemacht werden ist von außen ersichtlich, wieviele Daten von Gesundheitsämtern abgefragt werden.
+* Für die Dokumentation eines Besuchs ist keine Interaktion eines Nutzers mit einer Web-Anwendung oder einem Smartphone notwendig. Betreiber können Besuche auch asynchron erfassen und mit zusätzlichen Metadaten versehen. Der Aufwand zum Einlesen von QR-Codes ist gering, und die Aufbewahrung der Codes durch Betreiber stellt ein zusätzliches Backup zu den digitalen Daten dar und kann diesen auch als Nachweis der Erfüllung ihrer Dokumentationspflichten dienen.
+* QR-Codes müssen nicht in Form von Schlüsselanhängern bezogen werden sondern können von Nutzern selbst dezentral erstellt und ausgedruckt werden. Betreiber oder andere Akteure können theoretisch auch vorgefertigte QR-Code Serien an Nutzer ausgeben, welche diese dann im Rahmen der Protokollerweiterung unten selbst mit ihren Daten verknüpfen. In anderen Konstellationen können pseudonyme QR-Codes ausgegeben werden um eine Kontaktnachverfolgung unter Beteiligung eines neutralen Dritten zu ermöglichen.
+* Backends können föderiert und kooperativ betrieben werden, ebenso können Web-Anwendungen regional bereitgestellt und angepasst werden. Eine zentrale Datenhaltung ist nicht notwendig.
+
 ## Schwachstellenanalyse
 
 In den folgenden Abschnitten beschreiben wir einige Schwachstellen des Designs des Luca-Systems und vergleichen sie mit dem Design von Zilp-Zalp. Dies ist keine abschließende Bewertung der Sicherheit des Luca-Systems. Es existiert vielmehr bereits eine Reihe vone externen Analysen[^1]. Diese Aufstellung ist nur ergänzend.
