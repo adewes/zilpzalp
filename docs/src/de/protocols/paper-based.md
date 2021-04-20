@@ -54,11 +54,19 @@ Die Kontaktdaten sollen hierbei nur von vertauenswürdigen Akteuren verarbeitet 
 
 Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer und E-Mail Adresse (eine Validierung dieser Daten wird unten beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte, symmetrische Schlüssel $K _ A$ und $K _ B$, die über ein geeignetes Schlüsselableitungsverfahren miteinander zu einem Schlüssel $K _ C$ kombiniert werden. Die Anwendung verschlüsselt nun die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K _ C$, fügt zu diesen verschlüsselten Daten den Schlüssel $K _ A$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem öffentlichen Schlüssel der **GÄs** und übermittelt diese Daten an die **API**, welche sie in einem Backend ablegt und einen zufälligen Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind für keinen Akteur ohne Kenntnis des Schlüssels $K _ B$ sowie des privaten Schlüssels der **GÄs** entschlüsselbar. Letzterer befindet sich zunächst unter Kontrolle des Nutzers und kann nur über diesen oder über einen Betreiber an ein **GÄ** gelangen, das diesen entschlüsseln kann.
 
-Weiterhin generiert die Anwendung des Nutzers einen Zufallswert $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige Reihe weiterer Zufallswerte $H _ 1, H _ 2, \cdots H _ n$ erzeugt wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung an ein GA weitergegeben.
+Weiterhin generiert die Anwendung des Nutzers einen Zufallswert $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige Reihe weiterer Zufallswerte $H _ 1, H _ 2, \ldots H _ n$ erzeugt wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung an ein GA weitergegeben.
 
 Nun generiert die Anwendung Wertepaare bestehend aus $H _ i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits, wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils für jedes Wertepaar individuell mit dem GÄ-Schlüssel verschlüsselt wird. Diese Paare werden für die Kontaktnachverfolgung genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
 
 Die Anwendung generiert anschließend aus allen Datenstrukturen QR-Codes, übergibt diese dem Nutzer (z.B. zum Ausdruck) und löscht anschließend alle Daten.
+
+#### Sequenzdiagramm
+
+Das folgende Sequenzdiagramm fasst den Initialisierungsprozess zusammen.
+
+<div>
+    {% include "common/protocols/_initialization.html" %}
+</div>
 
 #### Optional: Initialisierung mit Daten-Validierung
 
@@ -72,13 +80,46 @@ Eine Validierung über Dritt-APIs wie sie in anderen, zentralen Systemen vorgeno
 
 Zur Dokumentation des Besuchs einer Ortschaft gegenüber Betreibern übergeben Nutzer diesen einfach jeweils einen zufälligen QR-Code. Hierbei ist es möglich, neben dem QR-Code zusätzliche Meta-Daten wie die genaue Ankunftszeit sowie die Verweildauer einzutragen, um die Genauigkeit der Dokumentation zu erhöhen. Der Betreiber erfasst die über einen gegebenen Zeitraum (z.B. einen Tag) erhaltenen QR-Codes anschließend mithilfe der Web-Anwendung. Sie werden zunächst nur lokal gespeichert. Betreiber können hierbei auch zusätzliche Meta-Daten erfassen um die Genauigkeit zur Kontaktnachverfolgung zu verbessern.
 
+<div>
+    {% include "common/protocols/_check_in.html" %}
+</div>
+
 ### Kontaktnachverfolgung
 
 Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln übergibt dieser zunächst dem Gesundheitsamt den für diesen bestimmten QR-Code (entweder digital oder analog). Dieses kann ihn mit dem privaten GÄ-Schlüssel entschlüsseln, wodurch es die Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^ l$ erhält ($l$ bezeichnet hier die Daten des $l$-ten Nutzers). Mit dem Wert $I _ D$ kann das GA vom Backend die verschlüsselten Nutzerdaten erhalten, welche unter Zuhilfenahme des privaten Schlüssels sowie von $K _ B$ entschlüsselt werden können. Weiterhin kann das GA mithilfe von $H _ s$ alle Hashwerte $H _ i$ des Nutzers erstellen. Diese Werte veröffentlicht es über das Backend (gemeinsam mit anderen Hashwerten um die Anonymität des Nutzers zu schützen). Die Web-Anwendungen der Betreiber laden regelmäßig die Liste dieser Werte herunter und gleichen sie mit den lokal gespeicherten Hashwerten ab. Ergibt sich eine Übereinstimmung, werden nach Bestätigung durch den Betreiber alle Besuchsdaten die mit diesen Hashwerten $H _ i$ in Zusammenhang stehen (z.B. ermittelt durch Vergleich der Besuchszeiten) über die öffentliche API an das Backend übertragen (ggf. können die Daten nochmals mit dem GÄ-Schlüssel verschlüsselt werden). Von dort können sie durch das GA abegrufen werden. Dieses entschlüsselt dann wiederum mit dem privaten GÄ-Schlüssel die Werte $ I _ D ^ k$, und $K _ B ^ k$, womit wiederum die Kontaktdaten des Nutzers vom Backend abgefragt werden können. Da das GA von diesem Nutzer jedoch nicht den Schlüssel $ H _ s ^ k$ besitzt, kann es dessen Besuchshistorie nicht ohne dessen Einwilligung rekonstruieren. Hierzu ist vielmehr wiederum die aktive Mitarbeit dieses Nutzers notwendig.
 
+#### Sequenzdiagramm
+
+Die folgenden Sequenzdiagramme zeigen den Ablauf der Kontaktnachverfolgung. Aus Übersichtsgründen wurde der Prozess dabei in drei Schritte aufgeteilt.
+
+##### Übergabe der Nutzerdaten an das GA
+
+Zunächst muss das Gesundheitsamt vom Nutzer die GA-Daten erhalten, um die weitere Kontaktnachverfolgung veranlassen zu können.
+
+<div>
+    {% include "common/protocols/_contact_tracing_1.html" %}
+</div>
+
+##### Abrufen von Ausschreibungen
+
+Anschließend schreibt das Gesundheitsamt relevante Hashes zur Kontaktnachverfolgung aus und wartet auf die Rückmeldung von Betreibern.
+
+<div>
+    {% include "common/protocols/_contact_tracing_2.html" %}
+</div>
+
+##### Verarbeiten relevanter Kontaktdaten
+
+Schließlich verarbeitet das Gesundheitsamt die Daten der Betreiber.
+
+<div>
+    {% include "common/protocols/_contact_tracing_3.html" %}
+</div>
+
+
 ### Risiko-Analyse
 
-Folgende Risiken wurden von uns bisher identifiziert:
+Die folgenden Abschnitte beschreiben von uns bisher identifizierte Risiken.
 
 #### Wiederverwendung von QR-Codes
 
@@ -95,7 +136,7 @@ Der oben beschriebene Validierungs-Ablauf kann das Vorhandensein und die Echthei
 
 #### Rekonstruktion von Besuchshistorien
 
-Zur Rekonstruktion einer Besuchshistorie muss eine Akteur wissen, welche Werte $H _ i$ zu einem gegebenen Nutzer gehören. Da diese Werte mithilfe eines geheimen Schlüssels $ H _ s $ erzeugt werden, muss der Angreifer daher im Besitz dieses Schlüssels sein um die Serie $H _ 1 \cdots H _ n$ zu rekonstruieren. Der Schlüssel $ H _ s $ befindet sich unter Kontrolle des Nutzers und kann nur von GÄs entschlüsselt werden. Ein Angreifer muss daher sowohl den privaten GÄ-Schlüssel besitzen, als auch den QR-Code des Nutzers mit dem Wert $ H _ s$. Zusätzlich muss der Angreifer die Besuchsdaten einzelne von den Betreibern extrahieren, z.B. durch Manipulation der Web-Anwendungen.
+Zur Rekonstruktion einer Besuchshistorie muss eine Akteur wissen, welche Werte $H _ i$ zu einem gegebenen Nutzer gehören. Da diese Werte mithilfe eines geheimen Schlüssels $ H _ s $ erzeugt werden, muss der Angreifer daher im Besitz dieses Schlüssels sein um die Serie $H _ 1 \ldots H _ n$ zu rekonstruieren. Der Schlüssel $ H _ s $ befindet sich unter Kontrolle des Nutzers und kann nur von GÄs entschlüsselt werden. Ein Angreifer muss daher sowohl den privaten GÄ-Schlüssel besitzen, als auch den QR-Code des Nutzers mit dem Wert $ H _ s$. Zusätzlich muss der Angreifer die Besuchsdaten einzelne von den Betreibern extrahieren, z.B. durch Manipulation der Web-Anwendungen.
 
 Unter der Annahme, dass zumindest eine dieser drei Angriffe fehlschlägt kann die Rekonstruktion von Besuchshistorien ausgeschlossen werden.
 

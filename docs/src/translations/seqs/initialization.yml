@@ -1,0 +1,96 @@
+destroy_evidence:
+  _t:
+    de: 3116d00bdca21755
+    en: 3116d00bdca21755
+  de: Lösche alle Daten.
+  en: Delete all data.
+encrypt_contact_data:
+  _t:
+    de: 1353c36c5d6b7804
+    en: 1353c36c5d6b7804
+  de: >-
+    Verschlüssele Kontaktdaten $D_{k}^e=\mathrm{enc}_{s}(D_k,
+    K_C)$, verschlüssele mit GA-Schlüssel $D_{k,\mathrm{ga}}^e
+    = \mathrm{enc}_{a}((D_{k}^e,K_A), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+  en: >-
+    Encrypt contact details $D_{k}^e=\mathrm{enc}_{s}(D_k, K_C)$,
+    encrypt with GA key $D_{k,\mathrm{ga}}^e = \mathrm{enc}_{a}((D_{k}^e,K_A),
+    K_{\mathrm{ga}}^{\mathrm{pub}})$.
+generate_secrets:
+  _t:
+    de: e5313940d89824c0
+    en: e5313940d89824c0
+  de: >-
+    Generiere geheime Schlüssel $K_A$, $K_B$ und $H_s$, leite
+    $K_C$ ab.
+  en: Generate secret keys $K_A$, $K_B$ and $H_s$, derive $K_C$.
+prepare_contact_data:
+  _t:
+    de: 99de3af6801d5b41
+    en: 99de3af6801d5b41
+  de: Bereite Kontaktdaten $D_k$ vor.
+  en: Prepare contact information $D_k$.
+prepare_ga_data:
+  _t:
+    de: 932279ab39715b87
+    en: 932279ab39715b87
+  de: >-
+    Verschlüssele Daten für Gesundheitsamt $D_{\mathrm{ga}} =
+    \mathrm{enc}_{a}((K_B, I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+  en: >-
+    Encrypted data for health department $D_{\mathrm{ga}} = \mathrm{enc}_{a}((K_B,
+    I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+prepare_operator_data:
+  _t:
+    de: 4d0c9521ea084b20
+    en: 4d0c9521ea084b20
+  de: >-
+    Generiere Pseudo-Zufallswerte $H_1, \ldots H_n$ mithilfe von
+    $H_s$. Generiere $D_{\mathrm{op}}^i = (H_i, \mathrm{enc}_{a}((K_B,
+    I_D), K_{\mathrm{ga}}^{\mathrm{pub}}))$.
+  en: >-
+    Generate pseudo-random values $H_1, \ldots H_n$ using $H_s$.
+    Generate $D_{\mathrm{op}}^i = (H_i, \mathrm{enc}_{a}((K_B,
+    I_D), K_{\mathrm{ga}}^{\mathrm{pub}}))$.
+provide_ga_keys:
+  _t:
+    de: aa7c3a243299e6ae
+    en: aa7c3a243299e6ae
+  de: Liefere GA-Schlüssel $K_\mathrm{ga}^\mathrm{pub}$ zurück
+  en: 'Return GA key $K_\mathrm{ga}^\mathrm{pub}$ '
+request_contact_data_storage:
+  _t:
+    de: af775a148f1534e5
+    en: af775a148f1534e5
+  de: >-
+    Frage beim Backend Speicherung von $D_{k,\mathrm{ga}}^e$ an,
+    erhalte $I_D$.
+  en: Query backend storage from $D_{k,\mathrm{ga}}^e$, get $I_D$.
+request_ga_keys:
+  _t:
+    de: a5230a44acdc02b9
+    en: a5230a44acdc02b9
+  de: >-
+    Frage vom Backend aktuelle (und ggf. zukünftige) GA-Schlüssel
+    $K_{\mathrm{ga}}^{\mathrm{pub}}$ ab.
+  en: >-
+    Query current (and future, if applicable) GA keys from the
+    backend $K_{\mathrm{ga}}^{\mathrm{pub}}$.
+save_data:
+  _t:
+    de: 48e1a897aa4a74ab
+    en: 48e1a897aa4a74ab
+  de: >-
+    Generiere QR-Codes aus $D_{\mathrm{op}}^i$ und $D_{\mathrm{ga}}$,
+    drucke QR-Codes aus.
+  en: >-
+    Generate QR codes from $D_{\mathrm{op}}^i$ and $D_{\mathrm{ga}}$,
+    print QR codes.
+store_contact_data:
+  _t:
+    de: 025321503d948492
+    en: 025321503d948492
+  de: >-
+    Speichere $D_{k,\mathrm{ga}}^e$, generiere $I_D$ und gib'
+    diese zurück.
+  en: Save $D_{k,\mathrm{ga}}^e$, generate $I_D$ and return it.

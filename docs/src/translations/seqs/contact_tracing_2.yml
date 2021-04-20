@@ -1,0 +1,39 @@
+check_hashes:
+  _t:
+    de: a25b2ef51d079384
+    en: a25b2ef51d079384
+  de: >-
+    Prüfe Hashes gegen gespeicherte Besuchsdaten. Suche zu den
+    Daten relevante Besuchsdaten $D_{op}$ heraus.
+  en: >-
+    Check hashes against stored visit data. Search for relevant
+    visit data $D_{op}$.
+provide_hashes:
+  _t:
+    de: 1b10cffb2f4ac47b
+    en: 1b10cffb2f4ac47b
+  de: Gib ausgeschriebene Hashes $H_i, H_j, \ldots$ zurück.
+  en: Return written out hashes $H_i, H_j, \ldots$.
+request_hashes:
+  _t:
+    de: 3a5baa30ff8e4187
+    en: 3a5baa30ff8e4187
+  de: Frage ausgeschriebene Hashwerte an.
+  en: Request hash values written out.
+store_data:
+  _t:
+    de: 812dbb93d10fac43
+    en: 812dbb93d10fac43
+  de: >-
+    Speichere Daten ab, assoziiert mit zugehörigen Hashes $H_{i}$.
+  en: Store data, associated with associated hashes $H_{i}$.
+submit_data:
+  _t:
+    de: 34df6a0d3f2021eb
+    en: 34df6a0d3f2021eb
+  de: >-
+    Frage die Speicherung der relevanten Daten $D_{op}$ an, verknüpft
+    mit dem zugehörigen Hash $H_{i}$
+  en: >-
+    Request the storage of the relevant data $D_{op}$, linked
+    with the corresponding hash $H_{i}$

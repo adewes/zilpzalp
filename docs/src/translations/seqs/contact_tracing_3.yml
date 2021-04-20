@@ -1,0 +1,49 @@
+decrypt_ga_data:
+  _t:
+    de: c488e912e688f4b1
+    en: c488e912e688f4b1
+  de: >-
+    Entschlüssele von jedem Datensatz GA-Daten $D_{\mathrm{ga}}^d
+    = \mathrm{dec}_{a}(D_\mathrm{ga}, K_{\mathrm{ga}}^{\mathrm{priv}})$
+    um $(K_B, I_D, H_s)$ zu erhalten.
+  en: >-
+    Decode GA data from each record $D_{\mathrm{ga}}^d = \mathrm{dec}_{a}(D_\mathrm{ga},
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(K_B, I_D, H_s)$.
+decrypt_user_data:
+  _t:
+    de: e29b52b939dd182a
+    en: e29b52b939dd182a
+  de: >-
+    Entschlüssele Nutzerdaten $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(D_{k}^e,K_A)$ zu erhalten.
+    Leite $K_C$ aus $K_A$ und $K_B$ ab, entschlüssele $D_{k} =
+    \mathrm{dec}_s(D_{k}^e, K_C)$ um Nutzerdaten zu erhalten.
+  en: >-
+    Decode user data $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(D_{k}^e,K_A)$.
+    Derive $K_C$ from $K_A$ and $K_B$, decode $D_{k} = \mathrm{dec}_s(D_{k}^e,
+    K_C)$ to get user data.
+provide_data:
+  _t:
+    de: f09f79c36670c472
+    en: f09f79c36670c472
+  de: Liefere relevante Daten zu den Hashes zurück.
+  en: Return relevant data to the hashes.
+provide_user_data:
+  _t:
+    de: b7665aed41f6ca06
+    en: b7665aed41f6ca06
+  de: Liefere Kontaktdaten zu $I_D$ zurück.
+  en: Return contact information to $I_D$.
+request_data:
+  _t:
+    de: 23ccc9d92c47adca
+    en: 23ccc9d92c47adca
+  de: Frage Daten zu ausgeschriebenen Hashes an.
+  en: Request data on hashes written out.
+request_user_data:
+  _t:
+    de: fe2fe15fcdf67cc8
+    en: fe2fe15fcdf67cc8
+  de: Fordere Kontaktdaten vom Backend an mit $I_D$.
+  en: Request contact details from backend using $I_D$.

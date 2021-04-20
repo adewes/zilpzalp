@@ -2,3 +2,4 @@ $include:
 - main.yml
 - templates.yml
 - urls.yml
+- seqs/index.yml

@@ -16,4 +16,4 @@ Zusätzlich legen wir folgende Sicherheits- & Datenschutzanforderungen zugrunde:
 
 ## Protokolle
 
-Ausgehend von diesen Anforderungen wurden Protokolle entwickelt, die diese umsetzen. Hierbei wurde zunächst eine [papiergestütztes Protokoll]({{'protocols.paper-based'|href}}) entwickelt, dass barrierefrei für den **Nutzer** ohne technologische Hilfsmittel wie Apps und Smartphones nutzbar ist.
+Ausgehend von diesen Anforderungen wurden Protokolle entwickelt, die diese umsetzen. Hierbei wurde zunächst eine [papiergestütztes Protokoll]({{'protocols.paper-based'|href}}) entwickelt, dass barrierefrei für den **Nutzer** ohne technologische Hilfsmittel wie Apps und Smartphones nutzbar ist. Darauf aufbauend wurde ein [digitales Protokoll]({{'protocols.digital'|href}}) formuliert, das die Dokumentation von Besuchshistorien mithilfe einer Web-Anwendung ermöglicht.

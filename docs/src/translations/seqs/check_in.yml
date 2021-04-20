@@ -1,0 +1,17 @@
+process_operator_data:
+  _t:
+    de: d6328d20461562df
+    en: d6328d20461562df
+  de: >-
+    Verarbeite QR-Code mithilfe der Web-Anwendung für Betreiber,
+    füge relevante Metadaten hinzu (z.B. Verweildauer, genauer
+    Aufenthaltsort).
+  en: >-
+    Process QR code using web application for operators, add relevant
+    metadata (e.g. dwell time, exact location).
+provide_operator_data:
+  _t:
+    de: b93cc5635c1abbff
+    en: b93cc5635c1abbff
+  de: Stelle QR-Code mit Betreiberdaten zur Verfügung.
+  en: Provide QR code with operator data.

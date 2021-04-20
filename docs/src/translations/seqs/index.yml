@@ -1,0 +1,41 @@
+seqs:
+  backend:
+    _t:
+      de: 2fb4019a35e427e8
+      en: 2fb4019a35e427e8
+    de: Backend
+    en: Backend
+  ci:
+    $include: check_in.yml
+  ct1:
+    $include: contact_tracing_1.yml
+  ct2:
+    $include: contact_tracing_2.yml
+  ct3:
+    $include: contact_tracing_3.yml
+  health_department:
+    _t:
+      de: 3acd3a017e10d78c
+      en: 3acd3a017e10d78c
+    de: Gesundheitsamt
+    en: Health Department
+  in:
+    $include: initialization.yml
+  operator:
+    _t:
+      de: f08d50a7a210ba94
+      en: f08d50a7a210ba94
+    de: Betreiber
+    en: Operator
+  user:
+    _t:
+      de: 47bb1a1f0662282a
+      en: 47bb1a1f0662282a
+    de: Nutzer
+    en: Users
+  user_app:
+    _t:
+      de: 330cc05bd5cb52cc
+      en: 330cc05bd5cb52cc
+    de: Nutzer-Anwendung
+    en: User application
