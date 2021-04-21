@@ -20,6 +20,27 @@
     the web application. Initially, they are only stored locally.
     Operators can also capture additional meta-data to improve
     accuracy for contact tracing.
+076cfc4be4cb6e43:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben. Er wurde daher vorerst in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * since $K _ B
+    $ is permanently stored with the user's contact data. However,
+    in an extension of the proctoll, it is planned to separate
+    the key $K _ B$ from the contact data in an additional step
+    of by a GA, store it separately from the beginning, or encrypt
+    it asymmetrically and give another party control over the
+    decryption. It was therefore left in the protocol for the
+    time being.
 08d8751721d223d4:
   de: >-
     Der oben beschriebene Validierungs-Ablauf kann das Vorhandensein
@@ -504,6 +525,16 @@
   en: >-
     * The procedure can also be used by people who have no experience
     in using smartphone apps or cannot use them for other reasons.
+6f38efed88d1163c:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
+    kept permanently with the user's contact details.
 6ffe53f5d8b30c10:
   de: >-
     Die Kontaktdaten sollen hierbei nur von vertauenswürdigen
@@ -608,6 +639,26 @@
     Many contact tracing systems, such as **Luca** or **Recover**,
     rely primarily on technical tools such as smartphone apps
     to document **visits**.
+8b77598e30dd8f22:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * since $K _ B
+    $ is permanently stored with the user's contact data. However,
+    in an extension of the proctoll, it is planned to separate
+    the key $K _ B$ from the contact data in an additional step
+    of by a GA, store it separately from the beginning, or encrypt
+    it asymmetrically and give another party control over decryption.
+    It was therefore left in the protocol.
 943e7ade3915d48a:
   de: '### Verbesserungsmöglichkeiten'
   en: '### Opportunities for improvement'
@@ -682,6 +733,24 @@ a3d7631faae4004e:
     %}'
   en: '    {% include "common/protocols/_contact_tracing_2.html"
     %}'
+a537faf8ca3baab9:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K_C$ aus $(K_A, K_B)$ nicht erhöht, da
+    $K_B$ permanent mit den Kontaktdaten des Nutzer aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K_B$ entweder schnell von den Kontaktdaten
+    zu trennen oder ihn asymmetrisch zu verschlüsseln und einer
+    weiteren Partei die Kontrolle über die Entschlüsselung zu
+    geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, deriving $K_C$ from $(K_A, K_B)$ does
+    not increase the security of the system, as $K_B$ is kept
+    permanently with the user's contact details. However, in an
+    extension to the proctoll, it is planned to either quickly
+    separate the $K_B$ key from the contact details or to asymmetrically
+    encrypt it and give another party control over decryption.
+    It was therefore left in the protocol.
 a6c57a14f8c62945:
   de: >-
     * Das GA kann die Daten nun regulär über die API vom Backend
@@ -722,6 +791,9 @@ b1b40da94ab3fdc4:
 b2bdbd2b60db45a1:
   de: '### Mögliche Strategien'
   en: '### Possible strategies'
+b890e7aea6befec3:
+  de: Er wurde daher vorerst in dem Protokoll belassen.
+  en: It was therefore left in the minutes for the time being.
 b8c3d77774e0f3a4:
   de: >-
     Die Anwendung generiert anschließend aus allen Datenstrukturen
@@ -764,6 +836,24 @@ be78857cd3a53478:
     assistance. If users are difficult to reach, this can delay
     and hinder effective contact tracing. In this sense, the privacy
     of users must be weighed against the interest of the GA.
+bfe299597d077206:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzer aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K _ B$ entweder schnell von den Kontaktdaten
+    zu trennen oder ihn asymmetrisch zu verschlüsseln und einer
+    weiteren Partei die Kontrolle über die Entschlüsselung zu
+    geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
+    kept permanently with the user's contact details. However,
+    in an extension to the proctoll, it is planned to either quickly
+    separate the $K _ B$ key from the contact details, or to asymmetrically
+    encrypt it and give another party control over decryption.
+    It was therefore left in the protocol.
 c2bcdfadda769d49:
   de: >-
     * Nutzer müssen keine Smartphone-Anwendungen von eventuell
@@ -930,6 +1020,20 @@ e3ca1f6f7be22e7f:
 e4a9f4b7aca08269:
   de: '# Papiergestützte Kontaktnachverfolgung'
   en: '# Paper-based contact tracing'
+e5ecc7301c9c9f69:
+  de: >-
+    In einer Erweiterung des Proktolls ist jedoch geplant, den
+    Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben.
+  en: >-
+    In an extension of the Proktoll, however, it is planned to
+    separate the key $K _ B$ from the contact data in an additional
+    step of by a GA, to store it separately from the beginning
+    or to encrypt it asymmetrically and to give another party
+    control over the decryption.
 e69219041f1ee55f:
   de: '#### Wiederverwendung von QR-Codes'
   en: '#### Reuse of QR codes'
@@ -975,9 +1079,9 @@ efc60d02fda6fbc2:
     * The user can periodically submit the data $ Z $ and $ I
     _ D $ to the web application, which then recognizes from the
     published token $ Z $ that the user's data has been requested
-    for contact tracing. It then prompts the user to provide
-    the data, encrypts it with the public GÄ key, signs the data
-    with the private key of the generated key pair, and communicates
+    for contact tracing. It then prompts the user to provide the
+    data, encrypts it with the public GÄ key, signs the data with
+    the private key of the generated key pair, and communicates
     it via the API to the backend, which stores it.
 f1745f1dcb6ea9b8:
   de: >-
@@ -1014,6 +1118,24 @@ f4f4adc837722796:
     of individual users, as well as a procedure to determine for
     a specific visit of a user all visits of other users that
     occurred in the same locality and in the same time period.
+fd09e279b9bbe5e0:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K_C$ aus $(K_A, K_B)$ **nicht** erhöht,
+    da $K_B$ permanent mit den Kontaktdaten des Nutzer aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K_B$ entweder schnell von den Kontaktdaten
+    zu trennen oder ihn asymmetrisch zu verschlüsseln und einer
+    weiteren Partei die Kontrolle über die Entschlüsselung zu
+    geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K_C$ from $(K_A, K_B)$, * as $K_B$ is kept permanently
+    with the user's contact details. However, in an extension
+    to the proctoll, it is planned to either quickly separate
+    the $K_B$ key from the contact details, or to asymmetrically
+    encrypt it and give another party control over decryption.
+    It was therefore left in the protocol.
 fe0bbc3db64eacee:
   de: '## Protokoll (v0.3)'
   en: '## Protocol (v0.3)'
