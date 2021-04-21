@@ -1,3 +1,21 @@
+0025434acb0eb6a1:
+  de: >-
+    Die Dokumentation basierend auf diesem Hash kann dann abgelehnt
+    werden.
+  en: Documentation based on this hash can then be rejected.
+03f94667cbaac2b4:
+  de: >-
+    Die Anwendung kann mithilfe von $ H _ s $ dann alle Hashes
+    $H _ i $ des Nutzers regenerieren, dies über ein geeignetes
+    Hashverfahren mit $ Z _ h$ kombinieren und die Liste der gehashten
+    Tokens ans Backend schicken, welche sie anschließend publiziert
+    (gemeinsam mit anderen Hashes um die Anonymität zu gewährleisten).
+  en: >-
+    The application can then use $ H _ s $ to regenerate all hashes
+    $H _ i $ of the user, combine this via a suitable hashing
+    procedure with $ Z _ h$ and send the list of hashed tokens
+    to the backend, which it then publishes (together with other
+    hashes to ensure anonymity).
 0591a19232981137:
   de: >-
     Zur Dokumentation des Besuchs einer Ortschaft gegenüber Betreibern
@@ -111,6 +129,19 @@
     I _ D)$ is encrypted individually with the GÄ key for each
     value pair. These pairs are used for contact tracing and passed
     on to public operators.
+13b44afc94bfef7f:
+  de: >-
+    Hierbei müsste der Nutzer eine zusätzliche Datenstruktur zur
+    eigenen Verwendung erhalten, welche das Geheimnis $H _ s$
+    enthält (eine solche Datenstruktur kann auch zur Nachprüfung
+    des Datenabrufs eingesetzt werden, was in einer Protokollerweiterung
+    unten beschrieben wird).
+  en: >-
+    In this case, the user would have to obtain an additional
+    data structure for his own use, which contains the secret
+    $H _ s$ (such a data structure can also be used to verify
+    the data retrieval, which is described in a protocol extension
+    below).
 13ffd2da58ba970b:
   de: >-
     Zur Rekonstruktion einer Besuchshistorie muss eine Akteur
@@ -201,6 +232,17 @@
     to work with an infected user to identify and contact (with
     minimal effort) possible at-risk contacts of that **user**
     based on that **user** 's **visit history**.
+1d203f2aafb57588:
+  de: >-
+    Manipulierte QR-Codes generell nur beim Einsatz des Validierungsmechanismus
+    entdeckt werden können ist eine Generierung manipulierter
+    Codes für einen Angreifer jedoch sehr viel einfacher als der
+    Diebstahl fremder Codes um eine Besuchsdokumentation zu umgehen.
+  en: >-
+    Manipulated QR codes can generally only be detected when using
+    the validation mechanism, however, generating manipulated
+    codes is much easier for an attacker than stealing someone
+    else's code to bypass visit documentation.
 209257c3af68ba98:
   de: >-
     Eine datenschutzfreundlichere Lösung ist daher die dezentrale
@@ -232,6 +274,12 @@
     actors can verify the trustworthiness of the public keys of
     these pairs via a suitable mechanism (e.g., a root certificate
     that is delivered together with the web application).
+25fef684887bba72:
+  de: >-
+    Aufgefundene Codes könnten einfach missbraucht werden z.B.
+    um die Besuchsdokumentation zu umgehen.
+  en: >-
+    Found codes could easily be misused e.g. to bypass visit documentation.
 2a0f7e673ecf8c4d:
   de: '#### Rekonstruktion von Besuchshistorien'
   en: '#### Reconstruction of visit histories'
@@ -343,6 +391,14 @@
 33ef6fb6ac258672:
   de: '    {% include "common/protocols/_check_in.html" %}'
   en: '    {% include "common/protocols/_check_in.html" %}'
+38babb0364e5a3db:
+  de: >-
+    Das Datenpaket kann zudem wie oben beschrieben genutzt werden,
+    um Hashes z.B. im Fall des Verlusts oder Diebstahls für ungültig
+    erklären zu lassen.
+  en: >-
+    The data package can also be used as described above to have
+    hashes declared invalid, e.g. in the event of loss or theft.
 39d8b40cce2b9059:
   de: >-
     * Statt bei der Erstellung von QR-Codes direkt dem Backend
@@ -430,6 +486,37 @@
   en: >-
     * It is not necessary to carry a smartphone or have internet
     connectivity to document visits.
+496918fb007cae51:
+  de: >-
+    Der Nutzer kann dieses Datenpaket, welches auch als QR-Code
+    bereitgestellt werden kann, der Web-Anwendung zur Verfügung
+    stellen. Diese kann mit den Daten die Hashes $ H _ i $ des
+    Nutzers rekonstruieren und mithilfe des Backends prüfen, ob
+    und von wem diese Hashes ausgeschrieben wurden. Der Nutzer
+    erhält somit eine Information darüber, ob seine Besuchsdaten
+    von einem GA angefragt wurden und kann im Falle einer Nichtbenachrichtigung
+    bei diesem Amt mit seinen GA-Daten weitere Daten zu der Nutzung
+    anfragen.
+  en: >-
+    The user can make this data package, which can also be provided
+    as a QR code, available to the web application. The web application
+    can use the data to reconstruct the user's hashes $ H _ i
+    $ and, with the help of the backend, check whether and by
+    whom these hashes were written out. The user thus receives
+    information as to whether his visit data has been requested
+    by a GA and, in the event of non-notification, can request
+    further data on the use from this office using his GA data.
+4aa76a6251146f01:
+  de: >-
+    Web-Anwendungen von Betreibern können diese Listen beziehen
+    (z.B. auch als Bloom-Filter) und bei der Dokumentation eines
+    Besuchs unter Zuhilfename des Tokens $ Z _ h $ prüfen, ob
+    ein gegebener Hash ungültig gemacht wurde.
+  en: >-
+    Web applications of operators can obtain these lists (e.g.,
+    also as Bloom filters) and check whether a given hash has
+    been invalidated when documenting a visit with the help of
+    the token $ Z _ h $.
 4c7d582c45d9c737:
   de: >-
     Nutzer im System möchten GÄ anlassbezogen ihre Kontaktdaten
@@ -508,6 +595,13 @@
     the GA does not have the user's key $ H _ s ^ k$, it cannot
     reconstruct the user's visit history without consent. For
     this, the active cooperation of this user is again necessary.
+56f37cb129cfd944:
+  de: >-
+    Das Backend veröffentlicht zusätzlich ein Token $Z _ h$ welches
+    von der Web-Anwendung des Nutzers abgefragt werden kann.
+  en: >-
+    The backend also publishes a token $Z _ h$ which can be queried
+    by the user's web application.
 571810518dc64149:
   de: >-
     Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
@@ -538,6 +632,13 @@
     $ K _ B$ together in a data structure and encrypts them with
     the public GÄ key. This data remains with the user and is
     only passed on to a GA for contact tracing.
+5cdf77c9e5675c4a:
+  de: >-
+    Um die Besuchsdokumentation mit einem ungültigen QR-Code zu
+    verhindern erfordert dies jedoch eine dirkte Prüfung der Codes.
+  en: >-
+    However, to prevent visit documentation with an invalid QR
+    code, this requires a direct check of the codes.
 64789651fd653174:
   de: >-
     Wichtig: Um die Abgabe manipulierter Daten zu verhindern,
@@ -689,6 +790,9 @@
     of by a GA, store it separately from the beginning, or encrypt
     it asymmetrically and give another party control over decryption.
     It was therefore left in the protocol.
+8d191395e09130a5:
+  de: '#### Überprüfung durch den Nutzer'
+  en: '#### Review by the user'
 943e7ade3915d48a:
   de: '### Verbesserungsmöglichkeiten'
   en: '### Opportunities for improvement'
@@ -742,6 +846,9 @@
 9e4527fb137f0b37:
   de: <div>
   en: <div>
+9f8e3d08fefcf091:
+  de: '#### Verlust oder Diebstahl von QR-Codes'
+  en: '#### Loss or theft of QR codes'
 a13e86e12343c88a:
   de: >-
     Viele Systeme zur Kontaktnachverfolgung wie **Luca** oder
@@ -784,6 +891,18 @@ a537faf8ca3baab9:
     separate the $K_B$ key from the contact details or to asymmetrically
     encrypt it and give another party control over decryption.
     It was therefore left in the protocol.
+a60b6633f29951c1:
+  de: >-
+    Bei der Initialisierung kann zusätzlich zu den GA-Daten auch
+    ein Datenpaket für den Nutzer generiert werden, welches u.a.
+    das Geheimnis $ H _ s $ enthalten kann (dieses Datenpaket
+    kann zusätzlich mit einem selbstgewählten Passwort geschützt
+    werden).
+  en: >-
+    During initialization, in addition to the GA data, a data
+    package can also be generated for the user, which can contain,
+    among other things, the secret $ H _ s $ (this data package
+    can also be protected with a password of your choice).
 a6c57a14f8c62945:
   de: >-
     * Das GA kann die Daten nun regulär über die API vom Backend
@@ -794,6 +913,13 @@ a6c57a14f8c62945:
 a6df326b9aac132e:
   de: '## Grundideen'
   en: '## Basic ideas'
+a75cafc8fe74410f:
+  de: >-
+    Ein Risiko der Generierung großer Anzahl von QR-Codes ist
+    der Verlust durch den Nutzer.
+  en: >-
+    One risk of generating large numbers of QR codes is loss by
+    the user.
 aac32651b10f567c:
   de: </div>
   en: </div>
@@ -977,6 +1103,15 @@ d8bd77e7b5ee8b75:
     * GÄs must be able to reconstruct **visit histories of** individual
     users and to obtain relevant **visits of** other users to
     these histories.
+d9fad49284475a7e:
+  de: >-
+    Auch bei einer späteren Prüfung kann der Mechanismus jedoch
+    verhindern, dass Besuche einem Nutzer zugeordnet werden, dessen
+    QR-Codes gestohlen wurden oder verloren gingen.
+  en: >-
+    However, even if checked later, the mechanism can prevent
+    visits from being attributed to a user whose QR codes have
+    been stolen or lost.
 daa451d487df53d2:
   de: >-
     **Zilp-Zalp** setzt hingegen **primär** auf ein papiergestütztes
@@ -999,6 +1134,13 @@ dae47a88953d96b8:
   en: >-
     * Furthermore, we create a way to document **visits** in a
     robust and data-efficient manner.
+dd684e5c2f9d1b5a:
+  de: >-
+    Die folgenden Abschnitte beschreiben mögliche Erweiterungen
+    des Protokolls, die über die grundlegende Funktionalität hinausgehen.
+  en: >-
+    The following sections describe possible extensions to the
+    protocol that go beyond the basic functionality.
 de475d6d2455f1f1:
   de: '### Initialisierung'
   en: '### Initialization'
@@ -1013,6 +1155,13 @@ e2434d4f98ac1127:
 e3b0c44298fc1c14:
   de: ''
   en: ''
+e3bc463105f19927:
+  de: >-
+    Um dies zu verhindern, kann ein Mechanismus zur Ungültigmachung
+    von Hashes eingeführt werden.
+  en: >-
+    To prevent this, a mechanism for invalidating hashes can be
+    introduced.
 e3ca1f6f7be22e7f:
   de: >-
     Das Risiko der Wiederverwendung kann zudem über einen Gültigkeitsmechanismus
@@ -1182,6 +1331,9 @@ f4f4adc837722796:
     of individual users, as well as a procedure to determine for
     a specific visit of a user all visits of other users that
     occurred in the same locality and in the same time period.
+f99ecfda1afd4b4b:
+  de: '### Erweiterungen'
+  en: '### Extensions'
 fa9d8cce855174e7:
   de: >-
     Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung

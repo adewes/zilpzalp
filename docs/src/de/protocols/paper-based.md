@@ -129,6 +129,20 @@ Schließlich verarbeitet das GA die Daten der Betreiber.
 
 Die folgenden Abschnitte beschreiben von uns bisher identifizierte Risiken.
 
+#### Verlust oder Diebstahl von QR-Codes
+
+Ein Risiko der Generierung großer Anzahl von QR-Codes ist der Verlust durch den Nutzer.
+Aufgefundene Codes könnten einfach missbraucht werden z.B. um die Besuchsdokumentation zu umgehen.
+Um dies zu verhindern, kann ein Mechanismus zur Ungültigmachung von Hashes eingeführt werden.
+Hierbei müsste der Nutzer eine zusätzliche Datenstruktur zur eigenen Verwendung erhalten, welche das Geheimnis $H _ s$ enthält (eine solche Datenstruktur kann auch zur Nachprüfung des Datenabrufs eingesetzt werden, was in einer Protokollerweiterung unten beschrieben wird).
+Das Backend veröffentlicht zusätzlich ein Token $Z _ h$ welches von der Web-Anwendung des Nutzers abgefragt werden kann.
+Die Anwendung kann mithilfe von $ H _ s $ dann alle Hashes $H _ i $ des Nutzers regenerieren, dies über ein geeignetes Hashverfahren mit $ Z _ h$ kombinieren und die Liste der gehashten Tokens ans Backend schicken, welche sie anschließend publiziert (gemeinsam mit anderen Hashes um die Anonymität zu gewährleisten).
+Web-Anwendungen von Betreibern können diese Listen beziehen (z.B. auch als Bloom-Filter) und bei der Dokumentation eines Besuchs unter Zuhilfename des Tokens $ Z _ h $ prüfen, ob ein gegebener Hash ungültig gemacht wurde.
+Die Dokumentation basierend auf diesem Hash kann dann abgelehnt werden.
+Um die Besuchsdokumentation mit einem ungültigen QR-Code zu verhindern erfordert dies jedoch eine dirkte Prüfung der Codes.
+Auch bei einer späteren Prüfung kann der Mechanismus jedoch verhindern, dass Besuche einem Nutzer zugeordnet werden, dessen QR-Codes gestohlen wurden oder verloren gingen.
+Manipulierte QR-Codes generell nur beim Einsatz des Validierungsmechanismus entdeckt werden können ist eine Generierung manipulierter Codes für einen Angreifer jedoch sehr viel einfacher als der Diebstahl fremder Codes um eine Besuchsdokumentation zu umgehen.
+
 #### Wiederverwendung von QR-Codes
 
 Da QR-Codes nur dezentral erfasst werden können sie zunächst unerkannt mehrfach benutzt werden. Hierbei könnte z.B. ein Betreiber oder ein Dritter der Zugang zu einem bereits verwendeten QR-Code eines Nutzers erhält diesen verwenden, um in anderen Ortschaften Besuche zu dokumentieren.
@@ -136,7 +150,6 @@ Da QR-Codes nur dezentral erfasst werden können sie zunächst unerkannt mehrfac
 Dieser Angriff ist jedoch bei der Kontaktnachverfolung leicht erkennbar, die durch Mehrfachverwendung eines QR-Codes generierten Daten können vermutlich leicht entfernt werden. Mögliche Quellen des Missbrauchs lassen sich zudem anhand vorliegender sowie fehlender Daten mithilfe einer Befragung des betroffenen Nutzers einfach rekonstruieren und fehlende QR-Codes können bei der Überprüfung eines Betreibers anschließend identifziert werden. Eine missbräuchliche Nutzung ist damit (wie bei anderen Verfahren) nicht ausgeschlossen, kann aber im Gegensatz zu diesen effektiv nachverfolgt und gegebenenfalls geahndet werden. Dies schafft für Betreiber und Nutzer effektive Anreize, QR-Codes sicher zu verwahren und nicht zu missbrauchen.
 
 Das Risiko der Wiederverwendung kann zudem über einen Gültigkeitsmechanismus begrenzt werden (bestimmte QR-Codes können z.B. nur an bestimmten Tagen verwendet werden). Dies würde zum Einen jedoch die Verwendung der Codes durch den Nutzer etwas komplizierter gestalten. Zum Anderen kann eine manipulationssichere Beschränkung der Gültigkeit von QR-Codes nur unter Zuhilfenahme eines validierenden Dritten erfolgen, wie oben beschrieben. Ob dies sinnvoll ist muss abgewogen werden. Eine "einfache" Beschränkung der Gültigkeit von QR-Codes kann durch Hinzufügen eines Zeitstempels erreicht werden, dies ist jedoch für einen technisch versierten Angreifer leicht zu umgehen. Trotzdem kann ein solcher Zeitstempel sinnvoll sein, um "Gelegenheits-Missbrauch" von QR-Codes zu unterbinden. Weiterhin kann die Web-Anwendung des Nutzers bei der Initialisierung eine HMAC-basierte Prüfsumme für diesen Zeitstempel erstellen, diese kann zwar von der Anwendung des Betreibers nicht verarbeitet werden, macht aber die Erkennung der missbräuchlichen Nutzung bei der Analyse durch das GA einfacher (die jedoch ohnehin einfach möglich ist).
-
 
 #### Hinterlegung falscher Daten
 
@@ -170,3 +183,15 @@ Die Besuchsdatenerfassung mithilfe der QR-Daten funktioniert auch ohne die Hinte
 Dieser Ablauf ist datenschutzfreundlicher, aber für ein papiergestütztes Verfahren eventuell nicht praktikabel da er auf die aktive Mitarbeit des Nutzers angewiesen ist. Nutzer welche die Web-Anwendung nicht regelmäßig öffnen erfahren nicht, dass ihre Daten angefordert wurden. Das Verfahren ist jedoch sehr gut geeignet für eine digitale Kontaktnachverfolgung per App. Es zögert in diesem Fall die Speicherung personenbezogener Informationen solange hinaus, bis diese wirklich benötigt werden.
 
 Die mit dem Verfahren verbundene, verzögerte Bereitstellung von Kontaktdaten muss wiederum gegen den Schutz der Privatsphäre einzelner Nutzer abgewogen werden.
+
+### Erweiterungen
+
+Die folgenden Abschnitte beschreiben mögliche Erweiterungen des Protokolls, die über die grundlegende Funktionalität hinausgehen.
+
+#### Überprüfung durch den Nutzer
+
+Bei der Initialisierung kann zusätzlich zu den GA-Daten auch ein Datenpaket für den Nutzer generiert werden, welches u.a. das Geheimnis $ H _ s $ enthalten kann (dieses Datenpaket kann zusätzlich mit einem selbstgewählten Passwort geschützt werden).
+
+Der Nutzer kann dieses Datenpaket, welches auch als QR-Code bereitgestellt werden kann, der Web-Anwendung zur Verfügung stellen. Diese kann mit den Daten die Hashes $ H _ i $ des Nutzers rekonstruieren und mithilfe des Backends prüfen, ob und von wem diese Hashes ausgeschrieben wurden. Der Nutzer erhält somit eine Information darüber, ob seine Besuchsdaten von einem GA angefragt wurden und kann im Falle einer Nichtbenachrichtigung bei diesem Amt mit seinen GA-Daten weitere Daten zu der Nutzung anfragen.
+
+Das Datenpaket kann zudem wie oben beschrieben genutzt werden, um Hashes z.B. im Fall des Verlusts oder Diebstahls für ungültig erklären zu lassen.
