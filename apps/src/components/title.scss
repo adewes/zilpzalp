@@ -1,0 +1,14 @@
+span.kip-overflow-ellipsis {
+    // Setup for the ellipsis to work
+    max-width: 140px;
+    display: inline-block;
+    vertical-align: middle;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+div.kip-nowrap {
+    line-height: 1em;
+}

@@ -1,0 +1,7 @@
+{
+    "commitSHA" : "COMMIT_SHA",
+    "apiUrl" : "http://localhost:8000",
+    "supportEmail": "zelp@zilpzalp.eu",
+    "termsUrl" : "http://localhost:8111/resources/terms.html",
+    "privacyUrl" : "https://localhost:8111/resources/privacy.html"
+}

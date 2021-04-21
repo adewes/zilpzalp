@@ -1,0 +1,80 @@
+/* muli-200 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+  src: url('./muli-v16-latin-200.eot'); /* IE9 Compat Modes */
+  src: local('Muli ExtraLight'), local('Muli-ExtraLight'),
+       url('./muli-v16-latin-200.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./muli-v16-latin-200.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./muli-v16-latin-200.woff') format('woff'), /* Modern Browsers */
+       url('./muli-v16-latin-200.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./muli-v16-latin-200.svg#Muli') format('svg'); /* Legacy iOS */
+}
+
+/* muli-regular - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./muli-v16-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Muli Regular'), local('Muli-Regular'),
+       url('./muli-v16-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./muli-v16-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./muli-v16-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('./muli-v16-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./muli-v16-latin-regular.svg#Muli') format('svg'); /* Legacy iOS */
+}
+
+/* muli-800 - latin */
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+  src: url('./muli-v16-latin-800.eot'); /* IE9 Compat Modes */
+  src: local('Muli ExtraBold'), local('Muli-ExtraBold'),
+       url('./muli-v16-latin-800.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('./muli-v16-latin-800.woff2') format('woff2'), /* Super Modern Browsers */
+       url('./muli-v16-latin-800.woff') format('woff'), /* Modern Browsers */
+       url('./muli-v16-latin-800.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('./muli-v16-latin-800.svg#Muli') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-display: swap;
+  font-weight: 900;
+  font-style: normal;
+  src: url("./Nunito-Black.woff") format("woff");
+}
+@font-face {
+  font-family: "Nunito";
+  font-display: swap;
+  font-weight: 700;
+  font-style: normal;
+  src: url("./Nunito-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "Nunito";
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+  src: url("./Nunito-SemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "Nunito";
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+  src: url("./Nunito-Regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Nunito";
+  font-display: swap;
+  font-weight: 300;
+  font-style: normal;
+  src: url("./Nunito-Light.woff") format("woff");
+}

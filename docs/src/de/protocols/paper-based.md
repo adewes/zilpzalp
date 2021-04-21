@@ -61,7 +61,7 @@ Nun generiert die Anwendung Wertepaare bestehend aus $H _ i$ ($ \ge 1$) einersei
 
 Die Anwendung generiert anschließend aus allen Datenstrukturen QR-Codes, übergibt diese dem Nutzer (z.B. zum Ausdruck) und löscht anschließend alle Daten.
 
-**Hinweis**: Aktuell wird die Sicherheit des Systems durch die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht, da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt wird.
+Hinweis: Aktuell wird die Sicherheit des Systems durch die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht, da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt wird.
 In einer Erweiterung des Proktolls ist jedoch geplant, den Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch ein GA von den Kontaktdaten zu trennen, ihn von Anfang an separat zu speichern oder ihn asymmetrisch zu verschlüsseln und einer weiteren Partei die Kontrolle über die Entschlüsselung zu geben.
 Er wurde daher vorerst in dem Protokoll belassen.
 

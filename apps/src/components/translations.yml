@@ -1,0 +1,34 @@
+_t:
+  path: components/translations.yml
+errorBoundary:
+  contactUs:
+    en: contact us by e-mail
+  somethingWentWrong:
+    en:
+      We're terribly sorry, but something went unexpectedly wrong. You can try to
+      reload this page to see if that helps. If the problem persists, please {contactUs}.
+leave:
+  cancel:
+    en: Go back
+  leave:
+    en: Leave page
+  text:
+    en:
+      There is unsaved data on the page you are about to leave. Are you sure you
+      want to navigate away?
+  title:
+    en: Do you really want to leave this page?
+loader:
+  failed:
+    en: We are sorry but we could not load the required resources.
+  please-wait:
+    en: Please wait, we are loading required resources...
+  updating:
+    en: Updating resources...
+modal:
+  cancel:
+    en: Cancel
+  save:
+    en: Save
+pageDoesNotExist:
+  en: Sorry, we could not find anything at this URL.

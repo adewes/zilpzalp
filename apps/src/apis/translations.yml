@@ -1,0 +1,4 @@
+_t:
+  path: apis/translations.yml
+requestFailed:
+  en: Request failed.

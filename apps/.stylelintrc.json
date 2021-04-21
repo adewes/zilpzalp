@@ -1,0 +1,30 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "property-no-vendor-prefix": null,
+    "indentation": 4,
+    "max-nesting-depth": 8,
+    "selector-no-qualifying-type": null,
+    "selector-max-compound-selectors": 8,
+    "order/order": [
+      [
+        "less-mixins",
+        "custom-properties",
+        "dollar-variables",
+        "at-variables",
+        "at-rules",
+        "declarations",
+        {
+          "type": "at-rule",
+          "name": "media",
+          "hasBlock": true
+        },
+        "rules"
+      ],
+      {
+        "disableFix": true
+      }
+    ],
+    "order/properties-alphabetical-order": null
+  }
+}

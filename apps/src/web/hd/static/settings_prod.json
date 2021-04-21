@@ -1,0 +1,6 @@
+{
+    "commitSHA" : "COMMIT_SHA",
+    "apiUrl" : "https://api.zilpalp.eu",
+    "termsUrl" : "https://zilpzalp.eu/demo/resources/terms",
+    "privacyUrl" : "https://zilpzalp.eu/demo/resources/privacy"
+}

@@ -1,0 +1,62 @@
+@import '~scss/variables';
+
+$kip-sidebar-fixed-z: 29; // less than navbar-fixed-z (default: 30)
+$kip-sidebar-width: 240px;
+
+.kip-sidebar {
+
+    @include kip-gradient('to top');
+
+    padding-top: $kip-navbar-height * 1.2;
+    color: #000;
+    overflow-x: hidden;
+    white-space: nowrap;
+    transition: width 150ms ease-in-out;
+    box-shadow: $kip-shadow-sm;
+    background-size: 100% 750px;
+    background-repeat: repeat-x;
+    background-color: $kip-blue;
+
+    @media (max-width: $kip-desktop) {
+        display: none;
+        position: fixed;
+        z-index: $kip-sidebar-fixed-z;
+        height: 100%;
+        overflow-y: auto;
+        min-width: 200px;
+        top: 0;
+        right: 0;
+        max-width: $kip-sidebar-width;
+
+        &--active {
+            display: block;
+        }
+    }
+
+    @media (min-width: $kip-desktop) {
+        width: $kip-sidebar-width;
+        position: fixed;
+        z-index: $kip-sidebar-fixed-z;
+        top: $kip-navbar-height;
+        margin-top: map-get($kip-space, lg);
+        padding-top: 0;
+        border-top-right-radius: $kip-border-radius;
+        border-bottom-right-radius: $kip-border-radius;
+        overflow-y: auto;
+
+        // Only collapse in the desktop version
+        transition: width 150ms ease-in-out;
+
+        &--collapsed:not(:hover) {
+            width: 60px;
+        }
+    }
+
+    h1 {
+        padding: 0 16px 16px;
+        width: 100%;
+        font-size: 1.8rem;
+        font-weight: bolder;
+    }
+
+}

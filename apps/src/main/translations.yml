@@ -1,0 +1,18 @@
+_t:
+  path: main/translations.yml
+app:
+  redirecting:
+    en: Please wait, redirecting you...
+apps:
+  _ignore_unused: true
+  en: Apps
+nav:
+  no-title:
+    en: Zilp-Zalp
+session:
+  verifying:
+    en: Please wait, verifying your session token...
+whereToGo:
+  en: Where do you want to go?
+logout:
+  en: Log out

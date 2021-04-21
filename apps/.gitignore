@@ -1,0 +1,11 @@
+# Unwanted file types
+__pycache__
+~*
+.DS_Store
+.tmp
+*.orig
+*.log
+# Local folders for development
+/build
+/node_modules
+/.idea
