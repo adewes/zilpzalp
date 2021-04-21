@@ -7,7 +7,7 @@ decrypt_ga_data:
     K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_B, I_D, H_s)$ zu
     erhalten.
   en: >-
-    Decode GA data $D_{\mathrm{ga}} = \mathrm{dec}_{a}(D^e_\mathrm{ga},
+    Decrypt GA data $D_{\mathrm{ga}} = \mathrm{dec}_{a}(D^e_\mathrm{ga},
     K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(K_B, I_D, H_s)$.
 decrypt_user_data:
   _t:
@@ -19,9 +19,9 @@ decrypt_user_data:
     Leite $K_C$ aus $K_A$ und $K_B$ ab, entschlüssele $D_{k} =
     \mathrm{dec}_s(D_{k}^e, K_C)$ um Nutzerdaten zu erhalten.
   en: >-
-    Decode user data $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
+    Decrypt user data $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
     K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(D_{k}^e,K_A)$.
-    Derive $K_C$ from $K_A$ and $K_B$, decode $D_{k} = \mathrm{dec}_s(D_{k}^e,
+    Derive $K_C$ from $K_A$ and $K_B$, decrypt $D_{k} = \mathrm{dec}_s(D_{k}^e,
     K_C)$ to get user data.
 hand_over_ga_data:
   _t:

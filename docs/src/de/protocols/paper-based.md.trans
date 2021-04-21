@@ -336,8 +336,8 @@
     these requirements. Probably the most obvious but not necessarily
     the most privacy-friendly strategy is to manage visit data
     centrally and to determine relevant visits from this central
-    data storage as needed. This approach is followed by *Lucaver,
-    among others * . The problem here is that central data storage
+    data storage as needed. This approach is followed by Luca,
+    among others. The problem here is that central data storage
     creates a multitude of possibilities for monitoring users
     that are difficult to solve technologically or organizationally.
 33ef6fb6ac258672:
