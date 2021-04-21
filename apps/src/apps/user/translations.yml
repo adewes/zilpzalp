@@ -1,0 +1,7 @@
+_t:
+  path: apps/hd/translations.yml
+dashboard:
+  en: Dashboard
+title:
+  _ignore_unused: true
+  en: Health Department App
