@@ -20,7 +20,7 @@ Basically, for robust contact tracing we need to be able to identify possible in
 
 ### Possible strategies
 
-In principle, there are various strategies for implementing these requirements. Probably the most obvious but not necessarily the most privacy-friendly strategy is to manage visit data centrally and to determine relevant visits from this central data storage as needed. This approach is followed by *Lucaver, among others * . The problem here is that central data storage creates a multitude of possibilities for monitoring users that are difficult to solve technologically or organizationally.
+In principle, there are various strategies for implementing these requirements. Probably the most obvious but not necessarily the most privacy-friendly strategy is to manage visit data centrally and to determine relevant visits from this central data storage as needed. This approach is followed by Luca, among others. The problem here is that central data storage creates a multitude of possibilities for monitoring users that are difficult to solve technologically or organizationally.
 
 Therefore, a more privacy-friendly solution is to store contact data in a decentralized manner. To evaluate this, we first divide the contact tracing problem into two sub-problems:
 
@@ -105,9 +105,12 @@ First, the GA must receive the GA data from the user in order to initiate furthe
     {% include "common/protocols/_contact_tracing_1.html" %}
 </div>
 
-##### Request for tenders
+##### Tendering of hashes
 
 The GA then writes out relevant hashes for contact tracing and waits for feedback from operators.
+Important: In order to prevent the submission of manipulated data, operators must always also submit the data available for the hash tendered.
+These data cannot be falsified by an operator without knowledge of the key $K _ B$, GÄ can thus exclude manipulated or incorrect data.
+An operator may still return irrelevant data, but such behaviour can be traced back to the operator in a number of ways and penalised accordingly.
 
 <div>
     {% include "common/protocols/_contact_tracing_2.html" %}

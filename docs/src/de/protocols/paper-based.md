@@ -105,9 +105,12 @@ Zunächst muss das GA vom Nutzer die GA-Daten erhalten, um die weitere Kontaktna
     {% include "common/protocols/_contact_tracing_1.html" %}
 </div>
 
-##### Abrufen von Ausschreibungen
+##### Ausschreibung von Hashes
 
 Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung aus und wartet auf die Rückmeldung von Betreibern.
+Wichtig: Um die Abgabe manipulierter Daten zu verhindern, müssen Betreiber hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden Daten übermitteln.
+Diese Daten können von einem Betreiber ohne Kenntnis des Schlüssels $K _ B$ nicht gefälscht werden, GÄ konnen so manipulierte oder fehlerhafte Daten ausschließen.
+Ein Betreiber kann immer noch unrelevante Daten zurückliefern, jedoch lässt sich ein solches Verhalten auf verschiedenen Wegen auf den Betreiber zurückführen und entsprechend ahnden.
 
 <div>
     {% include "common/protocols/_contact_tracing_2.html" %}

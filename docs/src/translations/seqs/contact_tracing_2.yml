@@ -29,11 +29,13 @@ store_data:
   en: Store data, associated with associated hashes $H_{i}$.
 submit_data:
   _t:
-    de: 34df6a0d3f2021eb
-    en: 34df6a0d3f2021eb
+    de: f869b20bf4d2f4c2
+    en: f869b20bf4d2f4c2
   de: >-
     Frage die Speicherung der relevanten Daten $D_{op}$ an, verknüpft
-    mit dem zugehörigen Hash $H_{i}$
+    mit dem zugehörigen Hash $H_{i}$. Liefere auch Ursprungsdaten
+    zu dem angefragen Hashwert mit.
   en: >-
-    Request the storage of the relevant data $D_{op}$, linked
-    with the corresponding hash $H_{i}$
+    Request storage of the relevant data $D_{op}$ associated with
+    the corresponding hash $H_{i}$. Also provide source data for
+    the requested hash value.

@@ -383,7 +383,7 @@
     by **users** to enable **contact tracing of** GEs.
 3ef7325ad12f4b3e:
   de: '##### Abrufen von Ausschreibungen'
-  en: '##### Request for tenders'
+  en: '##### Request for contact data'
 40406f47574ea199:
   de: >-
     * GÄ müssen ebenfalls in der Lage sein, **Kontaktdaten** der
@@ -443,6 +443,15 @@
     would like to store the data in such a way that GÄ can access
     the data without any further action on the part of the user
     (but in a way that is comprehensible to the user).
+54497eb4bf43ab92:
+  de: >-
+    Ein Betreiber kann immer noch unrelevante Daten zurückliefern,
+    jedoch lässt sich ein solches Verhalten auf verschiedenen
+    Wegen auf den Betreiber zurückführen und entsprechend ahnden.
+  en: >-
+    An operator may still return irrelevant data, but such behaviour
+    can be traced back to the operator in a number of ways and
+    penalised accordingly.
 555491e311834dc8:
   de: >-
     Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
@@ -499,6 +508,18 @@
     the GA does not have the user's key $ H _ s ^ k$, it cannot
     reconstruct the user's visit history without consent. For
     this, the active cooperation of this user is again necessary.
+571810518dc64149:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern. Um die
+    Abgabe manipulierter Daten zu verhindern, müssen Betreiber
+    hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden
+    Daten übermitteln.
+  en: >-
+    Subsequently, the GA writes out relevant hashes for contact
+    tracing and waits for feedback from operators. In order to
+    prevent the submission of manipulated data, operators must
+    always also submit the data available for the advertised hash.
 5c823a1e1abcd11b:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -517,6 +538,15 @@
     $ K _ B$ together in a data structure and encrypts them with
     the public GÄ key. This data remains with the user and is
     only passed on to a GA for contact tracing.
+64789651fd653174:
+  de: >-
+    Wichtig: Um die Abgabe manipulierter Daten zu verhindern,
+    müssen Betreiber hierbei immer auch die zu dem ausgeschriebenen
+    Hash vorliegenden Daten übermitteln.
+  en: >-
+    Important: In order to prevent the submission of manipulated
+    data, operators must always also submit the data available
+    for the hash tendered.
 6e553ace2302fac6:
   de: >-
     * Das Verfahren ist auch für Menschen nutzbar die keine Erfahrung
@@ -728,6 +758,9 @@ a13e86e12343c88a:
     reasons. Paper-based or analogue logs are also offered by
     other systems such as **Luca** (in the form of key fobs),
     but these have a number of privacy issues.
+a358175adb7c7edc:
+  de: '##### Ausschreibung von Hashes'
+  en: '##### Tendering of hashes'
 a3d7631faae4004e:
   de: '    {% include "common/protocols/_contact_tracing_2.html"
     %}'
@@ -1037,6 +1070,15 @@ e5ecc7301c9c9f69:
 e69219041f1ee55f:
   de: '#### Wiederverwendung von QR-Codes'
   en: '#### Reuse of QR codes'
+e8c87b555e3dee00:
+  de: >-
+    Diese Daten können von einem Betreiber ohne Kenntnis des Schlüssels
+    $K _ B$ nicht gefälscht werden, GÄ konnen so manipulierte
+    oder fehlerhafte Daten ausschließen.
+  en: >-
+    These data cannot be falsified by an operator without knowledge
+    of the key $K _ B$, GÄ can thus exclude manipulated or incorrect
+    data.
 e967712baa7617d0:
   de: '#### Sequenzdiagramm'
   en: '#### Sequence diagram'
@@ -1065,6 +1107,28 @@ ec1c68d5b6a1c1de:
   en: >-
     First, the GA must receive the GA data from the user in order
     to initiate further contact follow-up.
+ef9aac18bbe12719:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern. Wichtig:
+    Um die Abgabe manipulierter Daten zu verhindern, müssen Betreiber
+    hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden
+    Daten übermitteln. Diese Daten können von einem Betreiber
+    ohne Kenntnis des Schlüssels $K _ B$ nicht gefälscht werden,
+    GÄ konnen so manipulierte oder fehlerhafte Daten ausschließen.
+    Ein Betreiber kann immer noch unrelevante Daten zurückliefern,
+    jedoch lässt sich ein solches Verhalten auf verschiedenen
+    Wegen auf den Betreiber zurückführen und entsprechend ahnden
+  en: >-
+    The GA then writes out relevant hashes for contact tracing
+    and waits for feedback from operators. Important: In order
+    to prevent the submission of manipulated data, operators must
+    always also submit the data available for the hash that has
+    been advertised. These data cannot be falsified by an operator
+    without knowledge of the key $K _ B$, GÄ can thus exclude
+    manipulated or incorrect data. An operator can still return
+    irrelevant data, but such behaviour can be traced back to
+    the operator in various ways and penalised accordingly.
 efc60d02fda6fbc2:
   de: >-
     * Der Nutzer kann der Web-Anwendung regelmäßig die Daten $
@@ -1118,6 +1182,18 @@ f4f4adc837722796:
     of individual users, as well as a procedure to determine for
     a specific visit of a user all visits of other users that
     occurred in the same locality and in the same time period.
+fa9d8cce855174e7:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern. Wichtig:
+    Um die Abgabe manipulierter Daten zu verhindern, müssen Betreiber
+    hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden
+    Daten übermitteln.
+  en: >-
+    The GA then writes out relevant hashes for contact tracing
+    and waits for feedback from operators. Important: In order
+    to prevent the submission of manipulated data, operators must
+    always submit the data available for the hash advertised.
 fd09e279b9bbe5e0:
   de: >-
     **Hinweis**: Aktuell wird die Sicherheit des Systems durch
