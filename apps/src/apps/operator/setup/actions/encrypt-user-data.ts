@@ -6,7 +6,6 @@ export async function encryptUserData(state, keyStore, settings, key, data){
         const kcBytes = hex2buf(key)
 
         const iv = window.crypto.getRandomValues(new Uint8Array(12));
-        const id = window.crypto.getRandomValues(new Uint8Array(16));
 
         // we generate the base key
         const kc = await crypto.subtle.importKey('raw', kcBytes, 'AES-GCM', false, ['encrypt', 'decrypt']).catch(e => {throw e})
@@ -16,7 +15,7 @@ export async function encryptUserData(state, keyStore, settings, key, data){
             iv: iv,
         }, kc, str2ab(data));
 
-        return {ed: buf2hex(ed), iv: buf2hex(iv), id: buf2hex(id)}
+        return {ed: buf2hex(ed), iv: buf2hex(iv)}
 
     } catch (e) {
         return {error: e.toString()}
