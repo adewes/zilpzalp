@@ -9,7 +9,7 @@ Die Sicherheit des Gesamtsystems hängt wie bei allen Systee entscheidend von de
 Gesundheitsämter, Backend-Betreiber und ggf. Betreiber von Ortschaften besitzen jeweils einzelne asymmetrische Schlüsselpaare zur Ver-/Entschlüsselung und Signierung von Daten. Zusätzlich existieren eine oder mehrere Root-Schlüsselpaare, mit denen andere Schlüssel im System zertifiziert werden und die im Backend sowie den Web-Anwendungen als Vertrauensanker dienen.
 Um das Gesamtsystem möglichst robust gegenüber dem Verlust von Schlüsseln zu machen, sollten folgende Maßnahmen beachtet werden:
 
-* Die Anwendbarkeit und Macht von individuellen Schlüsseln sollte räumlich und zeitlich beschränkt werden.
+* Die Anwendbarkeit und Macht von individuellen Schlüsseln sollte räumlich und zeitlich möglichst stark beschränkt werden.
 * Private Schlüssel sollten nur vor Ort generiert und nicht "bewegt" werden.
 
 ## Notwendige Schlüssel
@@ -17,10 +17,19 @@ Um das Gesamtsystem möglichst robust gegenüber dem Verlust von Schlüsseln zu 
 Zilp-Zalp benötigt im Betrieb folgende Schlüsselpaare:
 
 * Für jede Backend-Instanz einen oder mehrere Root-Signaturschlüsselpaare, die andere Schlüssel im System zertifizieren und als Vertrauensanker dienen.
-* Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare, jeweils für die Ver-/Entschlüsselung von Daten sowie für das Signieren von Daten.
+* Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare (GA-Schlüssel), jeweils für die Ver-/Entschlüsselung von Daten sowie für das Signieren von Daten.
 * Optional für Betreiber ein oder mehrere Schlüsselpaare zum Signieren von Daten.
 
-Root-Schlüssel werden 
+Root-Schlüsselpaare werden vom Betreiber des Backends generiert und regelmäßig ausgetauscht. Öffentliche Root-Schlüssel werden als Konfigurationsdateien mit den Web-Anwendungen ausgeliefert (um unabhängig vom Backend selbst zu sein).
+
+GA-Schlüsselpaare werden lokal generiert, öffentliche Schlüssel werden über einen vertrauenswürdigen Kanal an den Backend-Betreiber geschickt, der diese signiert und im System hinterlegt.
+
+GA-Schlüsselpaare können häufig rotiert werden, jedoch macht in der Praxis eine Rotation die schneller erfolgt als die durchschnittliche Datenverweildauer im System wenig Sinn, da GÄ während dieser Dauer in der Lage sein müssen, mit vorherigen GA-Schlüsseln verschlüsselte Daten zu entschlüssen, und die entsprechenden Schlüssel daher trotzdem gemeinsam am gleichen Ort vorgehalten werden müssen (für Signaturschlüssel gilt dies nicht).
+In der Praxis können daher 2-4 Wochen jeweils sinnvolle Rotationszeiträume für Root- und GA-Schlüssel darstellen. Häufigere z.B. tägliche Schlüsselwechsel wie sie in anderen Systemen vorgeschlagen werden führen oft dazu, dass Schlüsselrotation automatisch abläuft (z.B. über API-Endpunkte im selben System, das Schlüssel publiziert), dies konterkariert zumindest in Teilen die Sicherheit eines solchen Austauschs.
+
+Um das Risiko eines Schlüsselverlusts weiter zu senken können zudem mehrere GA-Schlüssel zur Verschlüsselung von Daten verwendet werden. Dies würde es jedoch wiederum erforderlich machen, dass GÄ über das Backend "Amtshilfe" beim Entschlüsseln von Daten leisten. Aufgrund des großen Datenvolumns würde dies wirderum eine automatische Lösung erfordern, die hierbei wiederum eine Aufteilung der Schlüssel obsolet machen würde.
+
+Generell besteht das Problem, dass in der Web-Anwendung der GÄ sowohl Signatur- als auch Datenschlüsselpaare vorliegen müssen. Aus Sicherheitsgründen wäre jedoch eine Trennung dieser Schlüssel sinnvoll. Dementsprechend sollte die Web-Anwendung eventuell aufgeteilt und über einen "Air-Gap" geschützt werden. Hierbei würde der öffentliche Teil den Signaturschlüssel besitzen, Anfragen an das Backend stellen und Daten empfangen. Der private Teil würde hingegen den Datenschlüssel besitzen, die empfangenen Daten entschlüsseln und bearbeiten. Ob eine solche Trennung sinnvoll ist muss abgewogen werden.
 
 ## Risiko-Analyse
 
