@@ -114,6 +114,13 @@
   en: >-
     * **Health departments (HAs)** using **visit histories** and
     **contact information to** do contact tracing.
+0e92619ecc06e711:
+  de: >-
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden.
+  en: >-
+    QR code series can be pre-generated and pre-printed in large
+    numbers, similar to checkbooks, for example.
 1253c0b2b4cda099:
   de: >-
     Nun generiert die Anwendung Wertepaare bestehend aus $H _
@@ -274,12 +281,6 @@
     actors can verify the trustworthiness of the public keys of
     these pairs via a suitable mechanism (e.g., a root certificate
     that is delivered together with the web application).
-23d1c2054da920ee:
-  de: >-
-    Eine ausführliche Risikoanalyse findet sich in einem [separaten
-    Dokument]({{'analyses.risks'|href}}).
-  en: >-
-    A detailed risk analysis can be found in a [separate document]({{'analyses.risks'|href}}).
 25fef684887bba72:
   de: >-
     Aufgefundene Codes könnten einfach missbraucht werden z.B.
@@ -289,6 +290,15 @@
 2a0f7e673ecf8c4d:
   de: '#### Rekonstruktion von Besuchshistorien'
   en: '#### Reconstruction of visit histories'
+2a42af5f2704d475:
+  de: >-
+    Nutzer könnten diese z.B. von einem vertrauenswürdigen Dritten
+    beziehen und einen im Heft befindlichen QR-Code nutzen, um
+    den gegebenen Block mit ihren Kontaktdaten zu verknüpfen.
+  en: >-
+    For example, users could obtain them from a trusted third
+    party and use a QR code located in the booklet to link the
+    given block to their contact information.
 2b6dfef3c1edfd5f:
   de: >-
     Vertrauenswürdige Dritte könnten beispielsweise staatliche
@@ -492,6 +502,9 @@
   en: >-
     * It is not necessary to carry a smartphone or have internet
     connectivity to document visits.
+49243105c7cebc15:
+  de: '#### Re-Identifizierbarkeit von QR-Code Serien'
+  en: '#### Re-identifiability of QR code series'
 496918fb007cae51:
   de: >-
     Der Nutzer kann dieses Datenpaket, welches auch als QR-Code
@@ -536,6 +549,15 @@
     would like to store the data in such a way that GÄ can access
     the data without any further action on the part of the user
     (but in a way that is comprehensible to the user).
+512f44f992d0df23:
+  de: >-
+    Hierzu muss dem ausstellenden Dritten sowie allen an der Produktion
+    beteiligten Parteien jedoch vertraut werden, da diese die
+    QR-Codes aufzeichnen könnten.
+  en: >-
+    However, in order to do this, the issuing third party and
+    all parties involved in the production must be trusted, as
+    they could record the QR codes.
 54497eb4bf43ab92:
   de: >-
     Ein Betreiber kann immer noch unrelevante Daten zurückliefern,
@@ -545,6 +567,14 @@
     An operator may still return irrelevant data, but such behaviour
     can be traced back to the operator in a number of ways and
     penalised accordingly.
+54771b5c95f8a012:
+  de: >-
+    Dritte könnten somit beim Vorliegen mehrerer QR-Codes mit
+    solchen MICs eine Rückführung der Codes auf einen einzelnen
+    Nutzer vornehmen.
+  en: >-
+    Third parties could therefore trace the codes back to a single
+    user if several QR codes with such MICs were present.
 555491e311834dc8:
   de: >-
     Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
@@ -620,6 +650,13 @@
     tracing and waits for feedback from operators. In order to
     prevent the submission of manipulated data, operators must
     always also submit the data available for the advertised hash.
+57580e22d9462a53:
+  de: >-
+    Diese Codes lassen es zu, einen Ausdruck auf einen spezifischen
+    Drucker zurückzuführen.
+  en: >-
+    These codes allow a printout to be traced back to a specific
+    printer.
 5c823a1e1abcd11b:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -654,6 +691,14 @@
     Important: In order to prevent the submission of manipulated
     data, operators must always also submit the data available
     for the hash tendered.
+6979a4270ae93b67:
+  de: >-
+    Trotzdem wäre diese Variante in der Praxis eine einfache Möglichkeit,
+    QR-Code Serien schnell und unkompliziert zur Verfügung zu
+    stellen.
+  en: >-
+    Nevertheless, in practice this variant would be a simple way
+    to provide QR code series quickly and easily.
 6e553ace2302fac6:
   de: >-
     * Das Verfahren ist auch für Menschen nutzbar die keine Erfahrung
@@ -694,9 +739,38 @@
     %}'
   en: '    {% include "common/protocols/_contact_tracing_3.html"
     %}'
-78035bfa9832d05f:
-  de: '### Risikoanalyse'
-  en: '### Risk analysis'
+7814cc2ae07984bd:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability.
+7e3d9e585ec4a36b:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden. Nutzer könnten diese
+    z.B. von einem vertrauenswürdigen Dritten beziehen und einen
+    im Heft befindlichen QR-Code nutzen, um den gegebenen Block
+    mit ihren Kontaktdaten zu verknüpfen. Hierzu muss dem ausstellenden
+    Dritten sowie allen an der Produktion beteiligten Parteien
+    jedoch vertraut werden, da diese die QR-Codes aufzeichnen
+    könnten. Trotzdem wäre diese Variante in der Praxis eine einfache
+    Möglichkeit, QR-Code Serien schnell und unkompliziert zur
+    Verfügung zu stellen.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability. For example, QR code series can
+    be pre-generated and pre-printed in large numbers similar
+    to checkbooks. Users could obtain these from a trusted third
+    party, for example, and use a QR code located in the booklet
+    to link the given block with their contact details. However,
+    this requires trusting the issuing third party as well as
+    all parties involved in the production, as they could record
+    the QR codes. Nevertheless, in practice this variant would
+    be a simple way to provide QR code series quickly and easily.
 7f3a01c990203aa9:
   de: '### Besuchsdokumentation'
   en: '### Visit documentation'
@@ -971,6 +1045,18 @@ b8c3d77774e0f3a4:
     The application then generates QR codes from all data structures,
     transfers them to the user (e.g. for printing) and then deletes
     all data.
+bb934830b2470d77:
+  de: >-
+    Bestimmte Drucker generieren beispielsweise sogenannte [Machine
+    Identification Codes (MICs)](https://en.wikipedia.org/wiki/Machine_Identification_Code),
+    welche für das bloße Auge unsichtbar auf einem Ausdruck platziert
+    werden und mithilfe technischer Hilfsmittel ausgelesen werden
+    können.
+  en: >-
+    Certain printers, for example, generate so-called [Machine
+    Identification Codes (MICs)](https://en.wikipedia.org/wiki/Machine_Identification_Code),
+    which are placed on a printout invisibly to the naked eye
+    and can be read with the aid of technical aids.
 be78857cd3a53478:
   de: >-
     * **Datenhaltung im Backend**: Im aktuellen Entwurf werden
@@ -1086,6 +1172,26 @@ ce7340a81d6077cf:
   en: >-
     * It is not necessary to carry a smartphone or have internet
     connectivity to document **visits**.
+cf4b812a7bb7d9f1:
+  de: >-
+    Unabhängig vom Vorliegen solcher MICs kann eventuell bereits
+    das Druckbild sowie das verwendete Papier Rückschlüsse auf
+    den zur Erstellung genutzten Drucker bieten.
+  en: >-
+    Irrespective of the presence of such MICs, the print image
+    and the paper used may already provide information about the
+    printer used for production.
+d1815c06caba8b21:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability. QR code series can, for example,
+    be pre-generated and pre-printed in large numbers similar
+    to checkbooks.
 d1a45c8801349c85:
   de: >-
     Das papiergestützte, dezentrale Protokoll von Zilp-Zalp umfasst
@@ -1211,6 +1317,19 @@ e3ca1f6f7be22e7f:
 e4a9f4b7aca08269:
   de: '# Papiergestützte Kontaktnachverfolgung'
   en: '# Paper-based contact tracing'
+e5b1c8d2f937e08c:
+  de: >-
+    Da Nutzer QR-Codes im aktuellen Entwurf selbst ausdrucken
+    und die Codes bei der asynchronen Erfassung bei Betreibern
+    von Ortschaften verbleiben, könnten diese bei konsiprativer
+    Sammlung von QR-Codes eventuell versuchen, verschiedene Codes
+    auf einen einzelnen Nutzer zurückzuführen.
+  en: >-
+    Since users print QR codes on their own in the current design
+    and the codes remain with locality operators in asynchronous
+    collection, if QR codes are collected consipratively, they
+    could possibly try to trace different codes back to a single
+    user.
 e5ecc7301c9c9f69:
   de: >-
     In einer Erweiterung des Proktolls ist jedoch geplant, den
@@ -1316,12 +1435,6 @@ f1745f1dcb6ea9b8:
     analogue protocols are also offered by other systems such
     as **Luca** (in the form of key fobs), but these present a
     number of data protection problems.
-f3c34dd6d6b58146:
-  de: >-
-    Eine ausführliche Risikoanalyse findet sich in einem [separaten
-    Dokument]({{'analyses.risk'|href}}).
-  en: >-
-    A detailed risk analysis can be found in a [separate document]({{'analyses.risk'|href}}).
 f461c59347a9bf0a:
   de: >-
     Unter der Annahme, dass zumindest eine dieser drei Angriffe
@@ -1382,13 +1495,25 @@ fd09e279b9bbe5e0:
 fe0bbc3db64eacee:
   de: '## Protokoll (v0.3)'
   en: '## Protocol (v0.3)'
-ff8b6dde040cb3e9:
+fff4b8ec2100136f:
   de: >-
-    Hinweis: Aktuell wird die Sicherheit des Systems durch die
-    Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
-    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
-    wird.
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden. Nutzer könnten diese
+    z.B. von einem vertrauenswürdigen Dritten beziehen und einen
+    im Heft befindlichen QR-Code nutzen, um den gegebenen Block
+    mit ihren Kontaktdaten zu verknüpfen. Hierzu muss dem ausstellenden
+    Dritten sowie allen an der Produktion beteiligten Parteien
+    jedoch vertraut werden, da diese die QR-Codes aufzeichnen
+    könnten.
   en: >-
-    Note: Currently, the security of the system is *not enhanced
-    by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
-    kept permanently with the user's contact details.
+    Various technical and organizational measures can be taken
+    to reduce this traceability. For example, QR code series can
+    be pre-generated and pre-printed in large numbers, similar
+    to checkbooks. Users could obtain these from a trusted third
+    party, for example, and use a QR code located in the booklet
+    to link the given block with their contact details. However,
+    to do this, the issuing third party and all parties involved
+    in the production must be trusted, as they could record the
+    QR codes.
