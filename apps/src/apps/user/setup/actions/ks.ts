@@ -1,0 +1,30 @@
+import Base from "actions/base";
+import { buf2hex, str2ab } from "./utils";
+
+export async function ks(state, keyStore, settings){
+    try {
+        const kabBytes = new Uint8Array(64)
+        crypto.getRandomValues(kabBytes)
+
+        // we generate the base key
+        const kcBase = await crypto.subtle.importKey('raw', kabBytes, 'HKDF', false, ['deriveKey']).catch(e => {throw e})
+
+        const kc = await crypto.subtle.deriveKey(
+        {
+            name: 'HKDF',
+            hash: 'SHA-256',
+            salt: str2ab('0v7vJAwqAbFAeK7VwfMRV9so5kZlK6QF62q6b4fG'), // this is public information
+            info: str2ab(`1`), // we use a number string here for simplicity
+        }, kcBase, {
+            name: 'AES-GCM',
+            length: 256,
+        }, true, ['encrypt', 'decrypt']).catch(e => {throw e})
+
+        const kcBytes = await crypto.subtle.exportKey('raw', kc).catch(e => {throw e})
+
+        return {ka: buf2hex(kabBytes.slice(0,32)), kb: buf2hex(kabBytes.slice(32,64)), kc: buf2hex(kcBytes)}        
+
+    } catch (e) {
+        return {error: e.toString()}
+    }
+   }

@@ -7,9 +7,13 @@ pages:
   title: Zilp-Zalp Dokumentation
 - children:
   - name: luca
-    slug: luca
+    slug: vergleich-mit-luca
     src: de/analyses/luca.md
-    title: Luca
+    title: Vergleich mit Luca
+  - name: risks
+    slug: risiken
+    src: de/analyses/risks.md
+    title: Risiken
   name: analyses
   slug: analysen
   title: Analysen

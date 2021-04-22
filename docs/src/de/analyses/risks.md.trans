@@ -1,0 +1,1519 @@
+0025434acb0eb6a1:
+  de: >-
+    Die Dokumentation basierend auf diesem Hash kann dann abgelehnt
+    werden.
+  en: Documentation based on this hash can then be rejected.
+03f94667cbaac2b4:
+  de: >-
+    Die Anwendung kann mithilfe von $ H _ s $ dann alle Hashes
+    $H _ i $ des Nutzers regenerieren, dies über ein geeignetes
+    Hashverfahren mit $ Z _ h$ kombinieren und die Liste der gehashten
+    Tokens ans Backend schicken, welche sie anschließend publiziert
+    (gemeinsam mit anderen Hashes um die Anonymität zu gewährleisten).
+  en: >-
+    The application can then use $ H _ s $ to regenerate all hashes
+    $H _ i $ of the user, combine this via a suitable hashing
+    procedure with $ Z _ h$ and send the list of hashed tokens
+    to the backend, which it then publishes (together with other
+    hashes to ensure anonymity).
+0591a19232981137:
+  de: >-
+    Zur Dokumentation des Besuchs einer Ortschaft gegenüber Betreibern
+    übergeben Nutzer diesen einfach jeweils einen zufälligen QR-Code.
+    Hierbei ist es möglich, neben dem QR-Code zusätzliche Meta-Daten
+    wie die genaue Ankunftszeit sowie die Verweildauer einzutragen,
+    um die Genauigkeit der Dokumentation zu erhöhen. Der Betreiber
+    erfasst die über einen gegebenen Zeitraum (z.B. einen Tag)
+    erhaltenen QR-Codes anschließend mithilfe der Web-Anwendung.
+    Sie werden zunächst nur lokal gespeichert. Betreiber können
+    hierbei auch zusätzliche Meta-Daten erfassen um die Genauigkeit
+    zur Kontaktnachverfolgung zu verbessern.
+  en: >-
+    To document the visit of a location to operators, users simply
+    give them a random QR code. In addition to the QR code, it
+    is possible to enter additional meta data such as the exact
+    time of arrival and the length of stay in order to increase
+    the accuracy of the documentation. The operator then records
+    the QR codes received over a given period (e.g. one day) using
+    the web application. Initially, they are only stored locally.
+    Operators can also capture additional meta-data to improve
+    accuracy for contact tracing.
+076cfc4be4cb6e43:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben. Er wurde daher vorerst in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * since $K _ B
+    $ is permanently stored with the user's contact data. However,
+    in an extension of the proctoll, it is planned to separate
+    the key $K _ B$ from the contact data in an additional step
+    of by a GA, store it separately from the beginning, or encrypt
+    it asymmetrically and give another party control over the
+    decryption. It was therefore left in the protocol for the
+    time being.
+08d8751721d223d4:
+  de: >-
+    Der oben beschriebene Validierungs-Ablauf kann das Vorhandensein
+    und die Echtheit bestimmter Nutzerdaten im System garantieren.
+    Er erfordert jedoch die Einbindung einer vertrauenswürdigen
+    Stelle im Initialisierungsprozess.
+  en: >-
+    The validation process described above can guarantee the presence
+    and authenticity of certain user data in the system. However,
+    it requires the involvement of a trusted party in the initialization
+    process.
+0a0f088098bcd32a:
+  de: >-
+    Dieser Ablauf ist datenschutzfreundlicher, aber für ein papiergestütztes
+    Verfahren eventuell nicht praktikabel da er auf die aktive
+    Mitarbeit des Nutzers angewiesen ist. Nutzer welche die Web-Anwendung
+    nicht regelmäßig öffnen erfahren nicht, dass ihre Daten angefordert
+    wurden. Das Verfahren ist jedoch sehr gut geeignet für eine
+    digitale Kontaktnachverfolgung per App. Es zögert in diesem
+    Fall die Speicherung personenbezogener Informationen solange
+    hinaus, bis diese wirklich benötigt werden.
+  en: >-
+    This procedure is more privacy-friendly, but may not be practical
+    for a paper-based procedure as it relies on the active cooperation
+    of the user. Users who do not regularly open the web application
+    will not know that their data has been requested. However,
+    the process is very well suited for digital contact tracing
+    via app. In this case, it delays the storage of personal information
+    until it is really needed.
+0ad33da44856bff8:
+  de: >-
+    Da QR-Codes nur dezentral erfasst werden können sie zunächst
+    unerkannt mehrfach benutzt werden. Hierbei könnte z.B. ein
+    Betreiber oder ein Dritter der Zugang zu einem bereits verwendeten
+    QR-Code eines Nutzers erhält diesen verwenden, um in anderen
+    Ortschaften Besuche zu dokumentieren.
+  en: >-
+    Since QR codes are only recorded decentrally, they can initially
+    be used several times without being detected. For example,
+    an operator or a third party who has access to a QR code already
+    used by a user could use it to document visits in other locations.
+0b27362f1dee54cc:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern.
+  en: >-
+    The GA then writes out relevant hashes for contact tracing
+    and waits for feedback from operators.
+0d21df1057229d77:
+  de: >-
+    * **Gesundheitsämter (GÄ)**, die **Besuchshistorien** und
+    **Kontaktdaten** nutzen um Kontaktnachverfolgung zu betreiben.
+  en: >-
+    * **Health departments (HAs)** using **visit histories** and
+    **contact information to** do contact tracing.
+0e92619ecc06e711:
+  de: >-
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden.
+  en: >-
+    QR code series can be pre-generated and pre-printed in large
+    numbers, similar to checkbooks, for example.
+1253c0b2b4cda099:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Schlüssel verschlüsselt
+    wird. Diese Paare werden für die Kontaktnachverfolgung genutzt
+    und an Betreiber von Öffentlichkeiten weitergegeben.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on
+    the other hand, where $H _ i$ is unencrypted and $(K _ B,
+    I _ D)$ is encrypted individually with the GÄ key for each
+    value pair. These pairs are used for contact tracing and passed
+    on to public operators.
+13b44afc94bfef7f:
+  de: >-
+    Hierbei müsste der Nutzer eine zusätzliche Datenstruktur zur
+    eigenen Verwendung erhalten, welche das Geheimnis $H _ s$
+    enthält (eine solche Datenstruktur kann auch zur Nachprüfung
+    des Datenabrufs eingesetzt werden, was in einer Protokollerweiterung
+    unten beschrieben wird).
+  en: >-
+    In this case, the user would have to obtain an additional
+    data structure for his own use, which contains the secret
+    $H _ s$ (such a data structure can also be used to verify
+    the data retrieval, which is described in a protocol extension
+    below).
+13ffd2da58ba970b:
+  de: >-
+    Zur Rekonstruktion einer Besuchshistorie muss eine Akteur
+    wissen, welche Werte $H _ i$ zu einem gegebenen Nutzer gehören.
+    Da diese Werte mithilfe eines geheimen Schlüssels $ H _ s
+    $ erzeugt werden, muss der Angreifer daher im Besitz dieses
+    Schlüssels sein um die Serie $H _ 1 \ldots H _ n$ zu rekonstruieren.
+    Der Schlüssel $ H _ s $ befindet sich unter Kontrolle des
+    Nutzers und kann nur von GÄ entschlüsselt werden. Ein Angreifer
+    muss daher sowohl den privaten GÄ-Schlüssel besitzen, als
+    auch den QR-Code des Nutzers mit dem Wert $ H _ s$. Zusätzlich
+    muss der Angreifer die Besuchsdaten einzelne von den Betreibern
+    extrahieren, z.B. durch Manipulation der Web-Anwendungen.
+  en: >-
+    To reconstruct a visit history, an actor must know which values
+    $H _ i$ belong to a given user. Since these values are generated
+    using a secret key $ H _ s $, the attacker must therefore
+    be in possession of this key in order to reconstruct the $H
+    _ 1 \ldots H _ n$ series. The key $ H _ s $ is under control
+    of the user and can only be decrypted by GÄ. An attacker must
+    therefore possess both the GÄ private key and the user's QR
+    code with the value $ H _ s$. In addition, the attacker must
+    extract the visit data individually from the operators, e.g.,
+    by manipulating the web applications.
+1689b14096be8536:
+  de: >-
+    * Werden bei der Kontaktnachverfolgung die entsprechenden
+    Besuchsdaten gefunden stellt das Backend fest, dass zu diesen
+    noch keine Kontaktdaten existieren. Es schreibt dann das Token
+    $ Z $ über eine öffentliche Liste zur Vervollständigung aus.
+  en: >-
+    * If the corresponding visit data is found during contact
+    tracing, the backend determines that no contact data exists
+    for them yet. It then writes out the token $ Z $ via a public
+    list for completion.
+1acfe6d365d9266e:
+  de: '### Risiko-Analyse'
+  en: '### Risk analysis'
+1cbfef9dacaa98a6:
+  de: >-
+    Im Rahmen der normalen Initialisierung erfolgt keine Prüfung
+    der vom Nutzer angegebenen Kontaktdaten. Wenn eine Validierung
+    dieser Daten gewünscht ist, muss die Initialisierung mithilfe
+    eines vertrauenswürdigen Dritten erfolgen. Hierzu betreibt
+    dieser Dritte eine spezielle Version der Web-Anwendung, über
+    die Nutzer zunächst genau wie oben ihre Daten initialisieren.
+    Im Gegensatz zur normalen Initialisierung prüft der Dritte
+    hierbei jedoch vor der Verschlüsselung die Daten (z.B. durch
+    Abgleich mit einem Ausweisdokument) und bestätigt deren Korrektheit.
+    Die Web-Anwendung signiert anschließend jedes Wertepaar des
+    Nutzers mit einer Signatur, welche das Vorhandensein korrekter
+    Nutzerdaten zu dem Wertepaar zertifiziert. Diese Signaturen
+    $ S _ i $ werden zusätzlich zu den Wertepaaren auf den QR-Codes
+    des Nutzers aufgebracht. Die Web-Anwendung eines Betreibers
+    kann beim Scannen eines QR-Codes diese Signatur einlesen und
+    bestätigen. Der Betreiber kann hiermit bestätigen, dass zu
+    dem QR-Code validierte Nutzerdaten gehören. Zudem kann der
+    Dritte die Gültigkeit der QR-Codes beschränken. Dies ist sinnvoll
+    um die Wiederverwendung im System zu verhindern.
+  en: >-
+    As part of the normal initialization, no validation of the
+    contact data provided by the user takes place. If validation
+    of this data is desired, the initialization must be performed
+    with the help of a trusted third party. For this purpose,
+    this third party operates a special version of the web application
+    via which users initially initialize their data in exactly
+    the same way as above. In contrast to the normal initialization,
+    however, the third party checks the data before encryption
+    (e.g. by comparing it with an identification document) and
+    confirms its correctness. The web application then signs each
+    value pair of the user with a signature that certifies the
+    presence of correct user data for the value pair. These signatures
+    $ S _ i $ are applied to the user's QR codes in addition to
+    the value pairs. An operator's web application can read and
+    confirm this signature when scanning a QR code. The operator
+    can hereby confirm that validated user data belongs to the
+    QR code. In addition, the third party can restrict the validity
+    of the QR codes. This is useful to prevent reuse in the system.
+1ce0c286c1edc65a:
+  de: >-
+    * Ein **Gesundheitsamt (GA)** (Plural: **GÄ**) muss in der
+    Lage sein, in Zusammenarbeit mit einem infizierten Nutzer
+    (unter möglichst geringem Aufwand) mögliche Risikokontakte
+    dieses **Nutzers** basierend auf dessen **Besuchshistorie**
+    zu identifizieren und zu kontaktieren.
+  en: >-
+    * A **health department (GA)** (plural: **GÄ**) must be able
+    to work with an infected user to identify and contact (with
+    minimal effort) possible at-risk contacts of that **user**
+    based on that **user** 's **visit history**.
+1d203f2aafb57588:
+  de: >-
+    Manipulierte QR-Codes generell nur beim Einsatz des Validierungsmechanismus
+    entdeckt werden können ist eine Generierung manipulierter
+    Codes für einen Angreifer jedoch sehr viel einfacher als der
+    Diebstahl fremder Codes um eine Besuchsdokumentation zu umgehen.
+  en: >-
+    Manipulated QR codes can generally only be detected when using
+    the validation mechanism, however, generating manipulated
+    codes is much easier for an attacker than stealing someone
+    else's code to bypass visit documentation.
+209257c3af68ba98:
+  de: >-
+    Eine datenschutzfreundlichere Lösung ist daher die dezentrale
+    Speicherung von Kontaktdaten. Um diese zu evaluieren teilen
+    wir das Problem der Kontaktverfolgung zunächst in zwei Unterprobleme
+    auf:
+  en: >-
+    Therefore, a more privacy-friendly solution is to store contact
+    data in a decentralized manner. To evaluate this, we first
+    divide the contact tracing problem into two sub-problems:
+217ed4b6079c0f72:
+  de: '#### Anlassbezogene Datenfreigabe'
+  en: '#### Event-related data release'
+23b6c65e6089da1c:
+  de: >-
+    Die Verschlüsselung von Daten für GÄ sowie die Authentifizierung
+    von öffentlichen Anfragen dieser erfolgt durch **Public-Key
+    Verschlüsselung**. Im Folgenden nehmen wir an, dass GÄ jeweils
+    über ein Schlüsselpaar zum Signieren sowie zum Ver- & Entschlüsseln
+    von Daten verfügen, und andere Akteure die Vertrauenswürdigkeit
+    der öffentlichen Schlüssel dieser Paare über einen geeigneten
+    Mechanismus (z.B. ein Root-Zertifikat das gemeinsam mit der
+    Web-Anwendung ausgeliefert wird) verifizieren können.
+  en: >-
+    The encryption of data for GÄs as well as the authentication
+    of their public requests is done by **public-key encryption**.
+    In the following, we assume that GÄs each have a pair of keys
+    for signing and -  encrypting/decrypting data, and that other
+    actors can verify the trustworthiness of the public keys of
+    these pairs via a suitable mechanism (e.g., a root certificate
+    that is delivered together with the web application).
+25fef684887bba72:
+  de: >-
+    Aufgefundene Codes könnten einfach missbraucht werden z.B.
+    um die Besuchsdokumentation zu umgehen.
+  en: >-
+    Found codes could easily be misused e.g. to bypass visit documentation.
+2a0f7e673ecf8c4d:
+  de: '#### Rekonstruktion von Besuchshistorien'
+  en: '#### Reconstruction of visit histories'
+2a42af5f2704d475:
+  de: >-
+    Nutzer könnten diese z.B. von einem vertrauenswürdigen Dritten
+    beziehen und einen im Heft befindlichen QR-Code nutzen, um
+    den gegebenen Block mit ihren Kontaktdaten zu verknüpfen.
+  en: >-
+    For example, users could obtain them from a trusted third
+    party and use a QR code located in the booklet to link the
+    given block to their contact information.
+2b6dfef3c1edfd5f:
+  de: >-
+    Vertrauenswürdige Dritte könnten beispielsweise staatliche
+    Institutionen aber auch ggf. privatwirtschaftliche Akteure
+    (z.B. Postfilialen) sein, die bereits Erfahrung mit der Validierung
+    von Daten haben. Die Umsetzung eines solchen Systems erfordert
+    jedoch voraussichtlich einen sehr hohen Aufwand und schafft
+    ein zusätzliches Risiko, da ein weiterer Dritter bei der Initialisierung
+    Zugang zu den Daten eines Nutzers hat. Der Nutzen sollte daher
+    dem Aufwand gegenüber abgewogen werden.
+  en: >-
+    Trusted third parties could be, for example, state institutions
+    but also, if necessary, private sector actors (e.g. post offices)
+    that already have experience with the validation of data.
+    However, implementing such a system is likely to require a
+    great deal of effort and create an additional risk, as another
+    third party will have access to a user's data during initialisation.
+    The benefits should therefore be weighed against the effort
+    involved.
+2d6f9fce5d99b6f6:
+  de: >-
+    Hier zeigt sich, dass wir das Problem der Dokumentation von
+    **Besuchen** unabhängig vom Problem der Speicherung von **Kontaktdaten**
+    betrachten können.
+  en: >-
+    Here we see that we * can consider the problem of documenting
+    *visits independently of * the problem of storing **contact
+    information**.
+2d915f02c052a097:
+  de: >-
+    * Zunächst schaffen wir eine Möglichkeit, Kontaktdaten so
+    zu hinterlegen, dass sie nur **anlassbezogen** von GÄ zur
+    Kontaktnachverfolgung verarbeitet werden können und auch verschlüsselt
+    keinen anderen Akteuren im System zugänglich sind.
+  en: >-
+    * First, we create a possibility to store contact data in
+    such a way that they can only be processed by GÄ for contact
+    tracing on an ad **hoc** basis and are not accessible to any
+    other actors in the system, even in encrypted form.
+2eab7be561de2b9e:
+  de: >-
+    Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
+    $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige
+    Reihe weiterer Werte $H _ 1, H _ 2, \ldots H _ n$ erzeugt
+    wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und
+    $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt
+    diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben
+    beim Nutzer und werden nur zur Kontaktnachverfolgung an ein
+    GA weitergegeben.
+  en: >-
+    Furthermore, the user's application generates a random value
+    $H _ s$, from which a pseudo-random series of further values
+    $H _ 1, H _ 2, \ldots H _ n$ is generated using a suitable
+    procedure. The web application now stores $H _ s$, $I _ D$
+    and $ K _ B$ together in a data structure and encrypts them
+    with the public GÄ key. This data remains with the user and
+    is only passed on to a GA for contact tracing.
+3279b5130c2dfbbd:
+  de: >-
+    Eine Validierung über Dritt-APIs wie sie in anderen, zentralen
+    Systemen vorgenommen wird kann theoretisch ebenfalls erfolgen,
+    z.B. kann die Web-Anwendung die Erstellung von QR-Codes nur
+    erlauben, nachdem bestimmte Daten wie eine Telefonnummer oder
+    eine E-Mail Adresse über einen externen Dienst bestätigt wurden.
+    Da die Web-Anwendung (oder generell jede Client-Anwendung)
+    unter Kontrolle des Nutzers ist kann dieser diese leicht manipulieren,
+    um die Validierung zu umgehen. Dass dies praktikabel ist wurde
+    bereits demonstriert. Eine clientseitige Validierung von Daten
+    hält daher nur technisch nicht versierte, kooperationswillige
+    Nutzer von der Angabe falscher Daten ab (dies heißt jedoch
+    nicht, dass eine solche zusätzliche Validierung vollständig
+    nutzlos ist, sie sollte jedoch keineswegs als sicher oder
+    verlässlich eingestuft werden).
+  en: >-
+    Validation via third party APIs as done in other centralized
+    systems can theoretically be done as well, e.g. the web application
+    can only allow the creation of QR codes after certain data
+    like a phone number or an email address has been validated
+    via an external service. Since the web application (or generally
+    any client application) is under the control of the user they
+    can easily manipulate it to bypass validation. That this is
+    feasible has already been demonstrated. Client-side validation
+    of data therefore only discourages non-technical, cooperative
+    users from providing false data (this is not to say that such
+    additional validation is completely useless, but it should
+    by no means be considered secure or reliable).
+32b9259d94dc2f21:
+  de: >-
+    Prinzipiell gibt es verschiedene Strategien, um diese Anforderungen
+    umzusetzen. Die wohl naheliegendste aber nicht unbedingt privatsphäre-freundlichste
+    Strategie ist, Besuchsdaten zentral zu verwalten und bei Bedarf
+    aus dieser zentralen Datenhaltung relevante Besuche zu ermitteln.
+    Dieser Ansatz wird u.a. von **Luca** verfolgt. Problematisch
+    hierbei ist, dass durch die zentrale Datenhaltung eine Vielzahl
+    von Möglichkeiten zur Überwachung von Nutzern entstehen, die
+    sich nur schwer technologisch oder organisatorisch lösen lassen.
+  en: >-
+    In principle, there are various strategies for implementing
+    these requirements. Probably the most obvious but not necessarily
+    the most privacy-friendly strategy is to manage visit data
+    centrally and to determine relevant visits from this central
+    data storage as needed. This approach is followed by Luca,
+    among others. The problem here is that central data storage
+    creates a multitude of possibilities for monitoring users
+    that are difficult to solve technologically or organizationally.
+33ef6fb6ac258672:
+  de: '    {% include "common/protocols/_check_in.html" %}'
+  en: '    {% include "common/protocols/_check_in.html" %}'
+38babb0364e5a3db:
+  de: >-
+    Das Datenpaket kann zudem wie oben beschrieben genutzt werden,
+    um Hashes z.B. im Fall des Verlusts oder Diebstahls für ungültig
+    erklären zu lassen.
+  en: >-
+    The data package can also be used as described above to have
+    hashes declared invalid, e.g. in the event of loss or theft.
+39d8b40cce2b9059:
+  de: >-
+    * Statt bei der Erstellung von QR-Codes direkt dem Backend
+    verschlüsselte Kontaktdaten bereitzustellen, kann die Web-Anwendung
+    des Nutzers zunächst nur einen $ I _ D$ Wert sowie ein Token
+    $ Z $ vom Backend anfordern und gleichzeitig den öffentlichen
+    Teil eines von der Anwendung generierten asymmetrischen Schlüsselpaars
+    für dieses dort hinterlegen. Das Backend speichert diesen
+    gemeinsam mit $ Z $ und $I _ D$ ab. Der zugehörige private
+    Schlüssel, $ I _ D$ und $ Z $ können von der Anwendung dem
+    Nutzer zur Aufbewahrung zur Verfügung gestellt werden.
+  en: >-
+    * Instead of providing encrypted contact data directly to
+    the backend when creating QR codes, the user's web application
+    can initially only request a $ I _ D$ value and a token $
+    Z $ from the backend and simultaneously store the public part
+    of an asymmetric key pair generated by the application for
+    it there. The backend stores this together with $ Z $ and
+    $I _ D$. The associated private key, $ I _ D$ and $ Z $ can
+    be made available by the application to the user for storage.
+3b5982c6caf151a4:
+  de: >-
+    Die Besuchsdatenerfassung mithilfe der QR-Daten funktioniert
+    auch ohne die Hinterlegung von Kontaktdaten in einem zentralen
+    Backend. Dementsprechend kann die Erfassung und Speicherung
+    dieser Daten folgendermaßen hinausgezögert werden:
+  en: >-
+    Visit data collection using QR data also works without storing
+    contact data in a central backend. Accordingly, the collection
+    and storage of this data can be delayed as follows:
+3cd4e06fd3edb98a:
+  de: >-
+    * **Betreiber** von **Ortschaften**, die **Besuche** von **Nutzern**
+    dokumentieren um eine **Kontaktnachverfolgung** von GÄ zu
+    ermöglichen.
+  en: >-
+    * **Operators of** **localities** that document **visits**
+    by **users** to enable **contact tracing of** GEs.
+3ef7325ad12f4b3e:
+  de: '##### Abrufen von Ausschreibungen'
+  en: '##### Request for contact data'
+40406f47574ea199:
+  de: >-
+    * GÄ müssen ebenfalls in der Lage sein, **Kontaktdaten** der
+    Personen zu ermitteln, die zu den extrahierten **Besuchen**
+    gehören.
+  en: >-
+    * GPs must also be able to identify **contact details of**
+    individuals belonging to the extracted **visits**.
+4062f5f038999471:
+  de: >-
+    * **Nutzer**, welche Ihre **Kontaktdaten** sowie ihre **Besuchshistorie**
+    anlassbezogen GÄ zur **Kontaktnachverfolgung** zur Verfügung
+    stellen.
+  en: >-
+    * **Users** who provide their **contact information** and
+    **visit history to** GÄ for **contact tracing** purposes.
+422df66dae0ea0f1:
+  de: >-
+    Die folgenden Abschnitte beschreiben von uns bisher identifizierte
+    Risiken.
+  en: >-
+    The following sections describe risks we have identified to
+    date.
+42e0fafd1c6698e2:
+  de: '### Kontaktnachverfolgung'
+  en: '### Contact Tracking'
+439556fefd77219e:
+  de: '### Varianten'
+  en: '### Variants'
+45aa149847c232b2:
+  de: >-
+    Die mit dem Verfahren verbundene, verzögerte Bereitstellung
+    von Kontaktdaten muss wiederum gegen den Schutz der Privatsphäre
+    einzelner Nutzer abgewogen werden.
+  en: >-
+    The delayed provision of contact details associated with the
+    procedure must again be balanced against the protection of
+    the privacy of individual users.
+46d2a98a40f43295:
+  de: >-
+    * Für die Dokumentation von Besuchen ist es nicht notwendig,
+    ein Smartphone mit sich zu führen oder über Internet-Konnektivität
+    zu verfügen.
+  en: >-
+    * It is not necessary to carry a smartphone or have internet
+    connectivity to document visits.
+49243105c7cebc15:
+  de: '#### Re-Identifizierbarkeit von QR-Code Serien'
+  en: '#### Re-identifiability of QR code series'
+496918fb007cae51:
+  de: >-
+    Der Nutzer kann dieses Datenpaket, welches auch als QR-Code
+    bereitgestellt werden kann, der Web-Anwendung zur Verfügung
+    stellen. Diese kann mit den Daten die Hashes $ H _ i $ des
+    Nutzers rekonstruieren und mithilfe des Backends prüfen, ob
+    und von wem diese Hashes ausgeschrieben wurden. Der Nutzer
+    erhält somit eine Information darüber, ob seine Besuchsdaten
+    von einem GA angefragt wurden und kann im Falle einer Nichtbenachrichtigung
+    bei diesem Amt mit seinen GA-Daten weitere Daten zu der Nutzung
+    anfragen.
+  en: >-
+    The user can make this data package, which can also be provided
+    as a QR code, available to the web application. The web application
+    can use the data to reconstruct the user's hashes $ H _ i
+    $ and, with the help of the backend, check whether and by
+    whom these hashes were written out. The user thus receives
+    information as to whether his visit data has been requested
+    by a GA and, in the event of non-notification, can request
+    further data on the use from this office using his GA data.
+4aa76a6251146f01:
+  de: >-
+    Web-Anwendungen von Betreibern können diese Listen beziehen
+    (z.B. auch als Bloom-Filter) und bei der Dokumentation eines
+    Besuchs unter Zuhilfename des Tokens $ Z _ h $ prüfen, ob
+    ein gegebener Hash ungültig gemacht wurde.
+  en: >-
+    Web applications of operators can obtain these lists (e.g.,
+    also as Bloom filters) and check whether a given hash has
+    been invalidated when documenting a visit with the help of
+    the token $ Z _ h $.
+4c7d582c45d9c737:
+  de: >-
+    Nutzer im System möchten GÄ anlassbezogen ihre Kontaktdaten
+    zur Verfügung stellen. Hierbei legen wir die Annahme zugrunde,
+    dass Nutzer die Daten so hinterlegen möchten, dass GÄ bei
+    gegebenem Anlass ohne weiteres Zutun der Nutzer (allerdings
+    für diese nachvollziebar) auf die Daten zugreifen können.
+  en: >-
+    Users in the system would like to make their contact data
+    available to GÄ on an ad hoc basis. We assume here that users
+    would like to store the data in such a way that GÄ can access
+    the data without any further action on the part of the user
+    (but in a way that is comprehensible to the user).
+512f44f992d0df23:
+  de: >-
+    Hierzu muss dem ausstellenden Dritten sowie allen an der Produktion
+    beteiligten Parteien jedoch vertraut werden, da diese die
+    QR-Codes aufzeichnen könnten.
+  en: >-
+    However, in order to do this, the issuing third party and
+    all parties involved in the production must be trusted, as
+    they could record the QR codes.
+54497eb4bf43ab92:
+  de: >-
+    Ein Betreiber kann immer noch unrelevante Daten zurückliefern,
+    jedoch lässt sich ein solches Verhalten auf verschiedenen
+    Wegen auf den Betreiber zurückführen und entsprechend ahnden.
+  en: >-
+    An operator may still return irrelevant data, but such behaviour
+    can be traced back to the operator in a number of ways and
+    penalised accordingly.
+54771b5c95f8a012:
+  de: >-
+    Dritte könnten somit beim Vorliegen mehrerer QR-Codes mit
+    solchen MICs eine Rückführung der Codes auf einen einzelnen
+    Nutzer vornehmen.
+  en: >-
+    Third parties could therefore trace the codes back to a single
+    user if several QR codes with such MICs were present.
+555491e311834dc8:
+  de: >-
+    Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
+    übergibt dieser zunächst dem GA den für diesen bestimmten
+    QR-Code (entweder digital oder analog). Dieses kann ihn mit
+    dem privaten GÄ-Schlüssel entschlüsseln, wodurch es die Werte
+    $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^ l$ erhält ($l$ bezeichnet
+    hier die Daten des $l$-ten Nutzers). Mit dem Wert $I _ D$
+    kann das GA vom Backend die verschlüsselten Nutzerdaten erhalten,
+    welche unter Zuhilfenahme des privaten Schlüssels sowie von
+    $K _ B$ entschlüsselt werden können. Weiterhin kann das GA
+    mithilfe von $H _ s$ alle Hashwerte $H _ i$ des Nutzers erstellen.
+    Diese Werte veröffentlicht es über das Backend (gemeinsam
+    mit anderen Hashwerten um die Anonymität des Nutzers zu schützen).
+    Die Web-Anwendungen der Betreiber laden regelmäßig die Liste
+    dieser Werte herunter und gleichen sie mit den lokal gespeicherten
+    Hashwerten ab. Ergibt sich eine Übereinstimmung, werden nach
+    Bestätigung durch den Betreiber alle Besuchsdaten die mit
+    diesen Hashwerten $H _ i$ in Zusammenhang stehen (z.B. ermittelt
+    durch Vergleich der Besuchszeiten) über die öffentliche API
+    an das Backend übertragen (ggf. können die Daten nochmals
+    mit dem GÄ-Schlüssel verschlüsselt werden). Von dort können
+    sie durch das GA abegrufen werden. Dieses entschlüsselt dann
+    wiederum mit dem privaten GÄ-Schlüssel die Werte $ I _ D ^
+    k$, und $K _ B ^ k$, womit wiederum die Kontaktdaten des Nutzers
+    vom Backend abgefragt und entschlüsselt werden können. Da
+    das GA von diesem Nutzer jedoch nicht den Schlüssel $ H _
+    s ^ k$ besitzt, kann es dessen Besuchshistorie nicht ohne
+    Einwilligung rekonstruieren. Hierzu ist vielmehr wiederum
+    die aktive Mitarbeit dieses Nutzers notwendig.
+  en: >-
+    In order to determine possible risk contacts of an infected
+    user, the user first hands over the QR code (either digital
+    or analogue) to the GA. The GA can decrypt it with the private
+    GÄ key, whereby it receives the values $H _ s ^ l$, $I _ D
+    ^ l$ and $K _ B ^ l$ ($l$ denotes the data of the $l$-th user).
+    With the value $I _ D$ the GA can get the encrypted user data
+    from the backend, which can be decrypted with the help of
+    the private key as well as $K _ B$. Furthermore, the GA can
+    create all hash values $H _ i$ of the user with the help of
+    $H _ s$. It publishes these values via the backend. It publishes
+    these values via the backend (together with other hash values
+    to protect the anonymity of the user). The operators' web
+    applications regularly download the list of these values and
+    match them with the locally stored hash values. If there is
+    a match, after confirmation by the operator, all visit data
+    related to these hash values $H _ i$ (e.g. determined by comparing
+    the visit times) are transferred to the backend via the public
+    API (if necessary, the data can be encrypted again with the
+    GA key). From there they can be retrieved by the GA. The GA
+    then uses the private GÄ key to decrypt the values $ I _ D
+    ^ k$, and $K _ B ^ k$, which in turn allows the backend to
+    retrieve and decrypt the user's contact data. However, since
+    the GA does not have the user's key $ H _ s ^ k$, it cannot
+    reconstruct the user's visit history without consent. For
+    this, the active cooperation of this user is again necessary.
+56f37cb129cfd944:
+  de: >-
+    Das Backend veröffentlicht zusätzlich ein Token $Z _ h$ welches
+    von der Web-Anwendung des Nutzers abgefragt werden kann.
+  en: >-
+    The backend also publishes a token $Z _ h$ which can be queried
+    by the user's web application.
+571810518dc64149:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern. Um die
+    Abgabe manipulierter Daten zu verhindern, müssen Betreiber
+    hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden
+    Daten übermitteln.
+  en: >-
+    Subsequently, the GA writes out relevant hashes for contact
+    tracing and waits for feedback from operators. In order to
+    prevent the submission of manipulated data, operators must
+    always also submit the data available for the advertised hash.
+57580e22d9462a53:
+  de: >-
+    Diese Codes lassen es zu, einen Ausdruck auf einen spezifischen
+    Drucker zurückzuführen.
+  en: >-
+    These codes allow a printout to be traced back to a specific
+    printer.
+5c823a1e1abcd11b:
+  de: >-
+    Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
+    $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige
+    Reihe weiterer Zufallswerte $H _ 1, H _ 2, \ldots H _ n$ erzeugt
+    wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und
+    $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt
+    diese mit dem öffentlichen GÄ-Schlüssel. Diese Daten verbleiben
+    beim Nutzer und werden nur zur Kontaktnachverfolgung an ein
+    GA weitergegeben.
+  en: >-
+    Furthermore, the user's application generates a random value
+    $H _ s$, from which a pseudo-random series of further random
+    values $H _ 1, H _ 2, \ldots H _ n$ is generated using a suitable
+    method. The web application now stores $H _ s$, $I _ D$ and
+    $ K _ B$ together in a data structure and encrypts them with
+    the public GÄ key. This data remains with the user and is
+    only passed on to a GA for contact tracing.
+5cdf77c9e5675c4a:
+  de: >-
+    Um die Besuchsdokumentation mit einem ungültigen QR-Code zu
+    verhindern erfordert dies jedoch eine dirkte Prüfung der Codes.
+  en: >-
+    However, to prevent visit documentation with an invalid QR
+    code, this requires a direct check of the codes.
+64789651fd653174:
+  de: >-
+    Wichtig: Um die Abgabe manipulierter Daten zu verhindern,
+    müssen Betreiber hierbei immer auch die zu dem ausgeschriebenen
+    Hash vorliegenden Daten übermitteln.
+  en: >-
+    Important: In order to prevent the submission of manipulated
+    data, operators must always also submit the data available
+    for the hash tendered.
+6979a4270ae93b67:
+  de: >-
+    Trotzdem wäre diese Variante in der Praxis eine einfache Möglichkeit,
+    QR-Code Serien schnell und unkompliziert zur Verfügung zu
+    stellen.
+  en: >-
+    Nevertheless, in practice this variant would be a simple way
+    to provide QR code series quickly and easily.
+6e553ace2302fac6:
+  de: >-
+    * Das Verfahren ist auch für Menschen nutzbar die keine Erfahrung
+    im Umgang mit Smartphone Apps haben oder diese aus anderen
+    Gründen nicht nutzen können.
+  en: >-
+    * The procedure can also be used by people who have no experience
+    in using smartphone apps or cannot use them for other reasons.
+6f38efed88d1163c:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
+    kept permanently with the user's contact details.
+6ffe53f5d8b30c10:
+  de: >-
+    Die Kontaktdaten sollen hierbei nur von vertauenswürdigen
+    Akteuren verarbeitet werden können und generell möglichst
+    wenigen Akteuren im System vorliegen (egal ob in verschlüsselter
+    oder unverschlüsselter Form).
+  en: >-
+    The contact data should only be processed by trustworthy actors
+    and generally be available to as few actors as possible in
+    the system (whether in encrypted or unencrypted form).
+706a6e743732807f:
+  de: >-
+    Das folgende Sequenzdiagramm fasst den Initialisierungsprozess
+    zusammen.
+  en: >-
+    The following sequence diagram summarizes the initialization
+    process.
+769418dd570a9bf1:
+  de: '    {% include "common/protocols/_contact_tracing_3.html"
+    %}'
+  en: '    {% include "common/protocols/_contact_tracing_3.html"
+    %}'
+7814cc2ae07984bd:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability.
+7e3d9e585ec4a36b:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden. Nutzer könnten diese
+    z.B. von einem vertrauenswürdigen Dritten beziehen und einen
+    im Heft befindlichen QR-Code nutzen, um den gegebenen Block
+    mit ihren Kontaktdaten zu verknüpfen. Hierzu muss dem ausstellenden
+    Dritten sowie allen an der Produktion beteiligten Parteien
+    jedoch vertraut werden, da diese die QR-Codes aufzeichnen
+    könnten. Trotzdem wäre diese Variante in der Praxis eine einfache
+    Möglichkeit, QR-Code Serien schnell und unkompliziert zur
+    Verfügung zu stellen.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability. For example, QR code series can
+    be pre-generated and pre-printed in large numbers similar
+    to checkbooks. Users could obtain these from a trusted third
+    party, for example, and use a QR code located in the booklet
+    to link the given block with their contact details. However,
+    this requires trusting the issuing third party as well as
+    all parties involved in the production, as they could record
+    the QR codes. Nevertheless, in practice this variant would
+    be a simple way to provide QR code series quickly and easily.
+7f3a01c990203aa9:
+  de: '### Besuchsdokumentation'
+  en: '### Visit documentation'
+814f1a2bbea492bc:
+  de: >-
+    Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll,
+    das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen
+    nutzt, im Wesentlichen für den Nutzer bei **Besuchen** komplett
+    ohne technologische Hilfsmittel funktioniert. Ein solches
+    Protokoll hat in der Praxis viele Vorteile:
+  en: >-
+    Zilp-Zalp, on the other hand, relies primarily on a paper-based
+    protocol that uses technological tools such as web applications
+    only in a supportive manner, essentially functioning for the
+    **user** without technological tools during **visits**.  Such
+    a protocol has many advantages in practice:
+841ce317a2f1c3e9:
+  de: >-
+    Dieser Angriff ist jedoch bei der Kontaktnachverfolung leicht
+    erkennbar, die durch Mehrfachverwendung eines QR-Codes generierten
+    Daten können vermutlich leicht entfernt werden. Mögliche Quellen
+    des Missbrauchs lassen sich zudem anhand vorliegender sowie
+    fehlender Daten mithilfe einer Befragung des betroffenen Nutzers
+    einfach rekonstruieren und fehlende QR-Codes können bei der
+    Überprüfung eines Betreibers anschließend identifziert werden.
+    Eine missbräuchliche Nutzung ist damit (wie bei anderen Verfahren)
+    nicht ausgeschlossen, kann aber im Gegensatz zu diesen effektiv
+    nachverfolgt und gegebenenfalls geahndet werden. Dies schafft
+    für Betreiber und Nutzer effektive Anreize, QR-Codes sicher
+    zu verwahren und nicht zu missbrauchen.
+  en: >-
+    However, this attack is easy to detect during contact tracing,
+    and the data generated by multiple use of a QR code can presumably
+    be easily removed. Possible sources of misuse can also be
+    easily reconstructed on the basis of existing and missing
+    data by questioning the affected user, and missing QR codes
+    can subsequently be identified when checking an operator.
+    Misuse is therefore not excluded (as with other methods),
+    but in contrast to these can be effectively tracked and punished
+    if necessary. This creates effective incentives for operators
+    and users to keep QR codes safe and not to misuse them.
+84c9462e572ea3f2:
+  de: '#### Hinterlegung falscher Daten'
+  en: '#### Deposit of false data'
+8593af1b767e7041:
+  de: >-
+    Grundlegend müssen wir für eine robuste Kontaktermittlung
+    in der Lage sein, mögliche Schnittmengen zwischen Besuchen
+    einzelner Nutzer zu ermitteln. Dies erfordert generell eine
+    Dokumentation der Besuche einzelner Nutzer, sowie ein Verfahren
+    um für einen spezifischen Besuch eines Nutzers alle Besuche
+    anderer Nutzer zu ermitteln die in der gleichen Ortschaft
+    und im gleichen Zeitraum erfolgten.
+  en: >-
+    Basically, for robust contact tracing we need to be able to
+    identify possible intersections between visits of individual
+    users. This generally requires a documentation of the visits
+    of individual users, as well as a procedure to determine for
+    a specific visit of a user all visits of other users that
+    occurred in the same locality and in the same time period.
+893387dd9e3e5462:
+  de: >-
+    Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll,
+    das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen
+    nutzt, im Wesentlichen für den Nutzer bei Besuchen komplett
+    ohne technologische Hilfsmittel funktioniert. Ein solches
+    Protokoll hat in der Praxis viele Vorteile:
+  en: >-
+    Zilp-Zalp, on the other hand, relies primarily on a paper-based
+    protocol that uses technological tools such as web applications
+    only in a supportive manner, essentially functioning completely
+    without technological tools for the user during visits. Such
+    a protocol has many advantages in practice:
+8a4e1ff28ee08652:
+  de: >-
+    Viele Systeme zur Kontaktnachverfolgung wie **Luca** oder
+    **Recover** setzen primär auf technische Hilfsmittel wie Smartphone-Apps,
+    um **Besuche** zu dokumentieren.
+  en: >-
+    Many contact tracing systems, such as **Luca** or **Recover**,
+    rely primarily on technical tools such as smartphone apps
+    to document **visits**.
+8b77598e30dd8f22:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * since $K _ B
+    $ is permanently stored with the user's contact data. However,
+    in an extension of the proctoll, it is planned to separate
+    the key $K _ B$ from the contact data in an additional step
+    of by a GA, store it separately from the beginning, or encrypt
+    it asymmetrically and give another party control over decryption.
+    It was therefore left in the protocol.
+8d191395e09130a5:
+  de: '#### Überprüfung durch den Nutzer'
+  en: '#### Review by the user'
+943e7ade3915d48a:
+  de: '### Verbesserungsmöglichkeiten'
+  en: '### Opportunities for improvement'
+9c8a3cf2584dfdc1:
+  de: >-
+    Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung
+    und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer
+    und E-Mail Adresse (eine Validierung dieser Daten wird unten
+    beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte,
+    symmetrische Schlüssel $K _ A$ und $K _ B$, die über ein geeignetes
+    Schlüsselableitungsverfahren miteinander zu einem Schlüssel
+    $K _ C$ kombiniert werden. Die Anwendung verschlüsselt nun
+    die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K
+    _ C$, fügt zu diesen verschlüsselten Daten den Schlüssel $K
+    _ A$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem
+    öffentlichen Schlüssel der GÄ und übermittelt diese Daten
+    an die API, welche sie in einem Backend ablegt und einen zufälligen
+    Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind
+    für keinen Akteur ohne Kenntnis des Schlüssels $K _ B$ sowie
+    des privaten Schlüssels der GÄ entschlüsselbar. Letzterer
+    befindet sich zunächst unter Kontrolle des Nutzers und kann
+    nur über diesen oder über einen Betreiber an ein GÄ gelangen,
+    das diesen entschlüsseln kann.
+  en: >-
+    To enter contact data, users first open the web application
+    and enter relevant data such as name, address, telephone number
+    and e-mail address (a validation of this data is described
+    below). The application then generates two randomly generated
+    symmetric keys $K _ A$ and $K _ B$, which are combined using
+    a suitable key derivation procedure to form a key $K _ C$.
+    The application now encrypts the user's contact data symmetrically
+    with key $K _ C$, adds key $K _ A$ to this encrypted data,
+    encrypts this data asymmetrically with the public key of the
+    GÄ and transmits this data to the API, which stores it in
+    a backend and returns a random identifier $I_D$. The data
+    stored there cannot be decrypted by any actor without knowing
+    the key $K _ B$ as well as the private key of the GÄ. The
+    latter is initially under the control of the user and can
+    only reach a GÄ that can decrypt it via the user or via an
+    operator.
+9d5fbe8ca63baeb9:
+  de: '#### Optional: Initialisierung mit Daten-Validierung'
+  en: '#### Optional: Initialization with data validation'
+9df0b5dbffe0943b:
+  de: >-
+    Die folgenden Aspekte des Protokolls können aus unserer Sicht
+    noch verbessert werden:
+  en: >-
+    In our view, the following aspects of the protocol can still
+    be improved:
+9e4527fb137f0b37:
+  de: <div>
+  en: <div>
+9f8e3d08fefcf091:
+  de: '#### Verlust oder Diebstahl von QR-Codes'
+  en: '#### Loss or theft of QR codes'
+a13e86e12343c88a:
+  de: >-
+    Viele Systeme zur Kontaktnachverfolgung wie **Luca** oder
+    **Recover** setzen primär auf technische Hilfsmittel wie Smartphone-Apps,
+    um **Besuche** zu dokumentieren. Dies ist aus verschiedenen
+    Gründen problematisch. Papiergestützte bzw. analoge Protokolle
+    werden zwar auch von anderen Systemen wie **Luca** angeboten
+    (in Form von Schlüsselanhängern), jedoch weisen diese eine
+    Reihe von Datenschutz-Problemen auf.
+  en: >-
+    Many contact tracing systems such as **Luca** or **Recover**
+    rely primarily on technical tools such as smartphone apps
+    to document **visits**. This is problematic for a number of
+    reasons. Paper-based or analogue logs are also offered by
+    other systems such as **Luca** (in the form of key fobs),
+    but these have a number of privacy issues.
+a358175adb7c7edc:
+  de: '##### Ausschreibung von Hashes'
+  en: '##### Tendering of hashes'
+a3d7631faae4004e:
+  de: '    {% include "common/protocols/_contact_tracing_2.html"
+    %}'
+  en: '    {% include "common/protocols/_contact_tracing_2.html"
+    %}'
+a537faf8ca3baab9:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K_C$ aus $(K_A, K_B)$ nicht erhöht, da
+    $K_B$ permanent mit den Kontaktdaten des Nutzer aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K_B$ entweder schnell von den Kontaktdaten
+    zu trennen oder ihn asymmetrisch zu verschlüsseln und einer
+    weiteren Partei die Kontrolle über die Entschlüsselung zu
+    geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, deriving $K_C$ from $(K_A, K_B)$ does
+    not increase the security of the system, as $K_B$ is kept
+    permanently with the user's contact details. However, in an
+    extension to the proctoll, it is planned to either quickly
+    separate the $K_B$ key from the contact details or to asymmetrically
+    encrypt it and give another party control over decryption.
+    It was therefore left in the protocol.
+a60b6633f29951c1:
+  de: >-
+    Bei der Initialisierung kann zusätzlich zu den GA-Daten auch
+    ein Datenpaket für den Nutzer generiert werden, welches u.a.
+    das Geheimnis $ H _ s $ enthalten kann (dieses Datenpaket
+    kann zusätzlich mit einem selbstgewählten Passwort geschützt
+    werden).
+  en: >-
+    During initialization, in addition to the GA data, a data
+    package can also be generated for the user, which can contain,
+    among other things, the secret $ H _ s $ (this data package
+    can also be protected with a password of your choice).
+a6c57a14f8c62945:
+  de: >-
+    * Das GA kann die Daten nun regulär über die API vom Backend
+    abrufen.
+  en: >-
+    * The GA can now retrieve the data regularly from the backend
+    via the API.
+a6df326b9aac132e:
+  de: '## Grundideen'
+  en: '## Basic ideas'
+a75cafc8fe74410f:
+  de: >-
+    Ein Risiko der Generierung großer Anzahl von QR-Codes ist
+    der Verlust durch den Nutzer.
+  en: >-
+    One risk of generating large numbers of QR codes is loss by
+    the user.
+aac32651b10f567c:
+  de: </div>
+  en: </div>
+ac5ebbce510e40a7:
+  de: >-
+    Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
+    bzw. analoge Protokolle werden zwar auch von anderen Systemen
+    wie Luca angeboten (in Form von Schlüsselanhängern), jedoch
+    weisen diese eine Reihe von Datenschutz-Problemen auf.
+  en: >-
+    This is problematic for a number of reasons. Paper-based or
+    analogue protocols are also offered by other systems such
+    as Luca (in the form of key fobs), but these present a number
+    of data protection problems.
+ac8f77a40eb24321:
+  de: >-
+    * Eine **API** zum Austausch von Besuchshistorien und Kontaktdaten.
+  en: >-
+    * An **API** for sharing visit histories and contact information.
+b1b40da94ab3fdc4:
+  de: >-
+    Um die in der [Übersicht]({{'protocols.index'|href}}) genannten
+    Anforderungen an die Kontaktnachverfolgung zu erfüllen, muss
+    folgendes gegeben sein:
+  en: >-
+    To meet the contact tracing requirements outlined in the [overview]({{'protocols.index'|href}}),
+    the following must be in place:
+b2bdbd2b60db45a1:
+  de: '### Mögliche Strategien'
+  en: '### Possible strategies'
+b890e7aea6befec3:
+  de: Er wurde daher vorerst in dem Protokoll belassen.
+  en: It was therefore left in the minutes for the time being.
+b8c3d77774e0f3a4:
+  de: >-
+    Die Anwendung generiert anschließend aus allen Datenstrukturen
+    QR-Codes, übergibt diese dem Nutzer (z.B. zum Ausdruck) und
+    löscht anschließend alle Daten.
+  en: >-
+    The application then generates QR codes from all data structures,
+    transfers them to the user (e.g. for printing) and then deletes
+    all data.
+bb934830b2470d77:
+  de: >-
+    Bestimmte Drucker generieren beispielsweise sogenannte [Machine
+    Identification Codes (MICs)](https://en.wikipedia.org/wiki/Machine_Identification_Code),
+    welche für das bloße Auge unsichtbar auf einem Ausdruck platziert
+    werden und mithilfe technischer Hilfsmittel ausgelesen werden
+    können.
+  en: >-
+    Certain printers, for example, generate so-called [Machine
+    Identification Codes (MICs)](https://en.wikipedia.org/wiki/Machine_Identification_Code),
+    which are placed on a printout invisibly to the naked eye
+    and can be read with the aid of technical aids.
+be78857cd3a53478:
+  de: >-
+    * **Datenhaltung im Backend**: Im aktuellen Entwurf werden
+    die Kontaktdaten eines Nutzers verschlüsselt in einem Backend
+    gespeichert, um im Bedarfsfall von einem GA abgerufen werden
+    zu können. Eine Entschlüsselung ist prinzipiell nur möglich,
+    wenn dem GA zusätzlich noch eine Schlüsselhälfte des Nutzers
+    vorliegt, die dieser entweder direkt an das GA übermittelt
+    hat, oder die im Rahmen einer Besuchsdatenabfrage von einem
+    Betreiber übermittelt wurde. Trotzdem stellt jede zentrale
+    Datenhaltung eine Gefahr für die Privatsphäre der Nutzer dar.
+    Eine Variante dieses Protokolls kann daher die Zentralisierung
+    dieser Daten verzögern. Dies hat jedoch seinerseits Nachteile,
+    da in diesem Fall GÄ nur unter aktiver Mithilfe von Nutzern
+    deren Kontaktdaten erhalten können. Wenn Nutzer nur schwer
+    erreichbar sind kann dies eine effektive Kontaktnachverfolgung
+    verzögern und behindern. In diesem Sinne ist die Privatsphäre
+    der Nutzer gegenüber dem Interesse des GAs abzuwägen.
+  en: >-
+    * **Data storage in the backend** : In the current draft,
+    a user's contact data is stored in encrypted form in a backend
+    so that it can be retrieved by a GA if necessary. In principle,
+    decryption is only possible if the GA also has one half of
+    the user's key, which the user has either transmitted directly
+    to the GA or which was transmitted by an operator as part
+    of a visit data query. Nevertheless, any centralized data
+    storage poses a threat to user privacy. A variant of this
+    protocol can therefore delay the centralization of this data.
+    However, this in turn has disadvantages, since in this case,
+    GÄs can only obtain users' contact data with their active
+    assistance. If users are difficult to reach, this can delay
+    and hinder effective contact tracing. In this sense, the privacy
+    of users must be weighed against the interest of the GA.
+bfe299597d077206:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzer aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K _ B$ entweder schnell von den Kontaktdaten
+    zu trennen oder ihn asymmetrisch zu verschlüsseln und einer
+    weiteren Partei die Kontrolle über die Entschlüsselung zu
+    geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
+    kept permanently with the user's contact details. However,
+    in an extension to the proctoll, it is planned to either quickly
+    separate the $K _ B$ key from the contact details, or to asymmetrically
+    encrypt it and give another party control over decryption.
+    It was therefore left in the protocol.
+c2bcdfadda769d49:
+  de: >-
+    * Nutzer müssen keine Smartphone-Anwendungen von eventuell
+    nicht vertrauenswürdigen Quellen installieren.
+  en: >-
+    * Users do not have to install smartphone applications from
+    sources that may not be trusted.
+c31ff99465948554:
+  de: '    {% include "common/protocols/_contact_tracing_1.html"
+    %}'
+  en: '    {% include "common/protocols/_contact_tracing_1.html"
+    %}'
+c357cc4a900fba98:
+  de: Schließlich verarbeitet das GA die Daten der Betreiber.
+  en: Finally, the GA processes the operators' data.
+c53ec340e27bad83:
+  de: '##### Verarbeiten relevanter Kontaktdaten'
+  en: '##### Processing of relevant contact data'
+c5640f169d632b17:
+  de: >-
+    Um den Schutz der Privatsphäre von Nutzern weiter zu verbessern,
+    können verschiedene Varianten des Protokolls erstellt werden,
+    die in den folgenden Abschnitten diskutiert werden.
+  en: >-
+    To further enhance user privacy, different variants of the
+    protocol can be created, which are discussed in the following
+    sections.
+c5cc388f0e86178b:
+  de: >-
+    * Ein Betreiber einer **Ortschaft** muss in der Lage sein,
+    den **Besuch** eines **Nutzers** rechtskonform zu dokumentieren.
+  en: >-
+    * A **site** operator must be able to document a **user**
+    's **visit in** a legally compliant manner.
+c696c318c911ae22:
+  de: >-
+    Um den Austausch dieser Daten zwischen den Akteuren zu ermöglichen
+    implementiert Zilp-Zalp eine Infrastruktur mit verschiedenen
+    Diensten:
+  en: >-
+    To enable the exchange of this data between the actors, Zilp-Zalp
+    implements an infrastructure with different services:
+c936cb15e36331cd:
+  de: '    {% include "common/protocols/_initialization.html"
+    %}'
+  en: '    {% include "common/protocols/_initialization.html"
+    %}'
+cca00703d820d786:
+  de: >-
+    Die folgenden Sequenzdiagramme zeigen den Ablauf der Kontaktnachverfolgung.
+    Aus Übersichtsgründen wurde der Prozess dabei in drei Schritte
+    aufgeteilt.
+  en: >-
+    The following sequence diagrams show the contact follow-up
+    process. For reasons of clarity, the process was divided into
+    three steps.
+ce7340a81d6077cf:
+  de: >-
+    * Für die Dokumentation von **Besuchen** ist es nicht notwendig,
+    ein Smartphone mit sich zu führen oder über Internet-Konnektivität
+    zu verfügen.
+  en: >-
+    * It is not necessary to carry a smartphone or have internet
+    connectivity to document **visits**.
+cf4b812a7bb7d9f1:
+  de: >-
+    Unabhängig vom Vorliegen solcher MICs kann eventuell bereits
+    das Druckbild sowie das verwendete Papier Rückschlüsse auf
+    den zur Erstellung genutzten Drucker bieten.
+  en: >-
+    Irrespective of the presence of such MICs, the print image
+    and the paper used may already provide information about the
+    printer used for production.
+d1815c06caba8b21:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability. QR code series can, for example,
+    be pre-generated and pre-printed in large numbers similar
+    to checkbooks.
+d1a45c8801349c85:
+  de: >-
+    Das papiergestützte, dezentrale Protokoll von Zilp-Zalp umfasst
+    folgende Akteure:
+  en: >-
+    Zilp-Zalp's paper-based, decentralized protocol includes the
+    following actors:
+d4ca326bd1f683ac:
+  de: '##### Übergabe der Nutzerdaten an das GA'
+  en: '##### Transfer of user data to the GA'
+d5002a6a6df31c6f:
+  de: >-
+    * **Web-Anwendungen** für Betreiber, GÄ und Nutzer (für letztere
+    hier nur zur Erstellung von QR-Codes benötigt).
+  en: >-
+    * **Web applications** for operators, GÄ and users (for the
+    latter here only needed to create QR codes).
+d8bd77e7b5ee8b75:
+  de: >-
+    * GÄ müssen in der Lage sein, **Besuchshistorien** einzelner
+    Nutzer zu rekonstruieren und zu diesen Historien relevante
+    **Besuche** anderer Nutzer zu erhalten.
+  en: >-
+    * GÄs must be able to reconstruct **visit histories of** individual
+    users and to obtain relevant **visits of** other users to
+    these histories.
+d9fad49284475a7e:
+  de: >-
+    Auch bei einer späteren Prüfung kann der Mechanismus jedoch
+    verhindern, dass Besuche einem Nutzer zugeordnet werden, dessen
+    QR-Codes gestohlen wurden oder verloren gingen.
+  en: >-
+    However, even if checked later, the mechanism can prevent
+    visits from being attributed to a user whose QR codes have
+    been stolen or lost.
+daa451d487df53d2:
+  de: >-
+    **Zilp-Zalp** setzt hingegen **primär** auf ein papiergestütztes
+    Protokoll, das nur unterstützend technologische Hilfsmittel
+    wie Web-Anwendungen nutzt, im Wesentlichen für den Nutzer
+    bei **Besuchen** komplett ohne technologische Hilfsmittel
+    funktioniert. Ein solches Protokoll hat in der Praxis viele
+    Vorteile:
+  en: >-
+    *Zilp-Zalps * , on the other hand, relies **primarily** on
+    a paper-based protocol that uses technological tools such
+    as web applications only in a supportive manner, essentially
+    functioning completely without technological tools for the
+    user during **visits**. Such a protocol has many advantages
+    in practice:
+dae47a88953d96b8:
+  de: >-
+    * Weiterhin schaffen wir eine Möglichkeit, **Besuche** robust
+    und datensparsam zu dokumentieren.
+  en: >-
+    * Furthermore, we create a way to document **visits** in a
+    robust and data-efficient manner.
+dd684e5c2f9d1b5a:
+  de: >-
+    Die folgenden Abschnitte beschreiben mögliche Erweiterungen
+    des Protokolls, die über die grundlegende Funktionalität hinausgehen.
+  en: >-
+    The following sections describe possible extensions to the
+    protocol that go beyond the basic functionality.
+de475d6d2455f1f1:
+  de: '### Initialisierung'
+  en: '### Initialization'
+e2434d4f98ac1127:
+  de: >-
+    Viele Systeme zur Kontaktnachverfolgung wie Luca oder Recover
+    setzen primär auf technische Hilfsmittel wie Smartphone-Apps,
+    um Besuche zu dokumentieren.
+  en: >-
+    Many contact tracing systems, such as Luca or Recover, rely
+    primarily on tech tools like smartphone apps to document visits.
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e3bc463105f19927:
+  de: >-
+    Um dies zu verhindern, kann ein Mechanismus zur Ungültigmachung
+    von Hashes eingeführt werden.
+  en: >-
+    To prevent this, a mechanism for invalidating hashes can be
+    introduced.
+e3ca1f6f7be22e7f:
+  de: >-
+    Das Risiko der Wiederverwendung kann zudem über einen Gültigkeitsmechanismus
+    begrenzt werden (bestimmte QR-Codes können z.B. nur an bestimmten
+    Tagen verwendet werden). Dies würde zum Einen jedoch die Verwendung
+    der Codes durch den Nutzer etwas komplizierter gestalten.
+    Zum Anderen kann eine manipulationssichere Beschränkung der
+    Gültigkeit von QR-Codes nur unter Zuhilfenahme eines validierenden
+    Dritten erfolgen, wie oben beschrieben. Ob dies sinnvoll ist
+    muss abgewogen werden. Eine "einfache" Beschränkung der Gültigkeit
+    von QR-Codes kann durch Hinzufügen eines Zeitstempels erreicht
+    werden, dies ist jedoch für einen technisch versierten Angreifer
+    leicht zu umgehen. Trotzdem kann ein solcher Zeitstempel sinnvoll
+    sein, um "Gelegenheits-Missbrauch" von QR-Codes zu unterbinden.
+    Weiterhin kann die Web-Anwendung des Nutzers bei der Initialisierung
+    eine HMAC-basierte Prüfsumme für diesen Zeitstempel erstellen,
+    diese kann zwar von der Anwendung des Betreibers nicht verarbeitet
+    werden, macht aber die Erkennung der missbräuchlichen Nutzung
+    bei der Analyse durch das GA einfacher (die jedoch ohnehin
+    einfach möglich ist).
+  en: >-
+    The risk of reuse can also be limited via a validity mechanism
+    (e.g. certain QR codes can only be used on certain days).
+    On the one hand, however, this would make the use of the codes
+    by the user somewhat more complicated. On the other hand,
+    a tamper-proof limitation of the validity of QR codes can
+    only be achieved with the help of a validating third party,
+    as described above. Whether this makes sense must be weighed
+    up. A "simple" restriction of the validity of QR codes can
+    be achieved by adding a timestamp, but this is easy to circumvent
+    for a technically skilled attacker. Nevertheless, such a timestamp
+    can be useful to prevent "casual abuse" of QR codes. Furthermore,
+    the user's web application can create an HMAC-based checksum
+    for this timestamp during initialization, this cannot be processed
+    by the operator's application, but makes it easier to detect
+    the misuse during analysis by the GA (which, however, is easily
+    possible anyway).
+e4a9f4b7aca08269:
+  de: '# Papiergestützte Kontaktnachverfolgung'
+  en: '# Paper-based contact tracing'
+e5b1c8d2f937e08c:
+  de: >-
+    Da Nutzer QR-Codes im aktuellen Entwurf selbst ausdrucken
+    und die Codes bei der asynchronen Erfassung bei Betreibern
+    von Ortschaften verbleiben, könnten diese bei konsiprativer
+    Sammlung von QR-Codes eventuell versuchen, verschiedene Codes
+    auf einen einzelnen Nutzer zurückzuführen.
+  en: >-
+    Since users print QR codes on their own in the current design
+    and the codes remain with locality operators in asynchronous
+    collection, if QR codes are collected consipratively, they
+    could possibly try to trace different codes back to a single
+    user.
+e5ecc7301c9c9f69:
+  de: >-
+    In einer Erweiterung des Proktolls ist jedoch geplant, den
+    Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben.
+  en: >-
+    In an extension of the Proktoll, however, it is planned to
+    separate the key $K _ B$ from the contact data in an additional
+    step of by a GA, to store it separately from the beginning
+    or to encrypt it asymmetrically and to give another party
+    control over the decryption.
+e69219041f1ee55f:
+  de: '#### Wiederverwendung von QR-Codes'
+  en: '#### Reuse of QR codes'
+e8c87b555e3dee00:
+  de: >-
+    Diese Daten können von einem Betreiber ohne Kenntnis des Schlüssels
+    $K _ B$ nicht gefälscht werden, GÄ konnen so manipulierte
+    oder fehlerhafte Daten ausschließen.
+  en: >-
+    These data cannot be falsified by an operator without knowledge
+    of the key $K _ B$, GÄ can thus exclude manipulated or incorrect
+    data.
+e967712baa7617d0:
+  de: '#### Sequenzdiagramm'
+  en: '#### Sequence diagram'
+e9d5af9d6cc9c4d9:
+  de: >-
+    Die Verschlüsselung von Daten für GÄ sowie die Authentifizierung
+    von öffentlichen Anfragen dieser erfolgt durch Public-Key
+    Verschlüsselung. Im Folgenden nehmen wir an, dass GÄ jeweils
+    über ein Schlüsselpaar zum Signieren sowie zum Ver- & Entschlüsseln
+    von Daten verfügen, und andere Akteure die Vertrauenswürdigkeit
+    der öffentlichen Schlüssel dieser Paare über einen geeigneten
+    Mechanismus (z.B. ein Root-Zertifikat das gemeinsam mit der
+    Web-Anwendung ausgeliefert wird) verifizieren können.
+  en: >-
+    The encryption of data for GÄs as well as the authentication
+    of their public requests is done by public-key encryption.
+    In the following, we assume that GÄs each have a pair of keys
+    for signing and -  encrypting/decrypting data, and that other
+    actors can verify the trustworthiness of the public keys of
+    these pairs via a suitable mechanism (e.g., a root certificate
+    that is delivered together with the web application).
+ec1c68d5b6a1c1de:
+  de: >-
+    Zunächst muss das GA vom Nutzer die GA-Daten erhalten, um
+    die weitere Kontaktnachverfolgung veranlassen zu können.
+  en: >-
+    First, the GA must receive the GA data from the user in order
+    to initiate further contact follow-up.
+ef9aac18bbe12719:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern. Wichtig:
+    Um die Abgabe manipulierter Daten zu verhindern, müssen Betreiber
+    hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden
+    Daten übermitteln. Diese Daten können von einem Betreiber
+    ohne Kenntnis des Schlüssels $K _ B$ nicht gefälscht werden,
+    GÄ konnen so manipulierte oder fehlerhafte Daten ausschließen.
+    Ein Betreiber kann immer noch unrelevante Daten zurückliefern,
+    jedoch lässt sich ein solches Verhalten auf verschiedenen
+    Wegen auf den Betreiber zurückführen und entsprechend ahnden
+  en: >-
+    The GA then writes out relevant hashes for contact tracing
+    and waits for feedback from operators. Important: In order
+    to prevent the submission of manipulated data, operators must
+    always also submit the data available for the hash that has
+    been advertised. These data cannot be falsified by an operator
+    without knowledge of the key $K _ B$, GÄ can thus exclude
+    manipulated or incorrect data. An operator can still return
+    irrelevant data, but such behaviour can be traced back to
+    the operator in various ways and penalised accordingly.
+efc60d02fda6fbc2:
+  de: >-
+    * Der Nutzer kann der Web-Anwendung regelmäßig die Daten $
+    Z $ und $ I _ D $ vorlegen, diese erkennt dann anhand des
+    veröffentlichten Tokens $ Z $, dass die Daten des Nutzers
+    zur Kontaktnachverfolgung angefordert wurden. Es fordert diesen
+    dann dazu auf, die Daten anzugeben, verschlüsselt diese mit
+    dem öffentlich GÄ-Schlüssel, signiert die Daten mit dem privaten
+    Schlüssel des generierten Schlüsselpaares und teilt sie über
+    die API dem Backend mit, das diese speichert.
+  en: >-
+    * The user can periodically submit the data $ Z $ and $ I
+    _ D $ to the web application, which then recognizes from the
+    published token $ Z $ that the user's data has been requested
+    for contact tracing. It then prompts the user to provide the
+    data, encrypts it with the public GÄ key, signs the data with
+    the private key of the generated key pair, and communicates
+    it via the API to the backend, which stores it.
+f1745f1dcb6ea9b8:
+  de: >-
+    Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
+    bzw. analoge Protokolle werden zwar auch von anderen Systemen
+    wie **Luca** angeboten (in Form von Schlüsselanhängern), jedoch
+    weisen diese eine Reihe von Datenschutz-Problemen auf.
+  en: >-
+    This is problematic for a number of reasons. Paper-based or
+    analogue protocols are also offered by other systems such
+    as **Luca** (in the form of key fobs), but these present a
+    number of data protection problems.
+f461c59347a9bf0a:
+  de: >-
+    Unter der Annahme, dass zumindest eine dieser drei Angriffe
+    fehlschlägt kann die Rekonstruktion von Besuchshistorien ausgeschlossen
+    werden.
+  en: >-
+    Assuming that at least one of these three attacks fails, the
+    reconstruction of visit histories can be ruled out.
+f4f4adc837722796:
+  de: >-
+    Grundlegend müssen wir für eine robuste Kontaktermittlung
+    in der Lage sein, mögliche Schnittmengen zwischen **Besuchen**
+    einzelner Nutzer zu ermitteln. Dies erfordert generell eine
+    Dokumentation der Besuche einzelner Nutzer, sowie ein Verfahren
+    um für einen spezifischen Besuch eines Nutzers alle Besuche
+    anderer Nutzer zu ermitteln die in der gleichen Ortschaft
+    und im gleichen Zeitraum erfolgten.
+  en: >-
+    Basically, for robust contact tracing we need to be able to
+    identify possible intersections between visits of individual
+    users. This generally requires a documentation of the visits
+    of individual users, as well as a procedure to determine for
+    a specific visit of a user all visits of other users that
+    occurred in the same locality and in the same time period.
+f99ecfda1afd4b4b:
+  de: '### Erweiterungen'
+  en: '### Extensions'
+fa9d8cce855174e7:
+  de: >-
+    Anschließend schreibt das GA relevante Hashes zur Kontaktnachverfolgung
+    aus und wartet auf die Rückmeldung von Betreibern. Wichtig:
+    Um die Abgabe manipulierter Daten zu verhindern, müssen Betreiber
+    hierbei immer auch die zu dem ausgeschriebenen Hash vorliegenden
+    Daten übermitteln.
+  en: >-
+    The GA then writes out relevant hashes for contact tracing
+    and waits for feedback from operators. Important: In order
+    to prevent the submission of manipulated data, operators must
+    always submit the data available for the hash advertised.
+fd09e279b9bbe5e0:
+  de: >-
+    **Hinweis**: Aktuell wird die Sicherheit des Systems durch
+    die Ableitung von $K_C$ aus $(K_A, K_B)$ **nicht** erhöht,
+    da $K_B$ permanent mit den Kontaktdaten des Nutzer aufbewahrt
+    wird. In einer Erweiterung des Proktolls ist jedoch geplant,
+    den Schlüssel $K_B$ entweder schnell von den Kontaktdaten
+    zu trennen oder ihn asymmetrisch zu verschlüsseln und einer
+    weiteren Partei die Kontrolle über die Entschlüsselung zu
+    geben. Er wurde daher in dem Protokoll belassen.
+  en: >-
+    **Note** : Currently, the security of the system is *not enhanced
+    by deriving $K_C$ from $(K_A, K_B)$, * as $K_B$ is kept permanently
+    with the user's contact details. However, in an extension
+    to the proctoll, it is planned to either quickly separate
+    the $K_B$ key from the contact details, or to asymmetrically
+    encrypt it and give another party control over decryption.
+    It was therefore left in the protocol.
+fe0bbc3db64eacee:
+  de: '## Protokoll (v0.3)'
+  en: '## Protocol (v0.3)'
+fff4b8ec2100136f:
+  de: >-
+    Um diese Rückführbarkeit zu reduzieren können verschiedene
+    technische und organisatorische Maßnahmen ergriffen werden.
+    QR-Code Serien können z.B. ähnlich wie Checkhefte in großer
+    Zahl vorgeneriert und vorgedruckt werden. Nutzer könnten diese
+    z.B. von einem vertrauenswürdigen Dritten beziehen und einen
+    im Heft befindlichen QR-Code nutzen, um den gegebenen Block
+    mit ihren Kontaktdaten zu verknüpfen. Hierzu muss dem ausstellenden
+    Dritten sowie allen an der Produktion beteiligten Parteien
+    jedoch vertraut werden, da diese die QR-Codes aufzeichnen
+    könnten.
+  en: >-
+    Various technical and organizational measures can be taken
+    to reduce this traceability. For example, QR code series can
+    be pre-generated and pre-printed in large numbers, similar
+    to checkbooks. Users could obtain these from a trusted third
+    party, for example, and use a QR code located in the booklet
+    to link the given block with their contact details. However,
+    to do this, the issuing third party and all parties involved
+    in the production must be trusted, as they could record the
+    QR codes.

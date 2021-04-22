@@ -8,10 +8,14 @@ pages:
     name: analyses
     slug||slugify: Analysen
     children:
-      - title|t: Luca
+      - title|t: Vergleich mit Luca
         src|f|exists?: "{target_language}/analyses/luca.md"
         name: luca
         slug||slugify: luca
+      - title|t: Risiken
+        src|f|exists?: "{target_language}/analyses/risks.md"
+        name: risks
+        slug||slugify: risiken
 #  - title|t: System
 #    name: system
 #    slug||slugify: system
