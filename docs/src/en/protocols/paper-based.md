@@ -53,13 +53,13 @@ Users in the system would like to make their contact data available to GÄ on an
 
 The contact data should only be processed by trustworthy actors and generally be available to as few actors as possible in the system (whether in encrypted or unencrypted form).
 
-To enter contact data, users first open the web application and enter relevant data such as name, address, telephone number and e-mail address (a validation of this data is described below). The application then generates two randomly generated symmetric keys $K _ A$ and $K _ B$, which are combined using a suitable key derivation procedure to form a key $K _ C$. The application now encrypts the user's contact data symmetrically with key $K _ C$, adds key $K _ A$ to this encrypted data, encrypts this data asymmetrically with the public key of the GÄ and transmits this data to the API, which stores it in a backend and returns a random identifier $I_D$. The data stored there cannot be decrypted by any actor without knowing the key $K _ B$ as well as the private key of the GÄ. The latter is initially under the control of the user and can only reach a GÄ that can decrypt it via the user or via an operator.
+To enter contact data, users first open the web application and enter relevant data such as name, address, telephone number and e-mail address (a validation of this data is described below). The application then generates two randomly generated symmetric keys $K _ A$ and $K _ B$, which are combined using a suitable key derivation procedure to form a key $K _ C$. The application now encrypts the user's contact data symmetrically with key $K _ C$, adds key $K _ A$ to this encrypted data, encrypts this data asymmetrically with the public GÄ data key, and transmits this data to the API, which stores it in a backend and returns a random identifier $I_D$. The data stored there cannot be decrypted by any actor without knowledge of the key $K _ B$ as well as the private key of the GÄ. The latter is initially under the control of the user and can only reach a GÄ that can decrypt it via the user or via an operator.
 
-Furthermore, the user's application generates a random value $H _ s$, from which a pseudo-random series of further values $H _ 1, H _ 2, \ldots H _ n$ is generated using a suitable procedure. The web application now stores $H _ s$, $I _ D$ and $ K _ B$ together in a data structure and encrypts them with the public GÄ key. This data remains with the user and is only passed on to a GA for contact tracing.
+Furthermore, the user's application generates a random value $H _ s$, from which a pseudo-random series of further values $H _ 1, H _ 2, \ldots H _ n$ is generated using a suitable method. The web application now stores $H _ s$, $I _ D$ and $ K _ B$ together in a data structure and encrypts them with the public GÄ data key. This data remains with the user and is only passed on to a GA for contact tracing.
 
-Now the application generates value pairs consisting of $H _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on the other hand, where $H _ i$ is unencrypted and $(K _ B, I _ D)$ is encrypted individually with the GÄ key for each value pair. These pairs are used for contact tracing and passed on to public operators.
+Now the application generates value pairs consisting of $H _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on the other hand, whereby $H _ i$ is unencrypted and $(K _ B, I _ D)$ is encrypted individually for each value pair with the GÄ data key. Here, a public key is appended to the data set and the corresponding private key is stored by the application. These pairs are used for contact tracing and passed on to public operators.
 
-The application then generates QR codes from all data structures, transfers them to the user (e.g. for printing) and then deletes all data.
+The application then generates QR codes from all data structures, transfers them to the user (e.g. for printing) and then deletes all data. The data that is transferred to the health department as well as the data that the user himself uses to check and adjust his data can be saved in files.
 
 Note: Currently, the security of the system is *not enhanced by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is kept permanently with the user's contact details.
 In an extension of the Proktoll, however, it is planned to separate the key $K _ B$ from the contact data in an additional step of by a GA, to store it separately from the beginning or to encrypt it asymmetrically and to give another party control over the decryption.
@@ -85,13 +85,24 @@ Validation via third party APIs as done in other centralized systems can theoret
 
 To document the visit of a location to operators, users simply give them a random QR code. In addition to the QR code, it is possible to enter additional meta data such as the exact time of arrival and the length of stay in order to increase the accuracy of the documentation. The operator then records the QR codes received over a given period (e.g. one day) using the web application. Initially, they are only stored locally. Operators can also capture additional meta-data to improve accuracy for contact tracing.
 
+The operator's web application groups visit data as close to real time as possible (within a few hours).
+Individual visit data can exist in several groups (overlapping).
+For each group, the web application generates an asymmetric key pair.
+All visit records of the group are encrypted with the public key of this pair. The associated private key is encrypted with the public key of each visit record and stored with the record.
+
+As soon as it is clear that no further visit records will be assigned to a group, the web application deletes the private key belonging to the group. 
+The public key is stored together with the group data.
+Similarly, the web application deletes a user's original visit data as soon as it is clear that they will not be added to another group.
+
+The data encrypted in this way can only be accessed with the help of the GA key and a matching private key of a visit record belonging to the group. These private keys are under the control of the user and are only transmitted to the GA by the user in case of infection. Accordingly, even if the GA could access all operator data, it can only decrypt epidemiologically relevant data for which a user has provided the matching private key.
+
 <div>
     {% include "common/protocols/_check_in.html" %}
 </div>
 
 ### Contact Tracking
 
-In order to determine possible risk contacts of an infected user, the user first hands over the QR code (either digital or analogue) to the GA. The GA can decrypt it with the private GÄ key, whereby it receives the values $H _ s ^ l$, $I _ D ^ l$ and $K _ B ^ l$ ($l$ denotes the data of the $l$-th user). With the value $I _ D$ the GA can get the encrypted user data from the backend, which can be decrypted with the help of the private key as well as $K _ B$. Furthermore, the GA can create all hash values $H _ i$ of the user with the help of $H _ s$. It publishes these values via the backend. It publishes these values via the backend (together with other hash values to protect the anonymity of the user). The operators' web applications regularly download the list of these values and match them with the locally stored hash values. If there is a match, after confirmation by the operator, all visit data related to these hash values $H _ i$ (e.g. determined by comparing the visit times) are transferred to the backend via the public API (if necessary, the data can be encrypted again with the GA key). From there they can be retrieved by the GA. The GA then uses the private GÄ key to decrypt the values $ I _ D ^ k$, and $K _ B ^ k$, which in turn allows the backend to retrieve and decrypt the user's contact data. However, since the GA does not have the user's key $ H _ s ^ k$, it cannot reconstruct the user's visit history without consent. For this, the active cooperation of this user is again necessary.
+In order to determine possible risk contacts of an infected user, the user first hands over the QR code (either digital or analogue) to the GA. The GA can decrypt it with the private GÄ data key, whereby it receives the values $H _ s ^ l$, $I _ D ^ l$ and $K _ B ^ l$ ($l$ denotes the data of the $l$-th user). With the value $I _ D$ the GA can get the encrypted user data from the backend, which can be decrypted with the help of the private data key and $K _ B$. Furthermore the GA can create all hash values $H _ i$ of the user with the help of $H _ s$. It publishes these values via the backend (together with other hash values to protect the anonymity of the user). The operators' web applications regularly download the list of these values and match them with the locally stored hash values. If there is a match, after confirmation by the operator, all visit data related to these hash values $H _ i$ (e.g. determined by comparing the visit times) are transferred to the backend via the public API (if necessary, the data can be encrypted again with the GÄ data key). From there they can be retrieved by the GA. The GA then uses the private GÄ data key to decrypt the values $ I _ D ^ k$, and $K _ B ^ k$, which in turn can be used to retrieve and decrypt the user's contact data from the backend. However, since the GA does not have the user's key $ H _ s ^ k$, it cannot reconstruct the user's visit history without consent. For this, the active cooperation of this user is again necessary.
 
 #### Sequence diagram
 
@@ -111,6 +122,7 @@ The GA then writes out relevant hashes for contact tracing and waits for feedbac
 Important: In order to prevent the submission of manipulated data, operators must always also submit the data available for the hash tendered.
 These data cannot be falsified by an operator without knowledge of the key $K _ B$, GÄ can thus exclude manipulated or incorrect data.
 An operator may still return irrelevant data, but such behaviour can be traced back to the operator in a number of ways and penalised accordingly.
+An operator always returns complete group data, which contains visit data encrypted with a private group key. The private key in turn was encrypted with the public keys of the visit data of all group members.
 
 <div>
     {% include "common/protocols/_contact_tracing_2.html" %}
@@ -118,7 +130,7 @@ An operator may still return irrelevant data, but such behaviour can be traced b
 
 ##### Processing of relevant contact data
 
-Finally, the GA processes the operators' data.
+Finally, the GA processes the data of the operators. However, epidemiological group data can only be decrypted if the GA receives from the user a matching private key to visit data containing the encrypted private key of the respective group data. Without the presence of such a key, the GA cannot decrypt the data even if all data and all other keys are present.
 
 <div>
     {% include "common/protocols/_contact_tracing_3.html" %}
@@ -177,7 +189,7 @@ Visit data collection using QR data also works without storing contact data in a
 
 * Instead of providing encrypted contact data directly to the backend when creating QR codes, the user's web application can initially only request a $ I _ D$ value and a token $ Z $ from the backend and simultaneously store the public part of an asymmetric key pair generated by the application for it there. The backend stores this together with $ Z $ and $I _ D$. The associated private key, $ I _ D$ and $ Z $ can be made available by the application to the user for storage.
 * If the corresponding visit data is found during contact tracing, the backend determines that no contact data exists for them yet. It then writes out the token $ Z $ via a public list for completion.
-* The user can periodically submit the data $ Z $ and $ I _ D $ to the web application, which then recognizes from the published token $ Z $ that the user's data has been requested for contact tracing. It then prompts the user to provide the data, encrypts it with the public GÄ key, signs the data with the private key of the generated key pair, and communicates it via the API to the backend, which stores it.
+* The user can periodically submit the data $ Z $ and $ I _ D $ to the web application, which then recognizes from the published token $ Z $ that the user's data has been requested for contact tracking. It then prompts the user to provide the data, encrypts it with the GÄ public data key, signs the data with the private key of the generated key pair, and communicates it via the API to the backend, which stores it.
 * The GA can now retrieve the data regularly from the backend via the API.
 
 This procedure is more privacy-friendly, but may not be practical for a paper-based procedure as it relies on the active cooperation of the user. Users who do not regularly open the web application will not know that their data has been requested. However, the process is very well suited for digital contact tracing via app. In this case, it delays the storage of personal information until it is really needed.

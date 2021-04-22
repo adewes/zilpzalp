@@ -1,14 +1,15 @@
 decrypt_ga_data:
   _t:
-    de: 1162880d97273402
-    en: 1162880d97273402
+    de: b5569d02286761d0
+    en: b5569d02286761d0
   de: >-
     Entschlüssele von jedem Datensatz GA-Daten $D_{\mathrm{ga,op}}
-    = \mathrm{dec}_{a}(D^e_\mathrm{ga,op}, K_{\mathrm{ga}}^{\mathrm{priv}})$
-    um $(K_B, I_D)$ zu erhalten.
+    = \mathrm{dec}_{a}(\mathrm{dec}_{a}(D^e_\mathrm{ga,op}, K_{g}^\mathrm{priv}),
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_B, I_D)$ zu erhalten.
   en: >-
-    Decrypt GA data from each record $D_{\mathrm{ga,op}} = \mathrm{dec}_{a}(D^e_\mathrm{ga,op},
-    K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(K_B, I_D)$.
+    Decode GA data from each record $D_{\mathrm{ga,op}} = \mathrm{dec}_{a}(\mathrm{dec}_{a}(D^e_\mathrm{ga,op},
+    K_{g}^\mathrm{priv}), K_{\mathrm{ga}}^{\mathrm{priv}})$ to
+    get $(K_B, I_D)$.
 decrypt_user_data:
   _t:
     de: 12c4fb2864bf1130

@@ -1,10 +1,275 @@
+042bf432c4025d67:
+  de: >-
+    Erlangt er für diese Besuchsdaten zusätzlich Zugang zu den
+    im Backend gespeicherten Kontaktdaten, kann er diese ebenfalls
+    komplett entschlüsseln (da sich der Schlüssel $K _ B$ in den
+    Besuchsdaten befindet).
+  en: >-
+    If he also gains access to the contact data stored in the
+    backend for this visit data, he can also decrypt it completely
+    (since the key $K _ B$ is in the visit data).
+08b221a1469b3fca:
+  de: >-
+    Gesundheitsämter, Backend-Betreiber und ggf. Betreiber von
+    Ortschaften besitzen jeweils einzelne asymmetrische Schlüsselpaare
+    zur Ver-/Entschlüsselung und Signierung von Daten. Zusätzlich
+    existieren eine oder mehrere Root-Schlüsselpaare, mit denen
+    andere Schlüssel im System zertifiziert werden und die im
+    Backend sowie den Web-Anwendungen als Vertrauensanker dienen.
+    Erlangt ein Angreifer Zugang zu einem der zugehörigen privaten
+    Schlüssel dieser Schlüsselpaare kann dies verschiedene negative
+    Folgen für die Sicherheit des Systems haben.
+  en: >-
+    Health authorities, backend operators and, where applicable,
+    operators of localities each have individual asymmetric key
+    pairs for encrypting/decrypting and signing data. In addition,
+    one or more root key pairs exist with which other keys in
+    the system are certified and which serve as trust anchors
+    in the backend and the web applications. If an attacker gains
+    access to one of the associated private keys of these key
+    pairs, this can have various negative consequences for the
+    security of the system.
+12a9579cff882b1b:
+  de: >-
+    Zilp-Zalp nutzt eine Public-Key Infrastruktur (PKI) zur Verschlüsselung
+    von Daten, zur Authentifizierung von Akteuren gegenüber dem
+    Backend und zur Signierung von Anfragen, die veröffentlicht
+    werden.
+  en: >-
+    Zilp-Zalp uses a public key infrastructure (PKI) to encrypt
+    data, authenticate actors to the backend, and sign requests
+    that are published.
+172e62430b715c5e:
+  de: >-
+    Erlangt er Zugang zu Besuchsdaten von Betreibern, kann er
+    hiermit die Besuchshistorie von Nutzern rekonstruieren.
+  en: >-
+    If he gains access to visit data of operators, he can use
+    it to reconstruct the visit history of users.
+1c8b8e7b24ba3c12:
+  de: >-
+    Die Sicherheit des Gesamtsystems hängt wie bei allen Systee
+    entscheidend von der Sicherheit dieser PKI ab. Zilp-Zalp ist
+    darauf ausgelegt, mit existierenden PKI-Systemen zusammenarbeiten
+    zu können. Zu Demonstrationszwecken verfügt das System auch
+    über eine eigene PKI, diese sollte jedoch bei einen realen
+    Einsatz des Systems nach Möglichkeit ausgetauscht werden.
+  en: >-
+    As with all systems, the security of the overall system depends
+    crucially on the security of this PKI. Zilp-Zalp is designed
+    to work with existing PKI systems. For demonstration purposes,
+    the system also has its own PKI, but this should be replaced
+    if possible in a real deployment of the system.
+1f1e4c8e5a140fb8:
+  de: >-
+    Gesundheitsämter, Backend-Betreiber und ggf. Betreiber von
+    Ortschaften besitzen jeweils einzelne asymmetrische Schlüsselpaare
+    zur Ver-/Entschlüsselung und Signierung von Daten. Erlangt
+    ein Angreifer Zugang zu einem privaten Schlüssel eines Akteurs
+    kann dies verschiedene negative Folgen für die Sicherheit
+    des Systems haben:
+  en: >-
+    Health authorities, backend operators and, where applicable,
+    operators of localities each possess individual asymmetric
+    key pairs for encrypting/decrypting and signing data. If an
+    attacker gains access to a private key of an actor, this can
+    have various negative consequences for the security of the
+    system:
+34b33e1cac85ef65:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel,
+    kann er hiermit sowohl die mit dem zugehörigen öffentlichen
+    Schlüssel verschlüsselten Besuchsdaten entschlüsseln, als
+    auch die äußere Entschlüsselung von Kontaktdaten eines Nutzers
+    die mit dem öffentlichen Schlüssel verschlüsselt wurden entfernen.
+  en: >-
+    If an attacker gains access to a private GÄ data key, he can
+    use it to decrypt the visit data encrypted with the corresponding
+    public key as well as to remove the external decryption of
+    a user's contact data encrypted with the public key.
+371a019581bfcfe3:
+  de: >-
+    Die folgenden Abschnitte beschreiben Risiken, die durch den
+    Verlust von privaten Schlüsseln im System entstehen.
+  en: >-
+    The following sections describe risks that arise from the
+    loss of private keys in the system.
+3b191fb787c278e4:
+  de: '### Verlust eines privaten GÄ-Signierschlüssels'
+  en: '### Loss of a private GÄ signing key'
+40126cd3aa6e93b1:
+  de: >-
+    * Für jede Backend-Instanz einen oder mehrere Root-Signaturschlüsselpaare,
+    die andere Schlüssel im System zertifizieren und als Vertrauensanker
+    dienen.
+  en: >-
+    * For each backend instance, one or more root signature key
+    pairs that certify other keys in the system and serve as trust
+    anchors.
+458376451183dca9:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten GÄ-Signierschlüssel,
+    kann er sich hiermit gegenüber dem Backend authentifizieren,
+    Daten von dort abrufen und missbräuchliche Anfragen stellen.
+    Er kann jedoch ohne Kenntnis von $I _ D$ Werten keine Kontaktdaten
+    vom Backend abfragen. Um an solche $I _ D$ Werte zu gelangen,
+    kann er Anfragen zu Besuchsdaten stellen. Hierfür ist jedoch
+    ebenfalls das Vorliegen eines (sich unter Kontrolle von Nutzern
+    befindlichen) GA-Datenpakets nötig. Um dieses zu entschlüsseln
+    muss der Angreifer zusätzlich den zugehörigen privaten GÄ-Datenschlüssel
+    besitzen.
+  en: >-
+    If an attacker gains access to a private GÄ signing key, he
+    can use it to authenticate himself to the backend, retrieve
+    data from there and make abusive requests. However, he cannot
+    retrieve contact data from the backend without knowledge of
+    $I _ D$ values. To obtain such $I _ D$ values, he can make
+    requests for visit data. However, this also requires the presence
+    of a GA data packet (under user control). To decrypt this,
+    the attacker must also possess the associated private GA data
+    key.
+49e4b8eda9e6b9e0:
+  de: 'Root-Schlüssel werden '
+  en: 'Root keys are '
+59ef9007f0ce847d:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel
+    kann er hiermit folgende
+  en: >-
+    If an attacker gains access to a private GÄ data key, he can
+    use it to do the following
+5ba7a448c8df0a6c:
+  de: 'Zilp-Zalp benötigt im Betrieb folgende Schlüsselpaare:'
+  en: 'Zilp-Zalp requires the following key pairs during operation:'
+681ea43f0a6f16a2:
+  de: >-
+    * Optional für Betreiber ein oder mehrere Schlüsselpaare zum
+    Signieren von Daten.
+  en: >-
+    * Optional for operators one or more key pairs for signing
+    data.
+801e11bdd6ce4132:
+  de: '### Verlust eines privaten GÄ-Datenschlüssels'
+  en: '### Loss of a private GÄ data key'
 8484d016d0510d2d:
   de: >-
     Zilp-Zalp nutzt zur Verschlüsselung von Daten für Gesundheitsämter.
   en: Zilp-Zalp is used to encrypt data for health departments.
+88c36735b4b21b9b:
+  de: >-
+    In beiden oben genannten Szenarien wird davon ausgegangen,
+    dass der Angreifer lediglich Zugang zu Schlüsselmaterial erhalten
+    hat, jedoch abgesehen hiervon keine Systemkomponenten kompromittiert
+    hat. Diese Szenarien werden ausführlicher in der [Risiko-Analyse]({{'analyses.risks'|href}})
+    beschrieben und bleiben hier daher außen vor.
+  en: >-
+    In both of the above scenarios, it is assumed that the attacker
+    has only gained access to key material, but has not compromised
+    any system components apart from this. These scenarios are
+    described in more detail in the [risk analysis]({{'analyses.risks'|href}})
+    and are therefore left out here.
+92c1bbcee8181055:
+  de: >-
+    Um das Gesamtsystem möglichst robust gegenüber dem Verlust
+    von Schlüsseln zu machen, sollten folgende Maßnahmen beachtet
+    werden:
+  en: >-
+    In order to make the overall system as robust as possible
+    against the loss of keys, the following measures should be
+    observed:
+9dbe876076d3b556:
+  de: '### Verlust eines GÄ-Datenschlüssels'
+  en: '### Loss of a GÄ data key'
+a6df326b9aac132e:
+  de: '## Grundideen'
+  en: '## Basic ideas'
+b18ad8b1ab5282d6:
+  de: >-
+    * Private Schlüssel sollten nur vor Ort generiert und nicht
+    "bewegt" werden.
+  en: >-
+    * Private keys should only be generated on site and not "moved".
 bb3837544862ac0e:
   de: '# Schlüsselmanagement'
   en: '# Key Management'
+c24c998d87318027:
+  de: '## Risiko-Analyse'
+  en: '## Risk analysis'
+de6bc30b506fc6ad:
+  de: '### Verlust eines privaten Root-Signierschlüssels'
+  en: '### Loss of a private root signing key'
+e1115b963180ffff:
+  de: >-
+    Gesundheitsämter, Backend-Betreiber und ggf. Betreiber von
+    Ortschaften besitzen jeweils einzelne asymmetrische Schlüsselpaare
+    zur Ver-/Entschlüsselung und Signierung von Daten. Zusätzlich
+    existieren eine oder mehrere Root-Schlüsselpaare, mit denen
+    andere Schlüssel im System zertifiziert werden und die im
+    Backend sowie den Web-Anwendungen als Vertrauensanker dienen.
+  en: >-
+    Health authorities, backend operators and, where applicable,
+    operators of localities each have individual asymmetric key
+    pairs for encrypting/decrypting and signing data. In addition,
+    one or more root key pairs exist with which other keys in
+    the system are certified and which serve as trust anchors
+    in the backend and the web applications.
+e1badc23b9fc0848:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten Root-Signierschlüssel,
+    kann er selbst eigene Schlüsselpaare im System registrieren
+    und diese gegenüber allen Akteuren als vertauenswürdig erscheinen
+    lassen. Er kann damit z.B. Akteure veranlassen, Daten mit
+    diesen Schlüsseln zu verschlüsseln und im System zu hinterlegen.
+  en: >-
+    If an attacker gains access to a private root signing key,
+    he can register his own key pairs in the system and make them
+    appear trustworthy to all actors. He can thus, for example,
+    cause actors to encrypt data with these keys and store it
+    in the system.
 e3b0c44298fc1c14:
   de: ''
   en: ''
+ebc412abd341ef2d:
+  de: >-
+    * Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare,
+    jeweils für die Ver-/Entschlüsselung von Daten sowie für das
+    Signieren von Daten.
+  en: >-
+    * For each health department, one or more key pairs, each
+    for encrypting/decrypting data and for signing data.
+f59122170d20981f:
+  de: >-
+    * Die Anwendbarkeit und Macht von individuellen Schlüsseln
+    sollte räumlich und zeitlich beschränkt werden.
+  en: >-
+    * The applicability and power of individual keys should be
+    limited in space and time.
+f8ea80b530858df4:
+  de: '### Kompromittierung von Systemkomponenten'
+  en: '### Compromise of system components'
+f91eccb17f295d5f:
+  de: '## Notwendige Schlüssel'
+  en: '## Necessary keys'
+ffcf9088f599441c:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel
+    kann er hiermit sowohl die mit dem zugehörigen öffentlichen
+    Schlüssel verschlüsselten Besuchsdaten entschlüsseln, als
+    auch die äußere Entschlüsselung von Kontaktdaten eines Nutzers
+    die mit dem öffentlichen Schlüssel verschlüsselt wurden entfernen.
+    Erlangt er Zugang zu Besuchsdaten von Betreibern, kann er
+    hiermit die Besuchshistorie von Nutzern rekonstruieren. Erlangt
+    er für diese Besuchsdaten zusätzlich Zugang zu den im Backend
+    gespeicherten Kontaktdaten, kann er diese ebenfalls komplett
+    entschlüsseln (da sich der Schlüssel $K _ B$ in den Besuchsdaten
+    befindet).
+  en: >-
+    If an attacker gains access to a private GÄ data key, he can
+    use it to decrypt the visit data encrypted with the associated
+    public key as well as to remove the external decryption of
+    a user's contact data encrypted with the public key. If he
+    gains access to visit data of operators, he can use it to
+    reconstruct the visit history of users. If he also gains access
+    to the contact data stored in the backend for this visit data,
+    he can also completely decrypt it (since the key $K _ B$ is
+    located in the visit data).

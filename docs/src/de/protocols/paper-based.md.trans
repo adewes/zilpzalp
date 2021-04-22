@@ -274,6 +274,21 @@
     actors can verify the trustworthiness of the public keys of
     these pairs via a suitable mechanism (e.g., a root certificate
     that is delivered together with the web application).
+23d1c2054da920ee:
+  de: >-
+    Eine ausführliche Risikoanalyse findet sich in einem [separaten
+    Dokument]({{'analyses.risks'|href}}).
+  en: >-
+    A detailed risk analysis can be found in a [separate document]({{'analyses.risks'|href}}).
+25042b94d8a41db2:
+  de: >-
+    Ebenso löscht die Web-Anwendung die ursprünglichen Besuchsdaten
+    eines Nutzers sobald klar ist, dass diese zu keiner weiteren
+    Gruppe hinzugefügt werden.
+  en: >-
+    Similarly, the web application deletes a user's original visit
+    data as soon as it is clear that they will not be added to
+    another group.
 25fef684887bba72:
   de: >-
     Aufgefundene Codes könnten einfach missbraucht werden z.B.
@@ -391,6 +406,17 @@
 33ef6fb6ac258672:
   de: '    {% include "common/protocols/_check_in.html" %}'
   en: '    {% include "common/protocols/_check_in.html" %}'
+36efae87f8f38991:
+  de: >-
+    Alle Besuchsdaten der Gruppe werden mit dem öffentlichen Schlüssel
+    dieses Paares verschlüsselt. Der zugehörige private Schlüssel
+    wird jeweils mit dem öffentlichen Schlüssel jedes Besuchsdatensatzes
+    verschlüsselt und mit dem Datensatz gespeichert.
+  en: >-
+    All visit records of the group are encrypted with the public
+    key of this pair. The associated private key is encrypted
+    with the public key of each visit record and stored with the
+    record.
 38babb0364e5a3db:
   de: >-
     Das Datenpaket kann zudem wie oben beschrieben genutzt werden,
@@ -478,6 +504,21 @@
     The delayed provision of contact details associated with the
     procedure must again be balanced against the protection of
     the privacy of individual users.
+45c9ea63650078bc:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel
+    verschlüsselt wird. Diese Paare werden für die Kontaktnachverfolgung
+    genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on
+    the other hand, where $H _ i$ is unencrypted and $(K _ B,
+    I _ D)$ is encrypted individually for each value pair with
+    the GÄ data key. These pairs are used for contact tracing
+    and passed on to public operators.
 46d2a98a40f43295:
   de: >-
     * Für die Dokumentation von Besuchen ist es nicht notwendig,
@@ -506,6 +547,24 @@
     information as to whether his visit data has been requested
     by a GA and, in the event of non-notification, can request
     further data on the use from this office using his GA data.
+4a1b36396e5e4c81:
+  de: >-
+    * Der Nutzer kann der Web-Anwendung regelmäßig die Daten $
+    Z $ und $ I _ D $ vorlegen, diese erkennt dann anhand des
+    veröffentlichten Tokens $ Z $, dass die Daten des Nutzers
+    zur Kontaktnachverfolgung angefordert wurden. Es fordert diesen
+    dann dazu auf, die Daten anzugeben, verschlüsselt diese mit
+    dem öffentlichen GÄ-Datenschlüssel, signiert die Daten mit
+    dem privaten Schlüssel des generierten Schlüsselpaares und
+    teilt sie über die API dem Backend mit, das diese speichert.
+  en: >-
+    * The user can periodically submit the data $ Z $ and $ I
+    _ D $ to the web application, which then recognizes from the
+    published token $ Z $ that the user's data has been requested
+    for contact tracking. It then prompts the user to provide
+    the data, encrypts it with the GÄ public data key, signs the
+    data with the private key of the generated key pair, and communicates
+    it via the API to the backend, which stores it.
 4aa76a6251146f01:
   de: >-
     Web-Anwendungen von Betreibern können diese Listen beziehen
@@ -530,6 +589,11 @@
     would like to store the data in such a way that GÄ can access
     the data without any further action on the part of the user
     (but in a way that is comprehensible to the user).
+53b532d6b9212344:
+  de: >-
+    Der öffentliche Schlüssel wird zusammen mit den Gruppendaten
+    abgelegt.
+  en: The public key is stored together with the group data.
 54497eb4bf43ab92:
   de: >-
     Ein Betreiber kann immer noch unrelevante Daten zurückliefern,
@@ -614,6 +678,18 @@
     tracing and waits for feedback from operators. In order to
     prevent the submission of manipulated data, operators must
     always also submit the data available for the advertised hash.
+5780326310ef7376:
+  de: >-
+    Ein Betreiber liefert immer komplette Gruppendaten zurück,
+    welche Besuchsdaten enthalten die mit einem privaten Gruppenschlüssel
+    verschlüsselt wurden. Der private Schlüssel wiederum wurde
+    mit den öffentlichen Schlüsseln der Besuchsdaten aller Gruppenmitglieder
+    verschlüsselt.
+  en: >-
+    An operator always returns complete group data, which contains
+    visit data encrypted with a private group key. The private
+    key in turn was encrypted with the public keys of the visit
+    data of all group members.
 5c823a1e1abcd11b:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -639,6 +715,42 @@
   en: >-
     However, to prevent visit documentation with an invalid QR
     code, this requires a direct check of the codes.
+5d999fcc2bc37ce1:
+  de: >-
+    Die Web-Anwendung des Betreibers gruppiert Besuchsdaten möglichst
+    zeitnah (innerhalb weniger Stunden) in Gruppen. Einzelne Besuchsdaten
+    können hierbei in mehreren Gruppen (überlappend) vorhanden
+    sein. Für jede Gruppe generiert die Web-Anwendung ein asymmetrisches
+    Schlüsselpaar. Alle Besuchsdaten der Gruppe werden mit dem
+    öffentlichen Schlüssel dieses Paares verschlüsselt. Der zugehörige
+    private Schlüssel wird jeweils mit dem öffentlichen Schlüssel
+    jedes Besuchsdatensatzes verschlüsselt
+  en: >-
+    The web application of the operator groups visit data into
+    groups as soon as possible (within a few hours). Individual
+    visit data can exist in several groups (overlapping). For
+    each group, the web application generates an asymmetric key
+    pair. All visit data of the group is encrypted with the public
+    key of this pair. The corresponding private key is encrypted
+    with the public key of each visit data record.
+623d6bd8d77c62b0:
+  de: >-
+    Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
+    $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige
+    Reihe weiterer Werte $H _ 1, H _ 2, \ldots H _ n$ erzeugt
+    wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und
+    $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt
+    diese mit dem öffentlichen GÄ-Datenschlüssel. Diese Daten
+    verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung
+    an ein GA weitergegeben.
+  en: >-
+    Furthermore, the user's application generates a random value
+    $H _ s$, from which a pseudo-random series of further values
+    $H _ 1, H _ 2, \ldots H _ n$ is generated using a suitable
+    method. The web application now stores $H _ s$, $I _ D$ and
+    $ K _ B$ together in a data structure and encrypts them with
+    the public GÄ data key. This data remains with the user and
+    is only passed on to a GA for contact tracing.
 64789651fd653174:
   de: >-
     Wichtig: Um die Abgabe manipulierter Daten zu verhindern,
@@ -648,6 +760,27 @@
     Important: In order to prevent the submission of manipulated
     data, operators must always also submit the data available
     for the hash tendered.
+6762c18348af3a7f:
+  de: "Sobald klar ist, dass einer Gruppe keine weiteren Besuchsdatensätze\
+    \ zugeordnet werden, löscht die Web-Anwendung den zur Gruppe\
+    \ gehörigen privaten Schlüssel. "
+  en: "As soon as it is clear that no further visit records will\
+    \ be assigned to a group, the web application deletes the\
+    \ private key belonging to the group. "
+694772c4c12a2a02:
+  de: >-
+    Die Anwendung generiert anschließend aus allen Datenstrukturen
+    QR-Codes, übergibt diese dem Nutzer (z.B. zum Ausdruck) und
+    löscht anschließend alle Daten. Die Daten welche dem Gesundheitsamt
+    übergeben werden sowie die Daten die der Nutzer selbst zur
+    Kontrolle und Anpassung seiner Daten nutzt können in Dateien
+    gespeichert werden.
+  en: >-
+    The application then generates QR codes from all data structures,
+    transfers them to the user (e.g. for printing) and then deletes
+    all data. The data that is transferred to the health department
+    as well as the data that the user himself uses to check and
+    adjust his data can be saved in files.
 6e553ace2302fac6:
   de: >-
     * Das Verfahren ist auch für Menschen nutzbar die keine Erfahrung
@@ -683,11 +816,67 @@
   en: >-
     The following sequence diagram summarizes the initialization
     process.
+74436a30389749e5:
+  de: >-
+    Schließlich verarbeitet das GA die Daten der Betreiber. Daten
+    epidemiologischer Gruppen können jedoch nur entschlüsselt
+    werden, wenn das GA vom Nutzer einen passenden privaten Schlüssel
+    zu Besuchsdaten erhält, die den verschlüsselten privaten Schlüssel
+    der jeweiligen Gruppendaten enthalten. Ohne Vorliegen eines
+    solchen Schlüssels kann das GA auch bei Vorliegen aller Daten
+    und aller sonstigen Schlüssel die Daten nicht entschlüsseln.
+  en: >-
+    Finally, the GA processes the data of the operators. However,
+    epidemiological group data can only be decrypted if the GA
+    receives from the user a matching private key to visit data
+    containing the encrypted private key of the respective group
+    data. Without the presence of such a key, the GA cannot decrypt
+    the data even if all data and all other keys are present.
 769418dd570a9bf1:
   de: '    {% include "common/protocols/_contact_tracing_3.html"
     %}'
   en: '    {% include "common/protocols/_contact_tracing_3.html"
     %}'
+78035bfa9832d05f:
+  de: '### Risikoanalyse'
+  en: '### Risk analysis'
+79cb4080e00dc707:
+  de: >-
+    Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung
+    und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer
+    und E-Mail Adresse (eine Validierung dieser Daten wird unten
+    beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte,
+    symmetrische Schlüssel $K _ A$ und $K _ B$, die über ein geeignetes
+    Schlüsselableitungsverfahren miteinander zu einem Schlüssel
+    $K _ C$ kombiniert werden. Die Anwendung verschlüsselt nun
+    die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K
+    _ C$, fügt zu diesen verschlüsselten Daten den Schlüssel $K
+    _ A$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem
+    öffentlichen GÄ-Datenschlüssel und übermittelt diese Daten
+    an die API, welche sie in einem Backend ablegt und einen zufälligen
+    Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind
+    für keinen Akteur ohne Kenntnis des Schlüssels $K _ B$ sowie
+    des privaten Schlüssels der GÄ entschlüsselbar. Letzterer
+    befindet sich zunächst unter Kontrolle des Nutzers und kann
+    nur über diesen oder über einen Betreiber an ein GÄ gelangen,
+    das diesen entschlüsseln kann.
+  en: >-
+    To enter contact data, users first open the web application
+    and enter relevant data such as name, address, telephone number
+    and e-mail address (a validation of this data is described
+    below). The application then generates two randomly generated
+    symmetric keys $K _ A$ and $K _ B$, which are combined using
+    a suitable key derivation procedure to form a key $K _ C$.
+    The application now encrypts the user's contact data symmetrically
+    with key $K _ C$, adds key $K _ A$ to this encrypted data,
+    encrypts this data asymmetrically with the public GÄ data
+    key, and transmits this data to the API, which stores it in
+    a backend and returns a random identifier $I_D$. The data
+    stored there cannot be decrypted by any actor without knowledge
+    of the key $K _ B$ as well as the private key of the GÄ. The
+    latter is initially under the control of the user and can
+    only reach a GÄ that can decrypt it via the user or via an
+    operator.
 7f3a01c990203aa9:
   de: '### Besuchsdokumentation'
   en: '### Visit documentation'
@@ -770,6 +959,13 @@
     Many contact tracing systems, such as **Luca** or **Recover**,
     rely primarily on technical tools such as smartphone apps
     to document **visits**.
+8b04e974a7c1d123:
+  de: >-
+    Für jede Gruppe generiert die Web-Anwendung ein asymmetrisches
+    Schlüsselpaar.
+  en: >-
+    For each group, the web application generates an asymmetric
+    key pair.
 8b77598e30dd8f22:
   de: >-
     **Hinweis**: Aktuell wird die Sicherheit des Systems durch
@@ -793,6 +989,25 @@
 8d191395e09130a5:
   de: '#### Überprüfung durch den Nutzer'
   en: '#### Review by the user'
+921b019103eff72f:
+  de: >-
+    Die so verschlüsselten Daten können nur unter Zuhilfename
+    des GÄ-Schlüssels sowie eines passenden privaten Schlüssels
+    eines der Gruppe zugehörigen Besuchsdatensatzes. Diese privaten
+    Schlüssel befinden sich unter Kontrolle des Nutzers und werden
+    von diesem nur im Falle einer Infektion an das GA übermittelt.
+    Dementsprechend kann das GA selbst wenn es auf alle Daten
+    der Betreiber zugreifen könnte nur epidemiologisch relevante
+    Daten entschlüsseln, zu denen ein Nutzer den passenden privaten
+    Schlüssel bereitgestellt hat.
+  en: >-
+    The data encrypted in this way can only be accessed with the
+    help of the GA key and a matching private key of a visit record
+    belonging to the group. These private keys are under the control
+    of the user and are only transmitted to the GA by the user
+    in case of infection. Accordingly, even if the GA could access
+    all operator data, it can only decrypt epidemiologically relevant
+    data for which a user has provided the matching private key.
 943e7ade3915d48a:
   de: '### Verbesserungsmöglichkeiten'
   en: '### Opportunities for improvement'
@@ -865,6 +1080,62 @@ a13e86e12343c88a:
     reasons. Paper-based or analogue logs are also offered by
     other systems such as **Luca** (in the form of key fobs),
     but these have a number of privacy issues.
+a248a1534601c7ea:
+  de: >-
+    Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
+    übergibt dieser zunächst dem GA den für diesen bestimmten
+    QR-Code (entweder digital oder analog). Dieses kann ihn mit
+    dem privaten GÄ-Datenschlüssel entschlüsseln, wodurch es die
+    Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^ l$ erhält ($l$
+    bezeichnet hier die Daten des $l$-ten Nutzers). Mit dem Wert
+    $I _ D$ kann das GA vom Backend die verschlüsselten Nutzerdaten
+    erhalten, welche unter Zuhilfenahme des privaten Datenschlüssels
+    sowie von $K _ B$ entschlüsselt werden können. Weiterhin kann
+    das GA mithilfe von $H _ s$ alle Hashwerte $H _ i$ des Nutzers
+    erstellen. Diese Werte veröffentlicht es über das Backend
+    (gemeinsam mit anderen Hashwerten um die Anonymität des Nutzers
+    zu schützen). Die Web-Anwendungen der Betreiber laden regelmäßig
+    die Liste dieser Werte herunter und gleichen sie mit den lokal
+    gespeicherten Hashwerten ab. Ergibt sich eine Übereinstimmung,
+    werden nach Bestätigung durch den Betreiber alle Besuchsdaten
+    die mit diesen Hashwerten $H _ i$ in Zusammenhang stehen (z.B.
+    ermittelt durch Vergleich der Besuchszeiten) über die öffentliche
+    API an das Backend übertragen (ggf. können die Daten nochmals
+    mit dem GÄ-Datenschlüssel verschlüsselt werden). Von dort
+    können sie durch das GA abegrufen werden. Dieses entschlüsselt
+    dann wiederum mit dem privaten GÄ-Datenschlüssel die Werte
+    $ I _ D ^ k$, und $K _ B ^ k$, womit wiederum die Kontaktdaten
+    des Nutzers vom Backend abgefragt und entschlüsselt werden
+    können. Da das GA von diesem Nutzer jedoch nicht den Schlüssel
+    $ H _ s ^ k$ besitzt, kann es dessen Besuchshistorie nicht
+    ohne Einwilligung rekonstruieren. Hierzu ist vielmehr wiederum
+    die aktive Mitarbeit dieses Nutzers notwendig.
+  en: >-
+    In order to determine possible risk contacts of an infected
+    user, the user first hands over the QR code (either digital
+    or analogue) to the GA. The GA can decrypt it with the private
+    GÄ data key, whereby it receives the values $H _ s ^ l$, $I
+    _ D ^ l$ and $K _ B ^ l$ ($l$ denotes the data of the $l$-th
+    user). With the value $I _ D$ the GA can get the encrypted
+    user data from the backend, which can be decrypted with the
+    help of the private data key and $K _ B$. Furthermore the
+    GA can create all hash values $H _ i$ of the user with the
+    help of $H _ s$. It publishes these values via the backend
+    (together with other hash values to protect the anonymity
+    of the user). The operators' web applications regularly download
+    the list of these values and match them with the locally stored
+    hash values. If there is a match, after confirmation by the
+    operator, all visit data related to these hash values $H _
+    i$ (e.g. determined by comparing the visit times) are transferred
+    to the backend via the public API (if necessary, the data
+    can be encrypted again with the GÄ data key). From there they
+    can be retrieved by the GA. The GA then uses the private GÄ
+    data key to decrypt the values $ I _ D ^ k$, and $K _ B ^
+    k$, which in turn can be used to retrieve and decrypt the
+    user's contact data from the backend. However, since the GA
+    does not have the user's key $ H _ s ^ k$, it cannot reconstruct
+    the user's visit history without consent. For this, the active
+    cooperation of this user is again necessary.
 a358175adb7c7edc:
   de: '##### Ausschreibung von Hashes'
   en: '##### Tendering of hashes'
@@ -962,6 +1233,25 @@ b8c3d77774e0f3a4:
     The application then generates QR codes from all data structures,
     transfers them to the user (e.g. for printing) and then deletes
     all data.
+baba42036aecf4fe:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel
+    verschlüsselt wird. Hierbei wird an den Datensatz ein öffentlicher
+    Schlüssel angehängt, den zugehörigen privaten Schlüssel speichert
+    die Anwendung. Diese Paare werden für die Kontaktnachverfolgung
+    genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on
+    the other hand, whereby $H _ i$ is unencrypted and $(K _ B,
+    I _ D)$ is encrypted individually for each value pair with
+    the GÄ data key. Here, a public key is appended to the data
+    set and the corresponding private key is stored by the application.
+    These pairs are used for contact tracing and passed on to
+    public operators.
 be78857cd3a53478:
   de: >-
     * **Datenhaltung im Backend**: Im aktuellen Entwurf werden
@@ -1084,6 +1374,13 @@ d1a45c8801349c85:
   en: >-
     Zilp-Zalp's paper-based, decentralized protocol includes the
     following actors:
+d1cef128ca303004:
+  de: >-
+    Die Web-Anwendung des Betreibers gruppiert Besuchsdaten möglichst
+    zeitnah (innerhalb weniger Stunden) in Gruppen.
+  en: >-
+    The operator's web application groups visit data as close
+    to real time as possible (within a few hours).
 d4ca326bd1f683ac:
   de: '##### Übergabe der Nutzerdaten an das GA'
   en: '##### Transfer of user data to the GA'
@@ -1307,6 +1604,18 @@ f1745f1dcb6ea9b8:
     analogue protocols are also offered by other systems such
     as **Luca** (in the form of key fobs), but these present a
     number of data protection problems.
+f3c34dd6d6b58146:
+  de: >-
+    Eine ausführliche Risikoanalyse findet sich in einem [separaten
+    Dokument]({{'analyses.risk'|href}}).
+  en: >-
+    A detailed risk analysis can be found in a [separate document]({{'analyses.risk'|href}}).
+f3db97615bb00694:
+  de: >-
+    Einzelne Besuchsdaten können hierbei in mehreren Gruppen (überlappend)
+    vorhanden sein.
+  en: >-
+    Individual visit data can exist in several groups (overlapping).
 f461c59347a9bf0a:
   de: >-
     Unter der Annahme, dass zumindest eine dieser drei Angriffe

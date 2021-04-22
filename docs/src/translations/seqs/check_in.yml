@@ -1,3 +1,28 @@
+add_to_infection_groups:
+  _t:
+    de: 5647a153a49a68a4
+    en: 5647a153a49a68a4
+  de: >-
+    Füge Besuchsdaten zu relevanten Infektionsgruppen hinzu, verschlüssele
+    mit öffentlichem Gruppenschlüssel. Verschlüssele privaten
+    Gruppenschlüssel mit öffentlichem Schlüssel der Besuchsdaten.
+    Speichere Daten zusammen.
+  en: >-
+    Add visit data to relevant infection groups, encrypt with
+    group public key. Encrypt private group key with public key
+    of visit data. Store data together.
+delete_data:
+  _t:
+    de: 630f037f85e22fbc
+    en: 630f037f85e22fbc
+  de: Lösche nicht gruppenverschlüsselte Besuchsdaten.
+  en: Delete non-group-encrypted visit data.
+delete_group_keys:
+  _t:
+    de: 6de8a589d2d0f4b4
+    en: 6de8a589d2d0f4b4
+  de: Lösche nicht mehr benötigte private Gruppenschlüssel.
+  en: Delete private group keys that are no longer needed.
 process_operator_data:
   _t:
     de: d6328d20461562df
