@@ -61,7 +61,7 @@ Now the application generates value pairs consisting of $H _ i$ ($ \ge 1$) on th
 
 The application then generates QR codes from all data structures, transfers them to the user (e.g. for printing) and then deletes all data.
 
-**Note** : Currently, the security of the system is *not enhanced by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is kept permanently with the user's contact details.
+Note: Currently, the security of the system is *not enhanced by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is kept permanently with the user's contact details.
 In an extension of the Proktoll, however, it is planned to separate the key $K _ B$ from the contact data in an additional step of by a GA, to store it separately from the beginning or to encrypt it asymmetrically and to give another party control over the decryption.
 It was therefore left in the minutes for the time being.
 

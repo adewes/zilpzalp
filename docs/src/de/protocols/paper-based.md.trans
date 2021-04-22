@@ -1367,3 +1367,13 @@ fd09e279b9bbe5e0:
 fe0bbc3db64eacee:
   de: '## Protokoll (v0.3)'
   en: '## Protocol (v0.3)'
+ff8b6dde040cb3e9:
+  de: >-
+    Hinweis: Aktuell wird die Sicherheit des Systems durch die
+    Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht,
+    da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird.
+  en: >-
+    Note: Currently, the security of the system is *not enhanced
+    by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
+    kept permanently with the user's contact details.
