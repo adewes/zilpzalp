@@ -114,6 +114,26 @@
   en: >-
     * **Health departments (HAs)** using **visit histories** and
     **contact information to** do contact tracing.
+0f40603d1b90c1a4:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{pub}
+    \hdots K _ n ^ \mathrm{pub} ) $ sowie die Daten die der Nutzer
+    selbst zur Kontrolle und Anpassung seiner Daten nutzt können
+    entweder in Dateien gespeichert werden, oder lokal verschlüsselt
+    und anschließend im Backend abgelegt werden, wobei ein zufallsbasiertes
+    Passwort sowie eine zufällige ID generiert werden, die der
+    Nutzer notieren muss um die Daten später wiederherstellen
+    zu können.
+  en: >-
+    The data that is transferred to the health department in case
+    of contact tracing $ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{pub}
+    \hdots K _ n ^ \mathrm{pub} ) $ as well as the data that the
+    user himself uses to control and adjust his data can either
+    be stored in files or locally encrypted and then stored in
+    the backend, generating a random password and a random ID
+    that the user has to note down in order to be able to retrieve
+    the data later.
 1253c0b2b4cda099:
   de: >-
     Nun generiert die Anwendung Wertepaare bestehend aus $H _
@@ -129,6 +149,21 @@
     I _ D)$ is encrypted individually with the GÄ key for each
     value pair. These pairs are used for contact tracing and passed
     on to public operators.
+12d5dad6da24a53c:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden ($ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $), sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden.
+  en: >-
+    The data which is transferred to the health authority in the
+    case of contact tracing ($ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $), as well as the data which
+    the user himself uses to check and adjust his data can either
+    be stored in files, or locally encrypted and then stored in
+    the backend.
 13b44afc94bfef7f:
   de: >-
     Hierbei müsste der Nutzer eine zusätzliche Datenstruktur zur
@@ -177,6 +212,38 @@
     tracing, the backend determines that no contact data exists
     for them yet. It then writes out the token $ Z $ via a public
     list for completion.
+1a31c685b7cf5d80:
+  de: >-
+    Da das GA von diesem Nutzer jedoch nicht den Schlüssel $ H
+    _ s ^ k$ besitzt, kann es dessen Besuchshistorie nicht ohne
+    Einwilligung rekonstruieren.
+  en: >-
+    However, since the GA does not have the key $ H _ s ^ k$ from
+    this user, it cannot reconstruct the user's visit history
+    without consent.
+1a54ac01ef20ead9:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel
+    verschlüsselt wird. Hierbei wird an den Datensatz der im Rahmen
+    der für diese generierte öffentliche Schlüssel $K _ i ^ \mathrm{pub}
+    $ angehängt, den zugehörigen privaten Schlüssel $K _ i ^ \mathrm{priv}
+    $ speichert die Anwendung zur späteren eventuellen Übergabe
+    an das Gesundheitsamt. Diese Paare werden für die Kontaktnachverfolgung
+    genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on
+    the other hand, whereby $H _ i$ is unencrypted and $(K _ B,
+    I _ D)$ is encrypted individually for each value pair with
+    the GÄ data key. Here the public key $K _ i ^ \mathrm{pub}
+    $ generated in the context of the for this is attached to
+    the data record, the application stores the associated private
+    key $K _ i ^ \mathrm{priv} $ for the later possible delivery
+    to the public health department. These pairs are used for
+    contact tracing and passed on to public operators.
 1acfe6d365d9266e:
   de: '### Risiko-Analyse'
   en: '### Risk analysis'
@@ -295,6 +362,28 @@
     um die Besuchsdokumentation zu umgehen.
   en: >-
     Found codes could easily be misused e.g. to bypass visit documentation.
+263ca0ed9652ecb4:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel
+    verschlüsselt wird. Hierbei wird an den Datensatz der im Rahmen
+    der für diese generierte öffentliche Schlüssel $K _ i ^ \mathrm{pub}
+    $ angehängt, den zugehörigen privaten Schlüssel speichert
+    die Anwendung $K _ i ^ \mathrm{pub} $. Diese Paare werden
+    für die Kontaktnachverfolgung genutzt und an Betreiber von
+    Öffentlichkeiten weitergegeben.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on
+    the other hand, whereby $H _ i$ is unencrypted and $(K _ B,
+    I _ D)$ is encrypted individually with the GÄ data key for
+    each value pair. Here, the public key $K _ i ^ \mathrm{pub}
+    $ generated in the context of the for this is appended to
+    the data set, the associated private key is stored by the
+    application $K _ i ^ \mathrm{pub} $. These pairs are used
+    for contact tracing and passed on to public operators.
 2a0f7e673ecf8c4d:
   de: '#### Rekonstruktion von Besuchshistorien'
   en: '#### Reconstruction of visit histories'
@@ -403,6 +492,15 @@
     among others. The problem here is that central data storage
     creates a multitude of possibilities for monitoring users
     that are difficult to solve technologically or organizationally.
+335b9e2f98598a77:
+  de: >-
+    Mit dem Wert $I _ D$ kann das GA vom Backend die verschlüsselten
+    Nutzerdaten erhalten, welche unter Zuhilfenahme des privaten
+    Datenschlüssels sowie von $K _ B$ entschlüsselt werden können.
+  en: >-
+    With the value $I _ D$ the GA can receive the encrypted user
+    data from the backend, which can be decrypted with the help
+    of the private data key as well as $K _ B$.
 33ef6fb6ac258672:
   de: '    {% include "common/protocols/_check_in.html" %}'
   en: '    {% include "common/protocols/_check_in.html" %}'
@@ -455,6 +553,39 @@
     Visit data collection using QR data also works without storing
     contact data in a central backend. Accordingly, the collection
     and storage of this data can be delayed as follows:
+3c443194af99822a:
+  de: >-
+    Die Anwendung generiert anschließend aus den Daten QR-Codes,
+    übergibt diese dem Nutzer zum Ausdruck und löscht anschließend
+    alle Daten. Die Daten welche im Falle der Kontaktnachverfolgung
+    dem Gesundheitsamt übergeben werden $( K _ B, I_D, H_s, $K
+    _ 1 ^ \mathrm{pub} $\hdots $K _ n ^ \mathrm{pub} $) sowie
+    die Daten die der Nutzer selbst zur Kontrolle und Anpassung
+    seiner Daten nutzt können entweder in Dateien gespeichert
+    werden, oder lokal verschlüsselt und anschließend im Backend
+    abgelegt werden, wobei ein zufallsbasiertes Passwort sowie
+    eine zufällige ID generiert werden, die der Nutzer notieren
+    muss um die Daten später wiederherstellen zu können. Eine
+    lokale Speicherung als Datei ist hierbei aus Datenschutzsicht
+    zu bevorzugen.
+  en: >-
+    The application then generates QR codes from the data, hands
+    them over to the user for printing and then deletes all data.
+    The data that is transferred to the health authority in the
+    case of contact tracing $( K _ B, I_D, H_s, $K _ 1 ^ \mathrm
+    {pub} $\hdots $K _ n ^ \mathrm {pub} $) as well as the data
+    that the user himself uses to check and adjust his data can
+    either be stored in files or locally encrypted and then stored
+    in the backend, in which case a random password and a random
+    ID are generated that the user must note down in order to
+    be able to restore the data later. Local storage as a file
+    is preferable from a data protection point of view.
+3cd0d4dc6edba191:
+  de: >-
+    Hierzu ist vielmehr wiederum die aktive Mitarbeit dieses Nutzers
+    notwendig.
+  en: >-
+    On the contrary, the active cooperation of this user is necessary.
 3cd4e06fd3edb98a:
   de: >-
     * **Betreiber** von **Ortschaften**, die **Besuche** von **Nutzern**
@@ -482,6 +613,21 @@
   en: >-
     * **Users** who provide their **contact information** and
     **visit history to** GÄ for **contact tracing** purposes.
+419f513c5d13a4fd:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $ sowie die Daten die der Nutzer
+    selbst zur Kontrolle und Anpassung seiner Daten nutzt können
+    entweder in Dateien gespeichert werden, oder lokal verschlüsselt
+    und anschließend im Backend abgelegt werden.
+  en: >-
+    The data that is transferred to the health department in case
+    of contact tracing $ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $ as well as the data that
+    the user himself uses to control and adjust his data can either
+    be stored in files or locally encrypted and then stored in
+    the backend.
 422df66dae0ea0f1:
   de: >-
     Die folgenden Abschnitte beschreiben von uns bisher identifizierte
@@ -576,6 +722,88 @@
     also as Bloom filters) and check whether a given hash has
     been invalidated when documenting a visit with the help of
     the token $ Z _ h $.
+4afaa6ac0fe79bc0:
+  de: >-
+    Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
+    übergibt dieser zunächst dem GA den für diesen bestimmten
+    QR-Code (entweder digital oder analog). Dieses kann ihn mit
+    dem privaten GÄ-Datenschlüssel entschlüsseln, wodurch es die
+    Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^ l$ erhält ($l$
+    bezeichnet hier die Daten des $l$-ten Nutzers). Mit dem Wert
+    $I _ D$ kann das GA vom Backend die verschlüsselten Nutzerdaten
+    erhalten, welche unter Zuhilfenahme des privaten Datenschlüssels
+    sowie von $K _ B$ entschlüsselt werden können. Weiterhin kann
+    das GA mithilfe von $H _ s$ alle Hashwerte $H _ i$ des Nutzers
+    erstellen. Diese Werte veröffentlicht es über das Backend
+    (gemeinsam mit anderen Hashwerten um die Anonymität des Nutzers
+    zu schützen). Die Web-Anwendungen der Betreiber laden regelmäßig
+    die Liste dieser Werte herunter und gleichen sie mit den lokal
+    gespeicherten Hashwerten ab. Ergibt sich eine Übereinstimmung,
+    werden nach Bestätigung durch den Betreiber alle Besuchsdaten
+    die mit diesen Hashwerten $H _ i$ in Zusammenhang stehen (z.B.
+    ermittelt durch Vergleich der Besuchszeiten) über die öffentliche
+    API an das Backend übertragen (ggf. können die Daten nochmals
+    mit dem GÄ-Datenschlüssel verschlüsselt werden). Von dort
+    können sie durch das GA abegrufen werden. Dieses kann Daten
+    von Nutzern entschlüsseln, die mit diesem eine Infektionsgemeinschaft
+    gebildet haben und dementsprechend mit dem gleichen Gruppenschlüssel
+    verschlüsselt wurden. Hierzu entschlüsselt das GA zunächst
+    den Gruppenschlüssel mit dem passenden privaten Schlüssel
+    $K _ i ^ {pub}$ der zu den ursprünglichen Besuchsdaten gehört.
+    Mit diesem sowie dem privaten GÄ-Datenschlüssel kann es wiederum
+    die Werte $ I _ D ^ k$, und $K _ B ^ k$ relevanter Nutzer
+    entschlüsseln, womit wiederum die Kontaktdaten des Nutzers
+    vom Backend abgefragt und entschlüsselt werden können. Da
+    das GA von diesem Nutzer jedoch nicht den Schlüssel $ H _
+    s ^ k$ besitzt, kann es dessen Besuchshistorie nicht ohne
+    Einwilligung rekonstruieren. Hierzu ist vielmehr wiederum
+    die aktive Mitarbeit dieses Nutzers notwendig. Ebensowenig
+    kann das GA Besuchs- oder Kontaktdaten von Nutzern entschlüsseln,
+    die keine Infektionsgemeinschaft mit dem ursprünglichen Nutzer
+    gebildet haben.
+  en: >-
+    In order to determine possible risk contacts of an infected
+    user, the user first hands over the QR code (either digital
+    or analogue) to the GA. The GA can decrypt it with the private
+    GÄ data key, whereby it receives the values $H _ s ^ l$, $I
+    _ D ^ l$ and $K _ B ^ l$ ($l$ denotes the data of the $l$-th
+    user). With the value $I _ D$ the GA can get the encrypted
+    user data from the backend, which can be decrypted with the
+    help of the private data key and $K _ B$. Furthermore the
+    GA can create all hash values $H _ i$ of the user with the
+    help of $H _ s$. It publishes these values via the backend
+    (together with other hash values to protect the anonymity
+    of the user). The operators' web applications regularly download
+    the list of these values and match them with the locally stored
+    hash values. If there is a match, after confirmation by the
+    operator, all visit data related to these hash values $H _
+    i$ (e.g. determined by comparing the visit times) are transferred
+    to the backend via the public API (if necessary, the data
+    can be encrypted again with the GÄ data key). From there they
+    can be retrieved by the GA. The GA can decrypt data from users
+    who have formed an infection community with the GA and have
+    been encrypted with the same group key. To do this, the GA
+    first decrypts the group key with the matching private key
+    $K _ i ^ {pub}$ that belongs to the original visit data. With
+    this and the private GÄ data key, it can in turn decrypt the
+    values $ I _ D ^ k$, and $K _ B ^ k$ of relevant users, which
+    in turn allows the user's contact data to be retrieved and
+    decrypted by the backend. However, since the GA does not have
+    the user's key $ H _ s ^ k$, it cannot reconstruct the user's
+    visit history without consent. This requires the active cooperation
+    of the user. Nor can the GA - decrypt the visit or - contact
+    data of users who have not formed an infection community with
+    the original user.
+4b2515f52acba378:
+  de: >-
+    Hinweis: Aktuell wird die Sicherheit des Systems durch die
+    Ableitung von $K _ C$ aus $(K _ A, K _ B)$ nicht erhöht, da
+    $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird.
+  en: >-
+    Note: Currently, deriving $K _ C$ from $(K _ A, K _ B)$ does
+    not increase the security of the system, as $K _ B $ is kept
+    permanently with the user's contact information.
 4c7d582c45d9c737:
   de: >-
     Nutzer im System möchten GÄ anlassbezogen ihre Kontaktdaten
@@ -602,6 +830,17 @@
     only in a supportive manner, and essentially works completely
     without technological tools for the user during visits. Such
     a protocol has many advantages in practice:
+4ee3c3c74277dfc9:
+  de: >-
+    Weiterhin kann das GA mithilfe von $H _ s$ alle Hashwerte
+    $H _ i$ des Nutzers erstellen. Diese Werte veröffentlicht
+    es über das Backend (gemeinsam mit anderen Hashwerten um die
+    Anonymität des Nutzers zu schützen).
+  en: >-
+    Furthermore, the GA can use $H _ s$ to create all hash values
+    $H _ i$ of the user. It publishes these values via the backend
+    (together with other hash values to protect the anonymity
+    of the user).
 53b532d6b9212344:
   de: >-
     Der öffentliche Schlüssel wird zusammen mit den Gruppendaten
@@ -691,6 +930,20 @@
     tracing and waits for feedback from operators. In order to
     prevent the submission of manipulated data, operators must
     always also submit the data available for the advertised hash.
+57774f44464dad65:
+  de: >-
+    Ergibt sich eine Übereinstimmung, werden nach Bestätigung
+    durch den Betreiber alle Besuchsdaten die mit diesen Hashwerten
+    $H _ i$ in Zusammenhang stehen (z.B. ermittelt durch Vergleich
+    der Besuchszeiten) über die öffentliche API an das Backend
+    übertragen (ggf. können die Daten nochmals mit dem GÄ-Datenschlüssel
+    verschlüsselt werden).
+  en: >-
+    If there is a match, all visit data related to these hash
+    values $H _ i$ (e.g. determined by comparing the visit times)
+    are transferred to the backend via the public API after confirmation
+    by the operator (if necessary, the data can be encrypted again
+    with the GÄ data key).
 5780326310ef7376:
   de: >-
     Ein Betreiber liefert immer komplette Gruppendaten zurück,
@@ -703,6 +956,21 @@
     visit data encrypted with a private group key. The private
     key in turn was encrypted with the public keys of the visit
     data of all group members.
+58e62f4ea402c233:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden ($ ( K _ B, I _ D, H_s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $), sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden.
+  en: >-
+    The data which is transferred to the health authority in the
+    case of contact tracing ($ ( K _ B, I _ D, H_s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $), as well as the data which
+    the user himself uses to check and adjust his data can either
+    be stored in files, or locally encrypted and then stored in
+    the backend.
 5c823a1e1abcd11b:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -746,6 +1014,15 @@
     pair. All visit data of the group is encrypted with the public
     key of this pair. The corresponding private key is encrypted
     with the public key of each visit data record.
+622220a4f6504f26:
+  de: >-
+    Die Web-Anwendungen der Betreiber laden regelmäßig die Liste
+    dieser Werte herunter und gleichen sie mit den lokal gespeicherten
+    Hashwerten ab.
+  en: >-
+    The operators' web applications regularly download the list
+    of these values and match them with the locally stored hash
+    values.
 623d6bd8d77c62b0:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -850,9 +1127,27 @@
     %}'
   en: '    {% include "common/protocols/_contact_tracing_3.html"
     %}'
+77a2349203c4f68c:
+  de: >-
+    Dieses kann ihn mit dem privaten GÄ-Datenschlüssel entschlüsseln,
+    wodurch es die Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^
+    l$ erhält ($l$ bezeichnet hier die Daten des $l$-ten Nutzers).
+  en: >-
+    This can decrypt it with the private GÄ data key, whereby
+    it receives the values $H _ s ^ l$, $I _ D ^ l$ and $K _ B
+    ^ l$ ($l$ denotes here the data of the $l$-th user).
 78035bfa9832d05f:
   de: '### Risikoanalyse'
   en: '### Risk analysis'
+7943c437b7200db6:
+  de: >-
+    Dieses kann Daten von Nutzern entschlüsseln, die mit diesem
+    eine Infektionsgemeinschaft gebildet haben und dementsprechend
+    mit dem gleichen Gruppenschlüssel verschlüsselt wurden.
+  en: >-
+    This can decrypt data from users who have formed an infection
+    community with it and have accordingly been encrypted with
+    the same group key.
 79cb4080e00dc707:
   de: >-
     Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung
@@ -890,6 +1185,18 @@
     latter is initially under the control of the user and can
     only reach a GÄ that can decrypt it via the user or via an
     operator.
+7e31f21fb8f8467f:
+  de: Von dort können sie durch das GA abegrufen werden.
+  en: From there they can be recalled by the GA.
+7ea29b23b04b183e:
+  de: >-
+    Ebensowenig kann das GA Besuchs- oder Kontaktdaten von Nutzern
+    entschlüsseln, die keine Infektionsgemeinschaft mit dem ursprünglichen
+    Nutzer gebildet haben.
+  en: >-
+    Nor can the GA - decrypt visits or - contact data of users
+    who have not formed an infection community with the original
+    user.
 7f3a01c990203aa9:
   de: '### Besuchsdokumentation'
   en: '### Visit documentation'
@@ -1005,6 +1312,26 @@
 8d191395e09130a5:
   de: '#### Überprüfung durch den Nutzer'
   en: '#### Review by the user'
+8dbb0477f463caad:
+  de: >-
+    Mit diesem sowie dem privaten GÄ-Datenschlüssel kann es wiederum
+    die Werte $ I _ D ^ k$, und $K _ B ^ k$ relevanter Nutzer
+    entschlüsseln, womit wiederum die Kontaktdaten des Nutzers
+    vom Backend abgefragt und entschlüsselt werden können.
+  en: >-
+    With this and the private GÄ data key, it can in turn decrypt
+    the values $ I _ D ^ k$, and $K _ B ^ k$ of relevant users,
+    which in turn can be used to query and decrypt the user's
+    contact data from the backend.
+8f571fef1299b50f:
+  de: >-
+    Im letzteren Fall wird von der Anwendung ein zufallsbasiertes
+    Passwort sowie eine zufällige ID generiert, die der Nutzer
+    notieren muss um die Daten später wiederherstellen zu können.
+  en: >-
+    In the latter case, the application generates a random password
+    and ID that the user must write down in order to recover the
+    data later.
 921b019103eff72f:
   de: >-
     Die so verschlüsselten Daten können nur unter Zuhilfename
@@ -1100,6 +1427,13 @@
 9f8e3d08fefcf091:
   de: '#### Verlust oder Diebstahl von QR-Codes'
   en: '#### Loss or theft of QR codes'
+a0f3a67f767254ff:
+  de: >-
+    Diese Paare werden für die Kontaktnachverfolgung genutzt und
+    an Betreiber von Öffentlichkeiten weitergegeben.
+  en: >-
+    These pairs are used for contact tracking and shared with
+    public operators.
 a13e86e12343c88a:
   de: >-
     Viele Systeme zur Kontaktnachverfolgung wie **Luca** oder
@@ -1198,6 +1532,26 @@ a537faf8ca3baab9:
     separate the $K_B$ key from the contact details or to asymmetrically
     encrypt it and give another party control over decryption.
     It was therefore left in the protocol.
+a602f07af712148a:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel
+    verschlüsselt wird. Hierbei wird an den Datensatz der im Rahmen
+    der für diese generierte öffentliche Schlüssel $K _ i ^ \mathrm{pub}
+    $ angehängt, den zugehörigen privaten Schlüssel $K _ i ^ \mathrm{priv}
+    $ speichert die Anwendung zur späteren eventuellen Übergabe
+    an das Gesundheitsamt.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ B$ and $I _ D$ on
+    the other hand, whereby $H _ i$ is unencrypted and $(K _ B,
+    I _ D)$ is encrypted individually for each value pair with
+    the GÄ data key. The public key $K _ i ^ \mathrm{pub} $ generated
+    for this data set is appended to the data set, and the application
+    stores the associated private key $K _ i ^ \mathrm{priv} $
+    for possible later transfer to the health authority.
 a60b6633f29951c1:
   de: >-
     Bei der Initialisierung kann zusätzlich zu den GA-Daten auch
@@ -1230,6 +1584,21 @@ a75cafc8fe74410f:
 aac32651b10f567c:
   de: </div>
   en: </div>
+ac128c2b75a9622e:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{pub}
+    \hdots K _ n ^ \mathrm{pub} ) $ sowie die Daten die der Nutzer
+    selbst zur Kontrolle und Anpassung seiner Daten nutzt können
+    entweder in Dateien gespeichert werden, oder lokal verschlüsselt
+    und anschließend im Backend abgelegt werden.
+  en: >-
+    The data that is transferred to the health department in case
+    of contact tracing $ ( K _ B, I_D, H_s, K _ 1 ^ \mathrm{pub}
+    \hdots K _ n ^ \mathrm{pub} ) $ as well as the data that the
+    user himself uses to control and adjust his data can either
+    be stored in files or locally encrypted and then stored in
+    the backend.
 ac5ebbce510e40a7:
   de: >-
     Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
@@ -1257,6 +1626,29 @@ b1b40da94ab3fdc4:
 b2bdbd2b60db45a1:
   de: '### Mögliche Strategien'
   en: '### Possible strategies'
+b3f15850110948ff:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $ ( K _ B, I _ D, H _ s, K _ 1 ^ \mathrm{priv}
+    \ldots K _ n ^ \mathrm{priv} ) $, sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden.
+  en: >-
+    The data that is transferred to the health authority in the
+    case of contact tracing $ ( K _ B, I _ D, H _ s, K _ 1 ^ \mathrm{priv}
+    \ldots K _ n ^ \mathrm{priv} ) $, as well as the data that
+    the user himself uses to check and adjust his data can either
+    be stored in files, or locally encrypted and then stored in
+    the backend.
+b46354f257808c89:
+  de: >-
+    Die Anwendung generiert anschließend aus den Daten QR-Codes,
+    übergibt diese dem Nutzer zum Ausdruck und löscht anschließend
+    alle Daten.
+  en: >-
+    The application then generates QR codes from the data, hands
+    them to the user for printing, and then deletes all data.
 b890e7aea6befec3:
   de: Er wurde daher vorerst in dem Protokoll belassen.
   en: It was therefore left in the minutes for the time being.
@@ -1288,6 +1680,26 @@ baba42036aecf4fe:
     set and the corresponding private key is stored by the application.
     These pairs are used for contact tracing and passed on to
     public operators.
+bbc195ab57cdc977:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $( K _ B, I_D, H_s, $K _ 1 ^ \mathrm{pub}
+    $\hdots $K _ n ^ \mathrm{pub} )$ sowie die Daten die der Nutzer
+    selbst zur Kontrolle und Anpassung seiner Daten nutzt können
+    entweder in Dateien gespeichert werden, oder lokal verschlüsselt
+    und anschließend im Backend abgelegt werden, wobei ein zufallsbasiertes
+    Passwort sowie eine zufällige ID generiert werden, die der
+    Nutzer notieren muss um die Daten später wiederherstellen
+    zu können.
+  en: >-
+    The data which are handed over to the health authority in
+    case of contact tracing $( K _ B, I_D, H_s, $K _ 1 ^ \mathrm
+    {pub} $\hdots $K _ n ^ \mathrm {pub} )$ as well as the data
+    which the user himself uses to control and adjust his data
+    can either be stored in files or locally encrypted and then
+    stored in the backend, generating a random password as well
+    as a random ID which the user has to note down to be able
+    to recover the data later.
 be78857cd3a53478:
   de: >-
     * **Datenhaltung im Backend**: Im aktuellen Entwurf werden
@@ -1339,6 +1751,26 @@ bfe299597d077206:
     separate the $K _ B$ key from the contact details, or to asymmetrically
     encrypt it and give another party control over decryption.
     It was therefore left in the protocol.
+c0cf56b87b94b81a:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $ ( K _ B, I_D, H_s, $K _ 1 ^ \mathrm{pub}
+    $\hdots $K _ n ^ \mathrm{pub} ) $ sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden,
+    wobei ein zufallsbasiertes Passwort sowie eine zufällige ID
+    generiert werden, die der Nutzer notieren muss um die Daten
+    später wiederherstellen zu können.
+  en: >-
+    The data which are handed over to the health department in
+    case of contact tracing $ ( K _ B, I_D, H_s, $K _ 1 ^ \mathrm
+    {pub} $\hdots $K _ n ^ \mathrm {pub} ) $ as well as the data
+    which the user himself uses to control and adjust his data
+    can either be stored in files, or locally encrypted and then
+    stored in the backend, generating a random password as well
+    as a random ID which the user has to note down to be able
+    to recover the data later.
 c2bcdfadda769d49:
   de: >-
     * Nutzer müssen keine Smartphone-Anwendungen von eventuell
@@ -1354,6 +1786,21 @@ c31ff99465948554:
 c357cc4a900fba98:
   de: Schließlich verarbeitet das GA die Daten der Betreiber.
   en: Finally, the GA processes the operators' data.
+c3f5d62aebb7fdeb:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden ($ ( K _ B, I _ D, H _ s, K _ 1 ^ \mathrm{priv}
+    \hdots K _ n ^ \mathrm{priv} ) $), sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden.
+  en: >-
+    The data which is transferred to the health authority in the
+    case of contact tracing ($ ( K _ B, I _ D, H _ s, K _ 1 ^
+    \mathrm{priv} \hdots K _ n ^ \mathrm{priv} ) $), as well as
+    the data which the user himself uses to check and adjust his
+    data can either be stored in files, or locally encrypted and
+    then stored in the backend.
 c53ec340e27bad83:
   de: '##### Verarbeiten relevanter Kontaktdaten'
   en: '##### Processing of relevant contact data'
@@ -1429,6 +1876,30 @@ d1cef128ca303004:
   en: >-
     The operator's web application groups visit data as close
     to real time as possible (within a few hours).
+d2cdee459e0d55ff:
+  de: >-
+    Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
+    übergibt dieser zunächst dem GA den für diesen bestimmten
+    QR-Code (entweder digital oder analog).
+  en: >-
+    In order to identify possible risk contacts of an infected
+    user, the user first hands over the QR code (either digital
+    or analogue) to the GA.
+d4705741074650a9:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden ($ ( K _ B, I _ D, H _ s, K _ 1 ^ \mathrm{priv}
+    \ldots K _ n ^ \mathrm{priv} ) $), sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden.
+  en: >-
+    The data which is transferred to the health authority in the
+    case of contact tracing ($ ( K _ B, I _ D, H _ s, K _ 1 ^
+    \mathrm{priv} \ldots K _ n ^ \mathrm{priv} ) $), as well as
+    the data which the user himself uses to check and adjust his
+    data can either be stored in files, or locally encrypted and
+    then stored in the backend.
 d4ca326bd1f683ac:
   de: '##### Übergabe der Nutzerdaten an das GA'
   en: '##### Transfer of user data to the GA'
@@ -1479,6 +1950,13 @@ dae47a88953d96b8:
   en: >-
     * Furthermore, we create a way to document **visits** in a
     robust and data-efficient manner.
+db353caaa864cc40:
+  de: >-
+    Eine lokale Speicherung als Datei ist hierbei aus Datenschutzsicht
+    zu bevorzugen.
+  en: >-
+    Local storage as a file is preferable from a data protection
+    point of view.
 dd684e5c2f9d1b5a:
   de: >-
     Die folgenden Abschnitte beschreiben mögliche Erweiterungen
@@ -1572,6 +2050,15 @@ e8c87b555e3dee00:
   en: >-
     These data cannot be falsified by an operator without knowledge
     of the key $K _ B$, GÄ can thus exclude manipulated or incorrect
+    data.
+e95e78dd67f463d1:
+  de: >-
+    Hierzu entschlüsselt das GA zunächst den Gruppenschlüssel
+    mit dem passenden privaten Schlüssel $K _ i ^ {pub}$ der zu
+    den ursprünglichen Besuchsdaten gehört.
+  en: >-
+    To do this, the GA first decrypts the group key with the matching
+    private key $K _ i ^ {pub}$ that belongs to the original visit
     data.
 e967712baa7617d0:
   de: '#### Sequenzdiagramm'
@@ -1721,6 +2208,33 @@ fd09e279b9bbe5e0:
     the $K_B$ key from the contact details, or to asymmetrically
     encrypt it and give another party control over decryption.
     It was therefore left in the protocol.
+fd804d156e090e9b:
+  de: >-
+    Die Anwendung generiert anschließend aus den Daten QR-Codes,
+    übergibt diese dem Nutzer zum Ausdruck und löscht anschließend
+    alle Daten. Die Daten welche im Falle der Kontaktnachverfolgung
+    dem Gesundheitsamt übergeben werden $( K _ B, I_D, H_s, $K
+    _ 1 ^ \mathrm{pub} $\hdots $K _ n ^ \mathrm{pub} )$ sowie
+    die Daten die der Nutzer selbst zur Kontrolle und Anpassung
+    seiner Daten nutzt können entweder in Dateien gespeichert
+    werden, oder lokal verschlüsselt und anschließend im Backend
+    abgelegt werden, wobei ein zufallsbasiertes Passwort sowie
+    eine zufällige ID generiert werden, die der Nutzer notieren
+    muss um die Daten später wiederherstellen zu können. Eine
+    lokale Speicherung als Datei ist hierbei aus Datenschutzsicht
+    zu bevorzugen.
+  en: >-
+    The application then generates QR codes from the data, hands
+    them over to the user for printing and then deletes all data.
+    The data that is transferred to the health authority in the
+    case of contact tracing $( K _ B, I_D, H_s, $K _ 1 ^ \mathrm
+    {pub} $\hdots $K _ n ^ \mathrm {pub} )$ as well as the data
+    that the user himself uses to check and adjust his data can
+    either be stored in files or locally encrypted and then stored
+    in the backend, in which case a random password and a random
+    ID are generated that the user must note down in order to
+    be able to restore the data later. Local storage as a file
+    is preferable from a data protection point of view.
 fe0bbc3db64eacee:
   de: '## Protokoll (v0.3)'
   en: '## Protocol (v0.3)'

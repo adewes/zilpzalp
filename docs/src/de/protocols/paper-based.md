@@ -57,11 +57,15 @@ Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung und erfa
 
 Weiterhin generiert die Anwendung des Nutzers einen Zufallswert $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige Reihe weiterer Werte $H _ 1, H _ 2, \ldots H _ n$ erzeugt wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und $ K _ B$ zusammen in einer Datenstruktur und verschlüsselt diese mit dem öffentlichen GÄ-Datenschlüssel. Diese Daten verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung an ein GA weitergegeben.
 
-Nun generiert die Anwendung Wertepaare bestehend aus $H _ i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits, wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel verschlüsselt wird. Hierbei wird an den Datensatz ein öffentlicher Schlüssel angehängt, den zugehörigen privaten Schlüssel speichert die Anwendung. Diese Paare werden für die Kontaktnachverfolgung genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
+Nun generiert die Anwendung Wertepaare bestehend aus $H _ i$ ($ \ge 1$) einerseits und $K _ B$ und $I _ D$ andererseits, wobei $H _ i$ unverschlüsselt und $(K _ B, I _ D)$ jeweils für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel verschlüsselt wird. Hierbei wird an den Datensatz der im Rahmen der für diese generierte öffentliche Schlüssel $K _ i ^ \mathrm{pub} $ angehängt, den zugehörigen privaten Schlüssel $K _ i ^ \mathrm{priv} $ speichert die Anwendung zur späteren eventuellen Übergabe an das Gesundheitsamt.
+Diese Paare werden für die Kontaktnachverfolgung genutzt und an Betreiber von Öffentlichkeiten weitergegeben.
 
-Die Anwendung generiert anschließend aus allen Datenstrukturen QR-Codes, übergibt diese dem Nutzer (z.B. zum Ausdruck) und löscht anschließend alle Daten. Die Daten welche dem Gesundheitsamt übergeben werden sowie die Daten die der Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt können in Dateien gespeichert werden.
+Die Anwendung generiert anschließend aus den Daten QR-Codes, übergibt diese dem Nutzer zum Ausdruck und löscht anschließend alle Daten.
+Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt übergeben werden $ ( K _ B, I _ D, H _ s, K _ 1 ^ \mathrm{priv} \ldots K _ n ^ \mathrm{priv} ) $, sowie die Daten die der Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt können entweder in Dateien gespeichert werden, oder lokal verschlüsselt und anschließend im Backend abgelegt werden.
+Im letzteren Fall wird von der Anwendung ein zufallsbasiertes Passwort sowie eine zufällige ID generiert, die der Nutzer notieren muss um die Daten später wiederherstellen zu können.
+Eine lokale Speicherung als Datei ist hierbei aus Datenschutzsicht zu bevorzugen.
 
-Hinweis: Aktuell wird die Sicherheit des Systems durch die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ **nicht** erhöht, da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt wird.
+Hinweis: Aktuell wird die Sicherheit des Systems durch die Ableitung von $K _ C$ aus $(K _ A, K _ B)$ nicht erhöht, da $K _ B $ permanent mit den Kontaktdaten des Nutzers aufbewahrt wird.
 In einer Erweiterung des Proktolls ist jedoch geplant, den Schlüssel $K _ B$ in einem zusätzlichen Schritt von durch ein GA von den Kontaktdaten zu trennen, ihn von Anfang an separat zu speichern oder ihn asymmetrisch zu verschlüsseln und einer weiteren Partei die Kontrolle über die Entschlüsselung zu geben.
 Er wurde daher vorerst in dem Protokoll belassen.
 
@@ -102,7 +106,19 @@ Die so verschlüsselten Daten können nur unter Zuhilfename des GÄ-Datenschlüs
 
 ### Kontaktnachverfolgung
 
-Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln übergibt dieser zunächst dem GA den für diesen bestimmten QR-Code (entweder digital oder analog). Dieses kann ihn mit dem privaten GÄ-Datenschlüssel entschlüsseln, wodurch es die Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^ l$ erhält ($l$ bezeichnet hier die Daten des $l$-ten Nutzers). Mit dem Wert $I _ D$ kann das GA vom Backend die verschlüsselten Nutzerdaten erhalten, welche unter Zuhilfenahme des privaten Datenschlüssels sowie von $K _ B$ entschlüsselt werden können. Weiterhin kann das GA mithilfe von $H _ s$ alle Hashwerte $H _ i$ des Nutzers erstellen. Diese Werte veröffentlicht es über das Backend (gemeinsam mit anderen Hashwerten um die Anonymität des Nutzers zu schützen). Die Web-Anwendungen der Betreiber laden regelmäßig die Liste dieser Werte herunter und gleichen sie mit den lokal gespeicherten Hashwerten ab. Ergibt sich eine Übereinstimmung, werden nach Bestätigung durch den Betreiber alle Besuchsdaten die mit diesen Hashwerten $H _ i$ in Zusammenhang stehen (z.B. ermittelt durch Vergleich der Besuchszeiten) über die öffentliche API an das Backend übertragen (ggf. können die Daten nochmals mit dem GÄ-Datenschlüssel verschlüsselt werden). Von dort können sie durch das GA abegrufen werden. Dieses entschlüsselt dann wiederum mit dem privaten GÄ-Datenschlüssel die Werte $ I _ D ^ k$, und $K _ B ^ k$, womit wiederum die Kontaktdaten des Nutzers vom Backend abgefragt und entschlüsselt werden können. Da das GA von diesem Nutzer jedoch nicht den Schlüssel $ H _ s ^ k$ besitzt, kann es dessen Besuchshistorie nicht ohne Einwilligung rekonstruieren. Hierzu ist vielmehr wiederum die aktive Mitarbeit dieses Nutzers notwendig.
+Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln übergibt dieser zunächst dem GA den für diesen bestimmten QR-Code (entweder digital oder analog).
+Dieses kann ihn mit dem privaten GÄ-Datenschlüssel entschlüsseln, wodurch es die Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ B ^ l$ erhält ($l$ bezeichnet hier die Daten des $l$-ten Nutzers).
+Mit dem Wert $I _ D$ kann das GA vom Backend die verschlüsselten Nutzerdaten erhalten, welche unter Zuhilfenahme des privaten Datenschlüssels sowie von $K _ B$ entschlüsselt werden können.
+Weiterhin kann das GA mithilfe von $H _ s$ alle Hashwerte $H _ i$ des Nutzers erstellen. Diese Werte veröffentlicht es über das Backend (gemeinsam mit anderen Hashwerten um die Anonymität des Nutzers zu schützen).
+Die Web-Anwendungen der Betreiber laden regelmäßig die Liste dieser Werte herunter und gleichen sie mit den lokal gespeicherten Hashwerten ab.
+Ergibt sich eine Übereinstimmung, werden nach Bestätigung durch den Betreiber alle Besuchsdaten die mit diesen Hashwerten $H _ i$ in Zusammenhang stehen (z.B. ermittelt durch Vergleich der Besuchszeiten) über die öffentliche API an das Backend übertragen (ggf. können die Daten nochmals mit dem GÄ-Datenschlüssel verschlüsselt werden).
+Von dort können sie durch das GA abegrufen werden.
+Dieses kann Daten von Nutzern entschlüsseln, die mit diesem eine Infektionsgemeinschaft gebildet haben und dementsprechend mit dem gleichen Gruppenschlüssel verschlüsselt wurden.
+Hierzu entschlüsselt das GA zunächst den Gruppenschlüssel mit dem passenden privaten Schlüssel $K _ i ^ {pub}$ der zu den ursprünglichen Besuchsdaten gehört.
+Mit diesem sowie dem privaten GÄ-Datenschlüssel kann es wiederum die Werte $ I _ D ^ k$, und $K _ B ^ k$ relevanter Nutzer entschlüsseln, womit wiederum die Kontaktdaten des Nutzers vom Backend abgefragt und entschlüsselt werden können.
+Da das GA von diesem Nutzer jedoch nicht den Schlüssel $ H _ s ^ k$ besitzt, kann es dessen Besuchshistorie nicht ohne Einwilligung rekonstruieren.
+Hierzu ist vielmehr wiederum die aktive Mitarbeit dieses Nutzers notwendig.
+Ebensowenig kann das GA Besuchs- oder Kontaktdaten von Nutzern entschlüsseln, die keine Infektionsgemeinschaft mit dem ursprünglichen Nutzer gebildet haben.
 
 #### Sequenzdiagramm
 
