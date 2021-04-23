@@ -1,9 +1,9 @@
 # Paper-based contact tracing
 
 Many contact tracing systems, such as Luca or Recover, rely primarily on tech tools like smartphone apps to document visits.
-This is problematic for a number of reasons. Paper-based or analogue protocols are also offered by other systems such as Luca (in the form of key fobs), but these present a number of data protection problems.
+This is problematic for a number of reasons. Paper-based or analogue protocols are also offered by other systems such as Luca (e.g. in the form of "key tags"), but static QR codes have a number of data protection problems.
 
-Zilp-Zalp, on the other hand, relies primarily on a paper-based protocol that uses technological tools such as web applications only in a supportive manner, essentially functioning completely without technological tools for the user during visits. Such a protocol has many advantages in practice:
+Zilp-Zalp, on the other hand, relies primarily on a paper-based protocol that uses technological tools such as web applications only in a supportive manner, and essentially works completely without technological tools for the user during visits. Such a protocol has many advantages in practice:
 
 * Users do not have to install smartphone applications from sources that may not be trusted.
 * It is not necessary to carry a smartphone or have internet connectivity to document visits.

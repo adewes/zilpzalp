@@ -589,6 +589,19 @@
     would like to store the data in such a way that GÄ can access
     the data without any further action on the part of the user
     (but in a way that is comprehensible to the user).
+4de2c4fb325f6be5:
+  de: >-
+    Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll,
+    das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen
+    nutzt und im Wesentlichen für den Nutzer bei Besuchen komplett
+    ohne technologische Hilfsmittel funktioniert. Ein solches
+    Protokoll hat in der Praxis viele Vorteile:
+  en: >-
+    Zilp-Zalp, on the other hand, relies primarily on a paper-based
+    protocol that uses technological tools such as web applications
+    only in a supportive manner, and essentially works completely
+    without technological tools for the user during visits. Such
+    a protocol has many advantages in practice:
 53b532d6b9212344:
   de: >-
     Der öffentliche Schlüssel wird zusammen mit den Gruppendaten
@@ -1373,6 +1386,18 @@ c936cb15e36331cd:
     %}'
   en: '    {% include "common/protocols/_initialization.html"
     %}'
+cab976e430dd71b5:
+  de: >-
+    Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
+    bzw. analoge Protokolle werden zwar auch von anderen Systemen
+    wie Luca angeboten (z.B. in Form von "Schlüsselanhängern"),
+    jedoch weisen statische QR-Codes eine Reihe von Datenschutz-Problemen
+    auf.
+  en: >-
+    This is problematic for a number of reasons. Paper-based or
+    analogue protocols are also offered by other systems such
+    as Luca (e.g. in the form of "key tags"), but static QR codes
+    have a number of data protection problems.
 cca00703d820d786:
   de: >-
     Die folgenden Sequenzdiagramme zeigen den Ablauf der Kontaktnachverfolgung.

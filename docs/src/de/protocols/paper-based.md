@@ -1,9 +1,9 @@
 # Papiergestützte Kontaktnachverfolgung
 
 Viele Systeme zur Kontaktnachverfolgung wie Luca oder Recover setzen primär auf technische Hilfsmittel wie Smartphone-Apps, um Besuche zu dokumentieren.
-Dies ist aus verschiedenen Gründen problematisch. Papiergestützte bzw. analoge Protokolle werden zwar auch von anderen Systemen wie Luca angeboten (in Form von Schlüsselanhängern), jedoch weisen diese eine Reihe von Datenschutz-Problemen auf.
+Dies ist aus verschiedenen Gründen problematisch. Papiergestützte bzw. analoge Protokolle werden zwar auch von anderen Systemen wie Luca angeboten (z.B. in Form von "Schlüsselanhängern"), jedoch weisen statische QR-Codes eine Reihe von Datenschutz-Problemen auf.
 
-Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll, das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen nutzt, im Wesentlichen für den Nutzer bei Besuchen komplett ohne technologische Hilfsmittel funktioniert. Ein solches Protokoll hat in der Praxis viele Vorteile:
+Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll, das nur unterstützend technologische Hilfsmittel wie Web-Anwendungen nutzt und im Wesentlichen für den Nutzer bei Besuchen komplett ohne technologische Hilfsmittel funktioniert. Ein solches Protokoll hat in der Praxis viele Vorteile:
 
 * Nutzer müssen keine Smartphone-Anwendungen von eventuell nicht vertrauenswürdigen Quellen installieren.
 * Für die Dokumentation von Besuchen ist es nicht notwendig, ein Smartphone mit sich zu führen oder über Internet-Konnektivität zu verfügen.
