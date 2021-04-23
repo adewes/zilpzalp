@@ -58,6 +58,19 @@ a6e77d799da1bdd4:
     the corresponding document for [natural persons](.clas/Zilp-Zalp-Individual.pdf)
     or for [organizations](.clas/Zilp-Zalp-Entity.pdf) and send
     it to [us](mailto:zelp@zilpzalp.eu).
+b6a2a21483bf6c3e:
+  de: >-
+    Dokumentation ist lizensiert unter der [Creative Commons -
+    Attribution ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+    Lizenz. Bitte schaut in die [Lizenzdatei](DOCS-LICENSE) für
+    weitere Informationen (übersetzte Lizenztexte finden sich
+    unter dem Link oben).
+  en: >-
+    Documentation is licensed under the [Creative Commons - Attribution
+    ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/)
+    license. Please see the [license file for](DOCS-LICENSE) more
+    information (translated license texts can be found at the
+    link above).</md-list>
 ddc421c52e508ee1:
   de: '[English](README.md) [Deutsch](README-de.md)'
   en: '[English](README.md) [German](README-de.md)'

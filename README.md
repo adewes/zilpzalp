@@ -1,4 +1,5 @@
-[English](README.md) [German](README-de.md)
+[English version](README.md) // [Deutsche Version](README-de.md)
+
 
 # Zilp-Zalp - Privacy Friendly Contact Tracking</md-list>
 
@@ -9,6 +10,8 @@ Welcome to the Zilp-Zalp project! Please visit our [website](https://zilpzalp.eu
 # Licenses
 
 The Zilp-Zalp software code is licensed under Affero GPL version 3 (AGPL-3.0). Please see the [license file for](LICENSE) more information. The license was chosen to ensure that any changes to Zilp-Zalp will benefit the community.
+
+Documentation is licensed under the [Creative Commons - Attribution ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) license. Please see the [license file for](DOCS-LICENSE) more information (translated license texts can be found at the link above).</md-list>
 
 # Feedback
 

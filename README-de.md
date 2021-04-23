@@ -1,4 +1,6 @@
-[English](README.md) [Deutsch](README-de.md)
+<!--translate:ignore-->
+[English version](README.md) // [Deutsche Version](README-de.md)
+<!--translate:ignore-->
 
 # Zilp-Zalp - Privatsphärefreundliche Kontaktnachverfolgung
 
@@ -9,6 +11,8 @@ Willkommen zum Zilp-Zalp Projekt! Bitte besucht unsere [Webseite](https://zilpza
 # Lizenzen
 
 Der Zilp-Zalp Software-Code ist unter Affero GPL Version 3 (AGPL-3.0) lizensiert. Bitte schaut in die [Lizenzdatei](LICENSE) für weitere Informationen. Die Lizenz wurde gewählt um sicherzustellen, dass etwaige Änderungen an Zilp-Zalp wiederum der Community zugute kommen.
+
+Dokumentation ist lizensiert unter der [Creative Commons - Attribution ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) Lizenz. Bitte schaut in die [Lizenzdatei](DOCS-LICENSE) für weitere Informationen (übersetzte Lizenztexte finden sich unter dem Link oben).
 
 # Feedback
 
