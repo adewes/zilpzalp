@@ -41,7 +41,8 @@ optimize-html:
 
 site: translate sass babel
 	venv/bin/beam -vv up --site $(SITE)
-
+	cp src/de/readme.md ../README-de.md
+	cp src/en/readme.md ../README.md
 clean:
 	rm -rf build/*
 

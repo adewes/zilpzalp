@@ -1,0 +1,71 @@
+18622c3c75ae0d9c:
+  de: '<!--source: docs/src/de/readme.md-->'
+  en: '&lt;!--source: docs/src/en/readme.md--&gt;'
+308fb7b6ee386b7d:
+  de: >-
+    <img src="/materials/images/zilpzalp-1.png" alt="Zilp-Zalp
+    - Logo" title="Zilp-Zalp - Logo" width="40%" />
+  en: >-
+    <img src="/materials/images/zilpzalp-1.png" alt="Zilp-Zalp
+    - Logo" title="Zilp-Zalp - Logo" width="40%" />
+3ad0dfaad78c187f:
+  de: >-
+    Der Zilp-Zalp Software-Code ist unter Affero GPL Version 3
+    (AGPL-3.0) lizensiert. Bitte schaut in die [Lizenzdatei](LICENSE)
+    für weitere Informationen. Die Lizenz wurde gewählt um sicherzustellen,
+    dass etwaige Änderungen an Zilp-Zalp wiederum der Community
+    zugute kommen.
+  en: >-
+    The Zilp-Zalp software code is licensed under Affero GPL version
+    3 (AGPL-3.0). Please see the [license file for](LICENSE) more
+    information. The license was chosen to ensure that any changes
+    to Zilp-Zalp will benefit the community.
+61f132e295ced34c:
+  de: >-
+    Willkommen zum Zilp-Zalp Projekt! Bitte besucht unsere [Webseite](https://zilpzalp.eu)
+    um mehr über das Projekt zu erfahren.
+  en: >-
+    Welcome to the Zilp-Zalp project! Please visit our [website](https://zilpzalp.eu)
+    to learn more about the project.
+91d3d24d2a10b2a1:
+  de: '# Lizenzen'
+  en: '# Licenses'
+925405f5d626f09d:
+  de: '# Feedback'
+  en: '# Feedback'
+994fced887002c43:
+  de: '# Zilp-Zalp - Privatsphärefreundliche Kontaktnachverfolgung'
+  en: '# Zilp-Zalp - Privacy Friendly Contact Tracking</md-list>'
+a4475210eeb2927a:
+  de: '# Mitwirkung'
+  en: '# Participation'
+a6e77d799da1bdd4:
+  de: >-
+    Wir freuen uns über die Mitwirkung am Projekt! Um die Einhaltung
+    der Lizenzbedingungen und die zukünftige Weiterentwicklung
+    des Projektes zu sichern benötigen wir für alle Beiträge eine
+    unterschriebene Einwilligungserklärung nach dem [Harmony-Standard](http://selector.harmonyagreements.org).
+    Bitte unterzeichnet hierfür das entsprechende Dokument für
+    [natürliche Personen](.clas/Zilp-Zalp-Individual.pdf) oder
+    für [Organisationen](.clas/Zilp-Zalp-Entity.pdf) und sendet
+    es an [uns](mailto:zelp@zilpzalp.eu).
+  en: >-
+    We are happy about your contribution to the project! In order
+    to ensure compliance with the licensing conditions and the
+    future development of the project, we require a signed declaration
+    of consent for all contributions in accordance with the [Harmony
+    standard](http://selector.harmonyagreements.org). Please sign
+    the corresponding document for [natural persons](.clas/Zilp-Zalp-Individual.pdf)
+    or for [organizations](.clas/Zilp-Zalp-Entity.pdf) and send
+    it to [us](mailto:zelp@zilpzalp.eu).
+ddc421c52e508ee1:
+  de: '[English](README.md) [Deutsch](README-de.md)'
+  en: '[English](README.md) [German](README-de.md)'
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+f21c77037285f72f:
+  de: >-
+    Falls Fragen bestehen [kontaktiert uns einfach](mailto:zelp@zilpzalp.eu).
+  en: >-
+    If you have any questions [just contact us](mailto:zelp@zilpzalp.eu).

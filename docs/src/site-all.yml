@@ -1,5 +1,11 @@
 title: Zilp-Zalp
 pages:
+  - src|f|exists?: "{target_language}/readme.md"
+    title|t: readme
+    navtitle|t: readme
+    name: readme
+    hidden: true
+    slug: readme
   - src|f|exists?: "{target_language}/index.md"
     title|t: Zilp-Zalp Dokumentation
     navtitle|t: Start

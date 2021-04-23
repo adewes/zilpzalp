@@ -1,6 +1,12 @@
 # Warning, this is an auto-generated file, do not modify!
 # Modify this file instead: site-all.yml
 pages:
+- hidden: true
+  name: readme
+  navtitle: readme
+  slug: readme
+  src: de/readme.md
+  title: readme
 - name: ''
   navtitle: Start
   src: de/index.md
