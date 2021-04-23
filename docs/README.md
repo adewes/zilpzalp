@@ -55,3 +55,14 @@ We use a machine-learning based translation service (DeepL) in combination with 
 
 This will translate the configuration files, markdown texts and translation strings (used in HTML templates). You can fine-tune the translations by editing the corresponding YAML files ([filename].trans for configs and markdown). Be aware though that we use a hashing-based mechanism to detect outdated translations. Hence, if you modify a translated text and later modify the source text it will get re-translated and your modifications will be overwritten.
 
+## Third-Party Code
+
+We use the following third-party libraries in this codebase (in addition to the ones specified in `package.json` and `requirements.txt`):
+
+* [Bulma](https://github.com/jgthms/bulma)
+* [Muli](https://github.com/vernnobile/MuliFont)
+* [Nunito](https://github.com/vernnobile/NunitoFont)
+* [MathJax](https://github.com/mathjax/MathJax)
+* [Source Code Pro](https://github.com/adobe-fonts/source-code-pro)
+
+The Zilp-Zalp logo was hand-drawn and inspired by a picture of an [Iberian Zilp-Zalp](https://de.wikipedia.org/wiki/Iberienzilpzalp).
