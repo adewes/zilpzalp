@@ -94,7 +94,7 @@ Sobald klar ist, dass einer Gruppe keine weiteren Besuchsdatensätze zugeordnet 
 Der öffentliche Schlüssel wird zusammen mit den Gruppendaten abgelegt.
 Ebenso löscht die Web-Anwendung die ursprünglichen Besuchsdaten eines Nutzers sobald klar ist, dass diese zu keiner weiteren Gruppe hinzugefügt werden.
 
-Die so verschlüsselten Daten können nur unter Zuhilfename des GÄ-Schlüssels sowie eines passenden privaten Schlüssels eines der Gruppe zugehörigen Besuchsdatensatzes. Diese privaten Schlüssel befinden sich unter Kontrolle des Nutzers und werden von diesem nur im Falle einer Infektion an das GA übermittelt. Dementsprechend kann das GA selbst wenn es auf alle Daten der Betreiber zugreifen könnte nur epidemiologisch relevante Daten entschlüsseln, zu denen ein Nutzer den passenden privaten Schlüssel bereitgestellt hat.
+Die so verschlüsselten Daten können nur unter Zuhilfename des GÄ-Datenschlüssels sowie eines passenden privaten Schlüssels eines der Gruppe zugehörigen Besuchsdatensatzes. Diese privaten Schlüssel befinden sich unter Kontrolle des Nutzers und werden von diesem nur im Falle einer Infektion an das GA übermittelt. Dementsprechend kann das GA selbst wenn es auf alle Daten der Betreiber zugreifen könnte nur epidemiologisch relevante Daten entschlüsseln, zu denen ein Nutzer den passenden privaten Schlüssel bereitgestellt hat.
 
 <div>
     {% include "common/protocols/_check_in.html" %}

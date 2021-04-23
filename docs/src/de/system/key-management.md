@@ -18,6 +18,7 @@ Zilp-Zalp benötigt im Betrieb folgende Schlüsselpaare:
 
 * Für jede Backend-Instanz einen oder mehrere Root-Signaturschlüsselpaare, die andere Schlüssel im System zertifizieren und als Vertrauensanker dienen.
 * Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare (GA-Schlüssel), jeweils für die Ver-/Entschlüsselung von Daten sowie für das Signieren von Daten.
+* Für die globale Verschlüsselung von Besuchsdaten teilen alle Gesundheitsämter einen GÄ-Datenschlüssel.
 * Optional für Betreiber ein oder mehrere Schlüsselpaare zum Signieren von Daten.
 
 Root-Schlüsselpaare werden vom Betreiber des Backends generiert und regelmäßig ausgetauscht. Öffentliche Root-Schlüssel werden als Konfigurationsdateien mit den Web-Anwendungen ausgeliefert (um unabhängig vom Backend selbst zu sein).
@@ -26,6 +27,8 @@ GA-Schlüsselpaare werden lokal generiert, öffentliche Schlüssel werden über 
 
 GA-Schlüsselpaare können häufig rotiert werden, jedoch macht in der Praxis eine Rotation die schneller erfolgt als die durchschnittliche Datenverweildauer im System wenig Sinn, da GÄ während dieser Dauer in der Lage sein müssen, mit vorherigen GA-Schlüsseln verschlüsselte Daten zu entschlüssen, und die entsprechenden Schlüssel daher trotzdem gemeinsam am gleichen Ort vorgehalten werden müssen (für Signaturschlüssel gilt dies nicht).
 In der Praxis können daher 2-4 Wochen jeweils sinnvolle Rotationszeiträume für Root- und GA-Schlüssel darstellen. Häufigere z.B. tägliche Schlüsselwechsel wie sie in anderen Systemen vorgeschlagen werden führen oft dazu, dass Schlüsselrotation automatisch abläuft (z.B. über API-Endpunkte im selben System, das Schlüssel publiziert), dies konterkariert zumindest in Teilen die Sicherheit eines solchen Austauschs.
+
+Der GÄ-Schlüssel sollte häufig gewechselt werden, hierzu ist ein "Key Agreement" Prozess zwischen den GÄs notwendig. Dies kann erfolgen, indem ein GA anderen GÄ jeweils einen Zufallswert verschlüsselt über das Backend zur Verfügung stellt, dieser kann mit den öffentlichen Datenschlüsseln der GÄ verschlüsselt und vom sendenden GA zusätzlich signiert werden. Dieser Zufallswert wird anschließend lokal mit einem gemeinsamen, langlebigen Zufallswert kombiniert, aus dem resultierenden Wert wird dann deterministisch ein Schlüsselpaar abgeleitet. Der gemeinsame langlebige Zufallswert muss hierbei über einen anderen Kanal sicher geteilt werden, kann jedoch langlebig sein um den Aufwand gering zu halten. Durch die Verwendung eines Ableitungsmechanismus statt eines direkten Schlüsselaustauschs kann verhindert werden, dass ein privater Datenschlüssel im Falle der Kompromittierung eines GA-Datenschlüssels kompromittiert wird.
 
 Um das Risiko eines Schlüsselverlusts weiter zu senken können zudem mehrere GA-Schlüssel zur Verschlüsselung von Daten verwendet werden. Dies würde es jedoch wiederum erforderlich machen, dass GÄ über das Backend "Amtshilfe" beim Entschlüsseln von Daten leisten. Aufgrund des großen Datenvolumns würde dies wirderum eine automatische Lösung erfordern, die hierbei wiederum eine Aufteilung der Schlüssel obsolet machen würde.
 
