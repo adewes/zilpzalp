@@ -21,9 +21,6 @@ dep:
 install:
 	@go install $(GOFLAGS) ./...
 
-copyright:
-	python .scripts/make_copyright_headers.py
-
 # Currently we run all tests with "-p 1" to ensure that database operations do not interfere with each other
 
 test: dep

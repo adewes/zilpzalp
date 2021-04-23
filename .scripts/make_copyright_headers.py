@@ -2,7 +2,7 @@ import datetime
 import os
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
-source_dir = os.path.dirname(script_dir)
+source_dirs = [os.path.join(os.path.dirname(script_dir), 'apps/src'),os.path.join(os.path.dirname(script_dir), 'go')]
 context = {}
 
 def read_copyright():
@@ -18,6 +18,9 @@ def process_file(path, copyright_notice):
     with open(path) as input:
         content = input.read()
     lines = content.split("\n")
+    for line in lines:
+        if line.strip() == "// no-copyright-header":
+            return
     for i, line in enumerate(lines):
         if not line.startswith('//'):
             break
@@ -30,18 +33,20 @@ def process_file(path, copyright_notice):
         output.write(new_content)
     
 
-def enumerate_files(dir, extension='.go'):
+def enumerate_files(dir, extensions=['.go', '.js', '.jsx', '.ts', '.tsx'], exclude=set(['node_modules'])):
     for file in os.listdir(dir):
         path = os.path.join(dir, file)
         if file.startswith('.'):
             continue
-        if os.path.isdir(path):
+        if os.path.isdir(path) and file not in exclude:
             for path in enumerate_files(path):
                 yield path
         else:
-            if file.endswith(extension):
-                yield path
+            for extension in extensions:
+                if file.endswith(extension):
+                    yield path
 if __name__ == '__main__':
     copyright_notice = format_copyright(read_copyright())
-    for path in enumerate_files(source_dir):
-        process_file(path, copyright_notice)
+    for source_dir in source_dirs:
+        for path in enumerate_files(source_dir):
+            process_file(path, copyright_notice)
