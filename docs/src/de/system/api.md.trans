@@ -1,0 +1,25 @@
+35588dbf359a6466:
+  de: >-
+    Zilp-Zalp bietet mehrere APIs um Daten im System zu verwalten:
+  en: 'Zilp-Zalp offers several APIs to manage data in the system:'
+39d84c8074ae954b:
+  de: '# APIs'
+  en: '# APIs'
+79e53aea0f17c562:
+  de: >-
+    * Das globale Backend bietet eine **JSON-RPC** API und wird
+    für die Kommunikation zwischen Nutzern, Betreiben und Gesundheitsämtern
+    verwendet.
+  en: >-
+    * The global backend provides a **JSON-RPC** API and is used
+    for communication between users, operators and health authorities.
+8db6c824382bcd7a:
+  de: >-
+    * Gesundheitsämter und (optional) Betreiber nutzen lokale
+    Anwendungen, die jeweils **REST APIs** bieten um Daten auszutauschen.
+  en: >-
+    * Health departments and (optionally) operators use local
+    applications, each providing **REST APIs** to exchange data.
+e3b0c44298fc1c14:
+  de: ''
+  en: ''

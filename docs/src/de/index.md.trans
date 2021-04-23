@@ -1,3 +1,49 @@
+09ca6258ec52a90a:
+  de: >-
+    Zilp-Zalp setzt im Gegensatz zu fast allen anderen Lösungen
+    primär auf ein System zur Kontaktnachverfolgung, das auf innovative
+    Weise digitale und analoge Prozesse verbindet. Dies ist aus
+    unserer Sicht wichtig, da ein System zur Kontaktnachverfolgung
+    für alle Personen der Gesellschaft nutzbar sein sollte. Vollständig
+    digitale Lösungen wie die Corona-Warn-App können große Bevölkerungsteile
+    nicht erreichen und schließen diese daher effektiv von der
+    Kontaktnachverfolgung aus. System wie Luca und Recover, die
+    primär digital orientiert sind bieten für die analoge Kontaktnachverfolgung
+    zwar Behelfslösungen, bieten jedoch im Allgemeinen kein hohes
+    Datenschutzniveau für diese (siehe z.B. [LucaTrack](https://lucatrack.de/LucaTrack%20Pressebeschreibung.pdf)).
+  en: >-
+    Zilp-Zalp, unlike almost all other solutions, relies primarily
+    on a contact tracing system that combines digital and analogue
+    processes in an innovative way. This is important from our
+    point of view, as a contact tracing system should be usable
+    by everyone in society. Fully digital solutions such as the
+    Corona alert app cannot reach large segments of the population
+    and therefore effectively exclude them from contact tracing.
+    Systems such as Luca and Recover, which are primarily digitally
+    oriented, offer workarounds for analogue contact tracing,
+    but generally do not provide a high level of data protection
+    for them (see e.g. [LucaTrack](https://lucatrack.de/LucaTrack%20Pressebeschreibung.pdf)).
+133d1fce72817a3b:
+  de: >-
+    Diese Form der Kontaktnachverfolgung ist zudem barrierefrei
+    und für fast alle Menschen nutzbar.
+  en: >-
+    This form of contact tracking is also barrier-free and usable
+    by almost everyone.
+18ae5adb1e989f76:
+  de: >-
+    Diese Form der Kontaktnachverfolgung ist barrierefrei und
+    für alle Menschen nutzbar.
+  en: >-
+    This form of contact tracing is barrier-free and usable for
+    all people.
+1b39112ee1ee313c:
+  de: >-
+    Diese Form der Kontaktnachverfolgung ist zudem barrierefreier
+    und für fast alle Menschen nutzbar.
+  en: >-
+    This form of contact tracking is also more accessible and
+    usable by almost everyone.
 1ffa957894a8b309:
   de: >-
     Zilp-Zalp ist eine quelloffene, kostenlose und freie Plattform
@@ -7,9 +53,151 @@
     Zilp-Zalp is an open source, free and open source contact
     tracing platform. This page documents the various protocols
     and applications that make up Zilp-Zalp.
+2d1282425e75c0d7:
+  de: '## Was macht Zilp-Zalp besonders'
+  en: '## What makes Zilp-Zalp special'
+32a7926f4c4359ab:
+  de: >-
+    Zilp-Zalp setzt daher im Gegensatz zu diesen System für Nutzer
+    primär auf eine analoge, papiergestützte Form der Kontaktnachverfolgung,
+    die auch ohne technische Kenntnisse ein sehr hohes Datenschutzniveau
+    bietet und unkompliziert genutzt werden kann.
+  en: >-
+    Therefore, in contrast to these systems for users, Zilp-Zalp
+    primarily relies on an analogue, paper-based form of contact
+    tracking, which offers a very high level of data protection
+    even without technical knowledge and can be used in an uncomplicated
+    manner.
 3d111a9375d5e0d4:
   de: '# Willkommen!'
   en: '# Welcome!'
+3e264a23d2443c1e:
+  de: "Lediglich bei der einmalig erforderlichen Initialisierung\
+    \ ist für einen Nutzer der Einsatz einer Web-Anwendung notwendig,\
+    \ dieser Prozess kann ebenfalls mit Unterstützung Dritter\
+    \ barrierefrei und für alle zugänglich erfolgen. "
+  en: "Only the initialization process, which is required only\
+    \ once, requires the use of a web application for a user;\
+    \ this process can also be carried out barrier-free and accessible\
+    \ for all with the support of third parties. "
+3e5d06558157b884:
+  de: "Lediglich bei der einmalig erforderlichen Initialisierung\
+    \ ist für einen Nutzer der Einsatz einer Web-Anwendung notwendig,\
+    \ dieser Prozess kann ebenfalls mit Unterstützung Dritter\
+    \ überwiegend barrierefrei für fast alle Menschen zugänglich\
+    \ gemacht werden. "
+  en: "Only the one-time initialization process requires a user\
+    \ to use a web application; this process can also be made\
+    \ accessible to almost everyone with the support of third\
+    \ parties. "
+56c623cb5fd3d0a1:
+  de: >-
+    Im Gegensatz zu "Self-Check-In" Systemen wie Luca bietet Zilp-Zalp
+    zudem kaum Angriffsfläche für eine missbräuchliche Nutzung,
+    wie sie z.B. für Luca bereits [demonstriert](https://twitter.com/janboehm/status/1379573411400286209)
+    wurde.
+  en: >-
+    In contrast to "self-check-in" systems such as Luca, Zilp-Zalp
+    also offers hardly any attack surface for misuse, as has already
+    been [demonstrated](https://twitter.com/janboehm/status/1379573411400286209)
+    for Luca, for example.
+68755f83b57865f3:
+  de: >-
+    Für Betreiber von Ortschaften (Restaurants, Gaststätten etc.)
+    schafft Zilp-Zalp hingegen Möglichkeiten, Besuchsdokumentation
+    asynchron (z.B. täglich) vorzunehmen.
+  en: >-
+    For operators of localities (restaurants, pubs, etc.), on
+    the other hand, Zilp-Zalp creates opportunities to carry out
+    visit documentation asynchronously (e.g. daily).
+75f81c15a5592b8b:
+  de: >-
+    Im Gegensatz zu "Self-Check-In" Systemen wie Luca bietet Zilp-Zalp
+    zudem kaum Angriffsfläche für eine missbräuchliche Nutzung,
+    wie sie z.B. für Luca bereits [mehrfach demonstriert](https://twitter.com/janboehm/status/1379573411400286209)
+    wurde.
+  en: >-
+    In contrast to "self-check-in" systems such as Luca, Zilp-Zalp
+    also offers hardly any attack surface for misuse, as has already
+    been [demonstrated several times](https://twitter.com/janboehm/status/1379573411400286209)
+    for Luca, for example.
+77eeeba3f0d13e26:
+  de: >-
+    Vollständig digitale Lösungen wie die Corona-Warn-App können
+    große Bevölkerungsteile nicht erreichen und schließen diese
+    daher effektiv von der Kontaktnachverfolgung aus. System wie
+    Luca und Recover, die primär digital orientiert sind bieten
+    für die analoge Kontaktnachverfolgung zwar Behelfslösungen,
+    bieten jedoch im Allgemeinen kein hohes Datenschutzniveau
+    für diese (siehe z.B. [LucaTrack](https://lucatrack.de/LucaTrack%20Pressebeschreibung.pdf)).
+  en: >-
+    Fully digital solutions such as the Corona alert app cannot
+    reach large populations and therefore effectively exclude
+    them from contact tracing. Systems such as Luca and Recover,
+    which are primarily digitally oriented, offer workarounds
+    for analogue contact tracing, but generally do not provide
+    a high level of data protection for them (see e.g. [LucaTrack](https://lucatrack.de/LucaTrack%20Pressebeschreibung.pdf)).
+8fd839086296d78c:
+  de: >-
+    Zilp-Zalp setzt im Gegensatz zu diesen System für Nutzer primär
+    auf eine analoge, papiergestützte Form der Kontaktnachverfolgung,
+    die auch ohne technische Kenntnisse funktioniert, ein sehr
+    hohes Datenschutzniveau bietet und unkompliziert genutzt werden
+    kann.
+  en: >-
+    In contrast to these systems for users, Zilp-Zalp primarily
+    relies on an analogue, paper-based form of contact tracking,
+    which also works without technical knowledge, offers a very
+    high level of data protection and is uncomplicated to use.
+99c8eb087aebe7b3:
+  de: >-
+    Im Gegensatz zu "Self-Check-In" Systemen bietet Zilp-Zalp
+    zudem kaum Angriffsfläche für eine missbräuchliche Nutzung
+    wie sie für andere Systeme bereits [demonstriert](https://twitter.com/janboehm/status/1379573411400286209)
+    wurde.
+  en: >-
+    In contrast to "self-check-in" systems, Zilp-Zalp also offers
+    hardly any attack surface for misuse, as has already been
+    [demonstrated for](https://twitter.com/janboehm/status/1379573411400286209)
+    other systems.
+9e9e0fb7f8ee0382:
+  de: >-
+    Dies ist für viele Betreiber enorm wichtig, da sie nicht immer
+    die notwendige Infrastruktur besitzen um eine direkte Dokumentation
+    vorzunehmen oder die logistisch nicht abbildbar ist (z.B.
+    bei Großveranstaltungen).
+  en: >-
+    This is enormously important for many operators, as they do
+    not always have the necessary infrastructure to carry out
+    direct documentation or it is not logistically possible (e.g.
+    at large events).
+a09d755b1f1e4d16:
+  de: '## Was Zilp-Zalp ausmacht'
+  en: '## What makes Zilp-Zalp'
+a2815c2233a017c7:
+  de: >-
+    Zilp-Zalp setzt im Gegensatz zu diesen System für Nutzer primär
+    auf eine analoge, papiergestützte Form der Kontaktnachverfolgung,
+    die auch ohne technische Kenntnisse funktioniert und ein sehr
+    hohes Datenschutzniveau bietet und unkompliziert genutzt werden
+    kann.
+  en: >-
+    In contrast to these systems for users, Zilp-Zalp primarily
+    relies on an analogue, paper-based form of contact tracking,
+    which also works without technical knowledge and offers a
+    very high level of data protection and is uncomplicated to
+    use.
+b5ba1952a25c23ba:
+  de: >-
+    Zilp-Zalp ist eine [quelloffene](https://github.com/adewes/zilpzalp),
+    kostenlose und frei nutzbare Plattform zur Kontaktverfolgung.
+    Diese Seite dokumentiert die verschiedenen Protokolle und
+    Anwendungen aus denen Zilp-Zalp besteht.
+  en: >-
+    Zilp-Zalp is an [open source](https://github.com/adewes/zilpzalp),
+    free and freely usable contact tracking platform. This page
+    documents the various protocols and applications that make
+    up Zilp-Zalp.
 b9c046d85ca97f06:
   de: >-
     Zilp-Zalp unterstützt verschiedene [Protokolle]({{'protocols.index'|href}}),
@@ -19,6 +207,68 @@ b9c046d85ca97f06:
     Zilp-Zalp supports several [protocols]({{'protocols.index'|href}}),
     including [paper-based contact tracing]({{'protocols.paper-based'|href}})
     and [digital contact tracing]({{'protocols.digital'|href}}).
+bd0f982104bb73e0:
+  de: >-
+    Schließlich setzt Zilp-Zalp im Gegensatz zu anderen Anbietern
+    komplett auf eine offene und föderiert betreibbare Infrastruktur.
+  en: >-
+    Finally, unlike other providers, Zilp-Zalp relies entirely
+    on an open and federated infrastructure.
+cf7a08d4ebfd277b:
+  de: >-
+    Zilp-Zalp setzt im Gegensatz zu fast allen anderen Lösungen
+    primär auf ein System zur Kontaktnachverfolgung, das auf innovative
+    Weise digitale und analoge Prozesse verbindet. Dies ist aus
+    unserer Sicht wichtig, da ein System zur Kontaktnachverfolgung
+    für alle Personen der Gesellschaft nutzbar sein sollte. Vollständig
+    digitale Lösungen können große Bevölkerungsteile nicht erreichen
+    und schließen diese daher von der Kontaktnachverfolgung aus.
+    System wie Luca und Recover, die primär digital orientiert
+    sind bieten für die analoge Kontaktnachverfolgung nur Behelfslösungen,
+    die zudem sehr viel schlechtere Datenschutzgarantien bieten
+    (siehe z.B. LucaTrack).
+  en: >-
+    Zilp-Zalp, unlike almost all other solutions, relies primarily
+    on a contact tracing system that combines digital and analogue
+    processes in an innovative way. This is important from our
+    point of view, as a contact tracing system should be usable
+    by all people in society. Fully digital solutions cannot reach
+    large segments of the population and therefore exclude them
+    from contact tracing. Systems such as Luca and Recover, which
+    are primarily digitally oriented, offer only makeshift solutions
+    for analogue contact tracing, which also offer much poorer
+    data protection guarantees (see e.g. LucaTrack).
+d89185bc4dd61fab:
+  de: >-
+    Auch hier versucht Zilp-Zalp, analoge Prozesse innovativ mit
+    technologischen Lösungen zu kombinieren.
+  en: >-
+    Here, too, Zilp-Zalp tries to innovatively combine analogue
+    processes with technological solutions.
 e3b0c44298fc1c14:
   de: ''
   en: ''
+fc8b786e3c39a7a1:
+  de: >-
+    Zilp-Zalp setzt im Gegensatz zu diesen System für Nutzer primär
+    auf eine analoge, papiergestützte Form der Kontaktnachverfolgung,
+    die auch ohne technische Kenntnisse ein sehr hohes Datenschutzniveau
+    bietet und unkompliziert genutzt werden kann.
+  en: >-
+    In contrast to these systems for users, Zilp-Zalp primarily
+    relies on an analogue, paper-based form of contact tracking,
+    which offers a very high level of data protection even without
+    technical knowledge and can be used in an uncomplicated manner.
+fdeecaa3e27f535b:
+  de: >-
+    Zilp-Zalp setzt im Gegensatz zu fast allen anderen Lösungen
+    primär auf ein System zur Kontaktnachverfolgung, das auf innovative
+    Weise digitale und analoge Prozesse verbindet. Dies ist aus
+    unserer Sicht wichtig, da ein System zur Kontaktnachverfolgung
+    für alle Personen der Gesellschaft nutzbar sein sollte.
+  en: >-
+    Zilp-Zalp, unlike almost all other solutions, relies primarily
+    on a contact tracing system that combines digital and analogue
+    processes in an innovative way. This is important from our
+    point of view, as a contact tracing system should be usable
+    by everyone in the company.

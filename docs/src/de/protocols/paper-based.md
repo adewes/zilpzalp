@@ -32,7 +32,7 @@ Hier zeigt sich, dass wir das Problem der Dokumentation von **Besuchen** unabhä
 * Zunächst schaffen wir eine Möglichkeit, Kontaktdaten so zu hinterlegen, dass sie nur **anlassbezogen** von GÄ zur Kontaktnachverfolgung verarbeitet werden können und auch verschlüsselt keinen anderen Akteuren im System zugänglich sind.
 * Weiterhin schaffen wir eine Möglichkeit, **Besuche** robust und datensparsam zu dokumentieren.
 
-## Protokoll (v0.3)
+## Protokoll (v0.4)
 
 Das papiergestützte, dezentrale Protokoll von Zilp-Zalp umfasst folgende Akteure:
 

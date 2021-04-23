@@ -32,7 +32,7 @@ Here we see that we * can consider the problem of documenting *visits independen
 * First, we create a possibility to store contact data in such a way that they can only be processed by GÄ for contact tracing on an ad **hoc** basis and are not accessible to any other actors in the system, even in encrypted form.
 * Furthermore, we create a way to document **visits** in a robust and data-efficient manner.
 
-## Protocol (v0.3)
+## Protocol (v0.4)
 
 Zilp-Zalp's paper-based, decentralized protocol includes the following actors:
 
@@ -61,7 +61,7 @@ Now the application generates value pairs consisting of $H _ i$ ($ \ge 1$) on th
 
 The application then generates QR codes from all data structures, transfers them to the user (e.g. for printing) and then deletes all data. The data that is transferred to the health department as well as the data that the user himself uses to check and adjust his data can be saved in files.
 
-Note: Currently, the security of the system is *not enhanced by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is kept permanently with the user's contact details.
+Note: Currently, the security of the system is *not enhanced by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is kept permanently with the user's contact details.y **public-key encryption**. In the following, we assume that GÄs each have a pair of keys for signing and -  encrypting/decrypting data, and that other actors can verify the trustworthiness of the public keys of these pairs via a suitable mechanism (e.g., a root certificate that is delivered together with the web application).
 In an extension of the Proktoll, however, it is planned to separate the key $K _ B$ from the contact data in an additional step of by a GA, to store it separately from the beginning or to encrypt it asymmetrically and to give another party control over the decryption.
 It was therefore left in the minutes for the time being.
 
@@ -94,7 +94,7 @@ As soon as it is clear that no further visit records will be assigned to a group
 The public key is stored together with the group data.
 Similarly, the web application deletes a user's original visit data as soon as it is clear that they will not be added to another group.
 
-The data encrypted in this way can only be accessed with the help of the GA key and a matching private key of a visit record belonging to the group. These private keys are under the control of the user and are only transmitted to the GA by the user in case of infection. Accordingly, even if the GA could access all operator data, it can only decrypt epidemiologically relevant data for which a user has provided the matching private key.
+The data encrypted in this way can only be accessed with the help of the GA data key and a matching private key of a visit record belonging to the group. These private keys are under the control of the user and are only transmitted to the GA by the user in the event of an infection. Accordingly, even if the GA could access all operator data, it can only decrypt epidemiologically relevant data for which a user has provided the matching private key.
 
 <div>
     {% include "common/protocols/_check_in.html" %}

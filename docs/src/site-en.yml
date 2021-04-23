@@ -18,6 +18,26 @@ pages:
   slug: analyses
   title: Analyses
 - children:
+  - name: api
+    slug: api
+    src: en/system/api.md
+    title: API
+  - name: apps
+    slug: apps
+    src: en/system/apps.md
+    title: Apps
+  - name: deployment
+    slug: deployment
+    src: en/system/deployment.md
+    title: Deployment
+  - name: key-management
+    slug: key-management
+    src: en/system/key-management.md
+    title: Key Management
+  name: system
+  slug: system
+  title: System
+- children:
   - name: index
     slug: overview
     src: en/protocols/index.md

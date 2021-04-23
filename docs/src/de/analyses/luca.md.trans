@@ -40,6 +40,20 @@
     keys once during initialization and then destroy them. However,
     the Luca protocol is not designed for this and would have
     to be significantly modified to support such a procedure.
+26a2caafae5e2abd:
+  de: >-
+    * Kontaktdaten und Besuchsdaten von Nutzern können nur für
+    epidemiologisch relevante Infektionsgemeinschaften unter aktiver
+    Mitwirkung eines betroffenen Nutzers entschlüsselt werden.
+    Die Zweckbindung der Daten kann daher im Gegensatz zu anderen
+    Systemen vollständig durch technische und organisatorische
+    Maßnahmen garantiert werden.
+  en: >-
+    * Contact and visit data of users can only be decrypted for
+    epidemiologically relevant infection communities with the
+    active participation of a user concerned. The purpose limitation
+    of the data can therefore, in contrast to other systems, be
+    fully guaranteed by technical and organisational measures.
 2943c87c326e06c1:
   de: '### Szenario: Kompromittierung des System-Betreibers'
   en: '### Scenario: compromise of the system operator'

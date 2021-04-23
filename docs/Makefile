@@ -39,7 +39,7 @@ optimize-images:
 optimize-html:
 	find build -name "*.html" -exec tidy -m {} \;
 
-site: translate sass babel downloads
+site: translate sass babel
 	venv/bin/beam -vv up --site $(SITE)
 
 clean:

@@ -1,0 +1,118 @@
+03f2ef74c104b02b:
+  de: >-
+    Aus diesem Grund wird die Betreiber-Anwendung in zwei Varianten
+    angeboten, welche Daten jeweils im Browser speichern oder
+    zur Speicherung auf eine externe API zurückgreifen können,
+    die lokal deployed wird und eine SQLite-Datenbank zur Speicherung
+    von Daten nutzt. Letztere Variante kann insbesondere für Betreiber
+    größerer Ortschaften interessant sein, da hierdurch ein parallele
+    und gleichzeitige Nutzung der Anwendung möglich wird. Demgegenüber
+    steht jedoch ein höherer Betreiberaufwand.
+  en: >-
+    For this reason, the operator application is offered in two
+    variants, each of which can store data in the browser or can
+    fall back on an external API for storage, which is deployed
+    locally and uses an SQLite database to store data. The latter
+    variant can be particularly interesting for operators of larger
+    localities, as it enables parallel and simultaneous use of
+    the application. On the other hand, however, there is a higher
+    operator effort.
+4244f3902f2d09dd:
+  de: >-
+    Nutzer müssen lediglich initial QR-Codes generieren, hierzu
+    können sie eine Web-Anwendung nutzen. Diese Anwendung erstellt
+    das Schlüsselmaterial für Nutzer und stellt ihnen ihre geheimen
+    Daten zur Verfügung. Die Anwendung speichert keine langlebigen
+    Daten und wird nur zur Initialisierung sowie eventuell zur
+    einmaligen Übermittlung von Daten an ein Gesundheitsamt genutzt,
+    dementsprechend kann sie als Web-Anwendung implementiert werden.
+  en: >-
+    Users only need to generate initial QR codes, for this they
+    can use a web application. This application creates the key
+    material for users and provides them with their secret data.
+    The application does not store any long-lived data and is
+    only used for initialization and possibly for one-time transmission
+    of data to a health department, accordingly it can be implemented
+    as a web application.
+4d3f58204a4dc531:
+  de: '# Anwendungen'
+  en: '# Applications'
+71462969f107fc4e:
+  de: >-
+    Daher kommt hier ebenfalls eine lokal deploybare API mit zugehöriger
+    Web-Anwendung zum Einsatz, die Daten in einer SQLite-Datenbank
+    speichert und über Mehrnutzerfähigkeit sowie lokale Authentifizierung
+    verfügt.
+  en: >-
+    Therefore, a locally deployable API with associated web application
+    is also used here, which stores data in an SQLite database
+    and has multi-user capability as well as local authentication.
+7e34875cf24bc58d:
+  de: >-
+    Dies verhindert die einfache Extraktion von Schlüsseln im
+    Falle der Kompromittierung der Web-Anwendung.
+  en: >-
+    This prevents easy extraction of keys in case of compromise
+    of the web application.
+9c6394bdb8cf5768:
+  de: >-
+    Betreiber müssen Daten über Ihre Ortschaft(en) erfassen, QR-Codes
+    von Nutzern einlesen und ggf. mit Metadaten versehen. Die
+    Anwendung speichert Daten über einen längeren Zeitraum und
+    wird häufiger genutzt, dementsprechend sollte sie nicht alleine
+    auf Web-Technologien zurückgreifen da diese keine robuste
+    langlebige Speicherung garantieren können. Dies kann jedoch
+    andererseits eine einfache Nutzung durch Betreiber erschweren
+    oder in bestimmten Fällen eine Nutzung generell unmöglich
+    machen.
+  en: >-
+    Operators need to collect data about their locality(ies),
+    scan QR codes from users and add metadata where appropriate.
+    The application stores data over a longer period of time and
+    is used more frequently, so it should not rely solely on web
+    technologies as these cannot guarantee robust long-lived storage.
+    On the other hand, this can make it difficult for operators
+    to use the application easily or, in certain cases, make it
+    impossible to use in general.
+b6126fb20812468e:
+  de: >-
+    Dementsprechend verbietet sich hier der Einsatz einer reinen
+    Web-Anwendung, die Daten und Schlüssel im Browser vorhalten
+    müsste.
+  en: >-
+    Accordingly, the use of a pure web application, which would
+    have to store data and keys in the browser, is prohibited
+    here.
+ce07993e0e58f5a7:
+  de: >-
+    Gesundheitsämter verarbeiten mit Zilp-Zalp hochsensible Daten
+    und müssen zudem sicherheitskritische Schlüsselpaare verwalten.
+  en: >-
+    Health departments process highly sensitive data with Zilp-Zalp
+    and must also manage security-critical key pairs.
+dea784edd2ec4fff:
+  de: '## Betreiber-Anwendung'
+  en: '## Operator application'
+e0a3bcea655b20d2:
+  de: '## Gesundheitsamt-Anwendung'
+  en: '## Health Department Application'
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e6c50c0a5ab22489:
+  de: >-
+    Zilp-Zalp stellt verschiedene Anwendungen für Nutzer, Betreiber
+    von Ortschaften und Gesundheitsämter zur Verfügung, die hier
+    beschrieben werden.
+  en: >-
+    Zilp-Zalp provides various applications for users, operators
+    of localities and health authorities, which are described
+    here.
+f26f420607f43df8:
+  de: '## Nutzer-Anwendung'
+  en: '## User application'
+fdf49b14db6295d6:
+  de: >-
+    Die API generiert und verwaltet hierbei auch kryptographische
+    Schlüssel.
+  en: The API also generates and manages cryptographic keys.

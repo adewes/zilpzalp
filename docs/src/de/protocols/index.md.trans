@@ -1,6 +1,23 @@
+0834aca3a90739f9:
+  de: >-
+    Generell muss bei der Kontaktnachverfolgung Datenschutz gegenüber
+    anderen Interessen abgewogen werden. Da diese Abwägung lokal
+    unterschiedlich ausfallen kann, bietet Zilp-Zalp unterschiedliche
+    Implementierungsmöglichkeiten.
+  en: >-
+    In general, privacy must be weighed against other interests
+    when tracking contacts. Since this balancing can vary locally,
+    Zilp-Zalp offers different implementation options.
 1121864b1c268809:
   de: '# Protokolle'
   en: '# Protocols'
+12ad5ae8a1cbb084:
+  de: >-
+    Nutzer können hierbei QR-Codes generieren und die zugehörige
+    ID lokal generieren.
+  en: >-
+    Users can generate QR codes and generate the corresponding
+    ID locally.
 187e89c2e1e3582f:
   de: >-
     * **Nutzer** sollen gegenüber **Betreibern** einen **Besuch**
@@ -31,6 +48,17 @@
     aids such as apps and smartphones. Based on this, a [digital
     protocol]({{'protocols.digital'|href}}) was formulated that
     enables the documentation of visit histories using a web application.
+26838752472af2d7:
+  de: >-
+    Dies schafft den bestmöglichen Schutz der Privatsphäre von
+    Nutzern, kann jedoch die Kontaktnachverfolgung durch Gesundheitsämter
+    erschweren.
+  en: >-
+    This creates the best possible privacy protection for users,
+    but may make contact tracing by health departments more difficult.
+27efc8f9c17bd2fa:
+  de: '## Abwägungen'
+  en: '## Considerations'
 2fbe0e510348315f:
   de: >-
     * Lediglich **Gesundheitsämter** sollen **anlassbezogen**
@@ -40,6 +68,29 @@
     * Only **health authorities** should be able to view contact
     data on an ad **hoc basis**, and only with the cooperation
     of an affected **user** and an **operator**.
+38862d848320f32f:
+  de: >-
+    Kontaktdaten können dann über einen zusätzlichen Mechanismus
+    im Bedarfsfall nachgereicht werden.
+  en: >-
+    Contact details can then be provided via an additional mechanism
+    if required.
+395f14f906e77b0b:
+  de: >-
+    Da ab Zilp-Zalp Protokollversion `0.4` Besuchsdaten mit den
+    Gruppenschlüsseln von Infektionsgemeinschaften verschlüsselt
+    werden, können die zugehörigen Daten im Gegensatz zu anderen
+    Systemen auch bei konspirativer Zusammenarbeit zwischen dem
+    Backend-Betreiber und Gesundheitsämtern nicht ohne Mitwirkung
+    von zumindest einem Nutzer aus der relevanten Gemeinschaft
+    entschlüsselt werden.
+  en: >-
+    Since from Zilp-Zalp protocol version `0.4` onwards, visit
+    data is encrypted with the group keys of infection communities,
+    the associated data cannot be decrypted without the involvement
+    of at least one user from the relevant community, in contrast
+    to other systems, even in the case of conspiratorial cooperation
+    between the backend operator and health authorities.
 3bfa505feddba17f:
   de: '## Protokolle'
   en: '## Protocols'
@@ -56,6 +107,23 @@
     formulate the requirements for a general protocol for exchanging
     contact data and discuss possible protocol variants based
     on this.
+3f4573560d49e46b:
+  de: >-
+    Prinzipiell kann die Initialisierung von Zilp-Zalp für Nutzer
+    ohne Involvierung des Backends stattfinden.
+  en: >-
+    In principle, the initialization of Zilp-Zalp for users can
+    take place without the involvement of the backend.
+5e3019c071a03588:
+  de: >-
+    Dementsprechend kann prinzipiell auch eine zentrale Speicherung
+    dieser verschlüsselten Daten in Betracht gezogen werden, um
+    die Datenverfügbarkeit und Zuverlässigkeit der Verarbeitung
+    zu erhöhen.
+  en: >-
+    Accordingly, central storage of this encrypted data can in
+    principle also be considered to increase data availability
+    and reliability of processing.
 623b32b953aa9a27:
   de: '## Anforderungen'
   en: '## Requirements'
@@ -68,6 +136,9 @@
     * The documentation of a **visit** should be as accurate as
     possible and include, as far as possible and reasonable, information
     on the exact location, contact persons and visiting times.
+80f42c02bbf426b8:
+  de: '### Nachgelagerte vs. direkte Kontaktdatenhinterlegung'
+  en: '### Downstream vs. direct contact data deposit'
 84254a3cfa80e3bb:
   de: >-
     Zusätzlich legen wir folgende Sicherheits- & Datenschutzanforderungen
@@ -87,9 +158,65 @@
     * The collection, storage and processing of **contact data**
     and **visit histories of** individual **users** should be
     as data-saving and privacy-friendly as possible.
+ac4ca3234689f53a:
+  de: >-
+    Betreiber können in diesem Fall weiterhin über eine Datennutzung
+    informiert werden, die Kontrolle der Datenverarbeitung obliegt
+    jedoch dem betroffenen Nutzer.
+  en: >-
+    Operators may still be informed of data use in this case,
+    but the control of data processing remains with the user concerned.
+b9f9306b91407d25:
+  de: >-
+    Nutzer können eventuell auch nur pseudonyme Kontaktdaten angeben
+    (z.B. eine E-Mail Adresse) und im Falle einer Kontakdatenanfrage
+    aufgerfordert werden, ihre Daten zu vervollständigen.
+  en: >-
+    Users may also be able to provide only pseudonymous contact
+    information (e.g., an email address) and be prompted to complete
+    their information in the event of a contact information request.
+be56daddf12230c4:
+  de: >-
+    Um eine sichere Speicherung und Verarbeitung der Daten zu
+    garantieren ist jedoch erfordlich, dass Betreiber ein lokale
+    Anwendung installieren und betreiben, sowie über zuverlässige
+    Internet-Konnektivität verfügen (nicht zwangsweise permanent
+    und direkt am Ort des Besuchs).
+  en: >-
+    However, in order to guarantee secure storage and processing
+    of data, it is necessary that operators install and run a
+    local application and have reliable Internet connectivity
+    (not necessarily permanent and directly at the site of the
+    visit).
+bff0840e9ffc6ca4:
+  de: >-
+    Wiederum ist dies jedoch mit einem höheren Aufwand und einer
+    eventuellen Verzögerung bei der Kontaktnachverfolgung verbunden.
+  en: >-
+    Again, however, this involves more effort and a possible delay
+    in contact tracing.
+c6946e9f61d108e8:
+  de: >-
+    Eine zentrale Speicherung senkt hierbei auch die technischen
+    Anforderungen an Betreibern von Öffentlichkeiten, da Daten
+    nur über einen kurzen Zeitraum lokal gespeichert werden müssen.
+  en: >-
+    Central storage also lowers the technical requirements for
+    public operators, as data only needs to be stored locally
+    for a short period of time.
+d6eecfa2bbbef735:
+  de: >-
+    Generell erfolgt die Speicherung von Besuchsdaten im Zilp-Zalp
+    System dezentral bei Betreibern von Örtlichkeiten.
+  en: >-
+    In general, the storage of visit data in the Zilp-Zalp system
+    is decentralized to the operators of localities.
 e3b0c44298fc1c14:
   de: ''
   en: ''
+ef7688e6984dc0a1:
+  de: '### Zentrale vs. dezentrale Speicherung von Besuchsdaten'
+  en: '### Central vs. decentralized storage of visit data'
 fb8a8ffeecf186cd:
   de: >-
     Ausgehend von diesen Anforderungen wurden Protokolle entwickelt,
@@ -107,3 +234,11 @@ fb8a8ffeecf186cd:
     aids such as apps and smartphones. Based on this, a [digital
     protocol]({{'protocols.digital'|href}}) was formulated that
     enables the documentation of visit histories using a web application.
+ff56579a7a20001d:
+  de: >-
+    Dies kann ggf. zu einer höheren Akzeptanz des Systems führen,
+    da das Risiko des Verlusts personenbezogener Daten geringer
+    ausfällt.
+  en: >-
+    This may lead to a higher acceptance of the system, as the
+    risk of loss of personal data is lower.

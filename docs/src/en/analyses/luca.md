@@ -7,6 +7,7 @@ In this document we analyze the [Luca](https://www.luca-app.de) system and compa
 In our view, Zilp-Zalp offers the following advantages over Luca:
 
 * Unlike Luca, no single actor can decrypt a user's contact information or reveal a user's visit history through technical manipulation of system components alone.
+* Contact and visit data of users can only be decrypted for epidemiologically relevant infection communities with the active participation of a user concerned. The purpose limitation of the data can therefore, in contrast to other systems, be fully guaranteed by technical and organisational measures.
 * Since each user has a large number of QR codes and these can only be linked to each other with the help of a secret key in the possession of the user and the GÄ key, it is almost impossible for an attacker to correlate the visit data of individual users with each other, e.g. to create visit histories.
 * Loss of visit data from one operator or even conspiratorial misuse of the system by different operators does not result in loss of personal data or disclosure of visit histories of individual users.
 * Compromising the backend only makes a few, relatively uncritical meta data accessible to an attacker. The backend only stores encrypted contact data and IDs, but not complete visit histories like the Luca backend, for example.

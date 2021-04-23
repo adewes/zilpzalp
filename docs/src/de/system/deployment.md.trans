@@ -1,0 +1,103 @@
+05bb2749c5776aeb:
+  de: >-
+    Gesundheitsämter müssen zum Betrieb von Zilp-Zalp lediglich
+    die paketierte `ga`API-Anwendung deployen, welche zusätzlich
+    auch die Web-Anwendung enthält.
+  en: >-
+    Health departments only need to deploy the packaged `ga` API
+    application to run Zilp-Zalp, which also contains the web
+    application.
+0a55fa5f5a8831c9:
+  de: >-
+    Geheimnisse wie Schlüssel können hierbei auch dynamisch injiziert
+    werden um eine lokale Speicherung zu vermeiden. Hierzu kann
+    die `zilpzalp` Dienstanwendung benutzt werden.
+  en: >-
+    Secrets such as keys can also be injected dynamically to avoid
+    local storage. The `zilpzalp` service application can be used
+    for this purpose.
+2c100c1c5df29105:
+  de: <!--translate(ignore)-->
+  en: <!--translate(ignore)-->
+3d3c3eaebec69eee:
+  de: >-
+    Betreiber von Ortschaften können entweder die Zilp-Zalp Web-Anwendung
+    nutzen, oder ebenfalls eine lokale API-Anwendung deployen,
+    welche zusätzlich auch die Web-Anwendung enthält:
+  en: >-
+    Localities can either use the Zilp-Zalp web application or
+    deploy a local API application that also contains the web
+    application:
+4bcbd0669fdefa93:
+  de: >-
+    curl https://downloads.zilpzalp.eu/ga/zilpzalp-ga-latest.tar.gz
+  en: >-
+    curl https://downloads.zilpzalp.eu/ga/zilpzalp-ga-latest.tar.gz
+63870cac8c8860dc:
+  de: 'Die Anwendung kann anschließend einfach ausgeführt werden:'
+  en: 'The application can then be easily executed:'
+656b678195cf83fc:
+  de: tar -xvzf zilpzalp-ga-latest.tar.gz
+  en: tar -xvzf chiffchaff-ga-latest.tar.gz
+73f95894d03a8c55:
+  de: zilpzalp settings inject
+  en: Chiffchaff settings inject
+81a11ce385be38d0:
+  de: >-
+    Die folgenden Abschnitte beschreiben das Deployment der Zilp-Zalp
+    Systemkomponenten für Betreiber von Ortschaften und Gesundheitsämter.
+  en: >-
+    The following sections describe the deployment of the Zilp-Zalp
+    system components for operators of localities and health departments.
+8a33ed86d58372ac:
+  de: export ZILPZALP_ASSES=`readlink -f assets`
+  en: export ZILPZALP_ASSES=`readlink -f assets`
+90157b8c57c830a5:
+  de: '## Betreiber von Ortschaften'
+  en: '## site operators'
+963e57a186d7e87d:
+  de: '## Gesundheitsämter'
+  en: '## Public Health Departments'
+a07db0fe8ddadafd:
+  de: >-
+    Die Anwendung benötigt zudem Konfigurationseinstellungen,
+    welche in einem Verzeichnis abgelegt werden könenn das über
+    die Umgebungsvariable `ZILPZALP_SETTINGS` definiert wird (standardmäßig
+    werden diese im `settings` Unterverzeichnis des aktuellen
+    Arbeitsverzeichnisses gesucht), sowie verschiedene Dateien
+    (Migrationen, Frontend-Code), deren Speicherort über eine
+    Umgebungsvariable `ZILPZALP_ASSETS` definiert wird (standardmäßig
+    werden diese im `assets` Unterverzeichnis des aktuellen Arbeitsverzeichnisses
+    gesucht).
+  en: >-
+    The application also needs configuration settings, which can
+    be stored in a directory defined by the environment variable
+    `ZILPZALP_SETTINGS` (by default they are searched in the `settings`
+    subdirectory of the current working directory), and various
+    files (migrations, frontend code), whose location is defined
+    by an environment variable `ZILPZALP_ASSETS` (by default they
+    are searched in the `assets` subdirectory of the current working
+    directory).
+bdfdd21d76179bf8:
+  de: zilpzalp
+  en: Chiffchaff
+c357d3398365fd41:
+  de: tar -xvzf zilpzalp-operator-latest.tar.gz
+  en: tar -xvzf chiffchaff-operator-latest.tar.gz
+c5e42776f9e776df:
+  de: >-
+    curl https://downloads.zilpzalp.eu/operator/zilpzalp-operator-latest.tar.gz
+  en: >-
+    curl https://downloads.zilpzalp.eu/operator/zilpzalp-operator-latest.tar.gz
+dd52d2c98270f01d:
+  de: export ZILPZALP_SETTINGS=`readlink -f settings`
+  en: export ZILPZALP_SETTINGS=`readlink -f settings`
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e79aff752ccc89a4:
+  de: '# Deployment'
+  en: '# Deployment'
+f1b901847390b0ed:
+  de: '```'
+  en: '`` `'

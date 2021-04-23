@@ -16,26 +16,26 @@ pages:
         src|f|exists?: "{target_language}/analyses/risks.md"
         name: risks
         slug||slugify: risiken
-#  - title|t: System
-#    name: system
-#    slug||slugify: system
-#    children:
-#    - title|t: API
-#      src|f|exists?: "{target_language}/system/api.md" 
-#      name: index
-#      slug||slugify: api
-#    - title|t: Apps
-#      src|f|exists?: "{target_language}/system/apps.md" 
-#      name: index
-#      slug||slugify: apps
-#    - title|t: Deployment
-#      src|f|exists?: "{target_language}/system/deployment.md" 
-#      name: index
-#      slug||slugify: deployment
-#    - title|t: Schlüsselmanagement
-#      src|f|exists?: "{target_language}/system/key-management.md" 
-#      name: index
-#      slug||slugify: schluesselmanagement
+  - title|t: System
+    name: system
+    slug||slugify: system
+    children:
+    - title|t: API
+      src|f|exists?: "{target_language}/system/api.md" 
+      name: api
+      slug||slugify: api
+    - title|t: Apps
+      src|f|exists?: "{target_language}/system/apps.md" 
+      name: apps
+      slug||slugify: apps
+    - title|t: Deployment
+      src|f|exists?: "{target_language}/system/deployment.md" 
+      name: deployment
+      slug||slugify: deployment
+    - title|t: Schlüsselmanagement
+      src|f|exists?: "{target_language}/system/key-management.md" 
+      name: key-management
+      slug||slugify: schluesselmanagement
   - title|t: Protokolle
     name: protocols
     slug||slugify: Protokolle
