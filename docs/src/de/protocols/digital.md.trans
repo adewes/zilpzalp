@@ -1,3 +1,24 @@
+1f6aaa9cd1088d57:
+  de: >-
+    Generell erfolgt die Initialisierung ebenso wie im papiergestützten
+    Protokoll. Im Unterschied hierzu werden die generierten QR-Code
+    Daten jedoch nicht gelöscht, sondern im Browser (oder einer
+    Smartphone-App) gespeichert. Der Nutzer kann zur Besuchsdokumentation
+    die (Browser-/Smartphone-)App öffnen, diese zeigt dann einen
+    der vorab generierten QR-Codes an, welcher wiederum vom Betreiber
+    gescannt wird. Das Scanning muss hierbei synchron erfolgen.
+    Beim Verlassen der Ortschaft kann der gleiche Code nochmals
+    gescannt werden, um die Anwesenheitszeit zu dokumentieren.
+  en: >-
+    In general, the initialization takes place in the same way
+    as in the paper-based protocol. In contrast to this, however,
+    the generated QR code data is not deleted, but stored in the
+    browser (or a smartphone app). The user can open the (browser/smartphone)
+    app for visit documentation, which then displays one of the
+    previously generated QR codes, which in turn is scanned by
+    the operator. The scanning must be done synchronously. When
+    leaving the location, the same code can be scanned again to
+    document the attendance time.
 51a299fb7ff55e3c:
   de: '## Unterschiede zum papiergestützten Protokoll'
   en: '## Differences to the paper-based protocol'
@@ -55,6 +76,28 @@ ab09d874f26209f4:
     purpose, since by performing an anonymous check-in it can
     also simultaneously send anonymous warnings to users in the
     event of an infection.
+c744c6933134bfda:
+  de: >-
+    Zur Verhinderung der unberechtigten Wiederverwendung von QR-Codes
+    können bei der Initialisierung im Falle der digitalen Nachverfolgung
+    sowie dem Einsatz zeitlimitierter QR-Codes sehr viel mehr
+    Codes generiert werden (z.B. einer für jede Stunde der kommenden
+    zwölf Monate). Hierbei muss die Initialisierung jedoch ebenfalls
+    über einen validierenden Dritten erfolgen. Eine Selbst-Zertifizierung
+    der QR-Codes durch die Web-Anwendung des Nutzers ist ebenfalls
+    möglich, die Aufdeckung einer möglichen Mehrfachverwendung
+    kann jedoch in diesem Fall erst bei der Analyse der Daten
+    durch Gesundheitsämter erfolgen.
+  en: >-
+    To prevent the unauthorized reuse of QR codes, many more codes
+    can be generated during initialization in the case of digital
+    tracking as well as the use of time-limited QR codes (e.g.
+    one for every hour of the next twelve months). In this case,
+    however, the initialization must also be carried out by a
+    validating third party. Self-certification of the QR codes
+    by the user's web application is also possible, but in this
+    case the detection of possible multiple use can only take
+    place when the data is analysed by health authorities.
 d2c9d05559df7367:
   de: >-
     Generell erfolgt die Initialisierung ebenso wie im papiergestützten

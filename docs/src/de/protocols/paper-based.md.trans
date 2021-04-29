@@ -3,6 +3,29 @@
     Die Dokumentation basierend auf diesem Hash kann dann abgelehnt
     werden.
   en: Documentation based on this hash can then be rejected.
+00457c80a5e6f1e4:
+  de: >-
+    Besuchsdaten können entweder lokal gespeichert werden, oder
+    in einem (föderierten) Backend
+  en: >-
+    Visit data can either be stored locally, or in a (federated)
+    backend
+023b0b324d64099a:
+  de: >-
+    Daten, die der Nutzer einem Betreiber zur Besuchsdokumentation
+    übergibt. Jeweils nur ein Datenpaket wird pro Besuch übergeben
+    und danach nicht wiederverwendet. $ K _ b $, $ I _ D $ und
+    $ H _ s $ sind Nutzerdaten wie im Text beschrieben, $ U _
+    1 \ldots U _ n $ private Datenschlüssel des Nutzers. <strong>U</strong>
+    bezeichnet einen Nutzerschlüssel mit dem dieser seine Daten
+    verschlüsselt.
+  en: >-
+    Data that the user transfers to an operator for visit documentation.
+    Only one data packet is transferred per visit and is not reused
+    afterwards. $ K _ b $ , $ I _ D $ and $ H _ s $ are user data
+    as described in the text, $ U _ 1 \ldots U _ n $ private data
+    keys of the user. <strong>U</strong> denotes a user key with
+    which the user encrypts his data.
 03f94667cbaac2b4:
   de: >-
     Die Anwendung kann mithilfe von $ H _ s $ dann alle Hashes
@@ -16,6 +39,18 @@
     procedure with $ Z _ h$ and send the list of hashed tokens
     to the backend, which it then publishes (together with other
     hashes to ensure anonymity).
+0400ba7226ef4b9f:
+  de: >-
+    Generell sollte die Anforderung von Besuchsdaten über diesen
+    Mechanismus eine absolute Ausnahme darstellen, dementsprechend
+    kann der Prozess ohne starke Reduktion der Effektivität mit
+    einem starken zusätzlichen Kontrollmechanismus in Form eines
+    Ombuds-Prozesses ausgestattet werden.
+  en: >-
+    In general, requesting visit data through this mechanism should
+    be an absolute exception; accordingly, the process can be
+    equipped with a strong additional control mechanism in the
+    form of an ombuds process without greatly reducing its effectiveness.
 0591a19232981137:
   de: >-
     Zur Dokumentation des Besuchs einer Ortschaft gegenüber Betreibern
@@ -38,6 +73,9 @@
     the web application. Initially, they are only stored locally.
     Operators can also capture additional meta-data to improve
     accuracy for contact tracing.
+05a9a08a012ae029:
+  de: '* `v0.5`:'
+  en: '* `v0.5` :'
 076cfc4be4cb6e43:
   de: >-
     **Hinweis**: Aktuell wird die Sicherheit des Systems durch
@@ -88,6 +126,9 @@
     the process is very well suited for digital contact tracing
     via app. In this case, it delays the storage of personal information
     until it is really needed.
+0a8a18157d19e9b4:
+  de: '#### Speicherung von Besuchsdaten'
+  en: '#### Storage of visit data'
 0ad33da44856bff8:
   de: >-
     Da QR-Codes nur dezentral erfasst werden können sie zunächst
@@ -107,6 +148,40 @@
   en: >-
     The GA then writes out relevant hashes for contact tracing
     and waits for feedback from operators.
+0ba5ea9cb632c899:
+  de: </aside>
+  en: </aside>
+0c73ecbb31b3ffba:
+  de: >-
+    Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
+    übergeben werden $ ( K _ b, I _ D, H _ s, U _ 1 ^ \mathrm{priv}
+    \ldots U _ n ^ \mathrm{priv} ) $, sowie die Daten die der
+    Nutzer selbst zur Kontrolle und Anpassung seiner Daten nutzt
+    können entweder in Dateien gespeichert werden, oder lokal
+    verschlüsselt und anschließend im Backend abgelegt werden.
+  en: >-
+    The data that is transferred to the health department in the
+    case of contact tracing $ ( K _ b, I _ D, H _ s, U _ 1 ^ \mathrm{priv}
+    \ldots U _ n ^ \mathrm{priv} ) $, as well as the data that
+    the user himself uses to check and adjust his data can either
+    be stored in files, or locally encrypted and then stored in
+    the backend.
+0c848f0c3f61b435:
+  de: >-
+    Daten, die der Nutzer einem Betreiber zur Besuchsdokumentation
+    übergibt. Jeweils nur ein Datenpaket wird pro Besuch übergeben
+    und danach nicht wiederverwendet. $ K _ b $, $ I _ D $ und
+    $ H _ s $ sind Nutzerdaten wie im Text beschrieben, $ U _
+    1 \ldots U _ n $ private Datenschlüssel des Nutzers. $ U $
+    bezeichnet einen Nutzerschlüssel mit dem dieser seine Daten
+    verschlüsselt.
+  en: >-
+    Data that the user transfers to an operator for visit documentation.
+    Only one data packet is transferred per visit and is not reused
+    afterwards. $ K _ b $ , $ I _ D $ and $ H _ s $ are user data
+    as described in the text, $ U _ 1 \ldots U _ n $ private data
+    keys of the user. $ U $ describes a user key with which the
+    user encrypts his data.
 0d21df1057229d77:
   de: >-
     * **Gesundheitsämter (GÄ)**, die **Besuchshistorien** und
@@ -134,6 +209,45 @@
     the backend, generating a random password and a random ID
     that the user has to note down in order to be able to retrieve
     the data later.
+11b87e22b9af117f:
+  de: >-
+    Daten, die der Nutzer einem Betreiber zur Besuchsdokumentation
+    übergibt. Jeweils nur ein Datenpaket wird pro Besuch übergeben
+    und danach nicht wiederverwendet.
+  en: >-
+    Data that the user transfers to an operator for visit documentation.
+    Only one data package is transferred per visit and is not
+    reused afterwards.
+1236d8deee12ef23:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.).
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ the identification value of a group/infection community
+    formed by the operator application, $ M _ j $ public meta
+    data of this group (not assignable to an operator) $ K _ b
+    $ and $ I _ D $ are user data as described above, $ L _ D
+    $ contains the contact data of the operator and $ N _ j $
+    non-public meta data for the health department (e.g. table,
+    room information etc.).
+123f5bddbd7a0373:
+  de: >-
+    Hashwerte, die ein Gesundheitsamt zum Zweck der Kontaktnachverfolgung
+    veröffentlicht.
+  en: >-
+    Hash values published by a health department for contact tracing
+    purposes.
 1253c0b2b4cda099:
   de: >-
     Nun generiert die Anwendung Wertepaare bestehend aus $H _
@@ -201,6 +315,16 @@
     code with the value $ H _ s$. In addition, the attacker must
     extract the visit data individually from the operators, e.g.,
     by manipulating the web applications.
+149740e8d422c877:
+  de: >-
+    a) Validierte Daten, die der Nutzer einem Betreiber einer
+    Ortschaft zur Besuchsdokumentation übergibt. Dieser kann mit
+    dem öffentlichen Schlüssel der signierenden Stelle (TC) die
+    Validität der Daten überprüfen.
+  en: >-
+    a) Validated data that the user hands over to a locality operator
+    for visit documentation. The latter can check the validity
+    of the data with the public key of the signing entity (TC).
 1689b14096be8536:
   de: >-
     * Werden bei der Kontaktnachverfolgung die entsprechenden
@@ -212,6 +336,17 @@
     tracing, the backend determines that no contact data exists
     for them yet. It then writes out the token $ Z $ via a public
     list for completion.
+192fc1b55a24f761:
+  de: >-
+    Das Backend kann hierbei keine Zuordnung von einzelnen Besuchsdaten
+    zu spezifischen Ortschaften vornehmen. Lediglich über Metadaten
+    (IP-Adresse der hochladenenden Stelle) wäre es einem Backend
+    möglich, ggf. eine Zuordnung herzustellen.
+  en: >-
+    The backend cannot assign individual visit data to specific
+    locations. Only via metadata (IP address of the uploading
+    location) would it be possible for a backend to establish
+    an assignment if necessary.
 1a31c685b7cf5d80:
   de: >-
     Da das GA von diesem Nutzer jedoch nicht den Schlüssel $ H
@@ -247,6 +382,15 @@
 1acfe6d365d9266e:
   de: '### Risiko-Analyse'
   en: '### Risk analysis'
+1b78c0b80d721638:
+  de: '### Speicherung von Besuchsdaten'
+  en: '### Storage of visit data'
+1b8c902cc368c302:
+  de: Beschreibung.
+  en: Description.
+1c6e4bf1102b021e:
+  de: '* `0.5`:'
+  en: '* `0.5` :'
 1cbfef9dacaa98a6:
   de: >-
     Im Rahmen der normalen Initialisierung erfolgt keine Prüfung
@@ -323,6 +467,9 @@
 217ed4b6079c0f72:
   de: '#### Anlassbezogene Datenfreigabe'
   en: '#### Event-related data release'
+21db6822f42f5d2b:
+  de: '    Beschreibung.'
+  en: '    Description.'
 23b6c65e6089da1c:
   de: >-
     Die Verschlüsselung von Daten für GÄ sowie die Authentifizierung
@@ -384,9 +531,67 @@
     the data set, the associated private key is stored by the
     application $K _ i ^ \mathrm{pub} $. These pairs are used
     for contact tracing and passed on to public operators.
+26c0b2b3b7719187:
+  de: >-
+    Besuchsdaten können entweder lokal gespeichert werden, oder
+    in einem (föderierten) Backend abgelegt werden. Die lokale
+    Speicherung ist datenschutzfreundlich, birgt aber auch Verfügbarkeitsrisiken,
+    da der Betreiber einer Ortschaft sicherstellen muss, dass
+    die Daten ausfallsicher gespeichert werden können. Zudem verlangsamt
+    die lokale Speicherung eventuell die Kontaktnachverfolgung.
+    Da Zilp-Zalp bereits einen Mechanismus integriert, der Besuchsdaten
+    von Nutzern mithilfe einer Zuordnung zu Infektionsgemeinschaften
+    schützt, ist die Zweckbindung bereits hierüber gegeben. Dementsprechend
+    können Besuchsdaten auch in einem Backend abgelegt werden,
+    welches dann automatisiert auf ausgeschriebene Hashes antworten
+    kann. Hierbei kann die Web-Anwendung des Betreibers die Daten
+    zur Ortschaft zu allen verschlüsselten Besuchsdaten hinzufügen
+    und sie wie diese ebenfalls mit dem entsprechenden Gruppenschlüssel
+    verschlüsseln. Das Backend kann hierbei keine Zuordnung von
+    einzelnen Besuchsdaten zu spezifischen Ortschaften vornehmen.
+    Lediglich über Metadaten (IP-Adresse der hochladenenden Stelle)
+    wäre es einem Backend möglich, ggf. eine Zuordnung herzustellen.
+  en: >-
+    Visit data can either be stored locally, or stored in a (federated)
+    backend. Local storage is privacy-friendly, but also poses
+    availability risks, as the operator of a site must ensure
+    that the data can be stored in a fail-safe manner. In addition,
+    local storage potentially slows down contact tracking. Since
+    Zilp-Zalp already integrates a mechanism that protects user
+    visit data by associating it with infection communities, this
+    already provides purpose limitation. Accordingly, visit data
+    can also be stored in a backend, which can then automatically
+    respond to hashes that are written out. In this case, the
+    operator's web application can add the locality data to all
+    encrypted visit data and encrypt it like this with the corresponding
+    group key. The backend cannot assign individual visit data
+    to specific localities. Only via metadata (IP address of the
+    uploading location) would it be possible for a backend to
+    establish an assignment if necessary.
+28ffaa8116564ebc:
+  de: >-
+    Validierte Daten, die der Nutzer einem Betreiber einer Ortschaft
+    zur Besuchsdokumentation übergibt. Dieser kann mit dem öffentlichen
+    Schlüssel der signierenden Stelle ($ TC $) die Validität der
+    Daten überprüfen.
+  en: >-
+    Validated data that the user hands over to an operator of
+    a locality for visit documentation. The latter can check the
+    validity of the data with the public key of the signing body
+    ($ TC $).
 2a0f7e673ecf8c4d:
   de: '#### Rekonstruktion von Besuchshistorien'
   en: '#### Reconstruction of visit histories'
+2b27e3d60a6d3022:
+  de: "Erläuterungen der folgenden Digramme: a) Öffentlicher aymmetrischer\
+    \ Schlüssel. b) Privater asymmetrischer Schlüssel. c) Symmetrischer\
+    \ Schlüssel. d) Verschlüsselung mit einem symmetrischen oder\
+    \ asymmetrischen Schlüssel. e) Signierung mit einem privaten\
+    \ asymmetrischen Schlüssel. "
+  en: "Explanations of the following digrams: a) Public aymmetric\
+    \ key. b) Private asymmetric key. c) Symmetric key. d) Encryption\
+    \ with a symmetric or asymmetric key. e) Signing with a private\
+    \ asymmetric key. "
 2b6dfef3c1edfd5f:
   de: >-
     Vertrauenswürdige Dritte könnten beispielsweise staatliche
@@ -426,6 +631,27 @@
     such a way that they can only be processed by GÄ for contact
     tracing on an ad **hoc** basis and are not accessible to any
     other actors in the system, even in encrypted form.
+2e275543b804b20d:
+  de: >-
+    * Es kann eine Schlüsselableitung anhand der Kontaktdaten
+    der Person sowie Daten der Ortschaft erfolgen (beispielsweise
+    durch Zusammenführung und Hashing des Namens und der Anschrift
+    der Person sowie der Ortschaft). Wendet sich die Person an
+    das Gesundheitsamt zur Kontaktnachverfolgung, kann dieses
+    die Geheimschlüssel des Nutzers basierend auf den gegebenen
+    Daten rekonstruieren und anschließend die Kontaktnachverfolgung
+    regulär durchführen. Dies schwächt jedoch die Sicherheits-
+    und Privatsphäregarantien für diese Person sowie alle weiteren
+    Nutzer in dessen Infektionsgemeinschaft.
+  en: >-
+    * Key derivation can be performed based on the person's contact
+    details and locality data (for example, by merging and hashing
+    the person's name and address and locality). If the person
+    contacts the health department for contact tracing, the health
+    department can reconstruct the user's secret keys based on
+    the given data and then perform contact tracing regularly.
+    However, this weakens the security and privacy guarantees
+    for that person and all other users in his infection community.
 2eab7be561de2b9e:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -444,6 +670,41 @@
     and $ K _ B$ together in a data structure and encrypts them
     with the public GÄ key. This data remains with the user and
     is only passed on to a GA for contact tracing.
+30c0dc93c3dae804:
+  de: >-
+    Der Nachteil dieses Verfahrens ist, dass Ombudsschlüssel wiederum
+    die globale Entschlüsselung von Besuchsdaten ermöglichen.
+    Der Betreiber einer Ortschaft kann daher als weitere Vertrauensstelle
+    herangezogen werden. Eine alleinige Kontrolle der Entschlüsselung
+    durch Betreiber sollte jedoch ebenso vermieden werden, da
+    diese gegenüber öffentlichen Stellen keine effektive Kontrollfunktion
+    ausüben können, wie die [Zugänglichmachung von Gästelisten
+    an die Polizeibehörden](https://www.sueddeutsche.de/bayern/bayern-polizei-corona-gaestelisten-ermittlungen-1.5018271)
+    bereits gezeigt hat.
+  en: >-
+    The disadvantage of this procedure is that ombud keys in turn
+    enable the global decryption of visit data. The operator of
+    a locality can therefore be used as a further trust authority.
+    However, sole control of decryption by operators should be
+    avoided as well, since they cannot exercise an effective control
+    function vis-à-vis public authorities, as the [accessibility
+    of guest lists to police authorities](https://www.sueddeutsche.de/bayern/bayern-polizei-corona-gaestelisten-ermittlungen-1.5018271)
+    has already shown.
+316a1a25d2b63b16:
+  de: >-
+    a) Daten, die der Nutzer zur eventuellen Übergabe an das Gesundheitsamt
+    verwahrt. $ K _ b $, $ I _ D $ und $ H _ s $ sind Nutzerdaten
+    wie im Text beschrieben, $ U _ 1 \ldots U _ n $ private Datenschlüssel
+    des Nutzers. b) Daten, die der Nutzer für sich selbst zur
+    Kontrolle verwahrt. <strong><i>U</i></strong> bezeichnet einen
+    Nutzerschlüssel mit dem dieser seine Daten verschlüsselt.
+  en: >-
+    a) Data kept by the user for possible handover to the health
+    authority. $ K _ b $ , $ I _ D $ and $ H _ s $ are user data
+    as described in the text, $ U _ 1 \ldots U _ n $ private data
+    keys of the user. b) Data that the user keeps for himself
+    for control purposes. <strong><i>U</i></strong> means a user
+    key with which the user encrypts his data.
 3279b5130c2dfbbd:
   de: >-
     Eine Validierung über Dritt-APIs wie sie in anderen, zentralen
@@ -501,9 +762,57 @@
     With the value $I _ D$ the GA can receive the encrypted user
     data from the backend, which can be decrypted with the help
     of the private data key as well as $K _ B$.
+33e4b7cb43c0cfde:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <strong><code><i>Ob</i></code></strong>
+    bezeichnet den Ombuds-Schlüssel, <strong><code><i>Op</i></code></strong>
+    den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ denotes
+    color coded private and public group key respectively. <strong><code><i>Ob</i></code></strong>
+    denotes the ombuds key, <strong><code><i>Op</i></code></strong>
+    the operator key.
 33ef6fb6ac258672:
   de: '    {% include "common/protocols/_check_in.html" %}'
   en: '    {% include "common/protocols/_check_in.html" %}'
+33f2799467177287:
+  de: <p>
+  en: <p>
+34471a0ba0085dba:
+  de: >-
+    Die lokale Speicherung ist datenschutzfreundlich, birgt aber
+    auch Verfügbarkeitsrisiken, da der Betreiber einer Ortschaft
+    sicherstellen muss, dass die Daten ausfallsicher gespeichert
+    werden.
+  en: >-
+    Local storage is privacy-friendly, but also poses availability
+    risks, as the operator of a locality must ensure that the
+    data is stored in a fail-safe manner.
+35f9f108155dda23:
+  de: "\t<p>"
+  en: "\t<p>"
 36efae87f8f38991:
   de: >-
     Alle Besuchsdaten der Gruppe werden mit dem öffentlichen Schlüssel
@@ -523,6 +832,39 @@
   en: >-
     The data package can also be used as described above to have
     hashes declared invalid, e.g. in the event of loss or theft.
+38d7a2858317c306:
+  de: >-
+    Daten, die ein Betreiber zur Erbringung seiner Nachweispflicht
+    gegenüber dem Gesundheitsamt sowie zur eventuellen Entschlüsselung
+    von Besuchsdaten im Rahmen des Ombuds-Prozesses verschlüsselt
+    lokal oder in einem Backend verwahrt. $ G _ i $ bezeichnet
+    den Identifikator einer Gruppe/Infektionsgemeinschaft, $ M
+    _ k $ bezeichnet relevante Meta-Daten zu der Gruppe (u.a.
+    Zeit der Erfassung). <strong><i>Op</i> (rot)</strong> bezeichnet
+    den privaten Datenschlüssel des Betreibers (welcher für den
+    Ombuds-Prozess benötigt wird), <strong><i>Op</i> (gelb)</strong>
+    bezeichnet den geheimen Datenschlüssel mit dem der Betreiber
+    die Daten verschlüsselt. Der Betreiber kann diese Daten verschlüsselt
+    lokal oder in einem Backend speichern.
+  en: >-
+    Data that an operator stores locally or in a backend in encrypted
+    form in order to fulfil its obligation to provide evidence
+    to the health authority and for the possible decryption of
+    visit data as part of the ombudsman process. $ G _ i $ denotes
+    the identifier of a group/infection community, $ M _ k $ denotes
+    relevant meta-data about the group (including time of collection).
+    <strong><i>Op</i></strong> (red) denotes the private data
+    key of the operator (which is required for the Ombuds process),
+    <strong><i>Op</i></strong> (yellow) denotes the secret data
+    key with which the operator encrypts the data. The operator
+    can store this encrypted data locally or in a backend.
+3925efad2e39279f:
+  de: >2-
+      Dies schwächt jedoch die Sicherheits- und Privatsphäregarantien
+    für diese Person sowie alle weiteren Nutzer in deren Infektionsgemeinschaft.
+  en: >2-
+      However, this weakens the security and - privacy guarantees
+    for that person and all other users in their infection community.
 39d8b40cce2b9059:
   de: >-
     * Statt bei der Erstellung von QR-Codes direkt dem Backend
@@ -594,6 +936,17 @@
   en: >-
     * **Operators of** **localities** that document **visits**
     by **users** to enable **contact tracing of** GEs.
+3e2d112a76519932:
+  de: >-
+    Daten, die ein Betreiber zur Erbringung seiner Nachweispflicht
+    gegenüber dem Gesundheitsamt sowie zur eventuellen Entschlüsselung
+    von Besuchsdaten im Rahmen des Ombuds-Prozesses verschlüsselt
+    lokal oder in einem Backend verwahrt.
+  en: >-
+    Data that an operator holds in encrypted form locally or in
+    a backend for the purposes of providing evidence to the health
+    board and for the possible decryption of visit data as part
+    of the ombuds process.
 3ef7325ad12f4b3e:
   de: '##### Abrufen von Ausschreibungen'
   en: '##### Request for contact data'
@@ -613,6 +966,33 @@
   en: >-
     * **Users** who provide their **contact information** and
     **visit history to** GÄ for **contact tracing** purposes.
+410ee5aea99d2e6f:
+  de: >-
+    Kontaktdaten $ U _ d $, die ein Nutzer mit dem Schlüssel $
+    K _ a + K _ b $ verschüsselt in einem Backend verknüpft mit
+    seiner $ I _ D $ (unverschlüsselt) speichert. Eine zunächst
+    rein lokale Speicherung ist ebenfalls möglich (aber nur bei
+    Verwendung der digitalen Kontaktnachverfolgung empfohlen).
+  en: >-
+    Contact details $ U _ d $, which a user stores encrypted with
+    the key $ K _ a + K _ b $ in a backend linked to his $ I _
+    D $ (unencrypted). Initially purely local storage is also
+    possible (but only recommended when using digital contact
+    tracking).
+417ff04378f53d31:
+  de: >-
+    In einer Erweiterung des Proktolls ist jedoch geplant, den
+    Schlüssel $K _ b$ in einem zusätzlichen Schritt von durch
+    ein GA von den Kontaktdaten zu trennen, ihn von Anfang an
+    separat zu speichern oder ihn asymmetrisch zu verschlüsseln
+    und einer weiteren Partei die Kontrolle über die Entschlüsselung
+    zu geben.
+  en: >-
+    In an extension of the Proktoll, however, it is planned to
+    separate the key $K _ b$ from the contact data in an additional
+    step of by a GA, to store it separately from the beginning
+    or to encrypt it asymmetrically and to give another party
+    control over the decryption.
 419f513c5d13a4fd:
   de: >-
     Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
@@ -628,6 +1008,24 @@
     the user himself uses to control and adjust his data can either
     be stored in files or locally encrypted and then stored in
     the backend.
+41a45a8615358074:
+  de: >-
+    Mit diesem sowie dem privaten GÄ-Datenschlüssel kann es wiederum
+    die Werte $ I _ D ^ k$, und $K _ b ^ k$ relevanter Nutzer
+    entschlüsseln, womit wiederum die Kontaktdaten des Nutzers
+    vom Backend abgefragt und entschlüsselt werden können.
+  en: >-
+    With this and the private GÄ data key, it can in turn decrypt
+    the values $ I _ D ^ k$, and $K _ b ^ k$ of relevant users,
+    which in turn can be used to query and decrypt the user's
+    contact data from the backend.
+41dad89882dd3449:
+  de: >-
+    a) Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+  en: >-
+    (a) visit data generated by an operator from user data provided
+    to it and stored locally or in a back-end.
 422df66dae0ea0f1:
   de: >-
     Die folgenden Abschnitte beschreiben von uns bisher identifizierte
@@ -638,6 +1036,17 @@
 42e0fafd1c6698e2:
   de: '### Kontaktnachverfolgung'
   en: '### Contact Tracking'
+435eaa300f57f3df:
+  de: >2-
+      Wendet sich die Person an das Gesundheitsamt zur Kontaktnachverfolgung,
+    kann dieses die Geheimschlüssel des Nutzers basierend auf
+    den gegebenen Daten rekonstruieren und anschließend die Kontaktnachverfolgung
+    regulär durchführen.
+  en: >2-
+      If the person contacts the health department for contact
+    tracing, the health department can reconstruct the user's
+    secret keys based on the given data and then perform contact
+    tracing regularly.
 439556fefd77219e:
   de: '### Varianten'
   en: '### Variants'
@@ -673,6 +1082,67 @@
   en: >-
     * It is not necessary to carry a smartphone or have internet
     connectivity to document visits.
+479ba28bd93a974a:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <strong><i>`Ob`</i></strong> bezeichnet
+    den Ombuds-Schlüssel, <strong><i>`Op`</i></strong> den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ denotes
+    color coded private and public group key respectively. <strong><i>`Ob`</i></strong>
+    denotes the ombuds key, <strong><i>`Op`</i></strong> the operator
+    key.
+47c4d1234c7b68e3:
+  de: >2-
+      * Es wurde eine Erweiterung hinzugefügt, welche die manuelle
+    Erfassung von Kontaktdaten durch den Betreiber einer Ortschaft
+    beschreibt, sowie einen Prozess für Gesundheitsämter um auf
+    diese im Auftrag des Nutzers erhobenen Daten zweckgebunden
+    zugreifen zu können.
+  en: >2-
+      * An extension has been added to describe the manual collection
+    of contact details by the operator of a locality, and a process
+    for health boards to access this data collected on behalf
+    of the user for a specific purpose.
+48aa02f8cd093d17:
+  de: >-
+    Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
+    $H _ s$, aus dem mit ein geeigneten Verfahren eine pseudozufällige
+    Reihe weiterer Werte $H _ 1, H _ 2, \ldots H _ n$ erzeugt
+    wird. Die Web-Anwendung speichert nun $H _ s$, $I _ D$ und
+    $ K _ b$ zusammen in einer Datenstruktur und verschlüsselt
+    diese mit dem öffentlichen GÄ-Datenschlüssel. Diese Daten
+    verbleiben beim Nutzer und werden nur zur Kontaktnachverfolgung
+    an ein GA weitergegeben.
+  en: >-
+    Furthermore, the user's application generates a random value
+    $H _ s$, from which a pseudo-random series of further values
+    $H _ 1, H _ 2, \ldots H _ n$ is generated using a suitable
+    method. The web application now stores $H _ s$, $I _ D$ and
+    $ K _ b$ together in a data structure and encrypts them with
+    the public GÄ data key. This data remains with the user and
+    is only passed on to a GA for contact tracing.
 496918fb007cae51:
   de: >-
     Der Nutzer kann dieses Datenpaket, welches auch als QR-Code
@@ -693,6 +1163,9 @@
     information as to whether his visit data has been requested
     by a GA and, in the event of non-notification, can request
     further data on the use from this office using his GA data.
+49c50e7b5b37cfe9:
+  de: '  * dsdfsdf'
+  en: '  * dsdfsdf'
 4a1b36396e5e4c81:
   de: >-
     * Der Nutzer kann der Web-Anwendung regelmäßig die Daten $
@@ -817,6 +1290,15 @@
     would like to store the data in such a way that GÄ can access
     the data without any further action on the part of the user
     (but in a way that is comprehensible to the user).
+4ddfda08463ac31f:
+  de: >2-
+      * Es wird ein Ombuds-Prozess beschrieben, der den Datenzugriff
+    für Fälle regelt, in denen ein Gesundheitsamt Daten anfragt
+    ohne einen Nutzerschlüssel vorlegen zu können.
+  en: >2-
+      * An ombudsman process is described that governs data access
+    in cases where a health department requests data without being
+    able to provide a user key.
 4de2c4fb325f6be5:
   de: >-
     Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll,
@@ -841,6 +1323,15 @@
     $H _ i$ of the user. It publishes these values via the backend
     (together with other hash values to protect the anonymity
     of the user).
+5360c5d52785535b:
+  de: >2-
+      * Es wurde das Konzept eines Ombudsschlüssels hinzugefügt,
+    dass den Datenzugriff für Fälle regelt, in denen ein Gesundheitsamt
+    Daten anfragt ohne einen Nutzerschlüssel vorlegen zu können.
+  en: >2-
+      * The concept of an ombudsman key was added to regulate
+    data access in cases where a health authority requests data
+    without being able to provide a user key.
 53b532d6b9212344:
   de: >-
     Der öffentliche Schlüssel wird zusammen mit den Gruppendaten
@@ -930,6 +1421,36 @@
     tracing and waits for feedback from operators. In order to
     prevent the submission of manipulated data, operators must
     always also submit the data available for the advertised hash.
+574f4d76c49d2d4c:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <strong>Ob</strong> bezeichnet den Ombuds-Schlüssel,
+    <strong>Op</strong> den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ denotes
+    color coded private and public group key respectively. <strong>Ob</strong>
+    denotes the ombuds key, <strong>Op</strong> the operator key.
 57774f44464dad65:
   de: >-
     Ergibt sich eine Übereinstimmung, werden nach Bestätigung
@@ -956,6 +1477,15 @@
     visit data encrypted with a private group key. The private
     key in turn was encrypted with the public keys of the visit
     data of all group members.
+589f0232fa9bea69:
+  de: >2-
+      * Es wurde das Konzept eines Ombudsschlüssels hinzugefügt,
+    das den Datenzugriff für Fälle regelt, in denen ein Gesundheitsamt
+    Daten anfragt ohne einen Nutzerschlüssel vorlegen zu können.
+  en: >2-
+      * The concept of an ombudsman key has been added to address
+    data access in cases where a health department requests data
+    without being able to provide a user key.
 58e62f4ea402c233:
   de: >-
     Die Daten welche im Falle der Kontaktnachverfolgung dem Gesundheitsamt
@@ -971,6 +1501,36 @@
     the user himself uses to check and adjust his data can either
     be stored in files, or locally encrypted and then stored in
     the backend.
+5a573383766f3285:
+  de: >-
+    Kontaktdaten $ U _ d $, die ein Nutzer mit dem Schlüssel $
+    K _ a $ verschüsselt in einem Backend (oder zunächst lokal)
+    verknüpft mit seiner $ I _ D $ (unverschlüsselt) gespeichert
+    werden.
+  en: >-
+    Contact data $ U _ d $, which a user stores with the key $
+    K _ a $ encrypted in a backend (or initially locally) linked
+    to his $ I _ D $ (unencrypted).
+5b8b6eb639d6cbb5:
+  de: >-
+    Nun generiert die Anwendung Wertepaare bestehend aus $H _
+    i$ ($ \ge 1$) einerseits und $K _ b$ und $I _ D$ andererseits,
+    wobei $H _ i$ unverschlüsselt und $(K _ b, I _ D)$ jeweils
+    für jedes Wertepaar individuell mit dem GÄ-Datenschlüssel
+    verschlüsselt wird. Hierbei wird an den Datensatz der im Rahmen
+    der für diese generierte öffentliche Schlüssel $U _ i ^ \mathrm{pub}
+    $ angehängt, den zugehörigen privaten Schlüssel $U _ i ^ \mathrm{priv}
+    $ speichert die Anwendung zur späteren eventuellen Übergabe
+    an das Gesundheitsamt.
+  en: >-
+    Now the application generates value pairs consisting of $H
+    _ i$ ($ \ge 1$) on the one hand and $K _ b$ and $I _ D$ on
+    the other hand, whereby $H _ i$ is unencrypted and $(K _ b,
+    I _ D)$ is encrypted individually for each value pair with
+    the GÄ data key. The public key $U _ i ^ \mathrm{pub} $ generated
+    for this data set is appended to the data set, and the application
+    stores the associated private key $U _ i ^ \mathrm{priv} $
+    for possible later transfer to the health authority.
 5c823a1e1abcd11b:
   de: >-
     Weiterhin generiert die Anwendung des Nutzers einen Zufallswert
@@ -996,6 +1556,16 @@
   en: >-
     However, to prevent visit documentation with an invalid QR
     code, this requires a direct check of the codes.
+5d382bd4e35edb31:
+  de: "Erläuterungen der im Text folgenden Digramme. a) Öffentlicher\
+    \ aymmetrischer Schlüssel. b) Privater asymmetrischer Schlüssel.\
+    \ c) Symmetrischer Schlüssel. d) Verschlüsselung mit einem\
+    \ symmetrischen oder asymmetrischen Schlüssel. e) Signierung\
+    \ mit einem privaten asymmetrischen Schlüssel. "
+  en: "Explanations of the digrams that follow in the text. a)\
+    \ Public aymmetric key. b) Private asymmetric key. c) Symmetric\
+    \ key. d) Encryption with a symmetric or asymmetric key. e)\
+    \ Signing with a private asymmetric key. "
 5d999fcc2bc37ce1:
   de: >-
     Die Web-Anwendung des Betreibers gruppiert Besuchsdaten möglichst
@@ -1041,6 +1611,15 @@
     $ K _ B$ together in a data structure and encrypts them with
     the public GÄ data key. This data remains with the user and
     is only passed on to a GA for contact tracing.
+6262aa4a5234c634:
+  de: >-
+    Hierzu entschlüsselt das GA zunächst den Gruppenschlüssel
+    mit dem passenden privaten Schlüssel $U _ i ^ {pub}$ der zu
+    den ursprünglichen Besuchsdaten gehört.
+  en: >-
+    To do this, the GA first decrypts the group key with the matching
+    private key $U _ i ^ {pub}$ that belongs to the original visit
+    data.
 64789651fd653174:
   de: >-
     Wichtig: Um die Abgabe manipulierter Daten zu verhindern,
@@ -1050,6 +1629,19 @@
     Important: In order to prevent the submission of manipulated
     data, operators must always also submit the data available
     for the hash tendered.
+6528cf10ede47e91:
+  de: "Betreiber können prinzipiell Personen auch vorgefertigte\
+    \ QR-Code Blöcke aushändigen, die sie mithilfe der Initialisierung\
+    \ einer Person zuordnen. Dies birgt jedoch das Risiko, dass\
+    \ Betreiber die gesamten QR-Codes eines Blocks einsehen können.\
+    \ Durch technische Mittel kann dieses Risiko jedoch begrenzt\
+    \ werden. "
+  en: "In principle, operators can also hand out prefabricated\
+    \ QR code blocks to people, which they assign to a person\
+    \ with the help of initialization. However, this involves\
+    \ the risk that operators can view the entire QR codes of\
+    \ a block. However, this risk can be limited by technical\
+    \ means. "
 6762c18348af3a7f:
   de: "Sobald klar ist, dass einer Gruppe keine weiteren Besuchsdatensätze\
     \ zugeordnet werden, löscht die Web-Anwendung den zur Gruppe\
@@ -1057,6 +1649,21 @@
   en: "As soon as it is clear that no further visit records will\
     \ be assigned to a group, the web application deletes the\
     \ private key belonging to the group. "
+67a196cc81f13d1c:
+  de: >-
+    a) Daten, die der Nutzer zur eventuellen Übergabe an das Gesundheitsamt
+    verwahrt. $ K _ b $, $ I _ D $ und $ H _ s $ sind Nutzerdaten
+    wie im Text beschrieben, $ U _ 1 \ldots U _ n $ private Datenschlüssel
+    des Nutzers. b) Daten, die der Nutzer für sich selbst zur
+    Kontrolle verwahrt. <strong>U</strong> bezeichnet einen Nutzerschlüssel
+    mit dem dieser seine Daten verschlüsselt.
+  en: >-
+    a) Data that the user keeps for possible handover to the health
+    authority. $ K _ b $ , $ I _ D $ and $ H _ s $ are user data
+    as described in the text, $ U _ 1 \ldots U _ n $ private data
+    keys of the user. b) Data that the user keeps for himself
+    for control. <strong>U</strong> denotes a user key with which
+    the user encrypts his data.
 694772c4c12a2a02:
   de: >-
     Die Anwendung generiert anschließend aus allen Datenstrukturen
@@ -1071,6 +1678,24 @@
     all data. The data that is transferred to the health department
     as well as the data that the user himself uses to check and
     adjust his data can be saved in files.
+69ad105397a1afb2:
+  de: >-
+    a) Daten, die der Nutzer einem Betreiber zur Besuchsdokumentation
+    übergibt. Jeweils nur ein Datenpaket wird pro Besuch übergeben
+    und danach nicht wiederverwendet.
+  en: >-
+    a) Data that the user hands over to an operator for visit
+    documentation. Only one data package is handed over per visit
+    and is not reused afterwards.
+69f7472fddb6988d:
+  de: >-
+    a) Daten, die der Nutzer zur eventuellen Übergabe an das Gesundheitsamt
+    verwahrt. b) Daten, die der Nutzer für sich selbst zur Kontrolle
+    verwahrt.
+  en: >-
+    a) Data kept by the user for possible handover to the health
+    authority. b) Data kept by the user for himself/herself for
+    control purposes.
 6e553ace2302fac6:
   de: >-
     * Das Verfahren ist auch für Menschen nutzbar die keine Erfahrung
@@ -1079,6 +1704,32 @@
   en: >-
     * The procedure can also be used by people who have no experience
     in using smartphone apps or cannot use them for other reasons.
+6ea09c7e4ff7d08d:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen öffentlichen Datenschlüssel eines Nutzers aus der gebildeten
+    Gruppe.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a public data key of a user from the formed group.
 6f38efed88d1163c:
   de: >-
     **Hinweis**: Aktuell wird die Sicherheit des Systems durch
@@ -1089,6 +1740,9 @@
     **Note** : Currently, the security of the system is *not enhanced
     by deriving $K _ C$ from $(K _ A, K _ B)$, * as $K _ B $ is
     kept permanently with the user's contact details.
+6f411b9f51ddb8d8:
+  de: '#### Ombuds-Prozess'
+  en: '#### Ombuds process'
 6ffe53f5d8b30c10:
   de: >-
     Die Kontaktdaten sollen hierbei nur von vertauenswürdigen
@@ -1106,6 +1760,22 @@
   en: >-
     The following sequence diagram summarizes the initialization
     process.
+73137d87467c2699:
+  de: >-
+    Alle Besuchsdaten der Gruppe werden mit dem öffentlichen Schlüssel
+    dieses Paares verschlüsselt. Der zugehörige private Schlüssel
+    wird jeweils mit dem öffentlichen Schlüssel jedes Besuchsdatensatzes
+    verschlüsselt und mit dem Datensatz gespeichert. Zusätzlich
+    verschlüsselt der Betreiber die Daten der Ortschaft jeweils
+    mit den jeweiligen Gruppenschlüsseln eines Besuchsdatensatzes
+    und fügt diese dort an.
+  en: >-
+    All visit records of the group are encrypted with the public
+    key of this pair. The corresponding private key is encrypted
+    with the public key of each visit record and stored with the
+    record. In addition, the operator encrypts the locality data
+    in each case with the respective group keys of a visit data
+    record and appends them there.
 74436a30389749e5:
   de: >-
     Schließlich verarbeitet das GA die Daten der Betreiber. Daten
@@ -1122,6 +1792,9 @@
     containing the encrypted private key of the respective group
     data. Without the presence of such a key, the GA cannot decrypt
     the data even if all data and all other keys are present.
+75276f3cd0194a64:
+  de: </p>
+  en: </p>
 769418dd570a9bf1:
   de: '    {% include "common/protocols/_contact_tracing_3.html"
     %}'
@@ -1148,6 +1821,15 @@
     This can decrypt data from users who have formed an infection
     community with it and have accordingly been encrypted with
     the same group key.
+79b79b9180c63841:
+  de: >-
+    Da Zilp-Zalp bereits einen Mechanismus integriert, der Besuchsdaten
+    von Nutzern mithilfe einer Zuordnung zu Infektionsgemeinschaften
+    schützt, ist die Zweckbindung bereits hierüber gegeben.
+  en: >-
+    Since Zilp-Zalp already integrates a mechanism that protects
+    user visit data with the help of an assignment to infection
+    communities, the purpose limitation is already given here.
 79cb4080e00dc707:
   de: >-
     Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung
@@ -1185,9 +1867,41 @@
     latter is initially under the control of the user and can
     only reach a GÄ that can decrypt it via the user or via an
     operator.
+7ba006a652cca659:
+  de: >2-
+      * Daten zu Örtlichkeiten können jeweils mit einem Gruppenschlüssel
+    verschlüsselt und zu Besuchsdaten hinzugefügt werden. Dies
+    ermöglicht die anonyme Speicherung der Daten in einem Backend,
+    was die Verfügbarkeit der Daten erhöht und das Verlustrisiko
+    im Gegensatz zu einer voll dezentralen Speicherung reduziert.
+    Daten können hierbei vom Backend keiner spezifischen Ortschaft
+    zugeordnet werden.
+  en: >2-
+      * Location data can each be encrypted with a group key and
+    added to visit data. This allows the data to be stored anonymously
+    in a backend, which increases the availability of the data
+    and reduces the risk of loss in contrast to fully decentralized
+    storage. Data cannot be assigned to a specific location by
+    the backend.
 7e31f21fb8f8467f:
   de: Von dort können sie durch das GA abegrufen werden.
   en: From there they can be recalled by the GA.
+7e57aff556782875:
+  de: >-
+    Besuchsdaten können entweder lokal gespeichert werden, oder
+    in einem (föderierten) Backend abgelegt werden.
+  en: >-
+    Visit data can either be stored locally, or stored in a (federated)
+    backend.
+7e7b3a33a3ccbe68:
+  de: >2-
+      * Es wird ein Ombuds-Prozess beschrieben, der den Datenzugriff
+    für Fälle regelt, in denen ein Gesundheitsamt Daten anfragt
+    ohne den Geheimschlüssel eines Nutzers vorlegen zu können.
+  en: >2-
+      * An ombudsman process is described that governs data access
+    in cases where a health department requests data without being
+    able to produce a user's secret key.
 7ea29b23b04b183e:
   de: >-
     Ebensowenig kann das GA Besuchs- oder Kontaktdaten von Nutzern
@@ -1200,6 +1914,22 @@
 7f3a01c990203aa9:
   de: '### Besuchsdokumentation'
   en: '### Visit documentation'
+7f7d11b3953ea4e2:
+  de: >-
+    Das Backend soll ebenfalls föderiert betreibbar sein um das
+    Risiko der Metadaten-Analyse zu reduzieren.
+  en: >-
+    The backend should also be federated to reduce the risk of
+    metadata analysis.
+8020b5bbe72f4b52:
+  de: >-
+    Kontaktdaten $ U _ d $, die ein Nutzer verknüpft mit seiner
+    $ I _ D $ sowie dem Schlüssel $ K _ a $ verschüsselt in einem
+    Backend (oder zunächst lokal) speichert.
+  en: >-
+    Contact data $ U _ d $, which a user stores linked with his
+    $ I _ D $ as well as the key $ K _ a $ encrypted in a backend
+    (or first locally).
 814f1a2bbea492bc:
   de: >-
     Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll,
@@ -1216,6 +1946,15 @@
 834fb77d1bd0a7fa:
   de: '## Protokoll (v0.4)'
   en: '## Protocol (v0.4)'
+839137bd0a7eb18d:
+  de: >-
+    Dieses kann ihn mit dem privaten GÄ-Datenschlüssel entschlüsseln,
+    wodurch es die Werte $H _ s ^ l$, $I _ D ^ l$ und $K _ b ^
+    l$ erhält ($l$ bezeichnet hier die Daten des $l$-ten Nutzers).
+  en: >-
+    This can decrypt it with the private GÄ data key, whereby
+    it receives the values $H _ s ^ l$, $I _ D ^ l$ and $K _ b
+    ^ l$ ($l$ denotes here the data of the $l$-th user).
 841ce317a2f1c3e9:
   de: >-
     Dieser Angriff ist jedoch bei der Kontaktnachverfolung leicht
@@ -1260,6 +1999,48 @@
     of individual users, as well as a procedure to determine for
     a specific visit of a user all visits of other users that
     occurred in the same locality and in the same time period.
+867e8153c91558df:
+  de: >-
+    a) Daten, die der Nutzer zur eventuellen Übergabe an das Gesundheitsamt
+    verwahrt. $ K _ b $, $ I _ D $ und $ H _ s $ sind Nutzerdaten
+    wie im Text beschrieben, $ U _ 1 \ldots U _ n $ private Datenschlüssel
+    des Nutzers. b) Daten, die der Nutzer für sich selbst zur
+    Kontrolle verwahrt. <strong><code><i>U</i></code></strong>
+    bezeichnet einen Nutzerschlüssel mit dem dieser seine Daten
+    verschlüsselt.
+  en: >-
+    a) Data that the user keeps for possible handover to the health
+    authority. $ K _ b $ , $ I _ D $ and $ H _ s $ are user data
+    as described in the text, $ U _ 1 \ldots U _ n $ private data
+    keys of the user. b) Data that the user keeps for himself
+    for control. <strong><code><i>U</i></code></strong> means
+    a user key with which the user encrypts his data.
+881fdb136aca530a:
+  de: >-
+    Eine Möglichkeit, einen solchen Prozess zu gestalten ist die
+    Zuhilfenahme einer Ombuds-Stelle, welche als neutraler Dritter
+    die Datenanforderung überwacht und kontrolliert. Hierzu kann
+    für diese Stelle ein Schlüsselpaar generiert werden, der öffentliche
+    Schlüssel wird hierbei Betreibern zur Verfügung gestellt.
+    Gruppenschlüssel werden anschließend zusätzlich mit diesem
+    Schlüssel verschlüsselt. Fordert ein Gesundheitsamt Besuchsdaten
+    von einem Betreiber an, muss es zur Nutzbarmachung der Daten
+    bei der Ombudsstelle eine Entschlüsselung des entsprechenden
+    Gruppenschlüssels anfordern. Dieses prüft die Anfrage, entschlüsselt
+    ggf. den Gruppenschlüssel. Dieser Vorgang wird anschließend
+    ggf. öffentlich dokumentiert.
+  en: >-
+    One possibility to design such a process is the use of an
+    ombudsman office, which monitors and controls the data request
+    as a neutral third party. For this purpose, a key pair can
+    be generated for this body, the public key being made available
+    to operators. Group keys are then additionally encrypted with
+    this key. If a health authority requests visit data from an
+    operator, it must request decryption of the corresponding
+    group key from the ombudsman service in order to make the
+    data usable. The ombudsman checks the request and decrypts
+    the group key if necessary. This process is then publicly
+    documented if necessary.
 893387dd9e3e5462:
   de: >-
     Zilp-Zalp setzt hingegen primär auf ein papiergestütztes Protokoll,
@@ -1282,6 +2063,30 @@
     Many contact tracing systems, such as **Luca** or **Recover**,
     rely primarily on technical tools such as smartphone apps
     to document **visits**.
+8a87aa7ea5416d88:
+  de: >-
+    Daten, die ein Betreiber zur Erbringung seiner Nachweispflicht
+    gegenüber dem Gesundheitsamt sowie zur eventuellen Entschlüsselung
+    von Besuchsdaten im Rahmen des Ombuds-Prozesses verschlüsselt
+    lokal oder in einem Backend verwahrt. $ G _ i $ bezeichnet
+    den Identifikator einer Gruppe/Infektionsgemeinschaft, $ M
+    _ k $ bezeichnet relevante Meta-Daten zu der Gruppe (u.a.
+    Zeit der Erfassung). <strong>Op (rot)</strong> bezeichnet
+    den privaten Datenschlüssel des Betreibers (welcher für den
+    Ombuds-Prozess benötigt wird), <strong>Op (gelb)</strong>
+    bezeichnet den geheimen Datenschlüssel mit dem der Betreiber
+    die Daten verschlüsselt.
+  en: >-
+    Data that an operator stores locally or in a backend in encrypted
+    form in order to fulfil its obligation to provide evidence
+    to the health authority and for the possible decryption of
+    visit data as part of the ombudsman process. $ G _ i $ denotes
+    the identifier of a group/infection community, $ M _ k $ denotes
+    relevant meta-data about the group (including time of collection).
+    <strong>Op (red)</strong> denotes the private data key of
+    the operator (which is required for the ombuds process), <strong>Op
+    (yellow)</strong> denotes the secret data key with which the
+    operator encrypts the data.
 8b04e974a7c1d123:
   de: >-
     Für jede Gruppe generiert die Web-Anwendung ein asymmetrisches
@@ -1309,6 +2114,47 @@
     of by a GA, store it separately from the beginning, or encrypt
     it asymmetrically and give another party control over decryption.
     It was therefore left in the protocol.
+8bd6b6ff4165d2b8:
+  de: >-
+    Validierte Daten, die der Nutzer einem Betreiber einer Ortschaft
+    zur Besuchsdokumentation übergibt. Dieser kann mit dem öffentlichen
+    Schlüssel der signierenden Stelle (<strong><code><i>TC</i></code></strong>)
+    die Validität der Daten überprüfen.
+  en: >-
+    Validated data that the user hands over to a locality operator
+    for visit documentation. The latter can check the validity
+    of the data with the public key of the signing authority (<strong><code><i>TC</i></code></strong>)
+    to check the validity of the data.
+8ccfd04d052fff6b:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. `Ob` bezeichnet den Ombuds-Schlüssel, <strong><i>`Op`</i></strong>
+    den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ color-coded
+    denotes the private or public group key. `Ob` denotes the
+    ombuds key, <strong><i>`Op`</i></strong> the operator key.
 8d191395e09130a5:
   de: '#### Überprüfung durch den Nutzer'
   en: '#### Review by the user'
@@ -1351,9 +2197,74 @@
     in case of infection. Accordingly, even if the GA could access
     all operator data, it can only decrypt epidemiologically relevant
     data for which a user has provided the matching private key.
+9371092eb02fc4e8:
+  de: >2-
+      Wendet sich die Person an das Gesundheitsamt zur Kontaktnachverfolgung,
+    kann dieses die Geheimschlüssel des Nutzers basierend auf
+    den gegebenen Daten (Name der Person und Angaben zu der besuchten
+    Ortschaft) rekonstruieren und anschließend die Kontaktnachverfolgung
+    regulär durchführen.
+  en: >2-
+      If the person contacts the health department for contact
+    tracing, the health department can reconstruct the user's
+    secret keys based on the given data (name of the person and
+    details of the locality visited) and then perform contact
+    tracing regularly.
+93720cdc4287667f:
+  de: >-
+    * Es kann komplett auf eine Speicherung der Geheimschlüssel
+    verzichtet werden, die Daten des Nutzers sind dann lediglich
+    zweckgebunden über einen Gruppenschlüssel oder mithilfe des
+    Ombuds-Prozesses entschlüsselbar.
+  en: >-
+    * It is possible to completely dispense with the storage of
+    secret keys; the user's data can then only be decrypted for
+    a specific purpose via a group key or with the help of the
+    ombuds process.
 943e7ade3915d48a:
   de: '### Verbesserungsmöglichkeiten'
   en: '### Opportunities for improvement'
+94eac8bc2263be2b:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data provided to it and stores locally or in a backend.
+991f4f75460ddbc8:
+  de: >-
+    * Es kann komplett auf eine Speicherung der Geheimschlüssel
+    der Person verzichtet werden, die Besuchsdaten dieser sind
+    dann lediglich zweckgebunden über einen Gruppenschlüssel der
+    entsprechenden Infektionsgemeinschaft oder mithilfe des Ombuds-Prozesses
+    entschlüsselbar.
+  en: >-
+    * It is possible to completely dispense with the storage of
+    the person's secret key; the person's visit data can then
+    only be decrypted for a specific purpose via a group key of
+    the corresponding infection community or with the help of
+    the ombuds process.
+993f30b3e95eb6dc:
+  de: >-
+    Kontaktdaten $ U _ d $, die ein Nutzer mit dem Schlüssel $
+    K _ a + K _ b $ verschüsselt in einem Backend verknüpft mit
+    seiner $ I _ D $ (unverschlüsselt) speichert. Eine zunächst
+    rein lokale Speicherung ist ebenfalls möglich.
+  en: >-
+    Contact data $ U _ d $, which a user stores encrypted with
+    the key $ K _ a + K _ b $ in a backend linked to his $ I _
+    D $ (unencrypted). Initially purely local storage is also
+    possible.
+99d127abc8436a77:
+  de: >-
+    Hierbei kann die Web-Anwendung des Betreibers die Daten zur
+    Ortschaft zu allen verschlüsselten Besuchsdaten hinzufügen
+    und sie wie diese ebenfalls mit dem entsprechenden Gruppenschlüssel
+    verschlüsseln.
+  en: >-
+    Here, the operator's web application can add the locality
+    data to all encrypted visit data and encrypt it with the appropriate
+    group key as well.
 9af1a4987ab92201:
   de: >-
     Die so verschlüsselten Daten können nur unter Zuhilfename
@@ -1374,6 +2285,20 @@
     if the GA could access all operator data, it can only decrypt
     epidemiologically relevant data for which a user has provided
     the matching private key.
+9b1eb8a15a063e8d:
+  de: >-
+    Validierte Daten, die der Nutzer einem Betreiber einer Ortschaft
+    zur Besuchsdokumentation übergibt. Dieser kann mit dem öffentlichen
+    Schlüssel der signierenden Stelle (TC) die Validität der Daten
+    überprüfen.
+  en: >-
+    Validated data that the user hands over to an operator of
+    a locality for visit documentation. The latter can check the
+    validity of the data with the public key of the signing body
+    (TC).
+9b689007d2f42c77:
+  de: '### Änderungshistorie'
+  en: '### Change history'
 9c8a3cf2584dfdc1:
   de: >-
     Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung
@@ -1421,6 +2346,9 @@
   en: >-
     In our view, the following aspects of the protocol can still
     be improved:
+9e2a373b44931335:
+  de: '#### Manuelle Besuchserfassung'
+  en: '#### Manual visit recording'
 9e4527fb137f0b37:
   de: <div>
   en: <div>
@@ -1450,6 +2378,17 @@ a13e86e12343c88a:
     reasons. Paper-based or analogue logs are also offered by
     other systems such as **Luca** (in the form of key fobs),
     but these have a number of privacy issues.
+a1ef11c064225ead:
+  de: >-
+    Validierte Daten, die der Nutzer einem Betreiber einer Ortschaft
+    zur Besuchsdokumentation übergibt. Dieser kann mit dem öffentlichen
+    Schlüssel der signierenden Stelle (<strong><i>TC</i></strong>)
+    die Validität der Daten überprüfen.
+  en: >-
+    Validated data that the user hands over to a locality operator
+    for visit documentation. The latter can check the validity
+    of the data with the public key of the signing authority (<strong><i>TC</i></strong>)
+    to check the validity of the data.
 a248a1534601c7ea:
   de: >-
     Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
@@ -1581,6 +2520,55 @@ a75cafc8fe74410f:
   en: >-
     One risk of generating large numbers of QR codes is loss by
     the user.
+a9e3168ce49cfbed:
+  de: >-
+    Um Kontaktdaten zu erfassen, öffnen Nutzer zunächst die Web-Anwendung
+    und erfassen dort relevante Daten wie Name, Anschrift, Telefonnummer
+    und E-Mail Adresse (eine Validierung dieser Daten wird unten
+    beschrieben). Anschließend generiert die Anwendung zwei zufallsgenerierte,
+    symmetrische Schlüssel $K _ a$ und $K _ b$, die über ein geeignetes
+    Schlüsselableitungsverfahren miteinander zu einem Schlüssel
+    $K _ c$ kombiniert werden. Die Anwendung verschlüsselt nun
+    die Kontaktdaten des Nutzers symmetrisch mit Schlüssel $K
+    _ c$, fügt zu diesen verschlüsselten Daten den Schlüssel $K
+    _ a$ hinzu, verschlüsselt diese Daten asymmetrisch mit dem
+    öffentlichen GÄ-Datenschlüssel und übermittelt diese Daten
+    an die API, welche sie in einem Backend ablegt und einen zufälligen
+    Identifier $I_D$ zurückgibt. Die dort abgelegten Daten sind
+    für keinen Akteur ohne Kenntnis des Schlüssels $K _ b$ sowie
+    des privaten Schlüssels der GÄ entschlüsselbar. Letzterer
+    befindet sich zunächst unter Kontrolle des Nutzers und kann
+    nur über diesen oder über einen Betreiber an ein GÄ gelangen,
+    das diesen entschlüsseln kann.
+  en: >-
+    To enter contact data, users first open the web application
+    and enter relevant data such as name, address, telephone number
+    and e-mail address (a validation of this data is described
+    below). The application then generates two randomly generated
+    symmetric keys $K _ a$ and $K _ b$, which are combined using
+    a suitable key derivation procedure to form a key $K _ c$.
+    The application now encrypts the user's contact data symmetrically
+    with key $K _ c$, adds key $K _ a$ to this encrypted data,
+    encrypts this data asymmetrically with the public GÄ data
+    key, and transmits this data to the API, which stores it in
+    a backend and returns a random identifier $I_D$. The data
+    stored there cannot be decrypted by any actor without knowledge
+    of the key $K _ b$ as well as the private key of the GÄ. The
+    latter is initially under the control of the user and can
+    only reach a GÄ that can decrypt it via the user or via an
+    operator.
+a9f17a734a3efc6f:
+  de: "Besuchsdaten können entweder lokal gespeichert werden,\
+    \ oder in einem (föderierten) Backend abgelegt werden. Die\
+    \ lokale Speicherung ist datenschutzfreundlich, birgt aber\
+    \ auch Verfügbarkeitsrisiken, da der Betreiber einer Ortschaft\
+    \ sicherstellen muss, dass die Daten ausfallsicher gespeichert\
+    \ werden können. "
+  en: "Visit data can either be stored locally, or stored in a\
+    \ (federated) backend. Local storage is privacy-friendly,\
+    \ but also carries availability risks, as the operator of\
+    \ a site must ensure that the data can be stored in a fail-safe\
+    \ manner. "
 aac32651b10f567c:
   de: </div>
   en: </div>
@@ -1599,6 +2587,21 @@ ac128c2b75a9622e:
     user himself uses to control and adjust his data can either
     be stored in files or locally encrypted and then stored in
     the backend.
+ac3684d2b33be57c:
+  de: >-
+    a) Daten, die der Nutzer zur eventuellen Übergabe an das Gesundheitsamt
+    verwahrt. $ K _ b $, $ I _ D $ und $ H _ s $ sind Nutzerdaten
+    wie im Text beschrieben, $ U _ 1 \ldots U _ n $ private Datenschlüssel
+    des Nutzers. b) Daten, die der Nutzer für sich selbst zur
+    Kontrolle verwahrt. $ U $ bezeichnet einen Nutzerschlüssel
+    mit dem dieser seine Daten verschlüsselt.
+  en: >-
+    a) Data that the user keeps for possible handover to the health
+    authority. $ K _ b $ , $ I _ D $ and $ H _ s $ are user data
+    as described in the text, $ U _ 1 \ldots U _ n $ private data
+    keys of the user. b) Data that the user keeps for himself
+    for control. $ U $ refers to a user key with which the user
+    encrypts his or her data.
 ac5ebbce510e40a7:
   de: >-
     Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
@@ -1615,6 +2618,69 @@ ac8f77a40eb24321:
     * Eine **API** zum Austausch von Besuchshistorien und Kontaktdaten.
   en: >-
     * An **API** for sharing visit histories and contact information.
+acb246da82decd71:
+  de: >-
+    Das Backend soll wiederum föderiert betreibbar sein um das
+    Risiko der Metadaten-Analyse zu reduzieren.
+  en: >-
+    The backend should be federated to reduce the risk of metadata
+    analysis.
+ae0e731067f6bdef:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. $ Ob $ bezeichnet den Ombuds-Schlüssel,
+    $ Op $ den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ color-coded
+    denotes the private or public group key. $ Ob $ denotes the
+    ombuds key, $ Op $ denotes the operator key.
+af05b24bd01819db:
+  de: >-
+    Daten, die ein Betreiber zur Erbringung seiner Nachweispflicht
+    gegenüber dem Gesundheitsamt sowie zur eventuellen Entschlüsselung
+    von Besuchsdaten im Rahmen des Ombuds-Prozesses verschlüsselt
+    lokal oder in einem Backend verwahrt. $ G _ i $ bezeichnet
+    den Identifikator einer Gruppe/Infektionsgemeinschaft, $ M
+    _ k $ bezeichnet relevante Meta-Daten zu der Gruppe (u.a.
+    Zeit der Erfassung). $ Op $ (rot) bezeichnet den privaten
+    Datenschlüssel des Betreibers (welcher für den Ombuds-Prozess
+    benötigt wird), $ Op $ (gelb) bezeichnet den geheimen Datenschlüssel
+    mit dem der Betreiber die Daten verschlüsselt. Der Betreiber
+    kann diese Daten verschlüsselt lokal oder in einem Backend
+    speichern.
+  en: >-
+    Data that an operator stores locally or in a backend in encrypted
+    form in order to fulfil its obligation to provide evidence
+    to the health authority and for the possible decryption of
+    visit data as part of the ombudsman process. $ G _ i $ denotes
+    the identifier of a group/infection community, $ M _ k $ denotes
+    relevant meta-data about the group (including time of collection).
+    $ Op $ (red) denotes the private data key of the operator
+    (which is required for the Ombuds process), $ Op $ (yellow)
+    denotes the secret data key with which the operator encrypts
+    the data. The operator can store this encrypted data locally
+    or in a backend.
 b1b40da94ab3fdc4:
   de: >-
     Um die in der [Übersicht]({{'protocols.index'|href}}) genannten
@@ -1649,6 +2715,37 @@ b46354f257808c89:
   en: >-
     The application then generates QR codes from the data, hands
     them to the user for printing, and then deletes all data.
+b8873a63dc7d0d07:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <strong><i>Ob</i></strong> bezeichnet den
+    Ombuds-Schlüssel, <strong><i>Op</i></strong> den Betreiber-Schlüssel.
+  en: >-
+    Visit data generated by an operator based on user data passed
+    to it and stored locally or in a backend. $ H _ i $ denotes
+    the i-th public hash value of a user, $ G _ j $ denotes the
+    identification value of a group/infection community formed
+    by the operator application, $ M _ j $ denotes public meta
+    data of this group (not assignable to an operator) $ K _ b
+    $ and $ I _ D $ are user data as described above, $ L _ D
+    $ contains the contact data of the operator and $ N _ j $
+    contains non-public meta data for the health department (e.g.
+    table, room information etc.). $ U _ i ^a $ denotes a data
+    key of a user from the formed group. $ G _ j $ denotes color
+    coded private and public group key respectively. <strong><i>Whether</i></strong>
+    denotes the ombuds key, <strong><i>Op</i></strong> the operator
+    key.
 b890e7aea6befec3:
   de: Er wurde daher vorerst in dem Protokoll belassen.
   en: It was therefore left in the minutes for the time being.
@@ -1661,6 +2758,44 @@ b8c3d77774e0f3a4:
     The application then generates QR codes from all data structures,
     transfers them to the user (e.g. for printing) and then deletes
     all data.
+b9acb0cecef5cb39:
+  de: >-
+    Hinweis: Aktuell wird die Sicherheit des Systems durch die
+    Ableitung von $K _ c$ aus $(K _ a, K _ b)$ nicht erhöht, da
+    $K _ b $ permanent mit den Kontaktdaten des Nutzers aufbewahrt
+    wird.
+  en: >-
+    Note: Currently, deriving $K _ c$ from $(K _ a, K _ b)$ does
+    not increase the security of the system, as $K _ b $ is kept
+    permanently with the user's contact information.
+bab2ef8e87384628:
+  de: >-
+    Daten, die ein Betreiber zur Erbringung seiner Nachweispflicht
+    gegenüber dem Gesundheitsamt sowie zur eventuellen Entschlüsselung
+    von Besuchsdaten im Rahmen des Ombuds-Prozesses verschlüsselt
+    lokal oder in einem Backend verwahrt. $ G _ i $ bezeichnet
+    den Identifikator einer Gruppe/Infektionsgemeinschaft, $ M
+    _ k $ bezeichnet relevante Meta-Daten zu der Gruppe (u.a.
+    Zeit der Erfassung). <strong><code><i>Op</i> (rot)</code></strong>
+    bezeichnet den privaten Datenschlüssel des Betreibers (welcher
+    für den Ombuds-Prozess benötigt wird), <strong><code><i>Op</i>
+    (gelb)</code></strong> bezeichnet den geheimen Datenschlüssel
+    mit dem der Betreiber die Daten verschlüsselt. Der Betreiber
+    kann diese Daten verschlüsselt lokal oder in einem Backend
+    speichern.
+  en: >-
+    Data that an operator stores locally or in a backend in encrypted
+    form in order to fulfil its obligation to provide evidence
+    to the health authority and for the possible decryption of
+    visit data as part of the ombudsman process. $ G _ i $ denotes
+    the identifier of a group/infection community, $ M _ k $ denotes
+    relevant meta-data on the group (including time of collection).
+    <strong><code><i>Op</i> (rot)</code></strong> denotes the
+    private data key of the operator (which is needed for the
+    ombuds process), <strong><code><i>Op</i> (gelb)</code></strong>
+    denotes the secret data key with which the operator encrypts
+    the data. The operator can store this encrypted data locally
+    or in a backend.
 baba42036aecf4fe:
   de: >-
     Nun generiert die Anwendung Wertepaare bestehend aus $H _
@@ -1733,6 +2868,9 @@ be78857cd3a53478:
     assistance. If users are difficult to reach, this can delay
     and hinder effective contact tracing. In this sense, the privacy
     of users must be weighed against the interest of the GA.
+be8380b049202dc6:
+  de: '#### Optionaler Ombuds-Prozess'
+  en: '#### Optional Ombuds process'
 bfe299597d077206:
   de: >-
     **Hinweis**: Aktuell wird die Sicherheit des Systems durch
@@ -1801,6 +2939,32 @@ c3f5d62aebb7fdeb:
     the data which the user himself uses to check and adjust his
     data can either be stored in files, or locally encrypted and
     then stored in the backend.
+c4e09bd6fa51cedb:
+  de: >-
+    Daten, die ein Betreiber zur Erbringung seiner Nachweispflicht
+    gegenüber dem Gesundheitsamt sowie zur eventuellen Entschlüsselung
+    von Besuchsdaten im Rahmen des Ombuds-Prozesses verschlüsselt
+    lokal oder in einem Backend verwahrt. $ G _ i $ bezeichnet
+    den Identifikator einer Gruppe/Infektionsgemeinschaft, $ M
+    _ k $ bezeichnet relevante Meta-Daten zu der Gruppe (u.a.
+    Zeit der Erfassung). <strong>Op (rot)</strong> bezeichnet
+    den privaten Datenschlüssel des Betreibers (welcher für den
+    Ombuds-Prozess benötigt wird), <strong>Op (gelb)</strong>
+    bezeichnet den geheimen Datenschlüssel mit dem der Betreiber
+    die Daten verschlüsselt. Der Betreiber kann diese Daten verschlüsselt
+    lokal oder in einem Backend speichern.
+  en: >-
+    Data that an operator stores locally or in a backend in encrypted
+    form in order to fulfil its obligation to provide evidence
+    to the health authority and for the possible decryption of
+    visit data as part of the ombudsman process. $ G _ i $ denotes
+    the identifier of a group/infection community, $ M _ k $ denotes
+    relevant meta-data about the group (including time of collection).
+    <strong>Op (red)</strong> denotes the private data key of
+    the operator (which is required for the Ombuds process), <strong>Op
+    (yellow)</strong> denotes the secret data key with which the
+    operator encrypts the data. The operator can store this encrypted
+    data locally or in a backend.
 c53ec340e27bad83:
   de: '##### Verarbeiten relevanter Kontaktdaten'
   en: '##### Processing of relevant contact data'
@@ -1833,6 +2997,14 @@ c936cb15e36331cd:
     %}'
   en: '    {% include "common/protocols/_initialization.html"
     %}'
+ca0a6c6117f9be23:
+  de: >-
+    Dementsprechend können Besuchsdaten auch in einem Backend
+    abgelegt werden, welches dann automatisiert auf ausgeschriebene
+    Hashes antworten kann.
+  en: >-
+    Accordingly, visit data can also be stored in a backend, which
+    can then automatically respond to hashes written out.
 cab976e430dd71b5:
   de: >-
     Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
@@ -1845,6 +3017,16 @@ cab976e430dd71b5:
     analogue protocols are also offered by other systems such
     as Luca (e.g. in the form of "key tags"), but static QR codes
     have a number of data protection problems.
+cb0481d86ddc2af9:
+  de: >-
+    Kontaktdaten $ U _ d $, die ein Nutzer mit dem Schlüssel $
+    K _ a + K _ b $ verschüsselt in einem Backend (oder zunächst
+    lokal) verknüpft mit seiner $ I _ D $ (unverschlüsselt) gespeichert
+    werden.
+  en: >-
+    Contact data $ U _ d $, which a user stores with the key $
+    K _ a + K _ b $ encrypted in a backend (or initially locally)
+    linked to his $ I _ D $ (unencrypted).
 cca00703d820d786:
   de: >-
     Die folgenden Sequenzdiagramme zeigen den Ablauf der Kontaktnachverfolgung.
@@ -1854,6 +3036,38 @@ cca00703d820d786:
     The following sequence diagrams show the contact follow-up
     process. For reasons of clarity, the process was divided into
     three steps.
+cdb0d4700415981a:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <strong><i><code>Ob</code></i></strong>
+    bezeichnet den Ombuds-Schlüssel, <strong><i>`Op`</i></strong>
+    den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ denotes
+    color coded private and public group key respectively. <strong><i><code>Ob</code></i></strong>
+    denotes the ombuds key, <strong><i>`Op`</i></strong> the operator
+    key.
 ce7340a81d6077cf:
   de: >-
     * Für die Dokumentation von **Besuchen** ist es nicht notwendig,
@@ -1876,6 +3090,35 @@ d1cef128ca303004:
   en: >-
     The operator's web application groups visit data as close
     to real time as possible (within a few hours).
+d2bcfaf698b61c92:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen öffentlichen Datenschlüssel eines Nutzers aus der gebildeten
+    Gruppe. $ G _ j $ bezeichnet farbcodiert den privaten bzw.
+    öffentlichen Gruppenschlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a public data key of a user from the formed group. $ G _ j
+    $ denotes the private and public group key, respectively,
+    in color-coded form.
 d2cdee459e0d55ff:
   de: >-
     Um mögliche Risikokontakte eines infizierten Nutzers zu ermitteln
@@ -1910,6 +3153,48 @@ d5002a6a6df31c6f:
   en: >-
     * **Web applications** for operators, GÄ and users (for the
     latter here only needed to create QR codes).
+d57b61a3ce04ba83:
+  de: <aside>
+  en: <aside>
+d63251d8cedcf9b6:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. `Ob` bezeichnet den Ombuds-Schlüssel, `Op`
+    den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ color-coded
+    denotes the private or public group key. `Ob` denotes the
+    ombuds key, `Op` denotes the operator key.
+d7aafbe60024e7f5:
+  de: >-
+    Mit dem Wert $I _ D$ kann das GA vom Backend die verschlüsselten
+    Nutzerdaten erhalten, welche unter Zuhilfenahme des privaten
+    Datenschlüssels sowie von $K _ b$ entschlüsselt werden können.
+  en: >-
+    With the value $I _ D$ the GA can receive the encrypted user
+    data from the backend, which can be decrypted with the help
+    of the private data key as well as $K _ b$.
 d8bd77e7b5ee8b75:
   de: >-
     * GÄ müssen in der Lage sein, **Besuchshistorien** einzelner
@@ -2022,6 +3307,44 @@ e3ca1f6f7be22e7f:
     by the operator's application, but makes it easier to detect
     the misuse during analysis by the GA (which, however, is easily
     possible anyway).
+e3fde0d552807dff:
+  de: >2-
+      * Daten zu Örtlichkeiten können jeweils mit einem Gruppenschlüssel
+    verschlüsselt und zu Besuchsdaten hinzugefügt werden. Dies
+    ermöglicht die anonyme Speicherung der Daten in einem Backend,
+    was die Verfügbarkeit der Daten erhöht und das Verlustrisiko
+    im Gegensatz zu einer voll dezentralen Speicherung reduziert.
+    Daten können hierbei nur vom Ortschafts-Betreiber selbst dieser
+    Ortschaft zugeordnet werden.
+  en: >2-
+      * Location data can each be encrypted with a group key and
+    added to visit data. This enables the anonymous storage of
+    data in a backend, which increases the availability of the
+    data and reduces the risk of loss in contrast to a fully decentralized
+    storage. Data can only be assigned to this locality by the
+    locality operator itself.
+e43799dfa646a931:
+  de: >-
+    * Es kann eine einmalige Initialisierung mit Unterstützung
+    des Betreibers erfolgen. Hierbei müssen der Person die entsprechenden
+    Geheimschlüssel ausgehändigt werden, beispielsweise in Form
+    eines QR-Code Ausdrucks oder durch Notieren von zwei Zahlen
+    (im Falle der verschlüsselten Speicherung).
+  en: >-
+    * A one-time initialisation can be carried out with the support
+    of the operator. In this case, the person must be given the
+    corresponding secret keys, for example in the form of a QR
+    code printout or by noting two numbers (in the case of encrypted
+    storage).
+e46550ef371b2bf1:
+  de: >-
+    Diese Daten können von einem Betreiber ohne Kenntnis des Schlüssels
+    $K _ b$ nicht gefälscht werden, GÄ konnen so manipulierte
+    oder fehlerhafte Daten ausschließen.
+  en: >-
+    These data cannot be falsified by an operator without knowledge
+    of the key $K _ b$, GÄ can thus exclude manipulated or incorrect
+    data.
 e4a9f4b7aca08269:
   de: '# Papiergestützte Kontaktnachverfolgung'
   en: '# Paper-based contact tracing'
@@ -2039,9 +3362,69 @@ e5ecc7301c9c9f69:
     step of by a GA, to store it separately from the beginning
     or to encrypt it asymmetrically and to give another party
     control over the decryption.
+e6164e59f9c3d0e5:
+  de: >-
+    Das Backend soll wiederum föderiert betreibbar sein um das
+    Risiko der Metadaten-Analyse zu reduzieren. Die Speicherung
+    von Daten kann ebenfalls asynchron erfolgen
+  en: >-
+    The backend should again be federated to reduce the risk of
+    metadata analysis. The storage of data can also take place
+    asynchronously.
 e69219041f1ee55f:
   de: '#### Wiederverwendung von QR-Codes'
   en: '#### Reuse of QR codes'
+e71b1d2e7a6605d7:
+  de: >-
+    Es sind Szenarien denkbar, in denen eine Kontaktnachverfolgung
+    von einem Gesundheitsamt durchgeführt werden muss, ohne dass
+    dieses die Geheimschlüssel eines Nutzers kennt. Beispielsweise
+    wäre es denkbar, dass ein Nutzer seine Geheimschlüssel verliert,
+    dem Gesundheitsamt jedoch eine Liste besuchter Ortschaften
+    zur Verfügung stellen kann. Das Gesundheitsamt sollte dann
+    in der Lage sein, von diesen Ortschaften die mithilfe von
+    Zilp-Zalp erfassten Besuchsdaten zur Kontaktnachverfolgung
+    zu nutzen. Gleichzeitig muss sichergestellt sein, dass Gesundheitsämter
+    oder andere Akteure diese Möglichkeit nicht nutzen können,
+    um Besuchsdaten zweckungebunden zu entschlüsseln.
+  en: >-
+    Scenarios are conceivable in which contact tracing must be
+    performed by a health department without the health department
+    knowing a user's secret keys. For example, it is conceivable
+    that a user loses his secret keys, but can provide the health
+    department with a list of visited locations. The health department
+    should then be able to use the visit data collected from these
+    locations using Zilp-Zalp for contact tracing. At the same
+    time, it must be ensured that health authorities or other
+    actors cannot use this possibility to decode visit data for
+    any purpose.
+e74b4fd80f56c212:
+  de: >2-
+      Dies schwächt jedoch die Sicherheits- und Privatsphäregarantien
+    für diese Person sowie alle weiteren Nutzer in dessen Infektionsgemeinschaft
+  en: >2-
+      However, this weakens the security and - privacy guarantees
+    for that person and all other users in his infection community.
+e7e858722a8048b7:
+  de: >-
+    * Es kann eine Schlüsselableitung anhand der Kontaktdaten
+    der Person sowie Daten der Ortschaft erfolgen (beispielsweise
+    durch Zusammenführung und Hashing des Namens und der Anschrift
+    der Person sowie der Ortschaft).
+  en: >-
+    * Key derivation can be performed using the person's contact
+    details and locality data (for example, by merging and hashing
+    the person's name and address and locality).
+e8ab02b8d935fecd:
+  de: "Erläuterungen der folgenden Digramme: a) Öffentlicher aymmetrischer\
+    \ Schlüssel. b) Privater asymmetrischer Schlüssel. c) Symmetrischer\
+    \ Schlüssel. d) Verschlüsselung mit einem symmetrischen oder\
+    \ asymmetrischen Schlüssel. e) Signierung mit einem öffentlichen\
+    \ asymmetrischen Schlüssel. "
+  en: "Explanations of the following digrams: a) Public aymmetric\
+    \ key. b) Private asymmetric key. c) Symmetric key. d) Encryption\
+    \ with a symmetric or asymmetric key. e) Signing with a public\
+    \ asymmetric key. "
 e8c87b555e3dee00:
   de: >-
     Diese Daten können von einem Betreiber ohne Kenntnis des Schlüssels
@@ -2081,6 +3464,21 @@ e9d5af9d6cc9c4d9:
     actors can verify the trustworthiness of the public keys of
     these pairs via a suitable mechanism (e.g., a root certificate
     that is delivered together with the web application).
+eb28e957f394c859:
+  de: >-
+    Der Betreiber muss auch für Personen die Zilp-Zalp nicht nutzen
+    in der Lage sein, Kontaktdaten zu erfassen und verschlüsselt
+    abzulegen. Hierbei stellt sich jedoch die Frage, wie für diese
+    Daten eine Zweckbindung erreicht werden kann, da in diesem
+    Fall die Person keine Initialisierung im Zilp-Zalp System
+    durchlaufen hat. Hierzu gibt es mehrere Möglichkeiten:
+  en: >-
+    The operator must also be able to record contact data for
+    people who do not use Zilp-Zalp and store it in encrypted
+    form. However, this raises the question of how a purpose limitation
+    can be achieved for this data, since in this case the person
+    has not gone through any initialization in the Zilp-Zalp system.
+    There are several possibilities for this:
 ec1c68d5b6a1c1de:
   de: >-
     Zunächst muss das GA vom Nutzer die GA-Daten erhalten, um
@@ -2128,6 +3526,9 @@ efc60d02fda6fbc2:
     data, encrypts it with the public GÄ key, signs the data with
     the private key of the generated key pair, and communicates
     it via the API to the backend, which stores it.
+f037922cdd3acbbc:
+  de: '## Protokoll (v0.5)'
+  en: '## Protocol (v0.5)'
 f1745f1dcb6ea9b8:
   de: >-
     Dies ist aus verschiedenen Gründen problematisch. Papiergestützte
@@ -2175,6 +3576,45 @@ f4f4adc837722796:
     of individual users, as well as a procedure to determine for
     a specific visit of a user all visits of other users that
     occurred in the same locality and in the same time period.
+f531955b92408c08:
+  de: '* `v0.5`'
+  en: '* `v0.5`'
+f5f71630a7241054:
+  de: >-
+    Zudem verlangsamt die lokale Speicherung eventuell die Kontaktnachverfolgung.
+  en: In addition, local storage may slow down contact tracking.
+f6ab072face9a8ef:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <!--translate:ignore--><strong><i>Ob</i></strong><!--translate:ignore-->
+    bezeichnet den Ombuds-Schlüssel, <!--translate:ignore--><strong><i>Op</i></strong><!--translate:ignore-->
+    den Betreiber-Schlüssel.
+  en: >-
+    Visit data generated by an operator based on user data passed
+    to it and stored locally or in a backend. $ H _ i $ denotes
+    the i-th public hash value of a user, $ G _ j $ denotes the
+    identification value of a group/infection community formed
+    by the operator application, $ M _ j $ denotes public meta
+    data of this group (not assignable to an operator) $ K _ b
+    $ and $ I _ D $ are user data as described above, $ L _ D
+    $ contains the contact data of the operator and $ N _ j $
+    contains non-public meta data for the health department (e.g.
+    table, room information etc.). $ U _ i ^a $ denotes a data
+    key of a user from the formed group. $ G _ j $ denotes the
+    private or public group key in color-coded form. <!--translate:ignore--><strong><i>Whether</i></strong><!--translate:ignore-->
+    denotes the ombuds key, <!--translate:ignore--><strong><i>Op</i></strong><!--translate:ignore-->
+    denotes the operator key.
 f99ecfda1afd4b4b:
   de: '### Erweiterungen'
   en: '### Extensions'
@@ -2238,6 +3678,41 @@ fd804d156e090e9b:
 fe0bbc3db64eacee:
   de: '## Protokoll (v0.3)'
   en: '## Protocol (v0.3)'
+fe402a15a0bc9761:
+  de: >-
+    Besuchsdaten, die ein Betreiber anhand von ihm übergebenen
+    Nutzerdaten generiert und lokal oder in einem Backend speichert.
+    $ H _ i $ bezeichnet den i-ten öffentlichen Hashwert eines
+    Nutzers, $ G _ j $ den Identifikationswert einer von der Betreiber-Anwendung
+    gebildeten Gruppe/Infektionsgemeinschaft, $ M _ j $ öffentliche
+    Meta-Daten dieser Gruppe (nicht zu einem Betreiber zuordenbar)
+    $ K _ b $ und $ I _ D $ sind Nutzerdaten wie oben beschrieben,
+    $ L _ D $ enthält die Kontaktdaten des Betreibers und $ N
+    _ j $ nicht-öffentliche Meta-Daten für das Gesundheitsamt
+    (z.B. Tisch, Rauminformation etc.). $ U _ i ^a $ bezeichnet
+    einen Datenschlüssel eines Nutzers aus der gebildeten Gruppe.
+    $ G _ j $ bezeichnet farbcodiert den privaten bzw. öffentlichen
+    Gruppenschlüssel. <strong><i><code>Ob</code></i></strong>
+    bezeichnet den Ombuds-Schlüssel, <strong><i><code>Op</code></i></strong>
+    den Betreiber-Schlüssel.
+  en: >-
+    Visit data that an operator generates on the basis of user
+    data passed to it and stores locally or in a backend. $ H
+    _ i $ denotes the i-th public hash value of a user, $ G _
+    j $ denotes the identification value of a group/infection
+    community formed by the operator application, $ M _ j $ denotes
+    public meta data of this group (not assignable to an operator)
+    $ K _ b $ and $ I _ D $ are user data as described above,
+    $ L _ D $ contains the contact data of the operator and $
+    N _ j $ contains non-public meta data for the health department
+    (e.g. table, room information etc.). $ U _ i ^a $ denotes
+    a data key of a user from the formed group. $ G _ j $ denotes
+    color coded private and public group key respectively. <strong><i><code>Ob</code></i></strong>
+    denotes the ombuds key, <strong><i><code>Op</code></i></strong>
+    the operator key.
+feb41167d9a26c68:
+  de: '    </p>'
+  en: '    </p>'
 ff8b6dde040cb3e9:
   de: >-
     Hinweis: Aktuell wird die Sicherheit des Systems durch die

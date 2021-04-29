@@ -1,15 +1,15 @@
 decrypt_ga_data:
   _t:
-    de: 2db4bbcfe2c070e3
-    en: 2db4bbcfe2c070e3
+    de: ad246a3b81ea67fc
+    en: ad246a3b81ea67fc
   de: >-
     Entschlüssele GA-Daten $D_{\mathrm{ga}} = \mathrm{dec}_{a}(D^e_\mathrm{ga},
-    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_B, I_D, H_s, K_1^\mathrm{priv}\hdots
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_B, I_D, H_s, K_1^\mathrm{priv}\ldots
     K_n^\mathrm{priv})$ zu erhalten.
   en: >-
     Decode GA data $D_{\mathrm{ga}} = \mathrm{dec}_{a}(D^e_\mathrm{ga},
     K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(K_B, I_D, H_s,
-    K_1^\mathrm{priv}\hdots K_n^\mathrm{priv})$.
+    K_1^\mathrm{priv}\ldots K_n^\mathrm{priv})$.
 decrypt_user_data:
   _t:
     de: e29b52b939dd182a

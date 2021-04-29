@@ -1,0 +1,15 @@
+# Integration
+
+Zilp-Zalp is an open system and can thus be easily integrated into third-party applications. This should allow to integrate a method for privacy-friendly and decentralized contact tracking into existing systems (apps, tickets, etc.). This document describes the general integration possibilities of the protocol
+
+## Preliminary note
+
+This document generally describes integration possibilities of Zilp-Zalp into third party systems. - However, the security and - privacy aspects of such integration must always be considered on a case-by-case basis using the complete system design, as integration can lead to a weakening of the security & privacy guarantees of the Zilp-Zalp protocol.
+
+## Integration in third party apps
+
+In general, Zilp-Zalp QR codes can also be integrated into existing apps. In this case, an initialization would first be carried out via the Zilp-Zalp web application. Subsequently, the public QR codes generated from this would be transferred via a suitable mechanism to a smartphone app, which stores them locally and displays them as required. As described above, time-based QR codes can be generated in this process. However, the secret keys remain under the control of the user. Accordingly, if the third-party app is compromised, no personal or sensitive data can become known. However, since the app knows all of a user's QR codes, there is still a re-identification risk in the event that the third-party app operator gains knowledge of all hash values stored in the system. However, since these are processed by other actors, the risk can be considered low. In addition, as of protocol version `0.4`, information on localities is also stored in encrypted form and can therefore only be decrypted by health authorities even if all visit data is published.
+
+## Integration into digital or analogue documents
+
+Zilp-Zalp QR codes can also be integrated into other digital or analog documents. For example, public Zilp-Zalp codes could be integrated directly into admission tickets. In this case, the operator who integrates this data must first initialize it together with the user. This should ideally be done locally by integrating the Zilp-Zalp web library, so that again secret keys remain strictly with the user. Alternatively, the user can provide the operator's system with an existing Zilp-Zalp QR code, which can then be integrated into the document. This has the advantage that the operator cannot gain knowledge of the user's secret key material. However, since many registration scenarios already process personal data of the user (and thus are already available to the operator), these can also be used directly to perform an initialization. As with integration in third-party apps, however, the operator gains knowledge of the user's QR code and can assign it accordingly, thus gaining knowledge of an alert for the corresponding code and linking it to the user. Whether this risk is justifiable must be weighed up. A modification of the tendering process as described in protocol version `0.5` can minimise this risk.

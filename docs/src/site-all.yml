@@ -58,6 +58,10 @@ pages:
       src|f|exists?: "{target_language}/protocols/digital.md" 
       name: digital
       slug||slugify: Digital
+    - title|t: Integration
+      src|f|exists?: "{target_language}/protocols/integration.md" 
+      name: integration
+      slug||slugify: Integration
 #  - title|t: Installation
 #    navtitle|t: Installation
 #    slug||slugify: installation

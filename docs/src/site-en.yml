@@ -56,6 +56,10 @@ pages:
     slug: digital
     src: en/protocols/digital.md
     title: Digital
+  - name: integration
+    slug: integration
+    src: en/protocols/integration.md
+    title: Integration
   name: protocols
   slug: protocols
   title: Protocols
