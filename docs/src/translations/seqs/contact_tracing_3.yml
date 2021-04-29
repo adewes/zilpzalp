@@ -1,30 +1,35 @@
 decrypt_ga_data:
   _t:
-    de: a0fc38e82c560514
-    en: a0fc38e82c560514
+    de: 1fa082adcca26088
+    en: 1fa082adcca26088
   de: >-
     Entschlüssele von jedem Datensatz GA-Daten $D_{\mathrm{ga,op}}
-    = \mathrm{dec}_{a}(\mathrm{dec}_{a}(D^e_\mathrm{ga,op}, K_{}^\mathrm{priv}),
-    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_B, I_D)$ zu erhalten.
+    = \mathrm{dec}_{a}(\mathrm{dec}_{a}(D^e_\mathrm{ga,op}, K_{g_j}^\mathrm{priv}),
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(K_b, I_D)$ zu erhalten,
+    wobei der Gruppenschlüssel $K_{g_j}^{priv}$ mithilfe des passenden
+    Nutzerschlüssels $U_{i}^{priv}$ entschlüsselt werden kann
+    (oder ohne diesen über den Ombuds-Prozess).
   en: >-
-    Decode GA data from each record $D_{\mathrm{ga,op}} = \mathrm{dec}_{a}(\mathrm{dec}_{a}(D^e_\mathrm{ga,op},
-    K_{}^\mathrm{priv}), K_{\mathrm{ga}}^{\mathrm{priv}})$ to
-    get $(K_B, I_D)$.
+    Decrypt GA data $D_{\mathrm{ga,op}} = \mathrm{dec}_{a}(\mathrm{dec}_{a}(D^e_\mathrm{ga,op},
+    K_{g_j}^\mathrm{priv}), K_{\mathrm{ga}}^{\mathrm{priv}})$
+    from each record to get $(K_b, I_D)$, where the group key
+    $K_{g_j}^{priv}$ can be decrypted using the matching user
+    key $U_{i}^{priv}$ (or without it using the Ombuds process).
 decrypt_user_data:
   _t:
-    de: 12c4fb2864bf1130
-    en: 12c4fb2864bf1130
+    de: 3a0a991309a3410c
+    en: 3a0a991309a3410c
   de: >-
     Entschlüssele Nutzerdaten $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
-    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(D_{k}^e,K_A)$ zu erhalten.
-    Leite $K_C$ aus $K_A$ und $K_B$ ab, entschlüssele $D_{k} =
-    \mathrm{dec}_s(D_{k}^e, K_C)$ um Nutzerdaten zu erhalten.
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ um $(D_{k}^e,K_a)$ zu erhalten.
+    Leite $K_c$ aus $K_a$ und $K_b$ ab, entschlüssele $D_{k} =
+    \mathrm{dec}_s(D_{k}^e, K_c)$ um Nutzerdaten zu erhalten.
     Prüfe und nutze Daten für Kontaktermittlung.
   en: >-
-    Decrypt user data $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
-    K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(D_{k}^e,K_A)$.
-    Derive $K_C$ from $K_A$ and $K_B$, decrypt $D_{k} = \mathrm{dec}_s(D_{k}^e,
-    K_C)$ to obtain user data. Verify and use data for contact
+    Decode user data $D_{k,\mathrm{ga}} = \mathrm{dec}_{a}(D_{k,\mathrm{ga}}^e,
+    K_{\mathrm{ga}}^{\mathrm{priv}})$ to get $(D_{k}^e,K_a)$.
+    Derive $K_c$ from $K_a$ and $K_b$, decode $D_{k} = \mathrm{dec}_s(D_{k}^e,
+    K_c)$ to obtain user data. Verify and use data for contact
     tracing.
 provide_data:
   _t:

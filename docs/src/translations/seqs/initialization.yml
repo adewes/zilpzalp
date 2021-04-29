@@ -6,24 +6,24 @@ destroy_evidence:
   en: Delete all data.
 encrypt_contact_data:
   _t:
-    de: 1353c36c5d6b7804
-    en: 1353c36c5d6b7804
+    de: de82214fa0d1a6a9
+    en: de82214fa0d1a6a9
   de: >-
     Verschlüssele Kontaktdaten $D_{k}^e=\mathrm{enc}_{s}(D_k,
-    K_C)$, verschlüssele mit GA-Schlüssel $D_{k,\mathrm{ga}}^e
-    = \mathrm{enc}_{a}((D_{k}^e,K_A), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+    K_c)$, verschlüssele mit GA-Schlüssel $D_{k,\mathrm{ga}}^e
+    = \mathrm{enc}_{a}((D_{k}^e,K_a), K_{\mathrm{ga}}^{\mathrm{pub}})$.
   en: >-
-    Encrypt contact details $D_{k}^e=\mathrm{enc}_{s}(D_k, K_C)$,
-    encrypt with GA key $D_{k,\mathrm{ga}}^e = \mathrm{enc}_{a}((D_{k}^e,K_A),
+    Encrypt contact details $D_{k}^e=\mathrm{enc}_{s}(D_k, K_c)$,
+    encrypt with GA key $D_{k,\mathrm{ga}}^e = \mathrm{enc}_{a}((D_{k}^e,K_a),
     K_{\mathrm{ga}}^{\mathrm{pub}})$.
 generate_secrets:
   _t:
-    de: e5313940d89824c0
-    en: e5313940d89824c0
+    de: 1e7a940a91e322e2
+    en: 1e7a940a91e322e2
   de: >-
-    Generiere geheime Schlüssel $K_A$, $K_B$ und $H_s$, leite
-    $K_C$ ab.
-  en: Generate secret keys $K_A$, $K_B$ and $H_s$, derive $K_C$.
+    Generiere geheime Schlüssel $K_a$, $K_b$ und $H_s$, leite
+    $K_c$ ab.
+  en: Generate secret keys $K_a$, $K_b$ and $H_s$, derive $K_c$.
 prepare_contact_data:
   _t:
     de: 99de3af6801d5b41
@@ -32,25 +32,27 @@ prepare_contact_data:
   en: Prepare contact information $D_k$.
 prepare_ga_data:
   _t:
-    de: b8820e1a9b30d866
-    en: b8820e1a9b30d866
+    de: 1421062bd721bbf9
+    en: 1421062bd721bbf9
   de: >-
     Verschlüssele Daten für Gesundheitsamt $D^e_{\mathrm{ga}}
-    = \mathrm{enc}_{a}((K_B, I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+    = \mathrm{enc}_{a}((K_b, I_D, H_s, U_1^{priv}\ldots U_n^{priv}),
+    K_{\mathrm{ga}}^{\mathrm{pub}})$.
   en: >-
     Encrypted data for health department $D^e_{\mathrm{ga}} =
-    \mathrm{enc}_{a}((K_B, I_D, H_s), K_{\mathrm{ga}}^{\mathrm{pub}})$.
+    \mathrm{enc}_{a}((K_b, I_D, H_s, U_1^{priv}\ldots U_n^{priv}),
+    K_{\mathrm{ga}}^{\mathrm{pub}})$.
 prepare_operator_data:
   _t:
-    de: 4d0c9521ea084b20
-    en: 4d0c9521ea084b20
+    de: c47b89eaf1a25b47
+    en: c47b89eaf1a25b47
   de: >-
     Generiere Pseudo-Zufallswerte $H_1, \ldots H_n$ mithilfe von
-    $H_s$. Generiere $D_{\mathrm{op}}^i = (H_i, \mathrm{enc}_{a}((K_B,
+    $H_s$. Generiere $D_{\mathrm{op}}^i = (H_i, \mathrm{enc}_{a}((K_b,
     I_D), K_{\mathrm{ga}}^{\mathrm{pub}}))$.
   en: >-
     Generate pseudo-random values $H_1, \ldots H_n$ using $H_s$.
-    Generate $D_{\mathrm{op}}^i = (H_i, \mathrm{enc}_{a}((K_B,
+    Generate $D_{\mathrm{op}}^i = (H_i, \mathrm{enc}_{a}((K_b,
     I_D), K_{\mathrm{ga}}^{\mathrm{pub}}))$.
 provide_ga_keys:
   _t:
