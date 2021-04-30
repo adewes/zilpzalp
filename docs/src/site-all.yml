@@ -26,10 +26,14 @@ pages:
     name: system
     slug||slugify: system
     children:
-    - title|t: API
+    - title|t: Überblick
+      src|f|exists?: "{target_language}/system/index.md" 
+      name: ''
+      slug||slugify: ueberlick
+    - title|t: APIs
       src|f|exists?: "{target_language}/system/api.md" 
-      name: api
-      slug||slugify: api
+      name: apis
+      slug||slugify: apis
     - title|t: Apps
       src|f|exists?: "{target_language}/system/apps.md" 
       name: apps

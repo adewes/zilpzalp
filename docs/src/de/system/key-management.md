@@ -1,12 +1,13 @@
 # Schlüsselmanagement
 
-Zilp-Zalp nutzt eine Public-Key Infrastruktur (PKI) zur Verschlüsselung von Daten, zur Authentifizierung von Akteuren gegenüber dem Backend und zur Signierung von Anfragen, die veröffentlicht werden.
+Zilp-Zalp nutzt eine externe Public-Key Infrastruktur (PKI) zur Verschlüsselung von Daten sowie zur Authentifizierung von Gesundheitsämtern gegenüber Backend-Servern und zur Signierung von Anfragen, die von diesen veröffentlicht werden.
 
-Die Sicherheit des Gesamtsystems hängt wie bei allen Systee entscheidend von der Sicherheit dieser PKI ab. Zilp-Zalp ist darauf ausgelegt, mit existierenden PKI-Systemen zusammenarbeiten zu können. Zu Demonstrationszwecken verfügt das System auch über eine eigene PKI, diese sollte jedoch bei einen realen Einsatz des Systems nach Möglichkeit ausgetauscht werden.
+Die Sicherheit des Gesamtsystems hängt wie bei allen Systee entscheidend von der Sicherheit dieser PKI ab. Zilp-Zalp ist darauf ausgelegt, mit existierenden PKI-Systemen zusammenarbeiten zu können.
 
 ## Grundideen
 
-Gesundheitsämter, Backend-Betreiber und ggf. Betreiber von Ortschaften besitzen jeweils einzelne asymmetrische Schlüsselpaare zur Ver-/Entschlüsselung und Signierung von Daten. Zusätzlich existieren eine oder mehrere Root-Schlüsselpaare, mit denen andere Schlüssel im System zertifiziert werden und die im Backend sowie den Web-Anwendungen als Vertrauensanker dienen.
+Gesundheitsämter besitzen individuelle asymmetrische Schlüsselpaare zur Signierung von Daten, sowie ein geteiltes Schlüsselpaar zur Ver- & Entschlüsselung von Daten.
+Diese werden von einem oder mehreren Root-Zertifikaten signiert, welche den Backend-Servern als Vertrauensanker dienen.
 Um das Gesamtsystem möglichst robust gegenüber dem Verlust von Schlüsseln zu machen, sollten folgende Maßnahmen beachtet werden:
 
 * Die Anwendbarkeit und Macht von individuellen Schlüsseln sollte räumlich und zeitlich möglichst stark beschränkt werden.
@@ -16,23 +17,14 @@ Um das Gesamtsystem möglichst robust gegenüber dem Verlust von Schlüsseln zu 
 
 Zilp-Zalp benötigt im Betrieb folgende Schlüsselpaare:
 
-* Für jede Backend-Instanz einen oder mehrere Root-Signaturschlüsselpaare, die andere Schlüssel im System zertifizieren und als Vertrauensanker dienen.
-* Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare (GA-Schlüssel), jeweils für die Ver-/Entschlüsselung von Daten sowie für das Signieren von Daten.
+* Ein oder mehrere Root-Zertifikate, die als Vertrauensanker dienen.
+* Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare (GA-Schlüssel) für das Signieren von Anfragen an die Backend-Server.
 * Für die globale Verschlüsselung von Besuchsdaten teilen alle Gesundheitsämter einen GÄ-Datenschlüssel.
-* Optional für Betreiber ein oder mehrere Schlüsselpaare zum Signieren von Daten.
+* Für eine Ombuds-Stelle ein asymmetrisches Schlüsselpaar mit dem Besuchsdaten zusätzlich verschlüsselt werden und das erlaubt, in Ausnahmefällen den Zugriff auf solche Daten ohne Mitwirkung eines Nutzers zu erreichen.
 
-Root-Schlüsselpaare werden vom Betreiber des Backends generiert und regelmäßig ausgetauscht. Öffentliche Root-Schlüssel werden als Konfigurationsdateien mit den Web-Anwendungen ausgeliefert (um unabhängig vom Backend selbst zu sein).
+Root-Schlüsselpaare werden von einer vertrauenswürdigen Stelle generiert, die öffentlichen Schlüssel und Zertifikatsdetails werden im System verteilt und dienen allen Akteuren als Vertrauensanker.
 
-GA-Schlüsselpaare werden lokal generiert, öffentliche Schlüssel werden über einen vertrauenswürdigen Kanal an den Backend-Betreiber geschickt, der diese signiert und im System hinterlegt.
-
-GA-Schlüsselpaare können häufig rotiert werden, jedoch macht in der Praxis eine Rotation die schneller erfolgt als die durchschnittliche Datenverweildauer im System wenig Sinn, da GÄ während dieser Dauer in der Lage sein müssen, mit vorherigen GA-Schlüsseln verschlüsselte Daten zu entschlüssen, und die entsprechenden Schlüssel daher trotzdem gemeinsam am gleichen Ort vorgehalten werden müssen (für Signaturschlüssel gilt dies nicht).
-In der Praxis können daher 2-4 Wochen jeweils sinnvolle Rotationszeiträume für Root- und GA-Schlüssel darstellen. Häufigere z.B. tägliche Schlüsselwechsel wie sie in anderen Systemen vorgeschlagen werden führen oft dazu, dass Schlüsselrotation automatisch abläuft (z.B. über API-Endpunkte im selben System, das Schlüssel publiziert), dies konterkariert zumindest in Teilen die Sicherheit eines solchen Austauschs.
-
-Der GÄ-Schlüssel sollte häufig gewechselt werden, hierzu ist ein "Key Agreement" Prozess zwischen den GÄs notwendig. Dies kann erfolgen, indem ein GA anderen GÄ jeweils einen Zufallswert verschlüsselt über das Backend zur Verfügung stellt, dieser kann mit den öffentlichen Datenschlüsseln der GÄ verschlüsselt und vom sendenden GA zusätzlich signiert werden. Dieser Zufallswert wird anschließend lokal mit einem gemeinsamen, langlebigen Zufallswert kombiniert, aus dem resultierenden Wert wird dann deterministisch ein Schlüsselpaar abgeleitet. Der gemeinsame langlebige Zufallswert muss hierbei über einen anderen Kanal sicher geteilt werden, kann jedoch langlebig sein um den Aufwand gering zu halten. Durch die Verwendung eines Ableitungsmechanismus statt eines direkten Schlüsselaustauschs kann verhindert werden, dass ein privater Datenschlüssel im Falle der Kompromittierung eines GA-Datenschlüssels kompromittiert wird.
-
-Um das Risiko eines Schlüsselverlusts weiter zu senken können zudem mehrere GA-Schlüssel zur Verschlüsselung von Daten verwendet werden. Dies würde es jedoch wiederum erforderlich machen, dass GÄ über das Backend "Amtshilfe" beim Entschlüsseln von Daten leisten. Aufgrund des großen Datenvolumns würde dies wirderum eine automatische Lösung erfordern, die hierbei wiederum eine Aufteilung der Schlüssel obsolet machen würde.
-
-Generell besteht das Problem, dass in der Web-Anwendung der GÄ sowohl Signatur- als auch Datenschlüsselpaare vorliegen müssen. Aus Sicherheitsgründen wäre jedoch eine Trennung dieser Schlüssel sinnvoll. Dementsprechend sollte die Web-Anwendung eventuell aufgeteilt und über einen "Air-Gap" geschützt werden. Hierbei würde der öffentliche Teil den Signaturschlüssel besitzen, Anfragen an das Backend stellen und Daten empfangen. Der private Teil würde hingegen den Datenschlüssel besitzen, die empfangenen Daten entschlüsseln und bearbeiten. Ob eine solche Trennung sinnvoll ist muss abgewogen werden.
+GA-Signierschlüssel werden lokal generiert und von der vertrauenswürdigen Stelle über Signieranfragen (Certificate Signing Requests, CSR) signiert. Der gemeinsame GA-Datenschlüssel wird ebenfalls lokal generiert, signiert und anschließend über einen sicheren Kanal an einzelne GÄ verteilt. Er sollte regelmäßig gewechselt werden, hierzu ist ein "Key Agreement" Prozess zwischen den GÄs notwendig.
 
 ## Risiko-Analyse
 
@@ -40,17 +32,22 @@ Die folgenden Abschnitte beschreiben Risiken, die durch den Verlust von privaten
 
 ### Verlust eines privaten GÄ-Datenschlüssels
 
-Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel, kann er hiermit sowohl die mit dem zugehörigen öffentlichen Schlüssel verschlüsselten Besuchsdaten entschlüsseln, als auch die äußere Entschlüsselung von Kontaktdaten eines Nutzers die mit dem öffentlichen Schlüssel verschlüsselt wurden entfernen.
-Erlangt er Zugang zu Besuchsdaten von Betreibern, kann er hiermit die Besuchshistorie von Nutzern rekonstruieren.
-Erlangt er für diese Besuchsdaten zusätzlich Zugang zu den im Backend gespeicherten Kontaktdaten, kann er diese ebenfalls komplett entschlüsseln (da sich der Schlüssel $K _ B$ in den Besuchsdaten befindet).
+Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel, kann er die äußere Entschlüsselung von Kontaktdaten eines Nutzers entfernen.
+Er kann diese Daten jedoch nur unter Zuhilfenahme des Schlüssel $K _ a$ entschlüsseln, dieser muss vom Nutzer bereitgestellt oder über die Besuchsdaten des Nutzers ermittelt werden.
+Besuchsdaten können nur unter Zuhilfenahme eines Gruppenschlüssels entschlüsselt werden, ein solcher wiederum kann nur durch Mitwirkung eines Nutzers oder im Rahmen des Ombuds-Prozesses durch Mitwirkung der Ombuds-Stelle sowie eines Betreibers erlangt werden.
+Der Verlust eines privaten GÄ-Datenschlüssels führt somit nur zu einem sehr geringen Risiko der Enschlüsselung personenbezogener Daten, zumindest wenn es dem Angreifer nicht ebenfalls gelingt, weitere Schlüssel zu erlangen.
+Da diese weiteren Schlüssel dezentral verwahrt und nur mit manueller Beteiligung einzelner Akteure erlangt werden können ist die Hürde zur Erlangung für den Angreifer sehr hoch.
 
 ### Verlust eines privaten GÄ-Signierschlüssels
 
-Erlangt ein Angreifer Zugang zu einem privaten GÄ-Signierschlüssel, kann er sich hiermit gegenüber dem Backend authentifizieren, Daten von dort abrufen und missbräuchliche Anfragen stellen. Er kann jedoch ohne Kenntnis von $I _ D$ Werten keine Kontaktdaten vom Backend abfragen. Um an solche $I _ D$ Werte zu gelangen, kann er Anfragen zu Besuchsdaten stellen. Hierfür ist jedoch ebenfalls das Vorliegen eines (sich unter Kontrolle von Nutzern befindlichen) GA-Datenpakets nötig. Um dieses zu entschlüsseln muss der Angreifer zusätzlich den zugehörigen privaten GÄ-Datenschlüssel besitzen.
+Erlangt ein Angreifer Zugang zu einem privaten GÄ-Signierschlüssel, kann er sich hiermit gegenüber einem Backend-Server authentifizieren, Daten von dort abrufen und missbräuchliche Anfragen stellen. Er kann jedoch ohne Kenntnis von $I _ D$ Werten keine (verschlüsselten) Kontaktdaten von Backend-Servern abfragen. Um an solche $I _ D$ Werte zu gelangen, kann er Anfragen zu Besuchsdaten stellen.
+Hierfür ist jedoch ebenfalls das Vorliegen eines (sich unter Kontrolle von Nutzern befindlichen) GA-Datenpakets nötig, oder eines entschlüsselten Besuchsdatenpaket nötig.
+Wie oben erläutert ist die systematische Erlangung dieser Informationen mit hohen Hürden für den Angreifer verbunden.
 
-### Verlust eines privaten Root-Signierschlüssels
+### Verlust eines privaten Root-Zertifikatschlüssels
 
-Erlangt ein Angreifer Zugang zu einem privaten Root-Signierschlüssel, kann er selbst eigene Schlüsselpaare im System registrieren und diese gegenüber allen Akteuren als vertauenswürdig erscheinen lassen. Er kann damit z.B. Akteure veranlassen, Daten mit diesen Schlüsseln zu verschlüsseln und im System zu hinterlegen.
+Erlangt ein Angreifer Zugang zu einem privaten Root-Zertifikatschlüssel, kann er selbst eigene Schlüsselpaare signieren und diese gegenüber allen Akteuren als vertauenswürdig erscheinen lassen. Er kann damit Backend-Server dazu veranlassen, Anfragen zu Besuchsdaten zu stellen oder Daten von diesen abrufen.
+Da zum Abruf von Daten jedoch zusätzliche Geheimwerte notwendig sind und ein Abruf spezifischer Informationen (z.B. Kontaktdaten) nur bei Vorliegen entsprechender Identifikationsmerkmale (z.b. $I _ D$) möglich wird, ist die Hürde für den Angreifer auch hier sehr hoch.
 
 ### Kompromittierung von Systemkomponenten
 

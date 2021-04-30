@@ -37,6 +37,24 @@
 4d3f58204a4dc531:
   de: '# Anwendungen'
   en: '# Applications'
+515c1b870cf05f1b:
+  de: >-
+    Hierzu kann daher optional ein lokal deploybarer Server zum
+    Einsatz kommen, der private Schlüssel speichert und die Datenverarbeitung
+    übernimmt.
+  en: >-
+    Therefore, a locally deployable server can optionally be used
+    for this purpose, which stores private keys and handles the
+    data processing.
+65574720c86c9ede:
+  de: >-
+    Dementsprechend empfiehlt sich hier der Einsatz einer reinen
+    Web-Anwendung nicht, da Daten und Schlüssel dort im Browser
+    vorgehalten werden müssten.
+  en: >-
+    Accordingly, the use of a pure web application is not recommended
+    here, since data and keys would have to be stored there in
+    the browser.
 71462969f107fc4e:
   de: >-
     Daher kommt hier ebenfalls eine lokal deploybare API mit zugehöriger
@@ -74,6 +92,25 @@
     On the other hand, this can make it difficult for operators
     to use the application easily or, in certain cases, make it
     impossible to use in general.
+a45595c9df1b4db9:
+  de: >-
+    Alternativ kann Zilp-Zalp über einen anbieterübergreifenden
+    Gateway an Gesundheitsämter angebunden werden.
+  en: >-
+    Alternatively, Zilp-Zalp can be connected to health authorities
+    via a provider-independent gateway.
+b23d3204435d757c:
+  de: >-
+    Betreiber müssen Daten über Ihre Ortschaft(en) erfassen, QR-Codes
+    von Nutzern einlesen und ggf. mit Metadaten versehen. Die
+    Anwendung verschlüsselt Besuchsdaten über den im Protokoll
+    beschriebenen Mechanismus und hinterlegt die verschlüsselten
+    Daten auf einem oder mehreren Betreiber-Servern.
+  en: >-
+    Operators must collect data about their locality(ies), scan
+    QR codes from users, and add metadata if necessary. The application
+    encrypts visit data using the mechanism described in the protocol
+    and stores the encrypted data on one or more operator servers.
 b6126fb20812468e:
   de: >-
     Dementsprechend verbietet sich hier der Einsatz einer reinen

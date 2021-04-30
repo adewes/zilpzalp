@@ -1,10 +1,14 @@
 # Deployment
 
-Die folgenden Abschnitte beschreiben das Deployment der Zilp-Zalp Systemkomponenten für Betreiber von Ortschaften und Gesundheitsämter.
+Die folgenden Abschnitte beschreiben das Deployment der Zilp-Zalp Systemkomponenten für Betreiber von Ortschaften, Gesundheitsämter und Anbieter von Backend- sowie Betreiber-Servern.
 
 ## Betreiber von Ortschaften
 
-Betreiber von Ortschaften können entweder die Zilp-Zalp Web-Anwendung nutzen, oder ebenfalls eine lokale API-Anwendung deployen, welche zusätzlich auch die Web-Anwendung enthält:
+Betreiber von Ortschaften können die Zilp-Zalp Web-Anwendung nutzen. Diese kann Daten lokal speichern oder eine Betreiber-API nutzen, um Besuchsdaten und (optional) Einstellungen verschlüsselt zu speichern. Hierfür ist keine Registrierung erforderlich.
+
+## Anbieter von Betreiber-Servern
+
+Anbieter von Betreiber-Servern führen diesen auf einem geeigneten System aus:
 
 <!--translate:ignore-->
 ```bash
@@ -13,39 +17,37 @@ tar -xvzf zilpzalp-operator-latest.tar.gz
 ```
 <!--translate:ignore-->
 
-Die Anwendung kann anschließend einfach ausgeführt werden:
+Der Betreiber-Server kann anschließend einfach gestartet werden:
 
 <!--translate:ignore-->
 ```bash
 zilpzalp
 ```
 <!--translate:ignore-->
+
+Sie müssen über eine entsprechende Konfiguration die korrekte Einbindung in das föderierte Zilp-Zalp System sicherstellen.
 
 ## Gesundheitsämter
 
-Gesundheitsämter müssen zum Betrieb von Zilp-Zalp lediglich die paketierte `ga`API-Anwendung deployen, welche zusätzlich auch die Web-Anwendung enthält.
+Gesundheitsämter kommunizieren über einen (oder mehrere) externe Backend-Server mit dem Zilp-Zalp System. Gesundheitsämter müssen hierzu über einen Signierschlüssel verfügen, der mit einem von dem Gesun
 
-<!--translate:ignore-->
-```
-curl https://downloads.zilpzalp.eu/ga/zilpzalp-ga-latest.tar.gz
-tar -xvzf zilpzalp-ga-latest.tar.gz
-```
-<!--translate:ignore-->
+## Anbieter von Backend-Servern
 
-Die Anwendung benötigt zudem Konfigurationseinstellungen, welche in einem Verzeichnis abgelegt werden könenn das über die Umgebungsvariable `ZILPZALP_SETTINGS` definiert wird (standardmäßig werden diese im `settings` Unterverzeichnis des aktuellen Arbeitsverzeichnisses gesucht), sowie verschiedene Dateien (Migrationen, Frontend-Code), deren Speicherort über eine Umgebungsvariable `ZILPZALP_ASSETS` definiert wird (standardmäßig werden diese im `assets` Unterverzeichnis des aktuellen Arbeitsverzeichnisses gesucht).
+Anbieter von Backend-Servern führen diese auf einem geeigneten System aus:
 
 <!--translate:ignore-->
 ```bash
-export ZILPZALP_SETTINGS=`readlink -f settings`
-export ZILPZALP_ASSES=`readlink -f assets`
+curl https://downloads.zilpzalp.eu/operator/zilpzalp-backend-latest.tar.gz
+tar -xvzf zilpzalp-backend-latest.tar.gz
+```
+<!--translate:ignore-->
+
+Der Backend-Server kann anschließend einfach gestartet werden:
+
+<!--translate:ignore-->
+```bash
 zilpzalp
 ```
 <!--translate:ignore-->
 
-Geheimnisse wie Schlüssel können hierbei auch dynamisch injiziert werden um eine lokale Speicherung zu vermeiden. Hierzu kann die `zilpzalp` Dienstanwendung benutzt werden.
-
-<!--translate:ignore-->
-```bash
-zilpzalp settings inject
-```
-<!--translate:ignore-->
+Sie müssen über eine entsprechende Konfiguration ebenfalls die korrekte Einbindung in das föderierte Zilp-Zalp System sicherstellen.

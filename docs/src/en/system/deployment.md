@@ -1,10 +1,14 @@
 # Deployment
 
-The following sections describe the deployment of the Zilp-Zalp system components for operators of localities and health departments.
+The following sections describe the deployment of the Zilp-Zalp system components for operators of localities, health departments and providers of backend and - operator servers.
 
 ## site operators
 
-Localities can either use the Zilp-Zalp web application or deploy a local API application that also contains the web application:
+Operators of localities can use the Zilp-Zalp web application. This can store data locally or use an operator API to store visit data and (optionally) settings in encrypted form. No registration is required for this.
+
+## Provider of operator servers
+
+Providers of operator servers run this on a suitable system:
 
 ```bash
 curl https://downloads.zilpzalp.eu/operator/zilpzalp-operator-latest.tar.gz
@@ -12,36 +16,34 @@ tar -xvzf zilpzalp-operator-latest.tar.gz
 ```
 
 
-The application can then be easily executed:
+The operator server can then simply be started:
 
 ```bash
 zilpzalp
 ```
 
+
+You have to ensure the correct integration into the federated Zilp-Zalp system via an appropriate configuration.
 
 ## Public Health Departments
 
-Health departments only need to deploy the packaged `ga` API application to run Zilp-Zalp, which also contains the web application.
+Health departments communicate with the Zilp-Zalp system via one (or more) external backend servers. For this purpose, health departments must have a signing key, which is linked to a key issued by the health department.
 
-```
-curl https://downloads.zilpzalp.eu/ga/zilpzalp-ga-latest.tar.gz
-tar -xvzf zilpzalp-ga-latest.tar.gz
-```
+## back-end server provider
 
-
-The application also needs configuration settings, which can be stored in a directory defined by the environment variable `ZILPZALP_SETTINGS` (by default they are searched in the `settings` subdirectory of the current working directory), and various files (migrations, frontend code), whose location is defined by an environment variable `ZILPZALP_ASSETS` (by default they are searched in the `assets` subdirectory of the current working directory).
+Providers of backend servers run them on a suitable system:
 
 ```bash
-export ZILPZALP_SETTINGS=`readlink -f settings`
-export ZILPZALP_ASSES=`readlink -f assets`
+curl https://downloads.zilpzalp.eu/operator/zilpzalp-backend-latest.tar.gz
+tar -xvzf zilpzalp-backend-latest.tar.gz
+```
+
+
+The backend server can then simply be started:
+
+```bash
 zilpzalp
 ```
 
 
-Secrets such as keys can also be injected dynamically to avoid local storage. The `zilpzalp` service application can be used for this purpose.
-
-```bash
-zilpzalp settings inject
-```
-
-
+You must also ensure the correct integration into the federated Zilp-Zalp system via an appropriate configuration.

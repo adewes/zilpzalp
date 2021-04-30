@@ -1,10 +1,189 @@
+04262c8932f706c0:
+  de: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum<OK, ERR>, {OK:
+    data bytes<1,8192>, ERR: Error})`: Erlaubt das Abrufen von
+    verschlüsselten Nutzer-Einstellungen.
+  en: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum <OK, ERR>,
+    {OK: data bytes<1,8192>, ERR: Error})` : Allows retrieval
+    of encrypted user settings.
+0e908d3442373809:
+  de: '### Authentifzierte Endpunkte'
+  en: '### Authenticated endpoints'
+14b38ade51fdeb5a:
+  de: >-
+    Alle Endpunkte mit einem `signature` Parameter setzen eine
+    gültige Signatur eines Gesundheitsamts voraus. Ausgeschriebene
+    Hashes werden mit einem Salt-Wert nochmals gehasht, welcher
+    ebenfalls mitgeliefert wird, Betreiber-API muss ihrerseits
+    vorhandene Hashwerte zum Vergleich mit den ausgeschriebenen
+    Werten ebenfalls mit diesem Salt hashen. Betreiber müssen
+    dann ungehashte Hashes zurückliefern. Dies verhindert, dass
+    massenhaft ungültige Besuchsdaten eingereicht werden können.
+  en: >-
+    All endpoints with a `signature` parameter require a valid
+    signature from a health authority. Written out hashes are
+    hashed again with a salt value which is also supplied, operator
+    API must in turn hash existing hash values with this salt
+    as well for comparison with the written out values. Operators
+    must then return hashes that are not hashed. This prevents
+    mass submission of invalid visit data.
+173f5dcdd21bcdb8:
+  de: >-
+    Zilp-Zalp bietet prinzipiell zwei APIs um Daten im System
+    zu verwalten:
+  en: >-
+    Zilp-Zalp offers basically two APIs to manage data in the
+    system:
+1e054db3c5c12fb9:
+  de: >-
+    Alle Endpunkte mit einem `signature` Parameter setzen eine
+    gültige Signatur eines Gesundheitsamts voraus. Auszuschreibende
+    Hashes werden vor der Publikation zunächst mit einem Salt-Wert
+    gehasht. Dieser wird bei der Publikation ebenfalls mitgeliefert,
+    Betreiber-Server müssen ihrerseits vorhandene Hashwerte zum
+    Vergleich ebenfalls mit diesem Salt hashen. Sie müssen Anfragen
+    mit ungehashten Hashes beantworten, was über die "preimage
+    resistance" Eigenschaft des Hashes verhindert, dass massenhaft
+    ungültige Besuchsdaten von Betreiber-Servern eingereicht werden
+    können.
+  en: >-
+    All endpoints with a `signature` parameter require a valid
+    signature from a health authority. Hashes to be written out
+    are first hashed with a salt value before publication. This
+    is also supplied with the publication; operator servers must
+    also hash existing hash values with this salt for comparison.
+    They have to answer queries with unhashed hashes, which prevents
+    masses of invalid visit data from being submitted by operator
+    servers via the "preimage resistance" property of the hash.
+1f522312b21e1923:
+  de: >-
+    Falls sich trotz dieser Gegenmaßnahmen ein Missbrauch der
+    API nicht beherrschen lässt kann eine optionale Authentifizierung
+    von Anfragen über einen zweiten Faktor, beispielsweise ein
+    Token oder eine hieraus gebildete HMAC-Signatur, erfolgen
+    (jedoch müssen diese dann an Betreiber verteilt werden).
+  en: >-
+    If, despite these countermeasures, misuse of the API cannot
+    be controlled, an optional authentication of requests via
+    a second factor, for example a token or an HMAC signature
+    formed from it, can be used (but these must then be distributed
+    to operators).
+259069c5c0e9ad3c:
+  de: >-
+    * `storeEncryptedContactData(id bytes<16>, data EncryptedContactData)
+    -> enum<OK, ERR>`: Erlaubt das Speichern von verschlüsselten
+    Kontaktdaten im Rahmen der Initialisierung.
+  en: >-
+    * `storeEncryptedContactData(id bytes<16>, data EncryptedContactData)
+    -> enum <OK, ERR>` : Allows encrypted contact data to be stored
+    as part of the initialization process.
+286dde55fdf993e0:
+  de: >-
+    Falls sich trotz dieser Gegenmaßnahmen ein Missbrauch der
+    API nicht beherrschen lässt kann eine optionale Authentifizierung
+    von Anfragen über einen zweiten Faktor, beispielsweise eine
+    E-Mail Verifikation, erfolgen. Dies sollte auch aus Sicht
+    des Datenschutzes jedoch nach Möglichkeit vermieden werden.
+  en: >-
+    If, despite these countermeasures, misuse of the API cannot
+    be controlled, optional authentication of requests can take
+    place via a second factor, such as e-mail verification. However,
+    this should also be avoided from a data protection perspective
+    if possible.
+30f9e4ebceab2072:
+  de: '#### Sicherheitsaspekte'
+  en: '#### Safety aspects'
 35588dbf359a6466:
   de: >-
     Zilp-Zalp bietet mehrere APIs um Daten im System zu verwalten:
   en: 'Zilp-Zalp offers several APIs to manage data in the system:'
+3706d99ad0850ddd:
+  de: '## Backend-API'
+  en: '## Backend API'
+3771bc1b7538310e:
+  de: >-
+    * `publishHashes(hashes list<bytes<16>>, id bytes<16>, signature
+    Signature) -> enum<OK, ERR>`: Erlaubt das Ausschreiben von
+    Hashes durch Gesundheitsämter.
+  en: >-
+    * `publishHashes(hashes list <bytes<16>>, id bytes<16>, signature
+    Signature) -> enum <OK, ERR>` : Allows hashes to be written
+    out by health departments.
 39d84c8074ae954b:
   de: '# APIs'
   en: '# APIs'
+3ff2e00ef7c13c94:
+  de: >-
+    * `publishHashes(hashes list<bytes<16>>, signature Signature)
+    -> enum<OK, ERR>`: Erlaubt das Ausschreiben von Hashes durch
+    Gesundheitsämter.
+  en: >-
+    * `publishHashes(hashes list <bytes<16>>, signature Signature)
+    -> enum <OK, ERR>` : Allows hashes to be written out by health
+    departments.
+428faa6440647bff:
+  de: >-
+    * `getTraces(hashes list<string>, signature Signature) ->
+    (enum<OK, ERR>, {OK: list<Trace>, ERR: Error})`: Erlaubt die
+    Abfrage von zurückgelieferten Besuchsdaten durch das anfragende
+    Gesundheitsamt.
+  en: >-
+    * `getTraces(hashes list <string>, signature Signature) ->
+    (enum <OK, ERR>, {OK: list<Trace>, ERR: Error})` : Allows
+    the requesting health department to query returned visit data.
+4fffc7c19809aa24:
+  de: Beide APIs stellen eine JSON-RPC Schnittstelle bereit.
+  en: Both APIs provide a JSON-RPC interface.
+5325a02ec71153c4:
+  de: >-
+    * Eine **Backend-API**, die Kontaktdaten und (optional) verschlüsselte
+    Nutzer-Einstellungen speichert, Hashes publiziert und Besuchsdaten
+    entgegennimmt.
+  en: >-
+    * A **backend API** that stores contact information and (optionally)
+    encrypted user preferences, publishes hashes, and accepts
+    visit data.
+568f9d5f76b564fc:
+  de: '## Gesundheitsamt-API'
+  en: '## Health Department API'
+61ed7a00989069e4:
+  de: >-
+    * `getAllHashes() -> (enum<OK, ERR>, {OK: {hashes: list<bytes<16>>,
+    salt: bytes<16>}, ERR: Error})`: Erlaubt das Abfrufen aller
+    jemals ausgeschriebenen Hashes.
+  en: >-
+    * `getAllHashes() -> (enum <OK, ERR>, {OK: {hashes: list<bytes<16>>,
+    salt: bytes<16>}, ERR: Error})` : Allows retrieval of all
+    hashes ever written out.
+61f09ce5bf52755e:
+  de: '## Betreiber-API'
+  en: '## Operator API'
+6d02c0302c42155e:
+  de: >-
+    * Eine Gesundheitsamt-API, die Kontaktdaten und (optional)
+    verschlüsselte Nutzer-Einstellungen speichert, Hashes publiziert
+    und Besuchsdaten entgegennimmt.
+  en: >-
+    * A health department API that stores contact information
+    and (optionally) encrypted user preferences, publishes hashes,
+    and accepts visit data.
+77c0edce40a5c48f:
+  de: >-
+    Die Betreiber-API besitzt in der Standardkonfiguration keine
+    Authentifizierung und kann gespeicherte Daten zudem keinem
+    spezifischen Betreiber zuordnen. Sie muss daher robust gegenüber
+    der massenhaften Einreichung ungültiger Besuchsdaten sein
+    (da keine Möglichkeit zur Prüfung der Echtheit dieser Besuchsdaten
+    besteht). Dies kann ggf. durch Rate-Limiting, Datenlängebeschränkungen
+    und eine effiziente Speicherung erreicht werden.
+  en: >-
+    The operator API has no authentication in the default configuration
+    and also cannot assign stored data to a specific operator.
+    It must therefore be robust against the mass submission of
+    invalid visit data (since there is no way to verify the authenticity
+    of this visit data). This can be achieved, if necessary, by
+    rate limiting, data length restrictions and efficient storage.
 79e53aea0f17c562:
   de: >-
     * Das globale Backend bietet eine **JSON-RPC** API und wird
@@ -13,6 +192,48 @@
   en: >-
     * The global backend provides a **JSON-RPC** API and is used
     for communication between users, operators and health authorities.
+7a1c3a4db0520a88:
+  de: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum<OK, ERR>, {OK:
+    bytes<1,8192>, ERR: Error})`: Erlaubt das Abrufen von verschlüsselten
+    Betreiber-Einstellungen.
+  en: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum <OK, ERR>,
+    {OK: bytes<1,8192>, ERR: Error})` : Allows retrieval of encrypted
+    operator settings.
+7b9ab0aa8934eccf:
+  de: >-
+    Optional kann die Betreiber-API auch einen Endpunkt bereitstellen,
+    der für einen gegebenen Gruppen-Identifikator $G _ j$ Metadaten
+    $M _ j$ zurückliefert. Betreiber-Anwendungen können diesen
+    Endpunkt nutzen, um zu beweisen, dass sie Besuche korrekt
+    dokumentiert haben. Weitere Mechanismen sind hierfür vorstellbar,
+    z.B. die Rückgabe signierter Bestätigungen durch die Betreiber-API.
+    Wie in jedem System zur Kontaktnachverfolgung kann jedoch
+    keine abschließende Garantie für die korrekte und vollständige
+    Nutzung des Systems gegeben werden.
+  en: >2-
+     $G _ j$ Optionally, the operator API can also provide an
+    endpoint that returns $M _ j$ metadata for a given group identifier.
+    Operator applications can use this endpoint to prove that
+    they have documented visits correctly. Other mechanisms can
+    be envisioned for this, such as returning signed confirmations
+    through the operator API. However, as in any contact tracking
+    system, no final guarantee can be given for the correct and
+    complete use of the system.
+8b019895a33b2fbe:
+  de: >-
+    Falls sich trotz dieser Gegenmaßnahmen ein Missbrauch der
+    API nicht beherrschen lässt kann eine optionale Authentifizierung
+    von Anfragen über einen zweiten Faktor, beispielsweise eine
+    manuelle Verifikation, erfolgen. Dies sollte auch aus Sicht
+    des Datenschutzes jedoch nach Möglichkeit vermieden werden.
+  en: >-
+    If, despite these countermeasures, misuse of the API cannot
+    be controlled, optional authentication of requests can take
+    place via a second factor, for example manual verification.
+    However, this should also be avoided from a data protection
+    perspective if possible.
 8db6c824382bcd7a:
   de: >-
     * Gesundheitsämter und (optional) Betreiber nutzen lokale
@@ -20,6 +241,166 @@
   en: >-
     * Health departments and (optionally) operators use local
     applications, each providing **REST APIs** to exchange data.
+8e40a71c9a6b6d82:
+  de: >-
+    * Eine **Betreiber-API**, die Besuchsdaten und (optional)
+    verschlüsselte Betreiber-Einstellungen speichert.
+  en: >-
+    * An **operator API** that stores visit data and (optionally)
+    encrypted operator settings.
+94ccf7f80e9eee6b:
+  de: >-
+    Die Betreiber-API besitzt keine Authentifizierung und kann
+    gespeicherte Daten keinem spezifischen Betreiber zuordnen.
+    Sie muss daher robust gegenüber der massenhaften Einreichung
+    ungültiger Besuchsdaten sein (da keine Möglichkeit zur Prüfung
+    der Echtheit dieser Besuchsdaten besteht). Dies kann ggf.
+    durch Rate-Limiting, Datenlängebeschränkungen und eine effiziente
+    Speicherung erreicht werden.
+  en: >-
+    The operator API has no authentication and cannot associate
+    stored data with any specific operator. It must therefore
+    be robust against the mass submission of invalid visit data
+    (since there is no way to verify the authenticity of this
+    visit data). This can be achieved, if necessary, by rate limiting,
+    data length restrictions and efficient storage.
+96a29c77ca88fa8b:
+  de: >-
+    * Eine Betreiber-API, die Besuchsdaten und (optional) verschlüsselte
+    Betreiber-Einstellungen speichert.
+  en: >-
+    * An operator API that stores visit data and (optionally)
+    encrypted operator settings.
+a16dabb9977e46da:
+  de: >-
+    Auszuschreibende Hashes werden vor der Publikation zunächst
+    mit einem Salt-Wert gehasht. Dieser wird bei der Publikation
+    ebenfalls mitgeliefert, Betreiber-Server müssen ihrerseits
+    vorhandene Hashwerte zum Vergleich ebenfalls mit diesem Salt
+    hashen. Sie müssen Anfragen mit ungehashten Hashes beantworten,
+    was über die "preimage resistance" Eigenschaft des Hashes
+    verhindert, dass massenhaft ungültige Besuchsdaten von Betreiber-Servern
+    eingereicht werden können.
+  en: >-
+    Hashes to be written out are first hashed with a salt value
+    before publication. This is also supplied with the publication;
+    operator servers must also hash existing hash values with
+    this salt for comparison. They have to answer queries with
+    unhashed hashes, which prevents masses of invalid visit data
+    from being submitted by operator servers via the "preimage
+    resistance" property of the hash.
+a644f8b23f5d8e60:
+  de: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum<OK, ERR>, {OK:
+    data bytes<1,8192>, ERR: Error})`: Erlaubt das Abrufen von
+    verschlüsselten Betreiber-Einstellungen.
+  en: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum <OK, ERR>,
+    {OK: data bytes<1,8192>, ERR: Error})` : Allows retrieval
+    of encrypted operator settings.
+aa2517dfc8edc3ff:
+  de: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum<OK, ERR>, {OK:
+    bytes<1,8192>, ERR: Error})`: Erlaubt das Abrufen von verschlüsselten
+    Nutzer-Einstellungen.
+  en: >-
+    * `getEncryptedSettings(id bytes<16>) -> (enum <OK, ERR>,
+    {OK: bytes<1,8192>, ERR: Error})` : Allows retrieval of encrypted
+    user settings.
+b0cb2e32f56f1260:
+  de: '### Unauthentifizierte Endpunkte'
+  en: '### Unauthenticated endpoints'
+b2047d4cc3a817ff:
+  de: >-
+    * `storeEncryptedSettings(id bytes<16>, data bytes<1,8192>)
+    -> enum<OK, ERR>`: Erlaubt das Speichern von verschlüsselten
+    Nutzer-Einstellungen im Rahmen der Initialisierung.
+  en: >-
+    * `storeEncryptedSettings(id bytes<16>, data bytes<1,8192>)
+    -> enum <OK, ERR>` : Allows encrypted user settings to be
+    saved as part of the initialization process.
+b43b045b93ba24a8:
+  de: >-
+    * `getTraces(id bytes<16>, signature Signature) -> (enum<OK,
+    ERR>, {OK: list<Trace>, ERR: Error})`: Erlaubt die Abfrage
+    von zurückgelieferten Besuchsdaten durch das anfragende Gesundheitsamt
+    für eine vorher gegebene ID.
+  en: >-
+    * `getTraces(id bytes<16>, signature Signature) -> (enum <OK,
+    ERR>, {OK: list<Trace>, ERR: Error})` : Allows the requesting
+    health department to query returned visit data for a previously
+    given ID.
+c2b8d5fc9c0c7bc6:
+  de: '#### Hash-Ausschreibung'
+  en: '#### Hash tender'
+c48b8a36ceef9c00:
+  de: >-
+    Diese Endpunkte sind für Gesundheitsämter vorgesehen, welche
+    sich durch Signieren von Anfragen authentifizieren.
+  en: >-
+    These endpoints are intended for health departments that authenticate
+    by signing requests.
+d68ec87556a3a9b9:
+  de: Beide APIs nutzen eine JSON-RPC Schnittstelle.
+  en: Both APIs use a JSON-RPC interface.
+e0396df62dc95261:
+  de: >-
+    Die Betreiber-API führt in der Standardkonfiguration keine
+    Authentifizierung von Anfragen durch und ist öffentlich erreichbar
+    (dies kann jedoch vom Betreiber angepasst werden).
+  en: >-
+    In the default configuration, the operator API does not authenticate
+    requests and is publicly accessible (however, this can be
+    customized by the operator).
 e3b0c44298fc1c14:
   de: ''
   en: ''
+ec9d3d3d0daed4f0:
+  de: '### Authentifizierte Endpunkte'
+  en: '### Authenticated endpoints'
+eda36ef472732d86:
+  de: >-
+    Diese Endpunkte sind für Nutzer und Betreiber-Server vorgesehen.
+  en: These endpoints are intended for users and operator servers.
+edfc0cbe3778d360:
+  de: >-
+    * `getOpenHashes() -> (enum<OK, ERR>, {OK: {hashes: list<bytes<16>>,
+    salt: bytes<16>}, ERR: Error})`: Erlaubt das Abfrufen aller
+    aktuell ausgeschriebenen Hashes.
+  en: >-
+    * `getOpenHashes() -> (enum <OK, ERR>, {OK: {hashes: list<bytes<16>>,
+    salt: bytes<16>}, ERR: Error})` : Allows the retrieval of
+    all currently written out hashes.
+ee885546a7a38e90:
+  de: >-
+    * `storeTraces(traces list<RelatedTraces>) -> enum<OK, ERR>`:
+    Erlaubt die Einreichung von zu ausgeschriebenen Hashes relevanten
+    Besuchsdaten durch einen Betreiber.
+  en: >-
+    * `storeTraces(traces list <RelatedTraces>) -> enum <OK, ERR>`
+    : Allows the submission of visit data relevant to advertised
+    hashes by an operator.
+f15cee0a3dffcebb:
+  de: '### Nachweispflichten'
+  en: '### Verification requirements'
+f846767d91b62ad5:
+  de: >-
+    * `getEncryptedContactData(id bytes<16>, signature Signature)
+    -> (enum<OK, ERR>, {OK: EncryptedContactData, ERR: Error})`:
+    Erlaubt das Abrufen von verschlüsselten Kontaktdaten durch
+    Gesundheitsämter.
+  en: >-
+    * `getEncryptedContactData(id bytes<16>, signature Signature)
+    -> (enum <OK, ERR>, {OK: EncryptedContactData, ERR: Error})`
+    : Allows health departments to retrieve encrypted contact
+    information.
+fccf67b476b3f29e:
+  de: >-
+    * `storeTraces(traces list<Trace>) -> enum<OK, ERR>`: Erlaubt
+    die Speicherung von Besuchsdaten durch einen Betreiber.
+  en: >-
+    * `storeTraces(traces list <Trace>) -> enum <OK, ERR>` : Allows
+    the storage of visit data by an operator.
+ff34eedac5607384:
+  de: '#### Erfüllung von Nachweispflichten'
+  en: '#### Fulfilment of obligations to provide evidence'

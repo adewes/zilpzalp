@@ -1,0 +1,193 @@
+03dcdbada5c2cf15:
+  de: '### Sicherheit'
+  en: '### Security'
+0489807b21ee23c6:
+  de: '### Föderiertheit'
+  en: '### Federated'
+08e5c9c5557a1d51:
+  de: >-
+    * Die **Gesundheitsamt-Anwendung** erlaubt die Anfrage von
+    Kontaktdaten durch Gesundheitsämter, den Abruf zurückgelieferter
+    Daten sowie die Entschlüsselung und Weiterverarbeitung dieser
+    Daten.
+  en: >-
+    * The **health department application** allows the request
+    of contact data by health departments, the retrieval of returned
+    data as well as the decryption and further processing of this
+    data.
+165e7cf7cea40680:
+  de: >-
+    Backend- noch Betreiber-Server haben nur in sehr geringem
+    Maße Zugriff auf Metadaten, die Rückschlüsse auf personenbezogene
+    oder sensible Informationen liefern können. Da keine direkte
+    Kommunikation mit Nutzern stattfindet sind die Möglichkeit
+    eines IP-basierten Profilings nicht gegeben. Besuchsdaten
+    werden zudem strikt verschlüsselt gespeichert und können keinem
+    spezifischen Betreiber zugeordnet werden, ein gezielter Abruf
+    von Daten einzelner Ortschaften ist somit nicht möglich.
+  en: >-
+    Backend nor - operator servers have only very limited access
+    to metadata that can provide conclusions about personal or
+    sensitive information. Since there is no direct communication
+    with users, IP-based profiling is not possible. In addition,
+    visit data is stored strictly encrypted and cannot be assigned
+    to a specific operator; a targeted retrieval of data from
+    individual locations is therefore not possible.
+1b7eeab110cc5160:
+  de: 'Generell '
+  en: 'General '
+260850d6ec7d73b5:
+  de: >-
+    Die Gestaltung der Komponenten zielt darauf ab, ein System
+    zu erhalten das **redundant**, **dezentral**, **föderiert**,
+    **resilient**, **sicher** und **privatsphäre-freundlich**
+    ist. Dies wird über mehrere Aspekte erreicht:
+  en: >-
+    The design of the components aims to obtain a system that
+    * is **redundant**, **decentralized**, **federated**, **resilient**,
+    *secure, and *  **privacy-friendly**. This is achieved through
+    several aspects:
+36534b03cf9ca988:
+  de: 'Das System verfügt über zwei Server-Typen:'
+  en: 'The system has two types of servers:'
+40d1b352f355c384:
+  de: >-
+    * Die **Betreiber-Anwendung** erlaubt die Erfassung von Besuchsdaten
+    durch Betreiber sowie die Übermittlung der Daten an einen
+    oder mehrere **Betreiber-Server**.
+  en: >-
+    * The **operator application** allows the collection of visit
+    data by operators and the transmission of the data to one
+    or more **operator servers**.
+43193d3881a92d2e:
+  de: >-
+    Anbieter von Betreiber-Servern können selbst festlegen, mit
+    welchen Backend-Servern sie kommunizieren, dies kann somit
+    z.B. regional unterschiedlich ausgestaltet werden. Anbieter
+    von Backend-Servern können ebenfalls selbst festlegen, mit
+    welchen Betreiber-Servern sowie ggf. mit welchen Gesundheitsämtern
+    sie eine Kommunikation zulassen. So kann leicht eine Bundesland-spezifische,
+    föderierte Infrastruktur aufgebaut werden.
+  en: >-
+    Providers of operator servers can determine themselves with
+    which backend servers they communicate; this can thus be designed
+    differently, e.g. regionally. Providers of backend servers
+    can also define with which operator servers and, if applicable,
+    with which health authorities they allow communication. In
+    this way, a federal state-specific, federated infrastructure
+    can easily be set up.
+607701c5f0c420dd:
+  de: '### Privatsphäre-Freundlichkeit'
+  en: '### Privacy Friendliness'
+61a4cafe3ecd1efa:
+  de: 'Zudem verfügt das System über mehrere Client-Anwendungen:'
+  en: 'In addition, the system has several client applications:'
+649f041b19971321:
+  de: '### Privatsphäre-freundlich'
+  en: '### Privacy-friendly'
+6ff752ad7a9ee5a5:
+  de: '### Resilienz'
+  en: '### Resilience'
+7723f6e4bacdaf65:
+  de: >-
+    Sowohl Backend-Server als auch Betreiber-Server können redundant
+    ausgelegt werden, Daten können somit auf mehreren Servern
+    gespeichert werden. Fällt ein einzelner Server aus, bleiben
+    Daten so trotzdem abrufbar.
+  en: >-
+    Both backend servers and operator servers can be designed
+    redundantly, so data can be stored on multiple servers. If
+    a single server fails, data can still be accessed.
+903a8a5f525280f2:
+  de: '### Sicher'
+  en: '### Secure'
+977ec95f09d00850:
+  de: >-
+    * Die **Nutzer-Anwendung** erlaubt die Initialisierung der
+    Kontaktnachverfolgung für Nutzer.
+  en: >-
+    * The **user application** allows initialization of contact
+    tracking for users.
+9d4897337454badc:
+  de: '### Dezentralität'
+  en: '### Decentralisation'
+a1a4a16fb07143db:
+  de: >-
+    * **Backend-Server** speichern verschlüsselte Kontaktdaten
+    von Nutzern und optional verschlüsselte Nutzer-Einstellungen.
+    Weiterhin kommunizieren sie mit Gesundheitsämtern um Hashwerte
+    für die Kontaktnachverfolgung auszuschreiben, von Betreiber-Servern
+    zu diesen Hashes zurückgegebene Besuchsdaten zwischenspeichern
+    und diese dem anfragenden Gesundheitsämtern zur Verfügung
+    stellen.
+  en: >-
+    * **Backend servers** store encrypted user contact information
+    and optionally encrypted user preferences. Furthermore, they
+    communicate with health authorities to write out hash values
+    for contact tracking, cache visit data returned by operator
+    servers to these hashes, and make them available to the requesting
+    health authorities.
+c1be9aa88a6b552d:
+  de: >-
+    Backend- und Betreiber-Server speichern lediglich verschlüsselte
+    Daten mit sehr wenigen Metadaten. Selbst eine vollständige
+    Kompromittierung und ein kompletter Verlust aller Daten eines
+    Servers führt nur zu einem sehr geringen Risiko, da Angreifer
+    eine Reihe weiterer Informationen benötigen um Daten sinnvoll
+    verwerten zu können. Auch die Manipulation eines Servers bietet
+    Angreifern nur wenige Möglichkeiten, relevante Metadaten zu
+    sammeln oder sensible Informationen zu extrahieren. Server
+    speichern auch keine privaten Schlüssel-
+  en: >-
+    Backend and - operator servers only store encrypted data with
+    very little metadata. Even a complete compromise and a complete
+    loss of all data of a server only leads to a very low risk,
+    because attackers need a lot of additional information to
+    be able to make sense of the data. Also, tampering with a
+    server provides attackers with few opportunities to collect
+    relevant metadata or extract sensitive information. Servers
+    also do not store private key
+d015f03bc0f20f8b:
+  de: >-
+    Das Zilp-Zalp System besteht aus mehreren Komponenten, die
+    unabhängig voneinander und ohne zentrale Koordination eingesetzt
+    werden können. Gemeinsam bilden sie ein föderiertes, dezentrales
+    System zur Kontaktnachverfolgung.
+  en: >-
+    The Zilp-Zalp system consists of several components that can
+    be used independently of each other and without central coordination.
+    Together they form a federated, decentralized contact tracking
+    system.
+d1428732cc1a587d:
+  de: >-
+    * **Betreiber-Server** speichern verschlüsselte Besuchsdaten
+    von Betreibern von Ortschaften und optional verschlüsselte
+    Betreiber-Einstellungen. Sie rufen ausgeschriebene Hashwerte
+    von Backend-Servern ab und antworten auf diese Anfragen.
+  en: >-
+    * **Operator servers** store encrypted visit data from operators
+    of localities and optionally encrypted operator settings.
+    They retrieve advertised hash values from backend servers
+    and respond to these requests.
+db079204245fa3ac:
+  de: >-
+    Es gibt im Zilp-Zalp System keine zentrale Stelle, die den
+    Betrieb des Gesamtsystems kontrolliert. Betreiber-Server und
+    Backend-Server können unabhängig betrieben werden. Die funktionale
+    Einbindung erfolgt über einen Vertrauensansatz im Rahmen eines
+    "Web of Trust".
+  en: >-
+    There is no central office in the Zilp-Zalp system that controls
+    the operation of the entire system. Operator server and backend
+    server can be operated independently. The functional integration
+    takes place via a trust approach within the framework of a
+    "Web of Trust".
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+fd8e83dfadc0d044:
+  de: '## Systemkonzept'
+  en: '## System concept'
+fdd02315cf58c169:
+  de: '# Überblick'
+  en: '# Overview'

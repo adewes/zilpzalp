@@ -24,10 +24,14 @@ pages:
   slug: analysen
   title: Analysen
 - children:
-  - name: api
-    slug: api
+  - name: ''
+    slug: ueberblick
+    src: de/system/index.md
+    title: Überblick
+  - name: apis
+    slug: apis
     src: de/system/api.md
-    title: API
+    title: APIs
   - name: apps
     slug: apps
     src: de/system/apps.md

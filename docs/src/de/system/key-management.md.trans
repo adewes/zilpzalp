@@ -8,6 +8,27 @@
     If he also gains access to the contact data stored in the
     backend for this visit data, he can also decrypt it completely
     (since the key $K _ B$ is in the visit data).
+054e09ea9a6a7a81:
+  de: >-
+    Er kann diese Daten jedoch nur unter Zuhilfenahme des Schlüssel
+    $K _ a$ entschlüsseln, dieser muss vom Nutzer bereitgestellt
+    oder über die Besuchsdaten des Nutzers ermittelt werden.
+  en: >-
+    However, it can only decrypt this data with the aid of the
+    key $K _ a$, which must be provided by the user or determined
+    via the user's visit data.
+083acc803a4628db:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten Root-Zertifikatschlüssel,
+    kann er selbst eigene Schlüsselpaare signieren und diese gegenüber
+    allen Akteuren als vertauenswürdig erscheinen lassen. Er kann
+    damit Backend-Server dazu veranlassen, Anfragen zu Besuchsdaten
+    zu stellen oder Daten von diesen abrufen.
+  en: >-
+    If an attacker gains access to a private root certificate
+    key, he can sign his own key pairs and make them appear trustworthy
+    to all actors. He can thus cause backend servers to make requests
+    for visit data or retrieve data from them.
 08b221a1469b3fca:
   de: >-
     Gesundheitsämter, Backend-Betreiber und ggf. Betreiber von
@@ -39,6 +60,13 @@
     Zilp-Zalp uses a public key infrastructure (PKI) to encrypt
     data, authenticate actors to the backend, and sign requests
     that are published.
+12b537f362a295bf:
+  de: >-
+    * Für jede Backend-Instanz einen oder mehrere Root-Zertifikate,
+    die als Vertrauensanker dienen.
+  en: >-
+    * For each backend instance, one or more root certificates
+    that serve as trust anchors.
 172e62430b715c5e:
   de: >-
     Erlangt er Zugang zu Besuchsdaten von Betreibern, kann er
@@ -82,6 +110,24 @@
   en: >-
     * For the global encryption of visit data, all health departments
     share a GÄ data key.
+2230eb54650def63:
+  de: >-
+    Diese werden von einem oder mehreren Root-Zertifikaten signiert,
+    welche den Backend-Servern als Vertrauensanker dienen.
+  en: >-
+    These are signed by one or more root certificates, which serve
+    as trust anchors for the backend servers.
+253934379d952f0b:
+  de: >-
+    * Für eine Ombuds-Stelle ein asymmetrisches Schlüsselpaar
+    mit dem Besuchsdaten zusätzlich verschlüsselt werden und das
+    erlaubt, in Ausnahmefällen den Zugriff auf solche Daten ohne
+    Mitwirkung eines Nutzers zu erreichen.
+  en: >-
+    * For an ombudsman office, an asymmetric key pair with which
+    visit data is additionally encrypted and which allows, in
+    exceptional cases, access to such data without the involvement
+    of a user.
 2db482ef125c2a50:
   de: >-
     * Die Anwendbarkeit und Macht von individuellen Schlüsseln
@@ -145,6 +191,21 @@
     backend when decrypting data. Due to the large volume of data,
     this would require an automatic solution, which in turn would
     make a distribution of the keys obsolete.
+43eb0c257b083038:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten GÄ-Signierschlüssel,
+    kann er sich hiermit gegenüber einem Backend-Server authentifizieren,
+    Daten von dort abrufen und missbräuchliche Anfragen stellen.
+    Er kann jedoch ohne Kenntnis von $I _ D$ Werten keine (verschlüsselten)
+    Kontaktdaten von Backend-Servern abfragen. Um an solche $I
+    _ D$ Werte zu gelangen, kann er Anfragen zu Besuchsdaten stellen.
+  en: >-
+    If an attacker gains access to a private GÄ signing key, he
+    can use it to authenticate himself to a backend server, retrieve
+    data from there and make abusive requests. However, he cannot
+    retrieve (encrypted) contact data from backend servers without
+    knowledge of $I _ D$ values. To obtain such $I _ D$ values,
+    he can make requests for visit data.
 458376451183dca9:
   de: >-
     Erlangt ein Angreifer Zugang zu einem privaten GÄ-Signierschlüssel,
@@ -170,6 +231,20 @@
 49e4b8eda9e6b9e0:
   de: 'Root-Schlüssel werden '
   en: 'Root keys are '
+54dc0720254aebca:
+  de: >-
+    Gesundheitsämter besitzen individuelle asymmetrische Schlüsselpaare
+    zur Signierung von Daten, sowie ein geteiltes Schlüsselpaar
+    zur Ver- & Entschlüsselung von Daten.
+  en: >-
+    Health departments have individual asymmetric key pairs for
+    signing data, as well as a shared key pair for -  encrypting&
+    decrypting data.
+578c2cad4f2809db:
+  de: >-
+    * Ein oder mehrere Root-Zertifikate, die als Vertrauensanker
+    dienen.
+  en: '* One or more root certificates that serve as trust anchors.'
 59ef9007f0ce847d:
   de: >-
     Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel
@@ -188,6 +263,16 @@
 5ba7a448c8df0a6c:
   de: 'Zilp-Zalp benötigt im Betrieb folgende Schlüsselpaare:'
   en: 'Zilp-Zalp requires the following key pairs during operation:'
+625b2d94f59c17ff:
+  de: >-
+    Die Sicherheit des Gesamtsystems hängt wie bei allen Systee
+    entscheidend von der Sicherheit dieser PKI ab. Zilp-Zalp ist
+    darauf ausgelegt, mit existierenden PKI-Systemen zusammenarbeiten
+    zu können.
+  en: >-
+    As with all systems, the security of the overall system depends
+    crucially on the security of this PKI. Zilp-Zalp is designed
+    to work with existing PKI systems.
 681ea43f0a6f16a2:
   de: >-
     * Optional für Betreiber ein oder mehrere Schlüsselpaare zum
@@ -195,6 +280,29 @@
   en: >-
     * Optional for operators one or more key pairs for signing
     data.
+6fc0a92ebab039c6:
+  de: >-
+    Wie oben erläutert ist die systematische Erlangung dieser
+    Informationen mit hohen Hürden für den Angreifer verbunden.
+  en: >-
+    As explained above, the systematic acquisition of this information
+    is associated with high hurdles for the attacker.
+7477efab7d805c94:
+  de: >-
+    Root-Schlüsselpaare werden von einer vertrauenswürdigen Stelle
+    generiert, die öffentlichen Schlüssel und Zertifikatsdetails
+    werden im System verteilt und dienen allen Akteuren als Vertrauensanker.
+  en: >-
+    Root key pairs are generated by a trusted authority, and the
+    public keys and certificate details are distributed throughout
+    the system, serving as trust anchors for all actors.
+7d1e9a243327550d:
+  de: >-
+    * Für jedes Gesundheitsamt einen oder mehrere Schlüsselpaare
+    (GA-Schlüssel) für das Signieren von Anfragen an die Backend-Server.
+  en: >-
+    * For each health department, one or more key pairs (GA keys)
+    for signing requests to the backend servers.
 801e11bdd6ce4132:
   de: '### Verlust eines privaten GÄ-Datenschlüssels'
   en: '### Loss of a private GÄ data key'
@@ -238,6 +346,14 @@
 9dbe876076d3b556:
   de: '### Verlust eines GÄ-Datenschlüssels'
   en: '### Loss of a GÄ data key'
+9ebe29ce98d03e0e:
+  de: >-
+    Hierfür ist jedoch ebenfalls das Vorliegen eines (sich unter
+    Kontrolle von Nutzern befindlichen) GA-Datenpakets nötig,
+    oder eines entschlüsselten Besuchsdatenpaket nötig.
+  en: >-
+    However, this also requires the presence of a GA data packet
+    (under user control) or a decrypted visit data packet.
 a6df326b9aac132e:
   de: '## Grundideen'
   en: '## Basic ideas'
@@ -263,9 +379,52 @@ b18ad8b1ab5282d6:
     "bewegt" werden.
   en: >-
     * Private keys should only be generated on site and not "moved".
+b9223e5bf3b05e50:
+  de: >-
+    Da zum Abruf von Daten jedoch zusätzliche Geheimwerte notwendig
+    sind und ein Abruf spezifischer Informationen (z.B. Kontaktdaten)
+    nur bei Vorliegen entsprechender Identifikationsmerkmale (z.b.
+    $I _ D$) möglich wird, ist die Hürde für den Angreifer auch
+    hier sehr hoch.
+  en: >-
+    However, since additional secret values are required to retrieve
+    data and retrieval of specific information (e.g. contact data)
+    is only possible with the presence of corresponding identification
+    features (e.g. $I _ D$), the hurdle for the attacker is also
+    very high here.
+ba5df5b11ef17faa:
+  de: >-
+    Gesundheitsämter besitzen individuelle asymmetrische Schlüsselpaare
+    zur Signierung von Daten, sowie ein geteiltes Schlüsselpaar
+    zur Ver- & Entschlüsselung von Daten. Diese werden von einem
+    oder mehreren Root-Zertifikaten signiert, welche den Backend-Servern
+    als Vertrauensanker dienen. Um das Gesamtsystem möglichst
+    robust gegenüber dem Verlust von Schlüsseln zu machen, sollten
+    folgende Maßnahmen beachtet werden:
+  en: >-
+    Health departments have individual asymmetric key pairs for
+    signing data, as well as a shared key pair for -  encrypting
+    & -  decrypting data. These are signed by one or more root
+    certificates, which serve as trust anchors for the backend
+    servers. To make the overall system as robust as possible
+    against the loss of keys, the following measures should be
+    observed:
 bb3837544862ac0e:
   de: '# Schlüsselmanagement'
   en: '# Key Management'
+bee236da6178973e:
+  de: >-
+    Zilp-Zalp nutzt eine externe Public-Key Infrastruktur (PKI)
+    zur Verschlüsselung von Daten sowie zur Authentifizierung
+    von Gesundheitsämtern gegenüber Backend-Servern und zur Signierung
+    von Anfragen, die von diesen veröffentlicht werden.
+  en: >-
+    Zilp-Zalp uses an external Public-Key Infrastructure (PKI)
+    to encrypt data as well as to authenticate health departments
+    to backend servers and to sign requests published by them.
+bf503d91e5c08149:
+  de: '### Verlust eines privaten Root-Zertifikatschlüssels'
+  en: '### Loss of a private root certificate key'
 c24c998d87318027:
   de: '## Risiko-Analyse'
   en: '## Risk analysis'
@@ -291,6 +450,44 @@ c29832e9ff2b31e0:
     and receive data. The private part, on the other hand, would
     have the data key, decrypt the received data and process it.
     Whether such a separation makes sense must be weighed up.
+c5b5141f249735aa:
+  de: >-
+    Da diese weiteren Schlüssel dezentral verwahrt und nur mit
+    manueller Beteiligung einzelner Akteure erlangt werden können
+    ist die Hürde zur Erlangung für den Angreifer sehr hoch.
+  en: >-
+    Since these additional keys are stored decentrally and can
+    only be obtained with the manual involvement of individual
+    actors, the hurdle to obtaining them is very high for the
+    attacker.
+ca1dd9fc3547f722:
+  de: >-
+    Der Verlust eines privaten GÄ-Datenschlüssels führt somit
+    nur zu einem sehr geringen Risiko der Enschlüsselung personenbezogener
+    Daten, zumindest wenn es dem Angreifer nicht ebenfalls gelingt,
+    weitere Schlüssel zu erlangen.
+  en: >-
+    The loss of a private GÄ data key thus only leads to a very
+    low risk of decryption of personal data, at least if the attacker
+    does not also succeed in obtaining further keys.
+d9a001a64e31bd27:
+  de: >-
+    Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel,
+    kann er die äußere Entschlüsselung von Kontaktdaten eines
+    Nutzers entfernen.
+  en: >-
+    If an attacker gains access to a private GÄ data key, he can
+    remove the outer decryption of a user's contact information.
+dbfada95b7f5d42f:
+  de: >-
+    Zilp-Zalp nutzt eine externe Public-Key Infrastruktur (PKI)
+    zur Verschlüsselung von Daten sowie zur Authentifizierung
+    von Gesundheitsämtern gegenüber dem Backend und zur Signierung
+    von Anfragen, die von diesen veröffentlicht werden.
+  en: >-
+    Zilp-Zalp uses an external Public-Key Infrastructure (PKI)
+    to encrypt data as well as to authenticate health departments
+    to the backend and to sign requests published by them.
 de6bc30b506fc6ad:
   de: '### Verlust eines privaten Root-Signierschlüssels'
   en: '### Loss of a private root signing key'
@@ -381,6 +578,22 @@ ebc412abd341ef2d:
   en: >-
     * For each health department, one or more key pairs, each
     for encrypting/decrypting data and for signing data.
+ecc613711421d909:
+  de: >-
+    GA-Signierschlüssel werden lokal generiert und von der vertrauenswürdigen
+    Stelle über Signieranfragen (Certificate Signing Requests,
+    CSR) signiert. Der gemeinsame GA-Datenschlüssel wird ebenfalls
+    lokal generiert, signiert und anschließend über einen sicheren
+    Kanal an einzelne GÄ verteilt. Er sollte regelmäßig gewechselt
+    werden, hierzu ist ein "Key Agreement" Prozess zwischen den
+    GÄs notwendig.
+  en: >-
+    GA signing keys are generated locally and signed by the trusted
+    entity via Certificate Signing Requests (CSR). The common
+    GA data key is also generated locally, signed and then distributed
+    to individual GAs via a secure channel. It should be changed
+    regularly; this requires a "key agreement" process between
+    the GÄs.
 f59122170d20981f:
   de: >-
     * Die Anwendbarkeit und Macht von individuellen Schlüsseln
@@ -394,6 +607,18 @@ f8ea80b530858df4:
 f91eccb17f295d5f:
   de: '## Notwendige Schlüssel'
   en: '## Necessary keys'
+f95a77458d3dfed5:
+  de: >-
+    Besuchsdaten können nur unter Zuhilfenahme eines Gruppenschlüssels
+    entschlüsselt werden, ein solcher wiederum kann nur durch
+    Mitwirkung eines Nutzers oder im Rahmen des Ombuds-Prozesses
+    durch Mitwirkung der Ombuds-Stelle sowie eines Betreibers
+    erlangt werden.
+  en: >-
+    Visit data can only be decrypted with the aid of a group key,
+    which in turn can only be obtained with the cooperation of
+    a user or, within the framework of the ombudsman process,
+    with the cooperation of the ombudsman's office and an operator.
 ffcf9088f599441c:
   de: >-
     Erlangt ein Angreifer Zugang zu einem privaten GÄ-Datenschlüssel

@@ -7,6 +7,16 @@
     Health departments only need to deploy the packaged `ga` API
     application to run Zilp-Zalp, which also contains the web
     application.
+05cf1f3d13e6dc33:
+  de: >-
+    Anbieter von Backend-Servern führen diese auf einem geeigneten
+    System aus:
+  en: 'Providers of backend servers run them on a suitable system:'
+0625b78d14b4f532:
+  de: >-
+    Der Betreiber kann auch einen eigenen Betreiber-API-Server
+    nutzen:
+  en: 'The operator can also use its own operator API server:'
 0a55fa5f5a8831c9:
   de: >-
     Geheimnisse wie Schlüssel können hierbei auch dynamisch injiziert
@@ -16,9 +26,56 @@
     Secrets such as keys can also be injected dynamically to avoid
     local storage. The `zilpzalp` service application can be used
     for this purpose.
+10f9350d993654ca:
+  de: >-
+    Betreiber von Ortschaften können die Zilp-Zalp Web-Anwendung
+    nutzen. Diese kann Daten lokal speichern oder eine Betreiber-API
+    nutzen, um Besuchsdaten und (optional) Einstellungen verschlüsselt
+    zu speichern. Hierfür ist keine Registrierung erforderlich.
+    Der Betreiber kann auch einen eigenen Betreiber-API-Server
+    nutzen:
+  en: >-
+    Operators of localities can use the Zilp-Zalp web application.
+    This can store data locally or use an operator API to store
+    visit data and (optionally) settings in encrypted form. No
+    registration is required for this. The operator can also use
+    its own operator API server:
+26903eca51bb49f8:
+  de: >-
+    Betreiber von Ortschaften können die Zilp-Zalp Web-Anwendung
+    nutzen. Diese kann Daten lokal speichern oder eine Betreiber-API
+    nutzen, um Besuchsdaten und (optional) Einstellungen verschlüsselt
+    zu speichern. Hierfür ist keine Registrierung erforderlich.
+  en: >-
+    Operators of localities can use the Zilp-Zalp web application.
+    This can store data locally or use an operator API to store
+    visit data and (optionally) settings in encrypted form. No
+    registration is required for this.
+2a3d9d03bdb8905c:
+  de: >-
+    Sie müssen über eine entsprechende Konfiguration ebenfalls
+    die korrekte Einbindung in das föderierte Zilp-Zalp System
+    sicherstellen.
+  en: >-
+    You must also ensure the correct integration into the federated
+    Zilp-Zalp system via an appropriate configuration.
 2c100c1c5df29105:
   de: <!--translate(ignore)-->
   en: <!--translate(ignore)-->
+357a7d128be51120:
+  de: >-
+    Die folgenden Abschnitte beschreiben das Deployment der Zilp-Zalp
+    Systemkomponenten für Betreiber von Ortschaften, Gesundheitsämter
+    und Anbieter von Backend- sowie Betreiber-Servern.
+  en: >-
+    The following sections describe the deployment of the Zilp-Zalp
+    system components for operators of localities, health departments
+    and providers of backend and - operator servers.
+382f922cfa5adec2:
+  de: >-
+    Anbieter von Betreiber-Servern führen diesen auf einem geeigneten
+    System aus:
+  en: 'Providers of operator servers run this on a suitable system:'
 3d3c3eaebec69eee:
   de: >-
     Betreiber von Ortschaften können entweder die Zilp-Zalp Web-Anwendung
@@ -28,20 +85,57 @@
     Localities can either use the Zilp-Zalp web application or
     deploy a local API application that also contains the web
     application:
+40a1cdb90d0b2cb7:
+  de: >-
+    Sie müssen über eine entsprechende Konfiguration die korrekte
+    Einbindung in das föderierte Zilp-Zalp System sicherstellen.
+  en: >-
+    You have to ensure the correct integration into the federated
+    Zilp-Zalp system via an appropriate configuration.
+45382026d49c1ec1:
+  de: >-
+    Der Betreiber-Server kann anschließend einfach gestartet werden:
+  en: 'The operator server can then simply be started:'
 4bcbd0669fdefa93:
   de: >-
     curl https://downloads.zilpzalp.eu/ga/zilpzalp-ga-latest.tar.gz
   en: >-
     curl https://downloads.zilpzalp.eu/ga/zilpzalp-ga-latest.tar.gz
+5d4691280903c71b:
+  de: >-
+    Gesundheitsämter kommunizieren über einen (oder mehrere) externe
+    API-Server mit dem Zilp-Zalp System. Gesundheitsämter müssen
+    hierzu über einen Signierschlüssel verfügen, der mit einem
+    von dem Gesun
+  en: >-
+    Health departments communicate with the Zilp-Zalp system via
+    one (or more) external API servers. For this purpose, health
+    departments must have a signing key, which is linked to a
+    key issued by the health department.
 63870cac8c8860dc:
   de: 'Die Anwendung kann anschließend einfach ausgeführt werden:'
   en: 'The application can then be easily executed:'
 656b678195cf83fc:
   de: tar -xvzf zilpzalp-ga-latest.tar.gz
   en: tar -xvzf chiffchaff-ga-latest.tar.gz
+692c96e388bf9039:
+  de: >-
+    Betreiber von Ortschaften können die Zilp-Zalp Web-Anwendung
+    nutzen, oder ebenfalls eine lokale API-Anwendung deployen,
+    welche zusätzlich auch die Web-Anwendung enthält:
+  en: >-
+    Operators of localities can use the Zilp-Zalp web application,
+    or also deploy a local API application, which also contains
+    the web application:
+6b4ab8d2261927b0:
+  de: '## Anbieter von Backend-Servern'
+  en: '## back-end server provider'
 73f95894d03a8c55:
   de: zilpzalp settings inject
   en: Chiffchaff settings inject
+7fb3b5a1fe849007:
+  de: 'Der Betreiber kann auch eine eigene Betreiber-API nutzen:'
+  en: 'The operator can also use its own operator API:'
 81a11ce385be38d0:
   de: >-
     Die folgenden Abschnitte beschreiben das Deployment der Zilp-Zalp
@@ -49,9 +143,43 @@
   en: >-
     The following sections describe the deployment of the Zilp-Zalp
     system components for operators of localities and health departments.
+84e7821f1510515f:
+  de: >-
+    Die Betreiber-API kann anschließend einfach ausgeführt werden:
+  en: 'The operator API can then be easily executed:'
+85e4099525442f87:
+  de: >-
+    Der Betreiber-API-Server kann anschließend einfach gestartet
+    werden:
+  en: 'The operator API server can then simply be started:'
 8a33ed86d58372ac:
   de: export ZILPZALP_ASSES=`readlink -f assets`
   en: export ZILPZALP_ASSES=`readlink -f assets`
+8cb546419ae7a02d:
+  de: >-
+    Betreiber von Ortschaften können die Zilp-Zalp Web-Anwendung
+    nutzen. Diese kann Daten lokal speichern oder eine Betreiber-API
+    nutzen, um Besuchsdaten und (optional) Einstellungen verschlüsselt
+    zu speichern. Hierfür ist keine Registrierung erforderlich.
+    Der Betreiber kann alternativ auch einen eigenen Betreiber-API-Server
+    nutzen:
+  en: >-
+    Operators of localities can use the Zilp-Zalp web application.
+    This can store data locally or use an operator API to store
+    visit data and (optionally) settings in encrypted form. No
+    registration is required. Alternatively, the operator can
+    use its own operator API server:
+8f084ef67d1405ee:
+  de: >-
+    Gesundheitsämter kommunizieren über einen (oder mehrere) externe
+    Backend-Server mit dem Zilp-Zalp System. Gesundheitsämter
+    müssen hierzu über einen Signierschlüssel verfügen, der mit
+    einem von dem Gesun
+  en: >-
+    Health departments communicate with the Zilp-Zalp system via
+    one (or more) external backend servers. For this purpose,
+    health departments must have a signing key, which is linked
+    to a key issued by the health department.
 90157b8c57c830a5:
   de: '## Betreiber von Ortschaften'
   en: '## site operators'
@@ -78,23 +206,41 @@ a07db0fe8ddadafd:
     by an environment variable `ZILPZALP_ASSETS` (by default they
     are searched in the `assets` subdirectory of the current working
     directory).
+b140766c828f28ae:
+  de: >-
+    Der Backend-Server kann anschließend einfach gestartet werden:
+  en: 'The backend server can then simply be started:'
 bdfdd21d76179bf8:
   de: zilpzalp
   en: Chiffchaff
 c357d3398365fd41:
   de: tar -xvzf zilpzalp-operator-latest.tar.gz
   en: tar -xvzf chiffchaff-operator-latest.tar.gz
+c46e4c7b1443359a:
+  de: '## Anbieter von Betreiber-Servern'
+  en: '## Provider of operator servers'
 c5e42776f9e776df:
   de: >-
     curl https://downloads.zilpzalp.eu/operator/zilpzalp-operator-latest.tar.gz
   en: >-
     curl https://downloads.zilpzalp.eu/operator/zilpzalp-operator-latest.tar.gz
+c8bc7193aff1a94f:
+  de: >-
+    Die Betreiber-API kann anschließend einfach gestartet werden:
+  en: 'The operator API can then simply be started:'
 dd52d2c98270f01d:
   de: export ZILPZALP_SETTINGS=`readlink -f settings`
   en: export ZILPZALP_SETTINGS=`readlink -f settings`
 e3b0c44298fc1c14:
   de: ''
   en: ''
+e52b7437fff8597a:
+  de: >-
+    Gesundheitsämter kommunizieren über einen (oder mehrere) externe
+    API-Server mit dem Zilp-Zalp System.
+  en: >-
+    Health departments communicate with the Zilp-Zalp system via
+    one (or more) external API servers.
 e79aff752ccc89a4:
   de: '# Deployment'
   en: '# Deployment'
