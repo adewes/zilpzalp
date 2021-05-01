@@ -10,6 +10,17 @@ pages:
     title|t: Zilp-Zalp Dokumentation
     navtitle|t: Start
     name: ''
+  - title|t: Artikel
+    name: articles
+    no_submenu: true
+    slug||slugify: Artikel
+    src|f|exists?: "{target_language}/articles/index.md"
+    children:
+      - title|t: Einfachheit vs. Sicherheit
+        src|f|exists?: "{target_language}/articles/usability-vs-security.md"
+        name: usability-vs-security
+        slug||slugify: einfacheit-vs-sicherheit
+        hidden: true
   - title|t: Analysen
     name: analyses
     slug||slugify: Analysen

@@ -12,6 +12,17 @@ pages:
   src: de/index.md
   title: Zilp-Zalp Dokumentation
 - children:
+  - hidden: true
+    name: usability-vs-security
+    slug: einfachheit-vs-sicherheit
+    src: de/articles/usability-vs-security.md
+    title: Einfachheit vs. Sicherheit
+  name: articles
+  no_submenu: true
+  slug: artikel
+  src: de/articles/index.md
+  title: Artikel
+- children:
   - name: luca
     slug: vergleich-mit-luca
     src: de/analyses/luca.md

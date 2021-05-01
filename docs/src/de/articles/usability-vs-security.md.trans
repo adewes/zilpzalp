@@ -1,0 +1,456 @@
+0504c4e6609cb4f5:
+  de: >-
+    Der Betreiber muss hierbei auch relevante Meta-Daten (z.B.
+    Tischnummer, Besuchszeiten etc.) erfassen um sicherzstellen,
+    dass die erhobenen Daten sinnvoll verwendbar sind.
+  en: >-
+    The operator must also collect relevant meta-data (e.g. table
+    number, visiting times etc.) to ensure that the collected
+    data can be used in a meaningful way.
+076f95a84b82a71c:
+  de: >-
+    Eine der Herausforderungen beim Design eines sicheren und
+    privatsphäre-freundlichen Systems zur Kontaktnachverfolgung
+    ist die Einfachheit oder "Usability" der Lösung für Nutzer
+    und Betreiber von Ortschaften.
+  en: >-
+    One of the challenges in designing a secure and privacy-friendly
+    contact tracking system is the simplicity or "usability" of
+    the solution for locality users and operators.
+0df0adb67e67f7a3:
+  de: >-
+    Da QR-Code Scanner von Smartphones sehr viel besser funktionieren
+    als Javascript-basierte Scanner, ist es viel einfacher Besuche
+    so zu dokumentieren.
+  en: >-
+    Since QR code scanners from smartphones work much better than
+    Javascript-based scanners, it is much easier to document visits
+    this way.
+0f6c1325ca4e097f:
+  de: >-
+    Dies schafft die Möglichkeit, Besuchsdaten unkompliziert von
+    einzelnen Mitarbeiter erfassen zu lassen und die Daten trotzdem
+    in einer gemeinsamen, lokalen Anwendung weiterzuverarbeiten.
+  en: >-
+    This creates the possibility of having visit data recorded
+    in an uncomplicated manner by individual employees and still
+    being able to process the data in a common, local application.
+129095415168567c:
+  de: >-
+    Da Zilp-Zalp QR-Codes jedoch keine besonders sensiblen Daten
+    enthalten und nur bei systematischer Erfassung und Auswertung
+    Privatsphäre-Risiken für Betroffene bergen kann dieses Risiko
+    eventuell akzeptiert werden.
+  en: >-
+    However, since Zilp-Zalp QR codes do not contain any particularly
+    sensitive data and only pose privacy risks for data subjects
+    when systematically collected and analyzed, this risk may
+    be acceptable.
+13cc91e5b6e79e36:
+  de: >-
+    Dies kann über das Einlesen eines QR-Codes geschehen, der
+    von der Web-Anwendung bereitgestellt wird und eine geheime
+    ID sowie einen geheimen Schlüssel enthält.
+  en: >-
+    This can be done by scanning a QR code provided by the web
+    application, which contains a secret ID and a secret key.
+1723497897be8d24:
+  de: >-
+    Eine direkte, smartphone-basierte Erfassung von QR-Codes hat
+    insbesondere bei papierbasierten Codes den Vorteil, dass diese
+    nicht beim Betreiber verbleiben müssen und somit das Verlust-
+    oder Diebstahlrisiko dieser Codes ebenfalls minimiert wird.
+  en: >-
+    A direct, smartphone-based capture of QR codes has the advantage,
+    especially in the case of paper-based codes, that these do
+    not have to remain with the operator and thus the - risk of
+    loss or - theft of these codes is also minimized.
+1c71fe193498ff96:
+  de: >-
+    Eine direkte Erfassung von QR-Codes hat insbesondere bei papierbasierten
+    Codes den Vorteil, dass diese nicht beim Betreiber verbleiben
+    müssen und somit das Verlust- oder Diebstahlrisiko dieser
+    Codes ebenfalls minimiert wird.
+  en: >-
+    Direct capture of QR codes has the advantage, particularly
+    in the case of paper-based codes, that they do not have to
+    remain with the operator and thus the - risk of loss or -
+    theft of these codes is also minimized.
+24a9a3c517d75b40:
+  de: >-
+    Eine einfachere Möglichkeit stellt der verschlüsselte Austausch
+    der Daten über einen externen Service dar, der die Kommunikation
+    zwischen der Betreiber-Anwendung und dem Smartphone mit den
+    Besuchsdaten vermittelt.
+  en: >-
+    A simpler option is the encrypted exchange of data via an
+    external service that mediates the communication between the
+    operator application and the smartphone with the visit data.
+26add633710d4eeb:
+  de: >-
+    Problematisch ist zudem, dass die Besuchsdaten natürlich auf
+    zusätzlichen Geräten verarbeitet werden.
+  en: >-
+    It is also problematic that the visit data is of course processed
+    on additional devices.
+2b5e67472aab42b4:
+  de: >-
+    Insbesondere wenn hierzu private Smartphones benutzt werden
+    (was in der Praxis sicherlich häufig der Fall sein wird) besteht
+    dass Risiko, dass es zu einem Datenabfluss kommt.
+  en: >-
+    Especially if private smartphones are used for this purpose
+    (which will certainly often be the case in practice), there
+    is a risk of data leakage.
+347cc4587028b4c5:
+  de: >-
+    Hierdurch wäre gewährleistet, dass Daten nur lokal verarbeitet
+    werden.
+  en: This would ensure that data is only processed locally.
+3ab391f294377935:
+  de: >-
+    Dies kann über das Einlesen eines QR-Codes geschehen, der
+    von der Web-Anwendung bereitgestellt wird und eine zufällige
+    ID sowie einen geheimen Schlüssel enthält.
+  en: >-
+    This can be done by scanning a QR code provided by the web
+    application, which contains a random ID and a secret key.
+3bb46cb305ef2a8a:
+  de: >-
+    Hierzu muss ein QR-Code gescannt werden, welcher vom Nutzer
+    in Papierform oder digital über ein Smartphone gezeigt werden
+    kann.
+  en: >-
+    To do this, a QR code must be scanned, which can be shown
+    by the user in paper form or digitally via a smartphone.
+3f29c1c123cc8d24:
+  de: >-
+    Hierbei muss das Smartphone zunächst lokale mit der Web-Anwendung
+    "gepaart" werden.
+  en: >-
+    Here, the smartphone must first be "paired" locally with the
+    web application.
+4192809170d2d809:
+  de: >-
+    Erste Tests mit einem Web-basierten QR-Code Scanner basierend
+    auf [jsQR](https://github.com/cozmo/jsQR) haben zwar gezeigt,
+    dass das Einscannen von QR-Codes hiermit möglichst ist, jedoch
+    lässt die Genauigkeit stark zu wünschen übrig, Einscannen
+    von Codes kann daher sehr mühsam werden.
+  en: >-
+    First tests with a web-based QR code scanner based on [jsQR](https://github.com/cozmo/jsQR)
+    have shown that the scanning of QR codes is possible, but
+    the accuracy leaves much to be desired, scanning codes can
+    therefore be very tedious.
+4c739912c49da421:
+  de: >-
+    Dies kann über das Einlesen eines QR-Codes geschehen, der
+    von der Web-Anwendung bereitgestellt wird und der eine zufällige
+    ID sowie einen geheimen Schlüssel enthält.
+  en: >-
+    This can be done by scanning a QR code provided by the web
+    application, which contains a random ID and a secret key.
+4ce641d16c6ddf44:
+  de: >-
+    Ein Peer-To-Peer Datenaustausch über WebRTC wäre z.B. technisch
+    möglich, jedoch mit hohen Hürden verbunden und nicht zuverlässig
+    zu realisieren.
+  en: >-
+    A peer-to-peer data exchange via WebRTC, for example, would
+    be technically possible, but would involve high hurdles and
+    could not be reliably implemented.
+5fb2c9594b7dec9a:
+  de: >-
+    Da Zilp-Zalp QR-Codes jedoch zunächst keine besonders sensiblen
+    Daten enthalten und nur bei systematischer Erfassung und Auswertung
+    Privatsphäre-Risiken für Betroffene bergen kann dieses Risiko
+    eventuell akzeptiert werden.
+  en: >-
+    However, since Zilp-Zalp QR codes do not contain any particularly
+    sensitive data in the first place and only pose privacy risks
+    for data subjects if they are systematically collected and
+    evaluated, this risk may be acceptable.
+6878c995a2f4d04d:
+  de: >-
+    Ziel beim Entwurf von Zilp-Zalp war, die Nutzung möglichst
+    einfach zu gestalten und gleichzeitig sehr hohe Sicherheits-
+    & Datenschutz-Standards einzuhalten.
+  en: >-
+    The goal in designing Zilp-Zalp was to make it as easy to
+    use as possible while -  maintaining very high security &
+    -  privacy standards.
+712c370938362d06:
+  de: >-
+    * Statt wie aktuell zu verlangen, dass QR-Codes in einer speziellen
+    Web-Anwendung gescannt werden, könnten diese so gestaltet
+    werden, dass sie mithilfe eines integrierten Smartphone-Scanners
+    gescannt werden können.
+  en: >-
+    * Instead of requiring QR codes to be scanned in a special
+    web application, as is currently the case, they could be designed
+    to be scanned using an integrated smartphone scanner.
+7644cd3b3403ea74:
+  de: >-
+    Zur Realisierung dieser Übertragung habe ich verschiedene
+    Möglichkeiten evaluiert.
+  en: >-
+    For the realization of this transfer I evaluated different
+    possibilities.
+76a08d4982dc8ab6:
+  de: >-
+    Nicht allen Betreibern kann der Betrieb eines solchen Services
+    jedoch zugemutet werden.
+  en: >-
+    However, not all operators can be expected to operate such
+    a service.
+7fd710e27eff8a04:
+  de: >-
+    Technische versierte Betreiber können einen solchen Service
+    zur Datenübermittlung auch selbst in einem lokalen Netzwerk
+    betreiben und diesen über zusätzliche Authentifizierungsmechanismen
+    absichern.
+  en: >-
+    Technically experienced operators can also operate such a
+    service for data transmission themselves in a local network
+    and secure it using additional authentication mechanisms.
+8b8f0c41581de4c1:
+  de: >-
+    Um Missbrauchsszenarien durch gefälschte Check-Ins zu vermeiden
+    wurde bewusst darauf verzichtet, einen Selbstregistrierungsprozess
+    anzubieten.
+  en: >-
+    In order to avoid misuse scenarios through fake check-ins,
+    it was deliberately decided not to offer a self-registration
+    process.
+8dba0fb9058c20d4:
+  de: >-
+    Die Web-Anwendung des Smartphones kann dann Besuchsdaten mit
+    dem geheimen Schlüssel verschlüsseln (und hierbei ggf. eine
+    Schlüsselrotation über eine kryptographische Ratsche anwenden),
+    sie mit der zufälligen ID verknüpfen und sie auf dem externen
+    Service ablegen.
+  en: >-
+    The smartphone web application can then encrypt visit data
+    with the secret key (using key rotation via a cryptographic
+    ratchet if necessary), associate it with the random ID, and
+    store it on the external service.
+8e5b8ef03b99fa41:
+  de: >-
+    Dementsprechend müssen Gäste, Kunden oder Besucher vom Betreiber
+    einer Ortschaft registriert werden.
+  en: >-
+    Accordingly, guests, customers or visitors must be registered
+    by the operator of a locality.
+92880d862c6fba71:
+  de: >-
+    Die Web-Anwendung des Smartphones kann dann Besuchsdaten mit
+    dem geheimen Schlüssel verschlüsseln (und hierbei ggf. eine
+    Schlüsselrotation über eine kryptographische Ratsche- anwenden),
+    sie mit der zufälligen ID verknüpfen und sie auf dem externen
+    Service ablegen.
+  en: >-
+    The smartphone web application can then encrypt visit data
+    with the secret key (using key rotation via a cryptographic
+    ratchet if necessary - ), associate it with the random ID,
+    and store it on the external service.
+9c57a2d1926cf9ef:
+  de: >-
+    Technisch versierte Betreiber können einen solchen Service
+    zur Datenübermittlung auch selbst in einem lokalen Netzwerk
+    betreiben und diesen über zusätzliche Authentifizierungsmechanismen
+    absichern.
+  en: >-
+    Technically experienced operators can also operate such a
+    service for data transmission themselves in a local network
+    and secure it using additional authentication mechanisms.
+9cc4f1f3a82b064c:
+  de: >-
+    Ein Peer-To-Peer Datenaustausch über WebRTC wäre z.B. technisch
+    möglich, jedoch mit hohen Hürden verbunden und vermutlich
+    nicht zuverlässig zu realisieren.
+  en: >-
+    A peer-to-peer data exchange via WebRTC, for example, would
+    be technically possible, but would be associated with high
+    hurdles and probably not reliable to implement.
+9cd253bc0916737e:
+  de: >-
+    Daher könnten z.B. öffentliche Stellen oder vertrauenswürdige,
+    zivilgesellschaftliche Organisationen ebenfalls solche Services
+    anbieten.
+  en: >-
+    Therefore, e.g. public bodies or trustworthy civil society
+    organisations could also offer such services.
+9df9b083df5d84b9:
+  de: >-
+    Insbesondere wenn hierzu private Smartphones benutzt werden
+    (was in der Praxis sicherlich häufig der Fall sein wird) besteht
+    dass Risiko, dass es hier zu einem Datenabfluss kommt.
+  en: >-
+    Especially if private smartphones are used for this purpose
+    (which will certainly often be the case in practice), there
+    is a risk of data leakage.
+a81f7c935f1ca828:
+  de: >-
+    Die auf dem Smartphone vorliegenden Daten müssen nun jedoch
+    noch in die Web-Anwendung des Betreibers gelangen, wo sie
+    schließlich zusätzlich verschlüsselt und für einen eventuellen
+    Abruf durch Gesundheitsämter gesichert werden.
+  en: >-
+    However, the data available on the smartphone still has to
+    reach the operator's web application, where it is finally
+    additionally encrypted and secured for possible retrieval
+    by health authorities.
+b0a1bc6c63529fd9:
+  de: >-
+    Die Web-Anwendung des Smartphones kann dann Besuchsdaten mit
+    dem geheimen Schlüssel verschlüsseln (und hierbei ggf. eine
+    Schlüsselrotation über eine kryptographische Ratsche anwenden),
+    sie mit der zufälligen ID verknüpft und sie auf dem externen
+    Service ablegen.
+  en: >-
+    The smartphone web application can then encrypt visit data
+    with the secret key (using key rotation via a cryptographic
+    ratchet if necessary), associate it with the random ID, and
+    store it on the external service.
+b52b4ef0536d5587:
+  de: >-
+    Erste Tests mit einem Web-basierten QR-Code Scanner basierend
+    auf [jsQR](https://github.com/cozmo/jsQR) haben zwar gezeigt,
+    dass das Einscannen von QR-Codes hiermit möglichst ist, jedoch
+    lässt die Genauigkeit stark zu wünschen übrig, das Einscannen
+    von Codes kann daher sehr mühsam werden.
+  en: >-
+    First tests with a web-based QR code scanner based on [jsQR](https://github.com/cozmo/jsQR)
+    have shown that the scanning of QR codes is possible, but
+    the accuracy leaves much to be desired, the scanning of codes
+    can therefore be very tedious.
+be6268ca9cac13ad:
+  de: >-
+    Wie bei allen Komponenten ist es hierbei wichtig, eine Zentralisierung
+    und die damit einhergende Möglichkeit zur Metadaten-Analyse
+    möglichst zu unterbinden.
+  en: >-
+    As with all components, it is important here to prevent centralization
+    and the associated possibility of metadata analysis as far
+    as possible.
+c48c3a99df32ff43:
+  de: >-
+    Ein Peer-To-Peer Datenaustausch über WebRTC wäre z.B. technisch
+    möglich, jedoch mit hohen Hürden verbunden und vermutlich
+    nicht zuverlässig zu realisieren (niemand möchte z.B. im laufenden
+    Restaurant-Betrieb fehlerhafte WebRTC-Verbindungen debuggen).
+  en: >-
+    A peer-to-peer data exchange via WebRTC, for example, would
+    be technically possible, but would be associated with high
+    hurdles and probably not reliable to implement (no one wants
+    to debug faulty WebRTC connections during restaurant operation,
+    for example).
+c88048fa7d2ca858:
+  de: >-
+    Daher könnten z.B. öffentliche Stellen oder vertrauenswürdige,
+    zivilgesellschaftliche Organisationen solche Services anbieten.
+  en: >-
+    Therefore, e.g. public bodies or trustworthy civil society
+    organisations could offer such services.
+ca6a3bc998a6bdd2:
+  de: >-
+    Die auf dem Smartphone vorliegenden Daten müssen nun jedoch
+    noch in die Web-Anwendung des Betreibers gelangen, wo sie
+    schließlich zusätzlich verschlüsselt und für einen eventuellen
+    Abruf durch Gesundheitsämter gepsichert werden.
+  en: >-
+    However, the data on the smartphone still has to be transferred
+    to the operator's web application, where it is additionally
+    encrypted and secured for possible retrieval by health authorities.
+cebd393f15dd1840:
+  de: >-
+    Zur Realisierung dieser Übertragung wurden verschiedene Möglichkeiten
+    evaluiert.
+  en: >-
+    Various options were evaluated for the realisation of this
+    transfer.
+d0352270c6681265:
+  de: >-
+    Technische versierte Betreiber können einen solchen Service
+    jedoch auch selbst in einem lokalen Netzwerk betreiben und
+    diesen über zusätzliche Authentifizierungsmechanismen absichern.
+  en: >-
+    However, technically experienced operators can also run such
+    a service themselves in a local network and secure it using
+    additional authentication mechanisms.
+d06803586bc247e0:
+  de: >-
+    Da QR-Codes jedoch zunächst keine besonders sensiblen Daten
+    enthalten und nur bei systematischer Erfassung und Auswertung
+    Privatsphäre-Risiken für Betroffene bergen kann dieses Risiko
+    eventuell akzeptiert werden.
+  en: >-
+    However, since QR codes do not contain any particularly sensitive
+    data in the first instance and only entail privacy risks for
+    data subjects if they are systematically collected and evaluated,
+    this risk may possibly be accepted.
+d494cd8ca9bf4c4d:
+  de: >-
+    Über diese Web-Anwendung kann der Betreiber oder ein Angestellter
+    die relevanten Meta-Daten erfassen.
+  en: >-
+    Via this web application, the operator or an employee can
+    enter the relevant meta data.
+d70e1152f7be6926:
+  de: >-
+    Problematisch ist zudem, dass die Besuchsdaten auf zusätzlichen
+    Geräten verarbeitet werden.
+  en: >-
+    It is also problematic that visit data is processed on additional
+    devices.
+d96166f4eadc437f:
+  de: >-
+    Um den Prozess zu vereinfachen, ist daher folgender Vorschlag
+    entstanden:
+  en: >-
+    Therefore, in order to simplify the process, the following
+    proposal has emerged:
+db04c128f2403e96:
+  de: >-
+    Durch Einsatz eines externen Service eröffnen sich jedoch
+    auch Risiken, da dieser u.a. Metadaten analysieren kann und
+    der Austausch von Nachrichten immer ein Sicherheitsrisiko
+    darstellt.
+  en: >-
+    However, using an external service also opens up risks, since
+    the service can analyze metadata, among other things, and
+    the exchange of messages always poses a security risk.
+e3b0c44298fc1c14:
+  de: ''
+  en: ''
+e3f07049adb32f80:
+  de: >-
+    Hierbei kann der QR-Code eine URL enthalten, die zu einer
+    einfachen Scanner-Web-Anwendung führt.
+  en: >-
+    Here, the QR code can contain a URL that leads to a simple
+    scanner web application.
+e59dfe5905250f33:
+  de: >-
+    Die Web-Anwendung des Betreibers kann die Daten von dort über
+    die ID anfordern und mit dem geheimen Schlüssel entschlüsseln.
+  en: >-
+    The web application of the operator can request the data from
+    there via the ID and decrypt it with the secret key.
+e79fa12a5abff1fa:
+  de: >-
+    Die Web-Anwendung des Betreibers kann die Daten von dort über
+    die geheime ID anfordern und mit dem geheimen Schlüssel entschlüsseln.
+  en: >-
+    The web application of the operator can request the data from
+    there via the secret ID and decrypt it with the secret key.
+f733756fe77522b8:
+  de: '# Einfachheit vs. Sicherheit'
+  en: '# Simplicity vs. security'
+f9e68b52a57bfb58:
+  de: >-
+    Hierbei muss das Smartphone zunächst lokal mit der Web-Anwendung
+    "gepaart" werden.
+  en: >-
+    Here, the smartphone must first be "paired" locally with the
+    web application.
