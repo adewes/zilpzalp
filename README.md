@@ -1,3 +1,6 @@
+**Projekt wird hier weitergeführt: https://github.com/zilp-zalp**
+**Project development continues here: https://github.com/zilp-zalp**
+
 [English version](README.md) // [Deutsche Version](README-de.md)
 
 
